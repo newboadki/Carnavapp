@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
 #import "FirstViewController.h"
-
 #import "SecondViewController.h"
 
 @implementation AppDelegate
@@ -26,6 +24,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString* file_path = [NSString stringWithFormat: @"%@xml/%@", NSTemporaryDirectory(), @"file.xml"];    
+    [[NSFileManager defaultManager] removeItemAtPath:file_path error:nil];
+    FileDownloader* fd = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:@"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"] 
+                                                 andFilePath: nil // it won't write it to a file 
+                                               andCredential: nil 
+                                                 andDelegate: self];    
+    [fd start];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil] autorelease];
@@ -36,6 +42,21 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+- (void) handleSuccessfullDownloadWithData:(NSData*)data
+{
+    NSLog(@"SUCCESS! %i", [data length]);
+    NSString* file_path = [NSString stringWithFormat: @"%@xml/%@", NSTemporaryDirectory(), @"file.xml"];
+    NSLog(@"exists %i", [[NSFileManager defaultManager] fileExistsAtPath:file_path]);
+    NSLog(@">>>>>>>>>>> %@", [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:file_path] encoding:NSUTF8StringEncoding]);
+    NSLog(@"**************************** %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+}
+
+- (void) handleFailedDownloadWithError:(NSError *)error{}
+- (void) handleAuthenticationFailed{}
+- (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode{}
+- (void) connectionCouldNotBeCreated{}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
