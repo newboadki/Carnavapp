@@ -12,6 +12,7 @@
 
 @synthesize group;
 @synthesize modalityLabel, authorLabel, directorLabel, cityLabel, nameLabel;
+@synthesize imageWebView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,14 +37,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
     if (group)
     {
+        self.title = NSLocalizedString(self.group.nombre, self.group.nombre);
+        
         self.nameLabel.text = group.nombre;
         self.modalityLabel.text = [group.modalidad lowercaseString];
         self.authorLabel.text = group.autor;
         self.directorLabel.text = group.director;
         self.cityLabel.text = group.localidad;
+        
+        if ([group.urlFoto length] > 0) // The webView is transparent, if there's no url we are then showing the default image.
+        {
+            NSURL *url = [NSURL URLWithString:group.urlFoto];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+            [imageWebView loadRequest:requestObj];
+        }
     }
 }
 
@@ -57,6 +67,7 @@
     [self setDirectorLabel:nil];
     [self setCityLabel:nil];    
     [self setNameLabel:nil];
+    [self setImageWebView:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -73,6 +84,7 @@
     [authorLabel release];
     [directorLabel release];
     [cityLabel release];
+    [imageWebView release];
     [super dealloc];
 }
 

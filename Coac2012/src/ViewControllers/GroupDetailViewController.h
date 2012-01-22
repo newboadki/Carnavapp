@@ -19,6 +19,7 @@
     IBOutlet UILabel* authorLabel;
     IBOutlet UILabel* directorLabel;
     IBOutlet UILabel* cityLabel;
+    IBOutlet UIWebView* imageWebView;
 }
 
 @property (nonatomic, retain) Agrupacion*   group;
@@ -27,5 +28,6 @@
 @property (nonatomic, retain) UILabel* authorLabel;
 @property (nonatomic, retain) UILabel* directorLabel;
 @property (nonatomic, retain) UILabel* cityLabel;
+@property (nonatomic, retain) UIWebView* imageWebView;
 
 @end
