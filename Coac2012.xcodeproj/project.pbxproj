@@ -23,6 +23,10 @@
 		00820C6114CC8EE5008A914A /* cartel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5E14CC8EE5008A914A /* cartel.jpg */; };
 		00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */; };
 		00820C6314CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */; };
+		00820C6714CC9A44008A914A /* ContestPhasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C6514CC9A44008A914A /* ContestPhasesViewController.m */; };
+		00820C6814CC9A44008A914A /* ContestPhasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C6514CC9A44008A914A /* ContestPhasesViewController.m */; };
+		00820C6914CC9A44008A914A /* ContestPhasesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */; };
+		00820C6A14CC9A44008A914A /* ContestPhasesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
@@ -183,6 +187,9 @@
 		00820C5914CC8511008A914A /* GroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupDetailViewController.xib; sourceTree = "<group>"; };
 		00820C5E14CC8EE5008A914A /* cartel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cartel.jpg; sourceTree = "<group>"; };
 		00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_imagen_agrupacion.jpg; sourceTree = "<group>"; };
+		00820C6414CC9A44008A914A /* ContestPhasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhasesViewController.h; sourceTree = "<group>"; };
+		00820C6514CC9A44008A914A /* ContestPhasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhasesViewController.m; sourceTree = "<group>"; };
+		00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContestPhasesViewController.xib; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -473,6 +480,9 @@
 				00820C5714CC8511008A914A /* GroupDetailViewController.h */,
 				00820C5814CC8511008A914A /* GroupDetailViewController.m */,
 				00820C5914CC8511008A914A /* GroupDetailViewController.xib */,
+				00820C6414CC9A44008A914A /* ContestPhasesViewController.h */,
+				00820C6514CC9A44008A914A /* ContestPhasesViewController.m */,
+				00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */,
 			);
 			name = ViewControllers;
 			path = src/ViewControllers;
@@ -995,6 +1005,7 @@
 				00820C5C14CC8511008A914A /* GroupDetailViewController.xib in Resources */,
 				00820C6014CC8EE5008A914A /* cartel.jpg in Resources */,
 				00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
+				00820C6914CC9A44008A914A /* ContestPhasesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1008,6 +1019,7 @@
 				00820C5D14CC8511008A914A /* GroupDetailViewController.xib in Resources */,
 				00820C6114CC8EE5008A914A /* cartel.jpg in Resources */,
 				00820C6314CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
+				00820C6A14CC9A44008A914A /* ContestPhasesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1062,6 +1074,7 @@
 				00820C3E14CC42C0008A914A /* ModelDataHandler.m in Sources */,
 				00820C5314CC79AE008A914A /* GroupsForModalityViewController.m in Sources */,
 				00820C5A14CC8511008A914A /* GroupDetailViewController.m in Sources */,
+				00820C6714CC9A44008A914A /* ContestPhasesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1163,6 +1176,7 @@
 				00820C3F14CC42C0008A914A /* ModelDataHandler.m in Sources */,
 				00820C5414CC79AE008A914A /* GroupsForModalityViewController.m in Sources */,
 				00820C5B14CC8511008A914A /* GroupDetailViewController.m in Sources */,
+				00820C6814CC9A44008A914A /* ContestPhasesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

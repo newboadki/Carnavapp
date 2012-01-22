@@ -15,3 +15,10 @@
 #define CALENDAR_KEY @"CalendarKey"
 #define LINKS_KEY @"LinksKey"
 #define MODALITIES_KEY @"ModalitiesKey"
+
+
+// Contest Phases
+#define PRELIMINAR @"Preliminar"
+#define CUARTOS @"Cuartos"
+#define SEMIFINALES @"Semifinales"
+#define FINAL @"Final"
