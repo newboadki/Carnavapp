@@ -60,8 +60,6 @@
 #define MODALIDAD_ROMANCERO "ROMANCERO";
 
 
-
-
 @interface CoacParser(private)
 - (void) storeNode:(CXMLElement*)node asClass:(Class*) klass;
 - (void) parseAgrupacion:(CXMLElement*) node;
@@ -132,12 +130,19 @@
         [self parseElementsOfXpath:@"/coac2012/enlaces/enlace"];    
         
         // Debugging
-        [self showAgrupaciones];
+        /*[self showAgrupaciones];
         [self showCalendar];
         [self showLinks];
-        [self showModalities];        
+        [self showModalities];    */    
         
-        [delegate parsingDidFinishWithGroups:groups calendar:calendar links:links];
+        NSDictionary* results = [NSDictionary dictionaryWithObjectsAndKeys:groups, GROUPS_KEY, 
+                                                                           calendar, CALENDAR_KEY, 
+                                                                           links, LINKS_KEY, 
+                                                                           modalities, MODALITIES_KEY, nil];
+        
+        NSLog(@"HEY");
+        [(id)delegate performSelectorOnMainThread:@selector(parsingDidFinishWithResultsDictionary:) withObject:results waitUntilDone:YES];    
+
     }];
 	
     [queue addOperation:op];    

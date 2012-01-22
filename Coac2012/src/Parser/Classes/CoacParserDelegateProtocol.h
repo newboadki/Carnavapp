@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol CoacParserDelegateProtocol
-- (void) parsingDidFinishWithGroups:(NSArray*)groups calendar:(NSDictionary*)calendar links:(NSArray*)links;
+- (void) parsingDidFinishWithResultsDictionary:(NSDictionary*)resultsDictionary;
 @end

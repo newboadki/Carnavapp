@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00820C3E14CC42C0008A914A /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
+		00820C3F14CC42C0008A914A /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
@@ -157,6 +159,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00820C3C14CC42C0008A914A /* ModelDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelDataHandler.h; path = src/ModelDataHandler.h; sourceTree = "<group>"; };
+		00820C3D14CC42C0008A914A /* ModelDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelDataHandler.m; path = src/ModelDataHandler.m; sourceTree = "<group>"; };
+		00820C4114CC431B008A914A /* ModelDataHandlerDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelDataHandlerDelegateProtocol.h; path = src/ModelDataHandlerDelegateProtocol.h; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -800,6 +805,9 @@
 			isa = PBXGroup;
 			children = (
 				00C0BD5014CACD9500427E42 /* Parser */,
+				00820C3C14CC42C0008A914A /* ModelDataHandler.h */,
+				00820C3D14CC42C0008A914A /* ModelDataHandler.m */,
+				00820C4114CC431B008A914A /* ModelDataHandlerDelegateProtocol.h */,
 			);
 			name = Synchronizacion;
 			sourceTree = "<group>";
@@ -991,6 +999,7 @@
 				00C0BD8514CAEE8B00427E42 /* Link.m in Sources */,
 				00C0BD8914CAEFF200427E42 /* Picture.m in Sources */,
 				00C0BD8D14CAF04D00427E42 /* Video.m in Sources */,
+				00820C3E14CC42C0008A914A /* ModelDataHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1090,6 +1099,7 @@
 				00C0BD8E14CAF04D00427E42 /* Video.m in Sources */,
 				00C0BD9214CAF55A00427E42 /* FileDownloaderDelegate.m in Sources */,
 				00C0BD9514CAF5D500427E42 /* ChallengeSender.m in Sources */,
+				00820C3F14CC42C0008A914A /* ModelDataHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

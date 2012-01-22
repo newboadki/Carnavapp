@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FileDownloader.h"
-#import "FileDownloaderDelegateProtocol.h"
+#import "ModelDataHandler.h"
+#import "ModelDataHandlerDelegateProtocol.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, FileDownloaderDelegateProtocol>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, ModelDataHandlerDelegateProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;
