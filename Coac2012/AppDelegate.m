@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "CoacParser.h"
+
 
 @implementation AppDelegate
 
@@ -47,10 +49,14 @@
 - (void) handleSuccessfullDownloadWithData:(NSData*)data
 {
     NSLog(@"SUCCESS! %i", [data length]);
-    NSString* file_path = [NSString stringWithFormat: @"%@xml/%@", NSTemporaryDirectory(), @"file.xml"];
+    /*NSString* file_path = [NSString stringWithFormat: @"%@xml/%@", NSTemporaryDirectory(), @"file.xml"];
     NSLog(@"exists %i", [[NSFileManager defaultManager] fileExistsAtPath:file_path]);
     NSLog(@">>>>>>>>>>> %@", [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:file_path] encoding:NSUTF8StringEncoding]);
     NSLog(@"**************************** %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    */
+    CoacParser* p = [[CoacParser alloc] initWithXMLData:data delegate:nil];
+    [p start];
+    
 }
 
 - (void) handleFailedDownloadWithError:(NSError *)error{}

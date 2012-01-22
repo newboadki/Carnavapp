@@ -48,6 +48,8 @@
 @property (nonatomic, retain) NSArray*  componentes;
 @property (nonatomic, retain) NSArray*  comentatios;
 
+- (id) initAsRestingGroup;
+
 - (id) initWithId:(long int)theIdentifier
          modality:(NSString*)modality 
              name:(NSString*)name 
@@ -65,5 +67,7 @@
         urlVideos:(NSString*)theurlVideos 
          comments:(NSArray*)comments 
        components:(NSArray*)components;
+
++ (Agrupacion*) restingGroup;
 
 @end

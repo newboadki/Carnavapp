@@ -113,8 +113,8 @@
 		00C0BD4C14CACC7300427E42 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD3C14CACC7300427E42 /* CXMLNode_PrivateExtensions.m */; };
 		00C0BD4D14CACC7300427E42 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD3E14CACC7300427E42 /* CXMLNode_XPathExtensions.m */; };
 		00C0BD4E14CACC7300427E42 /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD4114CACC7300427E42 /* CTidy.m */; };
-		00C0BD5714CACD9500427E42 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* Parser.m */; };
-		00C0BD5814CACD9500427E42 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* Parser.m */; };
+		00C0BD5714CACD9500427E42 /* CoacParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* CoacParser.m */; };
+		00C0BD5814CACD9500427E42 /* CoacParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* CoacParser.m */; };
 		00C0BD5A14CACD9500427E42 /* ParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5614CACD9500427E42 /* ParserTests.m */; };
 		00C0BD5B14CACDA600427E42 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD2E14CACC7300427E42 /* CXMLDocument.m */; };
 		00C0BD5C14CACDA600427E42 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD3014CACC7300427E42 /* CXMLDocument_PrivateExtensions.m */; };
@@ -139,6 +139,11 @@
 		00C0BD8A14CAEFF200427E42 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8814CAEFF200427E42 /* Picture.m */; };
 		00C0BD8D14CAF04D00427E42 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8C14CAF04D00427E42 /* Video.m */; };
 		00C0BD8E14CAF04D00427E42 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8C14CAF04D00427E42 /* Video.m */; };
+		00C0BD8F14CAF4D500427E42 /* FileDownloaderDelegateProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2814CAC89D00427E42 /* FileDownloaderDelegateProtocol.h */; };
+		00C0BD9214CAF55A00427E42 /* FileDownloaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD9114CAF55A00427E42 /* FileDownloaderDelegate.m */; };
+		00C0BD9514CAF5D500427E42 /* ChallengeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD9414CAF5D500427E42 /* ChallengeSender.m */; };
+		00C0BD9A14CAF7EC00427E42 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6D14CAD7C200427E42 /* CoreData.framework */; };
+		00C0BD9B14CAF80700427E42 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,8 +374,8 @@
 		00C0BD4014CACC7300427E42 /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		00C0BD4114CACC7300427E42 /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		00C0BD4214CACC7300427E42 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		00C0BD5214CACD9500427E42 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
-		00C0BD5314CACD9500427E42 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		00C0BD5214CACD9500427E42 /* CoacParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParser.h; sourceTree = "<group>"; };
+		00C0BD5314CACD9500427E42 /* CoacParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParser.m; sourceTree = "<group>"; };
 		00C0BD5514CACD9500427E42 /* ParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserTests.h; sourceTree = "<group>"; };
 		00C0BD5614CACD9500427E42 /* ParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTests.m; sourceTree = "<group>"; };
 		00C0BD6D14CAD7C200427E42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -387,6 +392,11 @@
 		00C0BD8814CAEFF200427E42 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		00C0BD8B14CAF04C00427E42 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		00C0BD8C14CAF04D00427E42 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		00C0BD9014CAF55A00427E42 /* FileDownloaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloaderDelegate.h; sourceTree = "<group>"; };
+		00C0BD9114CAF55A00427E42 /* FileDownloaderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloaderDelegate.m; sourceTree = "<group>"; };
+		00C0BD9314CAF5D500427E42 /* ChallengeSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeSender.h; sourceTree = "<group>"; };
+		00C0BD9414CAF5D500427E42 /* ChallengeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeSender.m; sourceTree = "<group>"; };
+		00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParserDelegateProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +416,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C0BD9B14CAF80700427E42 /* libxml2.dylib in Frameworks */,
+				00C0BD9A14CAF7EC00427E42 /* CoreData.framework in Frameworks */,
 				00AECAA514CAC6DC005CE4DC /* SenTestingKit.framework in Frameworks */,
 				00AECAA614CAC6DC005CE4DC /* UIKit.framework in Frameworks */,
 				00AECAA714CAC6DC005CE4DC /* Foundation.framework in Frameworks */,
@@ -555,6 +567,10 @@
 		00C0BC2914CAC89D00427E42 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00C0BD9314CAF5D500427E42 /* ChallengeSender.h */,
+				00C0BD9414CAF5D500427E42 /* ChallengeSender.m */,
+				00C0BD9014CAF55A00427E42 /* FileDownloaderDelegate.h */,
+				00C0BD9114CAF55A00427E42 /* FileDownloaderDelegate.m */,
 				00C0BC2A14CAC89D00427E42 /* FileDownloaderTests.h */,
 				00C0BC2B14CAC89D00427E42 /* FileDownloaderTests.m */,
 			);
@@ -801,8 +817,9 @@
 		00C0BD5114CACD9500427E42 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				00C0BD5214CACD9500427E42 /* Parser.h */,
-				00C0BD5314CACD9500427E42 /* Parser.m */,
+				00C0BD5214CACD9500427E42 /* CoacParser.h */,
+				00C0BD5314CACD9500427E42 /* CoacParser.m */,
+				00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -967,7 +984,7 @@
 				00C0BD4C14CACC7300427E42 /* CXMLNode_PrivateExtensions.m in Sources */,
 				00C0BD4D14CACC7300427E42 /* CXMLNode_XPathExtensions.m in Sources */,
 				00C0BD4E14CACC7300427E42 /* CTidy.m in Sources */,
-				00C0BD5714CACD9500427E42 /* Parser.m in Sources */,
+				00C0BD5714CACD9500427E42 /* CoacParser.m in Sources */,
 				00C0BD7914CAE02900427E42 /* Agrupacion.m in Sources */,
 				00C0BD7D14CAE7C200427E42 /* Componente.m in Sources */,
 				00C0BD8114CAEC9A00427E42 /* Comentario.m in Sources */,
@@ -981,6 +998,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C0BD8F14CAF4D500427E42 /* FileDownloaderDelegateProtocol.h in Sources */,
 				00AECAB214CAC6DC005CE4DC /* Coac2012Tests.m in Sources */,
 				00C0BC3414CAC89D00427E42 /* CoreDataStackHelper.m in Sources */,
 				00C0BC3614CAC89D00427E42 /* ConsoleLogger.m in Sources */,
@@ -1053,7 +1071,7 @@
 				00C0BD1614CAC99F00427E42 /* NSObject+KiwiStubAdditions.m in Sources */,
 				00C0BD1714CAC99F00427E42 /* NSObject+KiwiVerifierAdditions.m in Sources */,
 				00C0BD1814CAC99F00427E42 /* NSValue+KiwiAdditions.m in Sources */,
-				00C0BD5814CACD9500427E42 /* Parser.m in Sources */,
+				00C0BD5814CACD9500427E42 /* CoacParser.m in Sources */,
 				00C0BD5A14CACD9500427E42 /* ParserTests.m in Sources */,
 				00C0BD5B14CACDA600427E42 /* CXMLDocument.m in Sources */,
 				00C0BD5C14CACDA600427E42 /* CXMLDocument_PrivateExtensions.m in Sources */,
@@ -1070,6 +1088,8 @@
 				00C0BD8614CAEE8B00427E42 /* Link.m in Sources */,
 				00C0BD8A14CAEFF200427E42 /* Picture.m in Sources */,
 				00C0BD8E14CAF04D00427E42 /* Video.m in Sources */,
+				00C0BD9214CAF55A00427E42 /* FileDownloaderDelegate.m in Sources */,
+				00C0BD9514CAF5D500427E42 /* ChallengeSender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1200,7 +1220,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coac2012/Coac2012-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/Coac2012/Tests/OCMock";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Coac2012/Tests/OCMock",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Coac2012Tests/Coac2012Tests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1214,7 +1237,7 @@
 					UIKit,
 					"-Objc",
 					"-force_load",
-					"\"$(SRCROOT)/Coac2012/Tests/OCMock/libOCMock.a\"",
+					"\"$(SRCROOT)/Coac2012Tests/OCMock/libOCMock.a\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1232,7 +1255,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coac2012/Coac2012-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/Coac2012/Tests/OCMock";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Coac2012/Tests/OCMock",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Coac2012Tests/Coac2012Tests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1246,7 +1272,7 @@
 					UIKit,
 					"-Objc",
 					"-force_load",
-					"\"$(SRCROOT)/Coac2012/Tests/OCMock/libOCMock.a\"",
+					"\"$(SRCROOT)/Coac2012Tests/OCMock/libOCMock.a\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
