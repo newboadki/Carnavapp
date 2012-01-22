@@ -7,6 +7,7 @@
 //
 
 #import "ModalitiesViewController.h"
+#import "GroupsForModalityViewController.h"
 
 @interface ModalitiesViewController()
 @property (nonatomic, retain) NSArray* orderedModalityKeys;
@@ -22,8 +23,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self)
-    {
-        self.title = NSLocalizedString(@"Modalidades", @"Modalidades");
+    {        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     }
     
@@ -69,6 +69,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Modalidades", @"Modalidades");
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -125,10 +126,9 @@
 	/***********************************************************************************************/							
     int numberOfRows = 0;
     
-    if (modelData)
-    {
-        NSDictionary* modalitiesDic = [modelData objectForKey:MODALITIES_KEY];
-        numberOfRows = [[modalitiesDic allKeys] count];
+    if (orderedModalityKeys)
+    {        
+        numberOfRows = [orderedModalityKeys count];
     }
     	
 	return numberOfRows;	
@@ -165,6 +165,13 @@
 {
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
-	/***********************************************************************************************/									
+	/***********************************************************************************************/
+    NSString* selectedModality = [orderedModalityKeys objectAtIndex:[indexPath row]];
+    GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"GroupsForModalityViewController" bundle:nil];
+    [nextController setModality:selectedModality];
+    [nextController setModelData:self.modelData];
+    
+    [[self navigationController] pushViewController:nextController animated:YES];
+    [nextController release];
 }
 @end
