@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		00820C3E14CC42C0008A914A /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
 		00820C3F14CC42C0008A914A /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
+		00820C4914CC6665008A914A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C4814CC6665008A914A /* MainWindow.xib */; };
+		00820C4A14CC6665008A914A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C4814CC6665008A914A /* MainWindow.xib */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
 		00AECA8314CAC6DC005CE4DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA8114CAC6DC005CE4DC /* InfoPlist.strings */; };
 		00AECA8514CAC6DC005CE4DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA8414CAC6DC005CE4DC /* main.m */; };
 		00AECA8914CAC6DC005CE4DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA8814CAC6DC005CE4DC /* AppDelegate.m */; };
-		00AECA8C14CAC6DC005CE4DC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA8B14CAC6DC005CE4DC /* FirstViewController.m */; };
+		00AECA8C14CAC6DC005CE4DC /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA8B14CAC6DC005CE4DC /* TodayViewController.m */; };
 		00AECA8E14CAC6DC005CE4DC /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA8D14CAC6DC005CE4DC /* first.png */; };
 		00AECA9014CAC6DC005CE4DC /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA8F14CAC6DC005CE4DC /* first@2x.png */; };
-		00AECA9314CAC6DC005CE4DC /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA9214CAC6DC005CE4DC /* SecondViewController.m */; };
+		00AECA9314CAC6DC005CE4DC /* ModalitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */; };
 		00AECA9514CAC6DC005CE4DC /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9414CAC6DC005CE4DC /* second.png */; };
 		00AECA9714CAC6DC005CE4DC /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9614CAC6DC005CE4DC /* second@2x.png */; };
-		00AECA9A14CAC6DC005CE4DC /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9814CAC6DC005CE4DC /* FirstViewController.xib */; };
-		00AECA9D14CAC6DC005CE4DC /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9B14CAC6DC005CE4DC /* SecondViewController.xib */; };
+		00AECA9A14CAC6DC005CE4DC /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */; };
+		00AECA9D14CAC6DC005CE4DC /* ModalitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */; };
 		00AECAA514CAC6DC005CE4DC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECAA414CAC6DC005CE4DC /* SenTestingKit.framework */; };
 		00AECAA614CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECAA714CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECAAF14CAC6DC005CE4DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00AECAAD14CAC6DC005CE4DC /* InfoPlist.strings */; };
 		00AECAB214CAC6DC005CE4DC /* Coac2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */; };
-		00C0BC3314CAC89D00427E42 /* CoreDataStackHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2014CAC89D00427E42 /* CoreDataStackHelper.m */; };
-		00C0BC3414CAC89D00427E42 /* CoreDataStackHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2014CAC89D00427E42 /* CoreDataStackHelper.m */; };
 		00C0BC3514CAC89D00427E42 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */; };
 		00C0BC3614CAC89D00427E42 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */; };
 		00C0BC3714CAC89D00427E42 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2714CAC89D00427E42 /* FileDownloader.m */; };
@@ -162,6 +162,7 @@
 		00820C3C14CC42C0008A914A /* ModelDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelDataHandler.h; path = src/ModelDataHandler.h; sourceTree = "<group>"; };
 		00820C3D14CC42C0008A914A /* ModelDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelDataHandler.m; path = src/ModelDataHandler.m; sourceTree = "<group>"; };
 		00820C4214CC6340008A914A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		00820C4814CC6665008A914A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,24 +173,22 @@
 		00AECA8614CAC6DC005CE4DC /* Coac2012-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coac2012-Prefix.pch"; sourceTree = "<group>"; };
 		00AECA8714CAC6DC005CE4DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00AECA8814CAC6DC005CE4DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		00AECA8A14CAC6DC005CE4DC /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		00AECA8B14CAC6DC005CE4DC /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		00AECA8A14CAC6DC005CE4DC /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TodayViewController.h; path = ../../TodayViewController.h; sourceTree = "<group>"; };
+		00AECA8B14CAC6DC005CE4DC /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TodayViewController.m; path = ../../TodayViewController.m; sourceTree = "<group>"; };
 		00AECA8D14CAC6DC005CE4DC /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		00AECA8F14CAC6DC005CE4DC /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		00AECA9114CAC6DC005CE4DC /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		00AECA9214CAC6DC005CE4DC /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		00AECA9114CAC6DC005CE4DC /* ModalitiesViewController.h */ = {isa = PBXFileReference; name = ModalitiesViewController.h; path = ../../ModalitiesViewController.h; sourceTree = "<group>"; };
+		00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ModalitiesViewController.m; path = ../../ModalitiesViewController.m; sourceTree = "<group>"; };
 		00AECA9414CAC6DC005CE4DC /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		00AECA9614CAC6DC005CE4DC /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		00AECA9914CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
-		00AECA9C14CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		00AECA9914CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		00AECA9C14CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ModalitiesViewController.xib; sourceTree = "<group>"; };
 		00AECAA314CAC6DC005CE4DC /* Coac2012Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Coac2012Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECAA414CAC6DC005CE4DC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		00AECAAC14CAC6DC005CE4DC /* Coac2012Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coac2012Tests-Info.plist"; sourceTree = "<group>"; };
 		00AECAAE14CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00AECAB014CAC6DC005CE4DC /* Coac2012Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coac2012Tests.h; sourceTree = "<group>"; };
 		00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coac2012Tests.m; sourceTree = "<group>"; };
-		00C0BC1F14CAC89D00427E42 /* CoreDataStackHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStackHelper.h; sourceTree = "<group>"; };
-		00C0BC2014CAC89D00427E42 /* CoreDataStackHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStackHelper.m; sourceTree = "<group>"; };
 		00C0BC2214CAC89D00427E42 /* ConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLogger.h; sourceTree = "<group>"; };
 		00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleLogger.m; sourceTree = "<group>"; };
 		00C0BC2614CAC89D00427E42 /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
@@ -433,10 +432,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00820C4314CC63DC008A914A /* ModelDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				00820C3C14CC42C0008A914A /* ModelDataHandler.h */,
+				00820C3D14CC42C0008A914A /* ModelDataHandler.m */,
+			);
+			name = ModelDataHandler;
+			sourceTree = "<group>";
+		};
+		00820C4514CC648D008A914A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				00AECA8A14CAC6DC005CE4DC /* TodayViewController.h */,
+				00AECA8B14CAC6DC005CE4DC /* TodayViewController.m */,
+				00AECA9114CAC6DC005CE4DC /* ModalitiesViewController.h */,
+				00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */,
+			);
+			name = ViewControllers;
+			path = src/ViewControllers;
+			sourceTree = "<group>";
+		};
+		00820C4614CC64A7008A914A /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */,
+				00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */,
+				00820C4814CC6665008A914A /* MainWindow.xib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		00820C4714CC64BE008A914A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				00AECA8D14CAC6DC005CE4DC /* first.png */,
+				00AECA8F14CAC6DC005CE4DC /* first@2x.png */,
+				00AECA9414CAC6DC005CE4DC /* second.png */,
+				00AECA9614CAC6DC005CE4DC /* second@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
-				00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */,
 				00AECA7E14CAC6DC005CE4DC /* Coac2012 */,
 				00AECAAA14CAC6DC005CE4DC /* Coac2012Tests */,
 				00AECA7714CAC6DC005CE4DC /* Frameworks */,
@@ -456,6 +496,7 @@
 		00AECA7714CAC6DC005CE4DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */,
 				00C0BD6D14CAD7C200427E42 /* CoreData.framework */,
 				00AECA7814CAC6DC005CE4DC /* UIKit.framework */,
 				00AECA7A14CAC6DC005CE4DC /* Foundation.framework */,
@@ -468,21 +509,12 @@
 		00AECA7E14CAC6DC005CE4DC /* Coac2012 */ = {
 			isa = PBXGroup;
 			children = (
+				00820C4514CC648D008A914A /* ViewControllers */,
 				00C0BD7614CAE01800427E42 /* Models */,
 				00C0BD4F14CACCBB00427E42 /* Synchronizacion */,
 				00C0BC1D14CAC89D00427E42 /* External */,
 				00AECA8714CAC6DC005CE4DC /* AppDelegate.h */,
 				00AECA8814CAC6DC005CE4DC /* AppDelegate.m */,
-				00AECA8A14CAC6DC005CE4DC /* FirstViewController.h */,
-				00AECA8B14CAC6DC005CE4DC /* FirstViewController.m */,
-				00AECA8D14CAC6DC005CE4DC /* first.png */,
-				00AECA8F14CAC6DC005CE4DC /* first@2x.png */,
-				00AECA9114CAC6DC005CE4DC /* SecondViewController.h */,
-				00AECA9214CAC6DC005CE4DC /* SecondViewController.m */,
-				00AECA9414CAC6DC005CE4DC /* second.png */,
-				00AECA9614CAC6DC005CE4DC /* second@2x.png */,
-				00AECA9814CAC6DC005CE4DC /* FirstViewController.xib */,
-				00AECA9B14CAC6DC005CE4DC /* SecondViewController.xib */,
 				00AECA7F14CAC6DC005CE4DC /* Supporting Files */,
 				00820C4214CC6340008A914A /* Constants.h */,
 			);
@@ -492,6 +524,8 @@
 		00AECA7F14CAC6DC005CE4DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00820C4714CC64BE008A914A /* Images */,
+				00820C4614CC64A7008A914A /* Nibs */,
 				00AECA8014CAC6DC005CE4DC /* Coac2012-Info.plist */,
 				00AECA8114CAC6DC005CE4DC /* InfoPlist.strings */,
 				00AECA8414CAC6DC005CE4DC /* main.m */,
@@ -525,21 +559,11 @@
 			isa = PBXGroup;
 			children = (
 				00C0BD2714CACC7300427E42 /* XMLTouch */,
-				00C0BC1E14CAC89D00427E42 /* CoreDataHelper */,
 				00C0BC2114CAC89D00427E42 /* DegubLog */,
 				00C0BC2414CAC89D00427E42 /* FileDownloader */,
 			);
 			name = External;
 			path = src/External;
-			sourceTree = "<group>";
-		};
-		00C0BC1E14CAC89D00427E42 /* CoreDataHelper */ = {
-			isa = PBXGroup;
-			children = (
-				00C0BC1F14CAC89D00427E42 /* CoreDataStackHelper.h */,
-				00C0BC2014CAC89D00427E42 /* CoreDataStackHelper.m */,
-			);
-			path = CoreDataHelper;
 			sourceTree = "<group>";
 		};
 		00C0BC2114CAC89D00427E42 /* DegubLog */ = {
@@ -805,9 +829,8 @@
 		00C0BD4F14CACCBB00427E42 /* Synchronizacion */ = {
 			isa = PBXGroup;
 			children = (
+				00820C4314CC63DC008A914A /* ModelDataHandler */,
 				00C0BD5014CACD9500427E42 /* Parser */,
-				00820C3C14CC42C0008A914A /* ModelDataHandler.h */,
-				00820C3D14CC42C0008A914A /* ModelDataHandler.m */,
 			);
 			name = Synchronizacion;
 			sourceTree = "<group>";
@@ -937,8 +960,9 @@
 				00AECA9014CAC6DC005CE4DC /* first@2x.png in Resources */,
 				00AECA9514CAC6DC005CE4DC /* second.png in Resources */,
 				00AECA9714CAC6DC005CE4DC /* second@2x.png in Resources */,
-				00AECA9A14CAC6DC005CE4DC /* FirstViewController.xib in Resources */,
-				00AECA9D14CAC6DC005CE4DC /* SecondViewController.xib in Resources */,
+				00AECA9A14CAC6DC005CE4DC /* TodayViewController.xib in Resources */,
+				00AECA9D14CAC6DC005CE4DC /* ModalitiesViewController.xib in Resources */,
+				00820C4914CC6665008A914A /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,6 +971,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00AECAAF14CAC6DC005CE4DC /* InfoPlist.strings in Resources */,
+				00820C4A14CC6665008A914A /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,9 +1000,8 @@
 			files = (
 				00AECA8514CAC6DC005CE4DC /* main.m in Sources */,
 				00AECA8914CAC6DC005CE4DC /* AppDelegate.m in Sources */,
-				00AECA8C14CAC6DC005CE4DC /* FirstViewController.m in Sources */,
-				00AECA9314CAC6DC005CE4DC /* SecondViewController.m in Sources */,
-				00C0BC3314CAC89D00427E42 /* CoreDataStackHelper.m in Sources */,
+				00AECA8C14CAC6DC005CE4DC /* TodayViewController.m in Sources */,
+				00AECA9314CAC6DC005CE4DC /* ModalitiesViewController.m in Sources */,
 				00C0BC3514CAC89D00427E42 /* ConsoleLogger.m in Sources */,
 				00C0BC3714CAC89D00427E42 /* FileDownloader.m in Sources */,
 				00C0BD4314CACC7300427E42 /* CXMLDocument_CreationExtensions.m in Sources */,
@@ -1009,7 +1033,6 @@
 			files = (
 				00C0BD8F14CAF4D500427E42 /* FileDownloaderDelegateProtocol.h in Sources */,
 				00AECAB214CAC6DC005CE4DC /* Coac2012Tests.m in Sources */,
-				00C0BC3414CAC89D00427E42 /* CoreDataStackHelper.m in Sources */,
 				00C0BC3614CAC89D00427E42 /* ConsoleLogger.m in Sources */,
 				00C0BC3814CAC89D00427E42 /* FileDownloader.m in Sources */,
 				00C0BC3A14CAC89D00427E42 /* FileDownloaderTests.m in Sources */,
@@ -1122,20 +1145,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		00AECA9814CAC6DC005CE4DC /* FirstViewController.xib */ = {
+		00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				00AECA9914CAC6DC005CE4DC /* en */,
 			);
-			name = FirstViewController.xib;
+			name = TodayViewController.xib;
 			sourceTree = "<group>";
 		};
-		00AECA9B14CAC6DC005CE4DC /* SecondViewController.xib */ = {
+		00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				00AECA9C14CAC6DC005CE4DC /* en */,
 			);
-			name = SecondViewController.xib;
+			name = ModalitiesViewController.xib;
 			sourceTree = "<group>";
 		};
 		00AECAAD14CAC6DC005CE4DC /* InfoPlist.strings */ = {

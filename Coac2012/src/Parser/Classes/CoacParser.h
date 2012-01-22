@@ -10,12 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "TouchXML.h"
 #import "CoacParserDelegateProtocol.h"
-
-// Keys for the results dictionary, it will be needed by the delegate of this class
-#define GROUPS_KEY @"GroupsKey"
-#define CALENDAR_KEY @"CalendarKey"
-#define LINKS_KEY @"LinksKey"
-#define MODALITIES_KEY @"ModalitiesKey"
+#import "Constants.h"
 
 @interface CoacParser : NSObject
 {

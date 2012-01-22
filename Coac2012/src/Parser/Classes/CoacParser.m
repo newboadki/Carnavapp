@@ -140,7 +140,6 @@
                                                                            links, LINKS_KEY, 
                                                                            modalities, MODALITIES_KEY, nil];
         
-        NSLog(@"HEY");
         [(id)delegate performSelectorOnMainThread:@selector(parsingDidFinishWithResultsDictionary:) withObject:results waitUntilDone:YES];    
 
     }];
