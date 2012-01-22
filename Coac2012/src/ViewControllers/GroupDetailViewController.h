@@ -1,0 +1,31 @@
+//
+//  GroupDetailViewController.h
+//  Coac2012
+//
+//  Created by Borja Arias on 22/01/2012.
+//  Copyright (c) 2012 Borja Arias Drake. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "Agrupacion.h"
+
+
+@interface GroupDetailViewController : UIViewController
+{
+    Agrupacion*   group;
+    
+    IBOutlet UILabel* nameLabel;
+    IBOutlet UILabel* modalityLabel;
+    IBOutlet UILabel* authorLabel;
+    IBOutlet UILabel* directorLabel;
+    IBOutlet UILabel* cityLabel;
+}
+
+@property (nonatomic, retain) Agrupacion*   group;
+@property (nonatomic, retain) UILabel* nameLabel;
+@property (nonatomic, retain) UILabel* modalityLabel;
+@property (nonatomic, retain) UILabel* authorLabel;
+@property (nonatomic, retain) UILabel* directorLabel;
+@property (nonatomic, retain) UILabel* cityLabel;
+
+@end

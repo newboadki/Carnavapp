@@ -8,6 +8,7 @@
 
 #import "GroupsForModalityViewController.h"
 #import "Agrupacion.h"
+#import "GroupDetailViewController.h"
 
 
 @interface GroupsForModalityViewController()
@@ -212,14 +213,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
+    detailViewController.group = [orderedGroupsForModality objectAtIndex:[indexPath row]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+     
 }
 
 @end

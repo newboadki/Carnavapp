@@ -15,6 +15,14 @@
 		00820C5414CC79AE008A914A /* GroupsForModalityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */; };
 		00820C5514CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */; };
 		00820C5614CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */; };
+		00820C5A14CC8511008A914A /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5814CC8511008A914A /* GroupDetailViewController.m */; };
+		00820C5B14CC8511008A914A /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5814CC8511008A914A /* GroupDetailViewController.m */; };
+		00820C5C14CC8511008A914A /* GroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5914CC8511008A914A /* GroupDetailViewController.xib */; };
+		00820C5D14CC8511008A914A /* GroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5914CC8511008A914A /* GroupDetailViewController.xib */; };
+		00820C6014CC8EE5008A914A /* cartel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5E14CC8EE5008A914A /* cartel.jpg */; };
+		00820C6114CC8EE5008A914A /* cartel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5E14CC8EE5008A914A /* cartel.jpg */; };
+		00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */; };
+		00820C6314CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
@@ -169,7 +177,12 @@
 		00820C4814CC6665008A914A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		00820C5014CC79AD008A914A /* GroupsForModalityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsForModalityViewController.h; sourceTree = "<group>"; };
 		00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsForModalityViewController.m; sourceTree = "<group>"; };
-		00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupsForModalityViewController.xib; sourceTree = "<group>"; };
+		00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupsForModalityViewController.xib; path = src/ViewControllers/GroupsForModalityViewController.xib; sourceTree = "<group>"; };
+		00820C5714CC8511008A914A /* GroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailViewController.h; sourceTree = "<group>"; };
+		00820C5814CC8511008A914A /* GroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailViewController.m; sourceTree = "<group>"; };
+		00820C5914CC8511008A914A /* GroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupDetailViewController.xib; sourceTree = "<group>"; };
+		00820C5E14CC8EE5008A914A /* cartel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cartel.jpg; sourceTree = "<group>"; };
+		00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_imagen_agrupacion.jpg; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -457,7 +470,9 @@
 				00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */,
 				00820C5014CC79AD008A914A /* GroupsForModalityViewController.h */,
 				00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */,
-				00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */,
+				00820C5714CC8511008A914A /* GroupDetailViewController.h */,
+				00820C5814CC8511008A914A /* GroupDetailViewController.m */,
+				00820C5914CC8511008A914A /* GroupDetailViewController.xib */,
 			);
 			name = ViewControllers;
 			path = src/ViewControllers;
@@ -466,6 +481,7 @@
 		00820C4614CC64A7008A914A /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */,
 				00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */,
 				00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */,
 				00820C4814CC6665008A914A /* MainWindow.xib */,
@@ -476,6 +492,8 @@
 		00820C4714CC64BE008A914A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				00820C5E14CC8EE5008A914A /* cartel.jpg */,
+				00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */,
 				00AECA8D14CAC6DC005CE4DC /* first.png */,
 				00AECA8F14CAC6DC005CE4DC /* first@2x.png */,
 				00AECA9414CAC6DC005CE4DC /* second.png */,
@@ -974,6 +992,9 @@
 				00AECA9D14CAC6DC005CE4DC /* ModalitiesViewController.xib in Resources */,
 				00820C4914CC6665008A914A /* MainWindow.xib in Resources */,
 				00820C5514CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */,
+				00820C5C14CC8511008A914A /* GroupDetailViewController.xib in Resources */,
+				00820C6014CC8EE5008A914A /* cartel.jpg in Resources */,
+				00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -984,6 +1005,9 @@
 				00AECAAF14CAC6DC005CE4DC /* InfoPlist.strings in Resources */,
 				00820C4A14CC6665008A914A /* MainWindow.xib in Resources */,
 				00820C5614CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */,
+				00820C5D14CC8511008A914A /* GroupDetailViewController.xib in Resources */,
+				00820C6114CC8EE5008A914A /* cartel.jpg in Resources */,
+				00820C6314CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,6 +1061,7 @@
 				00C0BD8D14CAF04D00427E42 /* Video.m in Sources */,
 				00820C3E14CC42C0008A914A /* ModelDataHandler.m in Sources */,
 				00820C5314CC79AE008A914A /* GroupsForModalityViewController.m in Sources */,
+				00820C5A14CC8511008A914A /* GroupDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,6 +1162,7 @@
 				00C0BD9514CAF5D500427E42 /* ChallengeSender.m in Sources */,
 				00820C3F14CC42C0008A914A /* ModelDataHandler.m in Sources */,
 				00820C5414CC79AE008A914A /* GroupsForModalityViewController.m in Sources */,
+				00820C5B14CC8511008A914A /* GroupDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
