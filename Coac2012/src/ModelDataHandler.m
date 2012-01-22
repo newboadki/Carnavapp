@@ -17,9 +17,10 @@
 
 @synthesize parser;
 
-- (id) initWithDelegate:(id <ModelDataHandlerDelegateProtocol>)theDelegate
+- (id) init
 {
     self = [super init];
+    
     if (self)        
     {
         fileDownloader = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:@"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"] 
@@ -27,6 +28,7 @@
                                                andCredential: nil 
                                                  andDelegate: self];
     }
+    
     return self;
 }
 

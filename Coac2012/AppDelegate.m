@@ -28,7 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    ModelDataHandler* dataHandler = [[ModelDataHandler alloc] initWithDelegate:self];
+    ModelDataHandler* dataHandler = [[ModelDataHandler alloc] init];
     [dataHandler downloadAndParseModelData];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -42,10 +42,6 @@
     return YES;
 }
 
-- (void) dataIsReady:(NSDictionary*)data
-{
-    NSLog(@"AAAAAA %@", data);
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

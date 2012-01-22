@@ -161,7 +161,7 @@
 /* Begin PBXFileReference section */
 		00820C3C14CC42C0008A914A /* ModelDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelDataHandler.h; path = src/ModelDataHandler.h; sourceTree = "<group>"; };
 		00820C3D14CC42C0008A914A /* ModelDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelDataHandler.m; path = src/ModelDataHandler.m; sourceTree = "<group>"; };
-		00820C4114CC431B008A914A /* ModelDataHandlerDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelDataHandlerDelegateProtocol.h; path = src/ModelDataHandlerDelegateProtocol.h; sourceTree = "<group>"; };
+		00820C4214CC6340008A914A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -484,6 +484,7 @@
 				00AECA9814CAC6DC005CE4DC /* FirstViewController.xib */,
 				00AECA9B14CAC6DC005CE4DC /* SecondViewController.xib */,
 				00AECA7F14CAC6DC005CE4DC /* Supporting Files */,
+				00820C4214CC6340008A914A /* Constants.h */,
 			);
 			path = Coac2012;
 			sourceTree = "<group>";
@@ -807,7 +808,6 @@
 				00C0BD5014CACD9500427E42 /* Parser */,
 				00820C3C14CC42C0008A914A /* ModelDataHandler.h */,
 				00820C3D14CC42C0008A914A /* ModelDataHandler.m */,
-				00820C4114CC431B008A914A /* ModelDataHandlerDelegateProtocol.h */,
 			);
 			name = Synchronizacion;
 			sourceTree = "<group>";

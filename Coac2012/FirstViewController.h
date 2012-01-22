@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 
 @interface FirstViewController : UIViewController
+{
+    NSDictionary* modelData;
+}
 
+@property (nonatomic, retain) NSDictionary* modelData;
 @end

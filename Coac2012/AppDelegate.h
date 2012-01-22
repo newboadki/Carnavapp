@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ModelDataHandler.h"
-#import "ModelDataHandlerDelegateProtocol.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, ModelDataHandlerDelegateProtocol>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;
