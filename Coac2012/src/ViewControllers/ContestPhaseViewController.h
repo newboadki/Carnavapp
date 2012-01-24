@@ -15,7 +15,7 @@
     NSString* phase;
     CalendarScrollViewController* calendarController;
     NSDictionary* modelData;
-    NSArray*      orderedGroups; // oredered by performance order
+    NSArray*      orderedGroups; // oredered by performance order. That happended during the parsing
     
     IBOutlet UITableView* tableView;
 }

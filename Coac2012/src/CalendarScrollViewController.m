@@ -11,7 +11,6 @@
 
 @interface CalendarScrollViewController()
 - (void) loadView;
-- (void) componentesFromDateString:(NSString*)dateString day:(int*)d month:(int*)m year:(int*)y;
 @end
 
 
@@ -20,6 +19,10 @@
 @synthesize view=scrollView;
 @synthesize dates;
 @synthesize delegate;
+
+
+
+#pragma mark - Initializators
 
 - (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del
 {
@@ -35,6 +38,10 @@
     return self;
 }
 
+
+
+#pragma mark - Accessors
+
 - (UIView*) view
 {
     if (!scrollView)
@@ -44,6 +51,10 @@
     
     return scrollView;
 }
+
+
+
+#pragma mark - View Related methods
 
 #define PADDING 1
 
@@ -84,32 +95,6 @@
     }
 }
 
-- (void) handleTap:(id) sender
-{
-
-    RoundedCalendarBoxController* tappedBox = (RoundedCalendarBoxController*)sender;
-    for (RoundedCalendarBoxController* cont in dayBoxControllers)
-    {
-        if (cont != tappedBox)
-        {
-            [cont setNormalLook];
-        }
-    }
-    
-    [delegate scrollableBoxTappedWith:tappedBox.dateString];
-}
-- (void) componentesFromDateString:(NSString*)dateString day:(int*)d month:(int*)m year:(int*)y
-{
-
-    NSDateFormatter* df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"dd/mm/yyyy"];
-    NSDate* date = [df dateFromString:dateString];
-    [df release];
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:date];
-    *d = [components day];    
-    *m = [components month];
-    *y = [components year];
-}
 
 - (void) viewDidLoad
 {
@@ -130,10 +115,12 @@
     }
 }
 
+
 - (void) viewWillAppear
 {
     
 }
+
 
 - (void) viewWillDisappear
 {
@@ -141,6 +128,27 @@
 }
 
 
+
+#pragma mark - Event Handlers
+
+- (void) handleTap:(id) sender
+{
+    
+    RoundedCalendarBoxController* tappedBox = (RoundedCalendarBoxController*)sender;
+    for (RoundedCalendarBoxController* cont in dayBoxControllers)
+    {
+        if (cont != tappedBox)
+        {
+            [cont setNormalLook];
+        }
+    }
+    
+    [delegate scrollableBoxTappedWith:tappedBox.dateString];
+}
+
+
+
+#pragma mark - Memory Management
 
 - (void) dealloc
 {

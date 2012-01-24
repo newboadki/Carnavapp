@@ -19,8 +19,11 @@
 
 @synthesize tapDelegate;
 @synthesize dateString;
-
 @synthesize monthLabel, dayLabel, view;
+
+
+
+#pragma mark - Initializators
 
 - (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds
 {
@@ -34,6 +37,9 @@
     return self;
 }
 
+
+
+#pragma mark - Accessor Methods
 
 - (UIView*) view
 {
@@ -69,6 +75,8 @@
 
 
 
+#pragma mark - View handling related Methods
+
 - (void) loadView
 {
     // Create the view
@@ -84,11 +92,6 @@
     
 }
 
-- (void) handleTap:(id)sender
-{
-    [tapDelegate handleTap:self];
-    [self setActiveLook];
-}
 
 - (void) viewDidLoad
 {
@@ -122,6 +125,16 @@
 }
 
 
+
+#pragma mark - Event Handlers
+
+- (void) handleTap:(id)sender
+{
+    [tapDelegate handleTap:self];
+    [self setActiveLook];
+}
+
+
 - (void) setNormalLook
 {
     self.view.backgroundColor = [UIColor whiteColor];
@@ -132,6 +145,10 @@
 {
     self.view.backgroundColor = [UIColor orangeColor];
 }
+
+
+
+#pragma mark - Helpers
 
 - (void) componentesFromDateString:(NSString*)ds day:(int*)d month:(int*)m year:(int*)y
 {    
@@ -147,6 +164,9 @@
     *y = [components year];
 }
 
+
+
+#pragma mark - Memory Management
 
 - (void) dealloc
 {
