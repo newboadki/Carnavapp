@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
+		0080960514CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
+		0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
+		0080960A14CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
+		0080960B14CCA072000E1525 /* ContestPhaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960814CCA072000E1525 /* ContestPhaseViewController.xib */; };
+		0080960C14CCA072000E1525 /* ContestPhaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960814CCA072000E1525 /* ContestPhaseViewController.xib */; };
+		0080960E14CCA1A1000E1525 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080960D14CCA1A1000E1525 /* QuartzCore.framework */; };
+		0080960F14CCA1A9000E1525 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080960D14CCA1A1000E1525 /* QuartzCore.framework */; };
+		0080961714CCA37C000E1525 /* RoundedCalendarBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080961614CCA37C000E1525 /* RoundedCalendarBoxController.m */; };
+		0080961814CCA37C000E1525 /* RoundedCalendarBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080961614CCA37C000E1525 /* RoundedCalendarBoxController.m */; };
+		0080961B14CCAB01000E1525 /* CalendarScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080961A14CCAB01000E1525 /* CalendarScrollViewController.m */; };
+		0080961C14CCAB01000E1525 /* CalendarScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080961A14CCAB01000E1525 /* CalendarScrollViewController.m */; };
 		00820C3E14CC42C0008A914A /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
 		00820C3F14CC42C0008A914A /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
 		00820C4914CC6665008A914A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C4814CC6665008A914A /* MainWindow.xib */; };
@@ -175,6 +187,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedCalendarBoxView.xib; sourceTree = "<group>"; };
+		0080960614CCA072000E1525 /* ContestPhaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseViewController.h; sourceTree = "<group>"; };
+		0080960714CCA072000E1525 /* ContestPhaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseViewController.m; sourceTree = "<group>"; };
+		0080960814CCA072000E1525 /* ContestPhaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContestPhaseViewController.xib; sourceTree = "<group>"; };
+		0080960D14CCA1A1000E1525 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0080961514CCA37C000E1525 /* RoundedCalendarBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundedCalendarBoxController.h; path = src/RoundedCalendarBoxController.h; sourceTree = "<group>"; };
+		0080961614CCA37C000E1525 /* RoundedCalendarBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundedCalendarBoxController.m; path = src/RoundedCalendarBoxController.m; sourceTree = "<group>"; };
+		0080961914CCAB01000E1525 /* CalendarScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarScrollViewController.h; path = src/CalendarScrollViewController.h; sourceTree = "<group>"; };
+		0080961A14CCAB01000E1525 /* CalendarScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarScrollViewController.m; path = src/CalendarScrollViewController.m; sourceTree = "<group>"; };
 		00820C3C14CC42C0008A914A /* ModelDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelDataHandler.h; path = src/ModelDataHandler.h; sourceTree = "<group>"; };
 		00820C3D14CC42C0008A914A /* ModelDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelDataHandler.m; path = src/ModelDataHandler.m; sourceTree = "<group>"; };
 		00820C4214CC6340008A914A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -184,12 +205,13 @@
 		00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupsForModalityViewController.xib; path = src/ViewControllers/GroupsForModalityViewController.xib; sourceTree = "<group>"; };
 		00820C5714CC8511008A914A /* GroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailViewController.h; sourceTree = "<group>"; };
 		00820C5814CC8511008A914A /* GroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailViewController.m; sourceTree = "<group>"; };
-		00820C5914CC8511008A914A /* GroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupDetailViewController.xib; sourceTree = "<group>"; };
+		00820C5914CC8511008A914A /* GroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupDetailViewController.xib; path = src/ViewControllers/GroupDetailViewController.xib; sourceTree = "<group>"; };
 		00820C5E14CC8EE5008A914A /* cartel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cartel.jpg; sourceTree = "<group>"; };
 		00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_imagen_agrupacion.jpg; sourceTree = "<group>"; };
 		00820C6414CC9A44008A914A /* ContestPhasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhasesViewController.h; sourceTree = "<group>"; };
 		00820C6514CC9A44008A914A /* ContestPhasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhasesViewController.m; sourceTree = "<group>"; };
-		00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContestPhasesViewController.xib; sourceTree = "<group>"; };
+		00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContestPhasesViewController.xib; path = src/ViewControllers/ContestPhasesViewController.xib; sourceTree = "<group>"; };
+		0082FD4014CF631E00337516 /* ScrollableBoxTappedDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollableBoxTappedDelegateProtocol.h; path = src/ScrollableBoxTappedDelegateProtocol.h; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -435,6 +457,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0080960E14CCA1A1000E1525 /* QuartzCore.framework in Frameworks */,
 				00C0BD7014CAD7CD00427E42 /* libxml2.dylib in Frameworks */,
 				00C0BD6E14CAD7C200427E42 /* CoreData.framework in Frameworks */,
 				00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */,
@@ -447,6 +470,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0080960F14CCA1A9000E1525 /* QuartzCore.framework in Frameworks */,
 				00C0BD9B14CAF80700427E42 /* libxml2.dylib in Frameworks */,
 				00C0BD9A14CAF7EC00427E42 /* CoreData.framework in Frameworks */,
 				00AECAA514CAC6DC005CE4DC /* SenTestingKit.framework in Frameworks */,
@@ -479,10 +503,11 @@
 				00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */,
 				00820C5714CC8511008A914A /* GroupDetailViewController.h */,
 				00820C5814CC8511008A914A /* GroupDetailViewController.m */,
-				00820C5914CC8511008A914A /* GroupDetailViewController.xib */,
 				00820C6414CC9A44008A914A /* ContestPhasesViewController.h */,
 				00820C6514CC9A44008A914A /* ContestPhasesViewController.m */,
-				00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */,
+				0080960614CCA072000E1525 /* ContestPhaseViewController.h */,
+				0080960714CCA072000E1525 /* ContestPhaseViewController.m */,
+				0080960814CCA072000E1525 /* ContestPhaseViewController.xib */,
 			);
 			name = ViewControllers;
 			path = src/ViewControllers;
@@ -491,6 +516,8 @@
 		00820C4614CC64A7008A914A /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				00820C5914CC8511008A914A /* GroupDetailViewController.xib */,
+				00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */,
 				00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */,
 				00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */,
 				00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */,
@@ -510,6 +537,19 @@
 				00AECA9614CAC6DC005CE4DC /* second@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		00820C6B14CC9CEE008A914A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */,
+				0080961514CCA37C000E1525 /* RoundedCalendarBoxController.h */,
+				0080961614CCA37C000E1525 /* RoundedCalendarBoxController.m */,
+				0080961914CCAB01000E1525 /* CalendarScrollViewController.h */,
+				0080961A14CCAB01000E1525 /* CalendarScrollViewController.m */,
+				0082FD4014CF631E00337516 /* ScrollableBoxTappedDelegateProtocol.h */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		00AECA6914CAC6DC005CE4DC = {
@@ -534,6 +574,7 @@
 		00AECA7714CAC6DC005CE4DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0080960D14CCA1A1000E1525 /* QuartzCore.framework */,
 				00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */,
 				00C0BD6D14CAD7C200427E42 /* CoreData.framework */,
 				00AECA7814CAC6DC005CE4DC /* UIKit.framework */,
@@ -547,6 +588,7 @@
 		00AECA7E14CAC6DC005CE4DC /* Coac2012 */ = {
 			isa = PBXGroup;
 			children = (
+				00820C6B14CC9CEE008A914A /* Views */,
 				00820C4514CC648D008A914A /* ViewControllers */,
 				00C0BD7614CAE01800427E42 /* Models */,
 				00C0BD4F14CACCBB00427E42 /* Synchronizacion */,
@@ -1006,6 +1048,8 @@
 				00820C6014CC8EE5008A914A /* cartel.jpg in Resources */,
 				00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
 				00820C6914CC9A44008A914A /* ContestPhasesViewController.xib in Resources */,
+				0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */,
+				0080960B14CCA072000E1525 /* ContestPhaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,6 +1064,8 @@
 				00820C6114CC8EE5008A914A /* cartel.jpg in Resources */,
 				00820C6314CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
 				00820C6A14CC9A44008A914A /* ContestPhasesViewController.xib in Resources */,
+				0080960514CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */,
+				0080960C14CCA072000E1525 /* ContestPhaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,6 +1121,9 @@
 				00820C5314CC79AE008A914A /* GroupsForModalityViewController.m in Sources */,
 				00820C5A14CC8511008A914A /* GroupDetailViewController.m in Sources */,
 				00820C6714CC9A44008A914A /* ContestPhasesViewController.m in Sources */,
+				0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */,
+				0080961714CCA37C000E1525 /* RoundedCalendarBoxController.m in Sources */,
+				0080961B14CCAB01000E1525 /* CalendarScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,6 +1226,9 @@
 				00820C5414CC79AE008A914A /* GroupsForModalityViewController.m in Sources */,
 				00820C5B14CC8511008A914A /* GroupDetailViewController.m in Sources */,
 				00820C6814CC9A44008A914A /* ContestPhasesViewController.m in Sources */,
+				0080960A14CCA072000E1525 /* ContestPhaseViewController.m in Sources */,
+				0080961814CCA37C000E1525 /* RoundedCalendarBoxController.m in Sources */,
+				0080961C14CCAB01000E1525 /* CalendarScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,9 @@
 @interface ContestPhasesViewController : UITableViewController
 {
     NSArray* phases;
+    NSDictionary* modelData;
 }
+
+@property (nonatomic, retain) NSDictionary* modelData;
 
 @end

@@ -7,15 +7,25 @@
 //
 
 #import "ContestPhasesViewController.h"
+#import "ContestPhaseViewController.h"
+
+@interface ContestPhasesViewController()
+
+@end
 
 @implementation ContestPhasesViewController
+
+@synthesize modelData;
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        // Custom initialization
+        // This controller is one of the tab's primary controllers, thus, we need to subscribe for model data notifications here
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
+
         phases = [[NSArray arrayWithObjects:PRELIMINAR, CUARTOS, SEMIFINALES, FINAL, nil] retain];
     }
     return self;
@@ -23,6 +33,8 @@
 
 - (void) dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
+    [modelData release];
     [phases release];
     [super dealloc];
 }
@@ -40,7 +52,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -57,7 +69,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewWillAppear:animated];    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -67,7 +79,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -78,8 +90,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+
+- (void) handleDataIsReady:(NSNotification*)notif
+{
+    NSDictionary* data = [notif userInfo];
+    [self setModelData:data];
+}
+
 
 #pragma mark - Table view data source
 
@@ -150,15 +170,13 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
+{    
+     ContestPhaseViewController *detailViewController = [[ContestPhaseViewController alloc] initWithNibName:@"ContestPhaseViewController" bundle:nil];
+    detailViewController.phase = [phases objectAtIndex:[indexPath row]];
+    detailViewController.modelData = self.modelData;
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
-     */
+     
 }
 
 @end
