@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Constants.h"
 
-@interface TodayViewController : UIViewController
+@interface TodayViewController : UITableViewController
 {
     NSDictionary* modelData;
+    NSArray* groupsForToday;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
+@property (nonatomic, retain) NSArray* groupsForToday;
 
 @end

@@ -7,10 +7,19 @@
 //
 
 #import "TodayViewController.h"
+#import "Agrupacion.h"
+#import "GroupDetailViewController.h"
+
+@interface TodayViewController()
+- (void) handleGroupsForToday;
+- (void) showAlertIfNoConstestToday;
+@end
 
 @implementation TodayViewController
 
 @synthesize modelData;
+@synthesize groupsForToday;
+
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
@@ -28,6 +37,7 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     [modelData release];
+    [groupsForToday release];
     [super dealloc];
 }
 
@@ -35,8 +45,37 @@
 {
     NSDictionary* data = [notif userInfo];
     [self setModelData:data];
+    [self handleGroupsForToday];
 }
 
+- (void) handleGroupsForToday
+{
+    NSDate* today = [NSDate date];
+    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSString* todaysDateString = [df stringFromDate:today];
+    NSLog(@"--- %@", todaysDateString);
+    [df release];
+    
+    NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];    
+    NSArray* groupsForDate = [calendarDictionary objectForKey:todaysDateString];
+    [self setGroupsForToday:groupsForDate];
+    [self.tableView reloadData];
+    
+    [self showAlertIfNoConstestToday];
+}
+
+
+- (void) showAlertIfNoConstestToday
+{
+    if (modelData && ([groupsForToday count] == 0))
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Informacion" message:@"Hoy no hay concurso" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+        [alertView show];
+        [alertView release];
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,6 +88,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showAlertIfNoConstestToday];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -84,5 +124,51 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    int numberOfRows = 0;
+    
+    if (groupsForToday) // we can just check for this as we set it as soon as we get the data
+    {        
+        numberOfRows = [groupsForToday count];
+    }
+    
+	return numberOfRows;	
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Configure the cell...
+    Agrupacion* ag = [groupsForToday objectAtIndex:[indexPath row]];
+    cell.textLabel.text = ag.nombre;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
+    detailViewController.group = [groupsForToday objectAtIndex:[indexPath row]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];    
+}
+
 
 @end
