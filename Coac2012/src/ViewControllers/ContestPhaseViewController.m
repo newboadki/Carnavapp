@@ -22,6 +22,7 @@
 @synthesize calendarController;
 @synthesize modelData, orderedGroups;
 @synthesize tableView;
+@synthesize cellFromNib;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -163,12 +164,25 @@
     UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
+        cell = cellFromNib;
+        NSLog(@"cell %@", cell);
+        self.cellFromNib = nil;    
     }
     
-    // Configure the cell...
     Agrupacion* ag = [orderedGroups objectAtIndex:[indexPath row]];
-    cell.textLabel.text = ag.nombre;
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
+    
+    if ([ag identificador] != -1)
+    {
+        groupNameLabel.text = ag.nombre;
+        categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
+    }
+    else
+    {
+        groupNameLabel.text = @"DESCANSO";
+    }
     
     return cell;
 }

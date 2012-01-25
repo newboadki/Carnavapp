@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Constants.h"
 
-@interface TodayViewController : UITableViewController
+@interface TodayViewController : UIViewController <UITableViewDataSource, UITabBarDelegate>
 {
     NSDictionary* modelData;
     NSArray* groupsForToday;
+    IBOutlet UITableViewCell* cellFromNib;
+    IBOutlet UITableView* tableView;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSArray* groupsForToday;
-
+@property (nonatomic, assign) UITableViewCell* cellFromNib;
+@property (nonatomic, retain) UITableView* tableView;
 @end

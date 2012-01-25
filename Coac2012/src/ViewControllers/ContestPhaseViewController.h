@@ -18,6 +18,7 @@
     NSArray*      orderedGroups; // oredered by performance order. That happended during the parsing
     
     IBOutlet UITableView* tableView;
+    UITableViewCell* cellFromNib;
 }
 
 @property (nonatomic, retain) NSString* phase;
@@ -25,5 +26,6 @@
 @property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSArray*      orderedGroups;
 @property (nonatomic, retain) UITableView* tableView;
+@property (nonatomic, assign) UITableViewCell* cellFromNib;
 
 @end

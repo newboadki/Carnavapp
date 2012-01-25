@@ -22,3 +22,7 @@
 #define CUARTOS @"Cuartos"
 #define SEMIFINALES @"Semifinales"
 #define FINAL @"Final"
+
+// GroupCellInfo NIB
+#define GROUP_NAME_LABEL_TAG 1
+#define CATEGORY_LABEL_TAG 2
