@@ -9,23 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "CalendarScrollViewController.h"
 #import "ScrollableBoxTappedDelegateProtocol.h"
+#import "BaseCoacListViewController.h"
 
-@interface ContestPhaseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ScrollableBoxTappedDelegateProtocol>
+
+@interface ContestPhaseViewController : BaseCoacListViewController <ScrollableBoxTappedDelegateProtocol>
 {
     NSString* phase;
     CalendarScrollViewController* calendarController;
-    NSDictionary* modelData;
-    NSArray*      orderedGroups; // oredered by performance order. That happended during the parsing
-    
-    IBOutlet UITableView* tableView;
-    UITableViewCell* cellFromNib;
 }
 
 @property (nonatomic, retain) NSString* phase;
 @property (nonatomic, retain) CalendarScrollViewController* calendarController;
-@property (nonatomic, retain) NSDictionary* modelData;
-@property (nonatomic, retain) NSArray*      orderedGroups;
-@property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, assign) UITableViewCell* cellFromNib;
 
 @end

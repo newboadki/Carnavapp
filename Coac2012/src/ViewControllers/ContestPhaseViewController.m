@@ -20,9 +20,6 @@
 
 @synthesize phase;
 @synthesize calendarController;
-@synthesize modelData, orderedGroups;
-@synthesize tableView;
-@synthesize cellFromNib;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,6 +39,27 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void) handleGroupsForDate:(NSString*) selectedDate
+{
+    NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];
+    NSArray* groupsForDate = [calendarDictionary objectForKey:selectedDate];
+    
+    [self setElementsArray:groupsForDate];
+    [tableView reloadData];
+}
+
+
+- (void) updateArrayOfElements
+{
+    NSArray* daysForCurrentPhase = [self daysForPhase:self.phase];
+    if([daysForCurrentPhase count] > 0)
+    {
+        NSString* selectedDate = [daysForCurrentPhase objectAtIndex:0];
+        [self handleGroupsForDate:selectedDate];
+    }
+}
+
+
 - (void) setModelData:(NSDictionary *)theModelData
 {
 
@@ -50,12 +68,8 @@
         [theModelData retain];
         [self->modelData release];
         self->modelData = theModelData;
-        
-        NSArray* daysForCurrentPhase = [self daysForPhase:self.phase];
-        if([daysForCurrentPhase count] > 0)
-        {
-            [self handleGroupsForDate:[daysForCurrentPhase objectAtIndex:0]];
-        }
+
+        [self updateArrayOfElements];
     }
 }
 
@@ -64,23 +78,11 @@
     // Get the data
     NSDictionary* data = [notif userInfo];
     [self setModelData:data];    
-    
-    NSArray* daysForCurrentPhase = [self daysForPhase:self.phase];
-    if([daysForCurrentPhase count] > 0)
-    {
-        [self handleGroupsForDate:[daysForCurrentPhase objectAtIndex:0]];
-    }
+
+    [self updateArrayOfElements];
 
 }
 
-- (void) handleGroupsForDate:(NSString*) selectedDate
-{
-    NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];
-    NSArray* groupsForDate = [calendarDictionary objectForKey:selectedDate];
-    
-    [self setOrderedGroups:groupsForDate];
-    [tableView reloadData];
-}
 
 
 #pragma mark - View lifecycle
@@ -142,37 +144,9 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    int numberOfRows = 0;
-    
-    if (orderedGroups) // we can just check for this as we set it as soon as we get the data
-    {        
-        numberOfRows = [orderedGroups count];
-    }
-    
-	return numberOfRows;	
-}
-
-- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
-        cell = cellFromNib;
-        NSLog(@"cell %@", cell);
-        self.cellFromNib = nil;    
-    }
-    
-    Agrupacion* ag = [orderedGroups objectAtIndex:[indexPath row]];
+    Agrupacion* ag = [elementsArray objectAtIndex:[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
@@ -185,22 +159,15 @@
     {
         groupNameLabel.text = @"DESCANSO";
     }
-    
-    return cell;
 }
 
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60.0f;
-}
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = [orderedGroups objectAtIndex:[indexPath row]];
+    detailViewController.group = [elementsArray objectAtIndex:[indexPath row]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];    
 }
@@ -208,9 +175,6 @@
 
 - (void) dealloc
 {
-    [tableView release];
-    [modelData release];
-    [orderedGroups release];
     [calendarController release];
     [phase release];
     [super dealloc];
