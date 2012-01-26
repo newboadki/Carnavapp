@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "Constants.h"
 
-@interface ModalitiesViewController : UITableViewController
+@interface ModalitiesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSDictionary* modelData;
+    IBOutlet UITableView* tableView;
+    UITableViewCell* cellFromNib;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
+@property (nonatomic, retain) UITableView* tableView;
+@property (nonatomic, assign) UITableViewCell* cellFromNib;
 
 @end

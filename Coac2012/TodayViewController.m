@@ -161,10 +161,10 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
         cell = cellFromNib;
-        NSLog(@"cell %@", cell);
         self.cellFromNib = nil;    
     }
     
