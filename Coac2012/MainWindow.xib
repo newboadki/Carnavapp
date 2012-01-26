@@ -45,7 +45,6 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -93,15 +92,20 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSColor" key="IBUITintColor" id="767129105">
+						<object class="NSColor" key="IBUITintColor" id="884359934">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC42NjI3NDUwOTggMC4wMTE3NjQ3MDU4OCAwLjMwOTgwMzkyMTYAA</bytes>
+							<bytes key="NSRGB">MC4yNzA1ODgyMzUzIDAgMC4xMjE1Njg2Mjc1AA</bytes>
 						</object>
 					</object>
 					<array class="NSMutableArray" key="IBUIViewControllers">
 						<object class="IBUIViewController" id="494629936">
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="1033141956">
-								<string key="IBUITitle">Root View Controller</string>
+								<string key="IBUITitle">Hoy</string>
+								<object class="IBUIBarButtonItem" key="IBUIBackBarButtonItem" id="121928217">
+									<string key="IBUITitle">Hoy</string>
+									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									<int key="IBUIStyle">1</int>
+								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="718424411"/>
@@ -143,7 +147,7 @@
 							<bool key="IBUIClipsSubviews">YES</bool>
 							<bool key="IBUIMultipleTouchEnabled">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITintColor" ref="767129105"/>
+							<reference key="IBUITintColor" ref="884359934"/>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
 							<object class="IBUIViewController" id="843195912">
@@ -193,7 +197,7 @@
 							<bool key="IBUIClipsSubviews">YES</bool>
 							<bool key="IBUIMultipleTouchEnabled">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITintColor" ref="767129105"/>
+							<reference key="IBUITintColor" ref="884359934"/>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
 							<object class="IBUIViewController" id="763185370">
@@ -238,7 +242,7 @@
 							<bool key="IBUIClipsSubviews">YES</bool>
 							<bool key="IBUIMultipleTouchEnabled">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITintColor" ref="767129105"/>
+							<reference key="IBUITintColor" ref="884359934"/>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
 							<object class="IBUIViewController" id="768467628">
@@ -262,7 +266,6 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSNextKeyView"/>
 					<string key="NSReuseIdentifierKey">_NS:473</string>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
@@ -271,7 +274,7 @@
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<object class="NSColor" key="IBUITintColor">
 						<int key="NSColorSpace">1</int>
-						<bytes key="NSRGB">MC4yNzU1MTAyMDQxIDAuMDczMDcwNzc2NzUgMC4xODAxMDU5MTAzAA</bytes>
+						<bytes key="NSRGB">MC4yNzA1ODgyMzUzIDAgMC4xMjE1Njg2Mjc1AA</bytes>
 					</object>
 				</object>
 			</object>
@@ -460,6 +463,9 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">28</int>
 						<reference key="object" ref="1033141956"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="121928217"/>
+						</array>
 						<reference key="parent" ref="494629936"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -500,6 +506,11 @@
 						<reference key="object" ref="913000956"/>
 						<reference key="parent" ref="597156626"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">35</int>
+						<reference key="object" ref="121928217"/>
+						<reference key="parent" ref="1033141956"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -535,6 +546,7 @@
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.CustomClassName">AppDelegate</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -543,7 +555,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">35</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

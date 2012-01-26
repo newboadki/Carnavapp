@@ -8,17 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "BaseCoacListViewController.h"
 
-@interface TodayViewController : UIViewController <UITableViewDataSource, UITabBarDelegate>
+@interface TodayViewController : BaseCoacListViewController
 {
-    NSDictionary* modelData;
-    NSArray* groupsForToday;
-    UITableViewCell* cellFromNib;
-    IBOutlet UITableView* tableView;
 }
 
-@property (nonatomic, retain) NSDictionary* modelData;
-@property (nonatomic, retain) NSArray* groupsForToday;
-@property (nonatomic, assign) UITableViewCell* cellFromNib;
-@property (nonatomic, retain) UITableView* tableView;
 @end

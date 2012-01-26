@@ -56,7 +56,7 @@
 
 #pragma mark - View Related methods
 
-#define PADDING 1
+#define PADDING 0
 
 - (void) loadView
 {
@@ -67,26 +67,27 @@
     frame.size.width += (2 * PADDING);
 
     // Create the scroll view
-    UIScrollView* sv = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 54)];// Day boxes are 50x50, refactor to get this from the nib 
+    UIScrollView* sv = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 71)];// Day boxes are 50x50, refactor to get this from the nib 
     scrollView = [sv retain];
     [sv release];
     scrollView.backgroundColor = [UIColor blackColor];
     
     // Resize scrollView contentSize
-    scrollView.contentSize = CGSizeMake([dates count]*50, 54); // Day boxes are 50x50, refactor to get this from the nib
+    scrollView.contentSize = CGSizeMake([dates count]*45, 71); // Day boxes are 45x68, refactor to get this from the nib
     
     // Create the dayBoxes controllers
     for (int i=0; i<[dates count]; i++)
     {
+        
         NSString* dateString = [dates objectAtIndex:i];
         RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString];
         [dayBoxControllers addObject:controller];        
-        
+
         // add the views        
         // set up the padding
         float pageWidth = controller.view.frame.size.width;
         pageWidth -= (2 * PADDING);
-        CGRect pageFrame = CGRectMake(i*50+PADDING, 2, pageWidth, controller.view.frame.size.height);
+        CGRect pageFrame = CGRectMake(i*45+PADDING, 2, pageWidth, controller.view.frame.size.height);
         pageFrame.size.width -= (2 * PADDING); // The padding is added into the paginScrollViewBounds. So we substract it to calculate the width
         
         controller.view.frame = pageFrame;
@@ -99,8 +100,15 @@
 - (void) viewDidLoad
 {
     // The view will be on the hierarchy already
+    int i = 0;
     for (RoundedCalendarBoxController* cont in dayBoxControllers)
     {
+        if (i == 0)
+        {
+            [cont setActiveLook];            
+        }
+        i++;
+
         [cont viewDidLoad];        
     }
 

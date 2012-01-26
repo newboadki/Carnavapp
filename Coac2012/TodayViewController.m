@@ -10,48 +10,32 @@
 #import "Agrupacion.h"
 #import "GroupDetailViewController.h"
 
-
-@interface TodayViewController()
-- (void) handleGroupsForToday;
+@interface TodayViewController(protected)
 - (void) showAlertIfNoConstestToday;
 @end
 
 @implementation TodayViewController
 
-@synthesize modelData;
-@synthesize groupsForToday;
-@synthesize cellFromNib;
-@synthesize tableView;
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        self.title = NSLocalizedString(@"Hoy", @"Hoy");
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
+        //self.title = NSLocalizedString(@"Hoy", @"Hoy");
     }
-    return self;
-    
+
+    return self;    
 }
 
 - (void) dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-    [modelData release];
-    [groupsForToday release];
-    [tableView release];
+
     [super dealloc];
 }
 
-- (void) handleDataIsReady:(NSNotification*)notif
-{
-    NSDictionary* data = [notif userInfo];
-    [self setModelData:data];
-    [self handleGroupsForToday];
-}
 
-- (void) handleGroupsForToday
+- (void) updateArrayOfElements
 {
     NSDate* today = [NSDate date];
     NSDateFormatter* df = [[NSDateFormatter alloc] init];
@@ -62,7 +46,7 @@
     
     NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];    
     NSArray* groupsForDate = [calendarDictionary objectForKey:todaysDateString];
-    [self setGroupsForToday:groupsForDate];
+    [self setElementsArray:groupsForDate];
     [self.tableView reloadData];
     
     [self showAlertIfNoConstestToday];
@@ -71,7 +55,7 @@
 
 - (void) showAlertIfNoConstestToday
 {
-    if (modelData && ([groupsForToday count] == 0))
+    if (modelData && ([elementsArray count] == 0))
     {
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Informacion" message:@"Hoy no hay concurso" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
         [alertView show];
@@ -92,14 +76,16 @@
 {
     [super viewDidLoad];
     [self showAlertIfNoConstestToday];
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"antifaz_52x37.png"]];
+    //imageView.frame = CGRectMake(0, 0, 52, 37);
+    
+    self.navigationItem.titleView = imageView;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [tableView release];
-    tableView = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -134,42 +120,9 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    int numberOfRows = 0;
-    
-    if (groupsForToday) // we can just check for this as we set it as soon as we get the data
-    {        
-        numberOfRows = [groupsForToday count];
-    }
-    
-	return numberOfRows;	
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60.0f;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
-        cell = cellFromNib;
-        self.cellFromNib = nil;    
-    }
-    
-    // Configure the cell...
-    Agrupacion* ag = [groupsForToday objectAtIndex:[indexPath row]];
+    Agrupacion* ag = [elementsArray objectAtIndex:[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
@@ -183,14 +136,13 @@
         groupNameLabel.text = @"DESCANSO";
         categoryNameLabel.text = @"";
     }
-    
-    return cell;
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = [groupsForToday objectAtIndex:[indexPath row]];
+    detailViewController.group = [elementsArray objectAtIndex:[indexPath row]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];    
 }

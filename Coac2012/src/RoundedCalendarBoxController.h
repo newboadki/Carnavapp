@@ -14,6 +14,7 @@
     IBOutlet UIView* view;
     IBOutlet UILabel* monthLabel;
     IBOutlet UILabel* dayLabel;
+    IBOutlet UIImageView* backgroundView;
     
     CalendarScrollViewController* tapDelegate;
     NSString* dateString;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) UILabel* monthLabel;
 @property (nonatomic, retain) UILabel* dayLabel;
 @property (nonatomic, retain) UIView*  view;
+@property (nonatomic, retain) UIImageView* backgroundView;
 @property (nonatomic, assign) CalendarScrollViewController* tapDelegate;
 @property (nonatomic, copy) NSString*  dateString;
 

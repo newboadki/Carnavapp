@@ -7,7 +7,6 @@
 //
 
 #import "RoundedCalendarBoxController.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface RoundedCalendarBoxController()
 - (void) loadView;
@@ -20,6 +19,7 @@
 @synthesize tapDelegate;
 @synthesize dateString;
 @synthesize monthLabel, dayLabel, view;
+@synthesize backgroundView;
 
 
 
@@ -82,8 +82,6 @@
     // Create the view
     // will only be called once, only form the view getter.
     view = [[[[NSBundle mainBundle] loadNibNamed:@"RoundedCalendarBoxView" owner:self options:nil] objectAtIndex:0] retain];            
-    CALayer* layer = view.layer;
-    layer.cornerRadius = 8.0;
     
     // Gesture recognizer
     UITapGestureRecognizer* tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
@@ -110,6 +108,9 @@
     monthLabel = nil;
     [dayLabel release];
     dayLabel = nil;
+    [backgroundView release];
+    backgroundView = nil;
+
 }
 
 
@@ -137,13 +138,13 @@
 
 - (void) setNormalLook
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.backgroundView.image = [UIImage imageNamed:@"inactiveDay2_45x68.png"];
 }
 
 
 - (void) setActiveLook
 {
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.backgroundView.image = [UIImage imageNamed:@"activeDay2_45x68.png"];
 }
 
 
@@ -173,6 +174,7 @@
     [dateString release];
     [monthLabel release];
     [dayLabel release];
+    [backgroundView release];
     [view release];
     [super dealloc];
 }
