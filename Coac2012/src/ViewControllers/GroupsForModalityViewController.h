@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GroupsForModalityViewController : UITableViewController
+@interface GroupsForModalityViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSDictionary* modelData;
     NSString* modality;
+    IBOutlet UITableView* tableView;
+    UITableViewCell* cellFromNib;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSString* modality;
-
+@property (nonatomic, retain) UITableView* tableView;
+@property (nonatomic, assign) UITableViewCell* cellFromNib;
 @end

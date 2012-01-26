@@ -22,6 +22,7 @@
 @synthesize modelData;
 @synthesize modality;
 @synthesize orderedGroupsForModality;
+@synthesize tableView, cellFromNib;
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -95,6 +96,8 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [tableView release];
+    tableView = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -144,20 +147,35 @@
 	return numberOfRows;	
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
+        cell = cellFromNib;
+        self.cellFromNib = nil;    
     }
     
     // Configure the cell...
     Agrupacion* ag = [orderedGroupsForModality objectAtIndex:[indexPath row]];
-    cell.textLabel.text = ag.nombre;
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
+    
+    if ([ag identificador] != -1)
+    {
+        groupNameLabel.text = ag.nombre;
+        categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
+    }    
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0f;
 }
 
 
@@ -167,6 +185,7 @@
     [modelData release];
     [modality release];
     [orderedGroupsForModality release];
+    [tableView release];
     [super dealloc];    
 }
 
