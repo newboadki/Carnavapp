@@ -22,7 +22,6 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        //self.title = NSLocalizedString(@"Hoy", @"Hoy");
     }
 
     return self;    
@@ -41,7 +40,6 @@
     NSDateFormatter* df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
     NSString* todaysDateString = [df stringFromDate:today];
-    NSLog(@"--- %@", todaysDateString);
     [df release];
     
     NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];    
@@ -76,11 +74,9 @@
 {
     [super viewDidLoad];
     [self showAlertIfNoConstestToday];
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"antifaz_52x37.png"]];
-    //imageView.frame = CGRectMake(0, 0, 52, 37);
     
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"antifaz_52x37.png"]];    
     self.navigationItem.titleView = imageView;
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload

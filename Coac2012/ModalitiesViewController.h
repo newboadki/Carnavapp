@@ -8,16 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "BaseCoacListViewController.h"
 
-@interface ModalitiesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ModalitiesViewController : BaseCoacListViewController
 {
-    NSDictionary* modelData;
-    IBOutlet UITableView* tableView;
-    UITableViewCell* cellFromNib;
 }
-
-@property (nonatomic, retain) NSDictionary* modelData;
-@property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, assign) UITableViewCell* cellFromNib;
 
 @end

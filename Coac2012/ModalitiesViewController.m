@@ -8,17 +8,10 @@
 
 #import "ModalitiesViewController.h"
 #import "GroupsForModalityViewController.h"
+#import "Agrupacion.h"
 
-@interface ModalitiesViewController()
-@property (nonatomic, retain) NSArray* orderedModalityKeys;
-@end
 
 @implementation ModalitiesViewController
-
-@synthesize modelData;
-@synthesize orderedModalityKeys;
-@synthesize tableView;
-@synthesize cellFromNib;
 
 
 - (id) initWithCoder:(NSCoder *)aDecoder
@@ -26,7 +19,6 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     }
     
     return self;
@@ -34,18 +26,12 @@
 					
 - (void) dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-    [modelData release];
-    [tableView release];
-    [orderedModalityKeys release];
     [super dealloc];    
 }
 
-- (void) handleDataIsReady:(NSNotification*)notif
+
+- (void) updateArrayOfElements
 {
-    // Get the data
-    NSDictionary* data = [notif userInfo];
-    [self setModelData:data];
     NSDictionary* modalitiesDic = [modelData objectForKey:MODALITIES_KEY];
     NSArray* mk = [modalitiesDic allKeys];
     
@@ -56,9 +42,9 @@
         return [s1 compare:s2];
     }];
     
-    [self setOrderedModalityKeys:mk];
-}
+    [self setElementsArray:mk];
 
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +59,6 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Modalidades", @"Modalidades");
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -115,61 +100,14 @@
 #pragma mark -
 #pragma mark Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-	/***********************************************************************************************/
-	/* numberOfSectionsInTableView.																   */
-	/***********************************************************************************************/    
-    return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	/***********************************************************************************************/
-	/* numberOfRowsInSection.																	   */
-	/***********************************************************************************************/							
-    int numberOfRows = 0;
-    
-    if (orderedModalityKeys)
-    {        
-        numberOfRows = [orderedModalityKeys count];
-    }
-    	
-	return numberOfRows;	
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-	/***********************************************************************************************/
-	/* cellForRowAtIndexPath.																	   */
-	/***********************************************************************************************/							
-    static NSString* CellIdentifier = @"Cell";
-    
-    UITableViewCell* cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-	{		
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
-        cell = cellFromNib;
-        self.cellFromNib = nil;    
-    }
-    
-    // Configure the cell..
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-
-    NSString* currentModality = [orderedModalityKeys objectAtIndex:[indexPath row]];    
+    
+    NSString* currentModality = [elementsArray objectAtIndex:[indexpath row]];    
     groupNameLabel.text = currentModality;
 	categoryNameLabel.text = @"";
-    
-    return cell;
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60.0f;
 }
 
 
@@ -181,7 +119,7 @@
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
-    NSString* selectedModality = [orderedModalityKeys objectAtIndex:[indexPath row]];
+    NSString* selectedModality = [elementsArray objectAtIndex:[indexPath row]];
     GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"GroupsForModalityViewController" bundle:nil];
     [nextController setModality:selectedModality];
     [nextController setModelData:self.modelData];
