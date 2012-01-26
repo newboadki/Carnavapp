@@ -16,7 +16,7 @@
 @implementation ContestPhasesViewController
 
 @synthesize modelData;
-
+@synthesize tableView, cellFromNib;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -36,6 +36,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     [modelData release];
     [phases release];
+    [tableView release];
     [super dealloc];
 }
 
@@ -63,6 +64,8 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [tableView release];
+    tableView = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -113,19 +116,31 @@
     return [phases count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
+        cell = cellFromNib;
+        self.cellFromNib = nil;    
     }
     
     // Configure the cell...
-    cell.textLabel.text = [phases objectAtIndex:[indexPath row]];
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
+
+    groupNameLabel.text = [phases objectAtIndex:[indexPath row]];
+    categoryNameLabel.text = @"";
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0f;
 }
 
 /*

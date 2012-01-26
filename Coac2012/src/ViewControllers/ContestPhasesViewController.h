@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContestPhasesViewController : UITableViewController
+@interface ContestPhasesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSArray* phases;
     NSDictionary* modelData;
+    IBOutlet UITableView* tableView;
+    UITableViewCell* cellFromNib;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
+@property (nonatomic, retain) UITableView* tableView;
+@property (nonatomic, assign) UITableViewCell* cellFromNib;
 
 @end

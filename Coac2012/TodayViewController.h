@@ -13,7 +13,7 @@
 {
     NSDictionary* modelData;
     NSArray* groupsForToday;
-    IBOutlet UITableViewCell* cellFromNib;
+    UITableViewCell* cellFromNib;
     IBOutlet UITableView* tableView;
 }
 
