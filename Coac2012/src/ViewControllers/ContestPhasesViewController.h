@@ -7,17 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseCoacListViewController.h"
 
-@interface ContestPhasesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ContestPhasesViewController : BaseCoacListViewController
 {
-    NSArray* phases;
-    NSDictionary* modelData;
-    IBOutlet UITableView* tableView;
-    UITableViewCell* cellFromNib;
 }
 
-@property (nonatomic, retain) NSDictionary* modelData;
-@property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, assign) UITableViewCell* cellFromNib;
 
 @end

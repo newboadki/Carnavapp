@@ -7,14 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseCoacListViewController.h"
 
-@interface LinksViewController : UITableViewController
+@interface LinksViewController : BaseCoacListViewController
 {
-    NSDictionary* modelData;
-    NSArray* links;
 }
-
-@property (nonatomic, retain) NSDictionary* modelData;
-@property (nonatomic, retain) NSArray* links;
 
 @end

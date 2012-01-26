@@ -11,25 +11,19 @@
 #import "GroupDetailViewController.h"
 
 
-@interface GroupsForModalityViewController()
-@property (nonatomic, retain) NSArray* orderedGroupsForModality;
-
-- (void) handleGroupsForModality;
+@interface GroupsForModalityViewController(protected)
+- (void) updateArrayOfElements;
 @end
 
 @implementation GroupsForModalityViewController
 
-@synthesize modelData;
 @synthesize modality;
-@synthesize orderedGroupsForModality;
-@synthesize tableView, cellFromNib;
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     }
     
     return self;
@@ -43,20 +37,12 @@
         [self->modelData release];
         self->modelData = theModelData;
             
-        [self handleGroupsForModality];
+        [self updateArrayOfElements];
     }
 }
 
-- (void) handleDataIsReady:(NSNotification*)notif
-{
-    // Get the data
-    NSDictionary* data = [notif userInfo];
-    [self setModelData:data];    
 
-    [self handleGroupsForModality]; 
-}
-
-- (void) handleGroupsForModality
+- (void) updateArrayOfElements
 {
     NSDictionary* modalitiesDic = [modelData objectForKey:MODALITIES_KEY];
     NSArray* modalityGroups = [modalitiesDic objectForKey:modality];
@@ -68,7 +54,7 @@
         return [a1.nombre compare:a2.nombre];
     }];
     
-    [self setOrderedGroupsForModality:modalityGroups];
+    [self setElementsArray:modalityGroups];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,18 +72,11 @@
     [super viewDidLoad];
 
     self.title = NSLocalizedString(self.modality, self.modality);
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    [tableView release];
-    tableView = nil;
+    [super viewDidUnload];    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -130,37 +109,10 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    int numberOfRows = 0;
-    
-    if (orderedGroupsForModality) // we can just check for this as we set it as soon as we get the data
-    {        
-        numberOfRows = [orderedGroupsForModality count];
-    }
-    
-	return numberOfRows;	
-}
-
-- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
-        cell = cellFromNib;
-        self.cellFromNib = nil;    
-    }
-    
     // Configure the cell...
-    Agrupacion* ag = [orderedGroupsForModality objectAtIndex:[indexPath row]];
+    Agrupacion* ag = [elementsArray objectAtIndex:[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
@@ -169,71 +121,22 @@
         groupNameLabel.text = ag.nombre;
         categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
     }    
-    
-    return cell;
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60.0f;
 }
 
 
 - (void) dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-    [modelData release];
     [modality release];
-    [orderedGroupsForModality release];
-    [tableView release];
     [super dealloc];    
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = [orderedGroupsForModality objectAtIndex:[indexPath row]];
+    detailViewController.group = [elementsArray objectAtIndex:[indexPath row]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
      

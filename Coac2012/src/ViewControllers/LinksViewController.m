@@ -11,46 +11,31 @@
 #import "LinkViewerViewController.h"
 
 
-@interface LinksViewController()
-- (void) prepareLinksArray;
-@end
 
 @implementation LinksViewController
 
-@synthesize modelData, links;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-    [modelData release];
-    [links release];
     [super dealloc];
 }
 
-- (void) handleDataIsReady:(NSNotification*)notif
-{
-    NSDictionary* data = [notif userInfo];
-    [self setModelData:data];
-    [self prepareLinksArray];
-}
 
 
-- (void) prepareLinksArray
+- (void) updateArrayOfElements
 {
     
     NSArray* linksArray = [modelData objectForKey:LINKS_KEY];
-    NSLog(@"-- %@", linksArray);
-    [self setLinks:linksArray];
+    [self setElementsArray:linksArray];
     [self.tableView reloadData];
 }
 
@@ -111,47 +96,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	/***********************************************************************************************/
-	/* numberOfRowsInSection.																	   */
-	/***********************************************************************************************/							
-    int numberOfRows = 0;
-    
-    if (links)
-    {        
-        numberOfRows = [links count];
-    }
-    
-	return numberOfRows;	
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-	/***********************************************************************************************/
-	/* cellForRowAtIndexPath.																	   */
-	/***********************************************************************************************/							
-    static NSString* CellIdentifier = @"Cell";
-    
-    UITableViewCell* cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-	{		
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-    }
-    
     // Configure the cell..
-    Link* link = [links objectAtIndex:[indexPath row]];    
+    Link* link = [elementsArray objectAtIndex:[indexpath row]];    
     cell.textLabel.text = link.desc;
-	
-    return cell;
-}
 
+}
 
 
 
@@ -163,7 +114,7 @@
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
-    Link* selectedLink = [links objectAtIndex:[indexPath row]];
+    Link* selectedLink = [elementsArray objectAtIndex:[indexPath row]];
     NSLog(@"link: %@", selectedLink.url);
     LinkViewerViewController* nextController = [[LinkViewerViewController alloc] initWithNibName:@"LinkViewerViewController" bundle:nil];
     [nextController setLink:selectedLink];

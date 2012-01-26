@@ -7,17 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseCoacListViewController.h"
 
-@interface GroupsForModalityViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GroupsForModalityViewController : BaseCoacListViewController
 {
-    NSDictionary* modelData;
     NSString* modality;
-    IBOutlet UITableView* tableView;
-    UITableViewCell* cellFromNib;
 }
 
-@property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSString* modality;
-@property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, assign) UITableViewCell* cellFromNib;
+
 @end

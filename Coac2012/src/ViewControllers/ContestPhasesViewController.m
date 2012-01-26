@@ -9,34 +9,22 @@
 #import "ContestPhasesViewController.h"
 #import "ContestPhaseViewController.h"
 
-@interface ContestPhasesViewController()
-
-@end
 
 @implementation ContestPhasesViewController
 
-@synthesize modelData;
-@synthesize tableView, cellFromNib;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        // This controller is one of the tab's primary controllers, thus, we need to subscribe for model data notifications here
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-
-        phases = [[NSArray arrayWithObjects:PRELIMINAR, CUARTOS, SEMIFINALES, FINAL, nil] retain];
+        elementsArray = [[NSArray arrayWithObjects:PRELIMINAR, CUARTOS, SEMIFINALES, FINAL, nil] retain];
     }
     return self;
 }
 
 - (void) dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-    [modelData release];
-    [phases release];
-    [tableView release];
     [super dealloc];
 }
 
@@ -64,8 +52,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [tableView release];
-    tableView = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -97,97 +83,27 @@
 }
 
 
-- (void) handleDataIsReady:(NSNotification*)notif
-{
-    NSDictionary* data = [notif userInfo];
-    [self setModelData:data];
-}
-
-
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [phases count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
-        cell = cellFromNib;
-        self.cellFromNib = nil;    
-    }
-    
     // Configure the cell...
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-
-    groupNameLabel.text = [phases objectAtIndex:[indexPath row]];
-    categoryNameLabel.text = @"";
     
-    return cell;
+    groupNameLabel.text = [elementsArray objectAtIndex:[indexpath row]];
+    categoryNameLabel.text = @"";
+
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60.0f;
-}
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
      ContestPhaseViewController *detailViewController = [[ContestPhaseViewController alloc] initWithNibName:@"ContestPhaseViewController" bundle:nil];
-    detailViewController.phase = [phases objectAtIndex:[indexPath row]];
+    detailViewController.phase = [elementsArray objectAtIndex:[indexPath row]];
     detailViewController.modelData = self.modelData;
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
