@@ -14,22 +14,6 @@
 @implementation ModalitiesViewController
 
 
-- (id) initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self)
-    {        
-    }
-    
-    return self;
-}
-					
-- (void) dealloc
-{
-    [super dealloc];    
-}
-
-
 - (void) updateArrayOfElements
 {
     NSDictionary* modalitiesDic = [modelData objectForKey:MODALITIES_KEY];
@@ -43,15 +27,9 @@
     }];
     
     [self setElementsArray:mk];
-
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
 
 #pragma mark - View lifecycle
 
@@ -59,41 +37,6 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Modalidades", @"Modalidades");
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    [tableView release];
-    tableView = nil;
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 
