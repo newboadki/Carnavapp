@@ -37,6 +37,7 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Modalidades", @"Modalidades");
+    [self setMaskAsTitleView];
 }
 
 
@@ -57,11 +58,14 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
+    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
+    
+
     NSString* selectedModality = [elementsArray objectAtIndex:[indexPath row]];
     GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"GroupsForModalityViewController" bundle:nil];
     [nextController setModality:selectedModality];

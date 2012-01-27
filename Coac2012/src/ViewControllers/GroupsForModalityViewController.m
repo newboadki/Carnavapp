@@ -91,8 +91,11 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
+    
+
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
     detailViewController.group = [elementsArray objectAtIndex:[indexPath row]];
     [self.navigationController pushViewController:detailViewController animated:YES];

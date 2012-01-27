@@ -21,4 +21,6 @@
 @property (nonatomic, assign) UITableViewCell* cellFromNib;
 @property (nonatomic, retain) UITableView* tableView;
 
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void) setMaskAsTitleView;
 @end

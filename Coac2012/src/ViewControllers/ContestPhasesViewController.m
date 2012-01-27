@@ -36,7 +36,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    [self setMaskAsTitleView];
+}
 
 #pragma mark - Table view data source
 
@@ -55,8 +59,11 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
+    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
+    
+
      ContestPhaseViewController *detailViewController = [[ContestPhaseViewController alloc] initWithNibName:@"ContestPhaseViewController" bundle:nil];
     detailViewController.phase = [elementsArray objectAtIndex:[indexPath row]];
     detailViewController.modelData = self.modelData;

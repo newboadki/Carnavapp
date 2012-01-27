@@ -18,9 +18,9 @@
 
 - (void) updateArrayOfElements
 {
-    
     NSArray* linksArray = [modelData objectForKey:LINKS_KEY];
     [self setElementsArray:linksArray];
+    NSLog(@">>> %@", tableView);
     [self.tableView reloadData];
 }
 
@@ -33,6 +33,12 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setMaskAsTitleView];
+}
+
 
 
 #pragma mark - Table view data source
@@ -40,8 +46,13 @@
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell..
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
+
     Link* link = [elementsArray objectAtIndex:[indexpath row]];    
-    cell.textLabel.text = link.desc;
+    NSLog(@"- %@", link.desc);
+    groupNameLabel.text = link.desc;
+    categoryNameLabel.text = @"";
 
 }
 
@@ -50,11 +61,14 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
+    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
+    
+
     Link* selectedLink = [elementsArray objectAtIndex:[indexPath row]];
     NSLog(@"link: %@", selectedLink.url);
     LinkViewerViewController* nextController = [[LinkViewerViewController alloc] initWithNibName:@"LinkViewerViewController" bundle:nil];

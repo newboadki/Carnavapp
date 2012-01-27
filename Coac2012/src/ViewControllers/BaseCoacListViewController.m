@@ -154,4 +154,17 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
+    cell.selectedBackgroundView = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCellSelected" owner:self options:nil] objectAtIndex:0] ;
+    [self configureCell:cell indexPath:indexPath];
+}
+
+- (void) setMaskAsTitleView
+{
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"antifaz_52x37.png"]];    
+    self.navigationItem.titleView = imageView;
+}
+
 @end
