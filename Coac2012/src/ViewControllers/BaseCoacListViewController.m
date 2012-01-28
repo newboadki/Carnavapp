@@ -158,7 +158,15 @@
 {
     UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
     cell.selectedBackgroundView = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCellSelected" owner:self options:nil] objectAtIndex:0] ;
-    [self configureCell:cell indexPath:indexPath];
+    [self configureCell:cell indexPath:indexPath]; 
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        [[[tableView cellForRowAtIndexPath:indexPath] selectedBackgroundView] setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        
+        [[tableView cellForRowAtIndexPath:indexPath] setSelectedBackgroundView:nil];
+    }];
+
 }
 
 - (void) setMaskAsTitleView

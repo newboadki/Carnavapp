@@ -36,7 +36,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIImageView" id="898311379">
+					<object class="IBUIImageView" id="690525888">
 						<reference key="NSNextResponder" ref="493102500"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{45, 68}</string>
@@ -48,11 +48,11 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">inactiveDay2_45x68.png</string>
+							<string key="NSResourceName">inactiveDay_45x68.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUIHighlightedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">activeDay2_45x68.png</string>
+							<string key="NSResourceName">activeDay_45x68.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="329820289">
@@ -123,7 +123,7 @@
 				<string key="NSFrameSize">{45, 68}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="898311379"/>
+				<reference key="NSNextKeyView" ref="690525888"/>
 				<string key="NSReuseIdentifierKey">_NS:196</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -166,7 +166,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">backgroundView</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="898311379"/>
+						<reference key="destination" ref="690525888"/>
 					</object>
 					<int key="connectionID">15</int>
 				</object>
@@ -195,7 +195,7 @@
 						<reference key="object" ref="493102500"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="329820289"/>
-							<reference ref="898311379"/>
+							<reference ref="690525888"/>
 							<reference ref="78714241"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -207,7 +207,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
-						<reference key="object" ref="898311379"/>
+						<reference key="object" ref="690525888"/>
 						<reference key="parent" ref="493102500"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -274,8 +274,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="activeDay2_45x68.png">{45, 68}</string>
-			<string key="inactiveDay2_45x68.png">{45, 68}</string>
+			<string key="activeDay_45x68.png">{45, 68}</string>
+			<string key="inactiveDay_45x68.png">{45, 68}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>

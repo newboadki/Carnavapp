@@ -18,6 +18,7 @@
     
     CalendarScrollViewController* tapDelegate;
     NSString* dateString;
+    NSDictionary* monthsNames;
 }
 
 @property (nonatomic, retain) UILabel* monthLabel;

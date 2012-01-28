@@ -19,4 +19,5 @@
 }
 
 - (void) downloadAndParseModelData;
+- (void) cancelOperations;
 @end

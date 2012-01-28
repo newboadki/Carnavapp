@@ -32,6 +32,7 @@
     {
         tapDelegate = delegate;
         dateString = [ds copy];
+        monthsNames = [[NSDictionary dictionaryWithObjectsAndKeys:@"ENE", [NSNumber numberWithInt:1],@"FEB", [NSNumber numberWithInt:2],@"MAR", [NSNumber numberWithInt:3],@"ABR", [NSNumber numberWithInt:4],@"MAY", [NSNumber numberWithInt:5],@"JUN", [NSNumber numberWithInt:6],@"JUL", [NSNumber numberWithInt:7],@"AGO", [NSNumber numberWithInt:8],@"SEP", [NSNumber numberWithInt:9],@"OCT", [NSNumber numberWithInt:10],@"NOV", [NSNumber numberWithInt:11],@"DIC", [NSNumber numberWithInt:12], nil] retain];
     }
     
     return self;
@@ -93,10 +94,10 @@
 
 - (void) viewDidLoad
 {
-    // The view will be on the hierarchy already
+    // The view will be on the hierarchy already    
     int day, month, year;
     [self componentesFromDateString:dateString day:(&day) month:(&month) year:(&year)];
-    self.monthLabel.text = [NSString stringWithFormat:@"%d", month];
+    self.monthLabel.text = [NSString stringWithFormat:@"%@", [monthsNames objectForKey:[NSNumber numberWithInt:month]]];
     self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 }
 
@@ -138,13 +139,13 @@
 
 - (void) setNormalLook
 {
-    self.backgroundView.image = [UIImage imageNamed:@"inactiveDay2_45x68.png"];
+    self.backgroundView.image = [UIImage imageNamed:@"inactiveDay_45x68.png"];
 }
 
 
 - (void) setActiveLook
 {
-    self.backgroundView.image = [UIImage imageNamed:@"activeDay2_45x68.png"];
+    self.backgroundView.image = [UIImage imageNamed:@"activeDay_45x68.png"];
 }
 
 
@@ -171,6 +172,7 @@
 
 - (void) dealloc
 {
+    [monthsNames release];
     [dateString release];
     [monthLabel release];
     [dayLabel release];

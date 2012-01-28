@@ -7,7 +7,7 @@
 //
 
 #import "ModelDataHandler.h"
-
+#import "UIApplication+PRPNetworkActivity.h"
 
 @interface ModelDataHandler()
 @property (nonatomic, retain) CoacParser* parser;
@@ -33,9 +33,22 @@
 }
 
 
+
+#pragma mark - Public Interface
+
 - (void) downloadAndParseModelData
 {
+    NSLog(@"AAA");
+    [[UIApplication sharedApplication] prp_pushNetworkActivity];
     [fileDownloader start];
+}
+
+
+- (void) cancelOperations
+{
+    [fileDownloader cancelAndRemoveFile:YES];                   // Stop the download
+    [self setParser:nil];                                       // Stop the parser
+    [[UIApplication sharedApplication] prp_popNetworkActivity]; // Show Network indicator
 }
 
 
@@ -44,16 +57,34 @@
 
 - (void) handleSuccessfullDownloadWithData:(NSData*)data
 {
+    [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+    
     CoacParser* p = [[CoacParser alloc] initWithXMLData:data delegate:self];
     [self setParser:p];
     [p release];
     [self.parser start];
 }
 
-- (void) handleFailedDownloadWithError:(NSError *)error{}
-- (void) handleAuthenticationFailed{}
-- (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode{}
-- (void) connectionCouldNotBeCreated{}
+- (void) handleFailedDownloadWithError:(NSError *)error
+{
+    [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+}
+
+- (void) handleAuthenticationFailed
+{
+    [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+}
+
+- (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode
+{
+    [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+}
+
+
+- (void) connectionCouldNotBeCreated
+{
+    [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+}
 
 
 

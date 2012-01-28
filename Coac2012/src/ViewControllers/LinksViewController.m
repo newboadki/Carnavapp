@@ -20,7 +20,6 @@
 {
     NSArray* linksArray = [modelData objectForKey:LINKS_KEY];
     [self setElementsArray:linksArray];
-    NSLog(@">>> %@", tableView);
     [self.tableView reloadData];
 }
 
@@ -50,7 +49,6 @@
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
 
     Link* link = [elementsArray objectAtIndex:[indexpath row]];    
-    NSLog(@"- %@", link.desc);
     groupNameLabel.text = link.desc;
     categoryNameLabel.text = @"";
 

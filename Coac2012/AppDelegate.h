@@ -13,5 +13,5 @@
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (strong, nonatomic) IBOutlet UITabBarController *tabBarController;
-
+@property (retain, nonatomic) ModelDataHandler* dataHandler;
 @end
