@@ -27,8 +27,8 @@
 
 - (void) viewDidLoad;
 - (void) viewDidUnload;
-- (void) viewWillAppear;
-- (void) viewWillDisappear;
+- (void) viewWillAppear:(BOOL)animated;
+- (void) viewWillDisappear:(BOOL)animated;
 
 - (void) handleTap:(id) sender;
 

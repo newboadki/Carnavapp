@@ -124,15 +124,21 @@
 }
 
 
-- (void) viewWillAppear
+- (void) viewWillAppear:(BOOL)animated
 {
-    
+    for (RoundedCalendarBoxController* cont in dayBoxControllers)
+    {
+        [cont viewWillAppear];
+    }    
 }
 
 
-- (void) viewWillDisappear
-{
-    
+- (void) viewWillDisappear:(BOOL)animated
+{    
+    for (RoundedCalendarBoxController* cont in dayBoxControllers)
+    {
+        [cont viewWillDisappear];
+    }
 }
 
 

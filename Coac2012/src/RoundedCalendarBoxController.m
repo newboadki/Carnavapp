@@ -32,7 +32,19 @@
     {
         tapDelegate = delegate;
         dateString = [ds copy];
-        monthsNames = [[NSDictionary dictionaryWithObjectsAndKeys:@"ENE", [NSNumber numberWithInt:1],@"FEB", [NSNumber numberWithInt:2],@"MAR", [NSNumber numberWithInt:3],@"ABR", [NSNumber numberWithInt:4],@"MAY", [NSNumber numberWithInt:5],@"JUN", [NSNumber numberWithInt:6],@"JUL", [NSNumber numberWithInt:7],@"AGO", [NSNumber numberWithInt:8],@"SEP", [NSNumber numberWithInt:9],@"OCT", [NSNumber numberWithInt:10],@"NOV", [NSNumber numberWithInt:11],@"DIC", [NSNumber numberWithInt:12], nil] retain];
+        monthsNames = [[NSDictionary dictionaryWithObjectsAndKeys:@"ENE", [NSNumber numberWithInt:1],
+                                                                  @"FEB", [NSNumber numberWithInt:2],
+                                                                  @"MAR", [NSNumber numberWithInt:3],
+                                                                  @"ABR", [NSNumber numberWithInt:4],
+                                                                  @"MAY", [NSNumber numberWithInt:5],
+                                                                  @"JUN", [NSNumber numberWithInt:6],
+                                                                  @"JUL", [NSNumber numberWithInt:7],
+                                                                  @"AGO", [NSNumber numberWithInt:8],
+                                                                  @"SEP", [NSNumber numberWithInt:9],
+                                                                  @"OCT", [NSNumber numberWithInt:10],
+                                                                  @"NOV", [NSNumber numberWithInt:11],
+                                                                  @"DIC", [NSNumber numberWithInt:12], 
+                                                                  nil] retain];
     }
     
     return self;
@@ -111,7 +123,8 @@
     dayLabel = nil;
     [backgroundView release];
     backgroundView = nil;
-
+    [view release];
+    view = nil;
 }
 
 
