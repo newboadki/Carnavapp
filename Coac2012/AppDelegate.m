@@ -27,17 +27,49 @@
     [super dealloc];
 }
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     ModelDataHandler* dh = [[ModelDataHandler alloc] init];
     [self setDataHandler:dh];
     [dh release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(handleDataIsReady:) 
+                                                 name:MODEL_DATA_IS_READY_NOTIFICATION 
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(handleNoNetwork:) 
+                                                 name:NO_NETWORK_NOTIFICATION 
+                                               object:nil];
+
             
     
-
+    loadingScreen = [[[[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil] objectAtIndex:0] retain];
+    loadingScreen.frame = CGRectMake(0, 20, 320, 460);
+    [self.window addSubview:loadingScreen];
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+
+- (void) handleDataIsReady:(NSNotification*)notif
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        [loadingScreen setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        [loadingScreen removeFromSuperview];
+        [loadingScreen release];
+    }];
+}
+
+- (void) handleNoNetwork:(NSNotification*)notif
+{
+    UILabel* label = (UILabel*)[loadingScreen viewWithTag:LOADING_SCREEN_LABEL_TAG];
+    label.text = @"No hay acceso a internet";
 }
 
 
@@ -64,7 +96,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    NSLog(@"ACTIVE !!!");
+    UILabel* label = (UILabel*)[loadingScreen viewWithTag:LOADING_SCREEN_LABEL_TAG];
+    label.text = @"Buscando conexion a internet";
+
     [self.dataHandler downloadAndParseModelData];
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.

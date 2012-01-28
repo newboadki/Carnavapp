@@ -9,6 +9,7 @@
 
 // Notifications
 #define MODEL_DATA_IS_READY_NOTIFICATION @"ModelDataIsReadyNotification"
+#define NO_NETWORK_NOTIFICATION @"NoNetworkNotification"
 
 // Modalities
 #define GROUPS_KEY @"GroupsKey"
@@ -26,3 +27,4 @@
 // GroupCellInfo NIB
 #define GROUP_NAME_LABEL_TAG 1
 #define CATEGORY_LABEL_TAG 2
+#define LOADING_SCREEN_LABEL_TAG 1

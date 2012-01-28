@@ -12,7 +12,6 @@
 
 @interface ContestPhaseViewController()
 - (void) handleGroupsForDate:(NSString*) selectedDate;
-- (void) handleDataIsReady:(NSNotification*)notif;
 - (NSArray*) daysForPhase:(NSString*) phase;
 @end
 
@@ -38,6 +37,7 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+
 
 - (void) handleGroupsForDate:(NSString*) selectedDate
 {
@@ -72,17 +72,6 @@
         [self updateArrayOfElements];
     }
 }
-
-- (void) handleDataIsReady:(NSNotification*)notif
-{
-    // Get the data
-    NSDictionary* data = [notif userInfo];
-    [self setModelData:data];    
-
-    [self updateArrayOfElements];
-
-}
-
 
 
 #pragma mark - View lifecycle

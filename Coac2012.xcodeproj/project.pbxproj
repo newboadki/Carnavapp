@@ -72,6 +72,8 @@
 		00AECAB214CAC6DC005CE4DC /* Coac2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */; };
 		00BC176F14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */; };
 		00BC177014D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */; };
+		00BC177614D4100B00D043E7 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC177514D4100B00D043E7 /* LoadingScreen.xib */; };
+		00BC177714D4100B00D043E7 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC177514D4100B00D043E7 /* LoadingScreen.xib */; };
 		00C0BC3514CAC89D00427E42 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */; };
 		00C0BC3614CAC89D00427E42 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */; };
 		00C0BC3714CAC89D00427E42 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2714CAC89D00427E42 /* FileDownloader.m */; };
@@ -300,6 +302,7 @@
 		00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coac2012Tests.m; sourceTree = "<group>"; };
 		00BC176D14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+PRPNetworkActivity.h"; sourceTree = "<group>"; };
 		00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+PRPNetworkActivity.m"; sourceTree = "<group>"; };
+		00BC177514D4100B00D043E7 /* LoadingScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
 		00C0BC2214CAC89D00427E42 /* ConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLogger.h; sourceTree = "<group>"; };
 		00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleLogger.m; sourceTree = "<group>"; };
 		00C0BC2614CAC89D00427E42 /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
@@ -600,6 +603,7 @@
 				00820C4814CC6665008A914A /* MainWindow.xib */,
 				00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */,
 				0084FEF314D222CB002A074E /* GroupInfoCellSelected.xib */,
+				00BC177514D4100B00D043E7 /* LoadingScreen.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -1237,6 +1241,7 @@
 				0084FEEC14D20D3F002A074E /* activeDay2_45x68.png in Resources */,
 				0084FEEE14D20D3F002A074E /* inactiveDay2_45x68.png in Resources */,
 				0084FEF414D222CB002A074E /* GroupInfoCellSelected.xib in Resources */,
+				00BC177614D4100B00D043E7 /* LoadingScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,6 +1281,7 @@
 				0084FEED14D20D3F002A074E /* activeDay2_45x68.png in Resources */,
 				0084FEEF14D20D3F002A074E /* inactiveDay2_45x68.png in Resources */,
 				0084FEF514D222CB002A074E /* GroupInfoCellSelected.xib in Resources */,
+				00BC177714D4100B00D043E7 /* LoadingScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

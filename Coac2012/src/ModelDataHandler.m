@@ -9,6 +9,7 @@
 #import "ModelDataHandler.h"
 #import "UIApplication+PRPNetworkActivity.h"
 
+    
 @interface ModelDataHandler()
 @property (nonatomic, retain) CoacParser* parser;
 @end
@@ -16,6 +17,7 @@
 @implementation ModelDataHandler
 
 @synthesize parser;
+
 
 - (id) init
 {
@@ -38,7 +40,6 @@
 
 - (void) downloadAndParseModelData
 {
-    NSLog(@"AAA");
     [[UIApplication sharedApplication] prp_pushNetworkActivity];
     [fileDownloader start];
 }
@@ -68,22 +69,27 @@
 - (void) handleFailedDownloadWithError:(NSError *)error
 {
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+    [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
+
 }
 
 - (void) handleAuthenticationFailed
 {
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+    [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
 
 - (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode
 {
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+    [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
 
 
 - (void) connectionCouldNotBeCreated
 {
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
+    [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
 
 

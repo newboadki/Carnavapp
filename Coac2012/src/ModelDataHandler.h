@@ -13,11 +13,14 @@
 #import "CoacParserDelegateProtocol.h"
 #import "Constants.h"
 
+
 @interface ModelDataHandler : NSObject <FileDownloaderDelegateProtocol, CoacParserDelegateProtocol>
 {
     FileDownloader* fileDownloader;
 }
 
+
 - (void) downloadAndParseModelData;
 - (void) cancelOperations;
+
 @end
