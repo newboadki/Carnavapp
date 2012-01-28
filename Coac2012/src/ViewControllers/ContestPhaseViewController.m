@@ -146,7 +146,8 @@
     }
     else
     {
-        groupNameLabel.text = @"DESCANSO";
+        groupNameLabel.text = @"-- DESCANSO --";
+        [cell setUserInteractionEnabled:NO];
     }
 }
 

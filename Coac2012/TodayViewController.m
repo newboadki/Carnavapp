@@ -72,8 +72,9 @@
     }
     else
     {
-        groupNameLabel.text = @"DESCANSO";
+        groupNameLabel.text = @"-- DESCANSO --";
         categoryNameLabel.text = @"";
+        [cell setUserInteractionEnabled:NO];
     }
 }
 
