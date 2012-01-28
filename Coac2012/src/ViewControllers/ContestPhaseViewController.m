@@ -212,11 +212,11 @@
     
     NSArray* diasFinal = [NSArray arrayWithObjects:@"17/02/2012", nil];
     
-    NSDictionary* daysForPhases = [[NSDictionary alloc] initWithObjectsAndKeys:diasPreliminar, PRELIMINAR, 
+    NSDictionary* daysForPhases = [[[NSDictionary alloc] initWithObjectsAndKeys:diasPreliminar, PRELIMINAR, 
                                                                                diasCuartos, CUARTOS, 
                                                                                diasSemifinales, SEMIFINALES, 
                                                                                diasFinal, FINAL,
-                                                                               nil];
+                                                                               nil] autorelease];
     
     return [daysForPhases objectForKey:currentPhase];
 }

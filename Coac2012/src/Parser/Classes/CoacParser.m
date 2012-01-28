@@ -230,6 +230,7 @@
     l.desc = [[linkElement attributeForName:DESCRIPTION_ATTRIBUTE_NAME] stringValue];
 
     [links addObject:l];
+    [l release];
 }
 
 
@@ -307,12 +308,14 @@
         [modalities setObject:newGroupsForModalidy forKey:modality];
         [newGroupsForModalidy release];
     }
+    
+    [ag release];
 }
 
 
 - (NSArray*) parseComponents:(CXMLElement*)componentsElement
 {
-    NSMutableArray* components = [[NSMutableArray alloc] init];
+    NSMutableArray* components = [[[NSMutableArray alloc] init] autorelease];
     NSArray* componenteNodes = [componentsElement elementsForName:COMPONENT_TAG];
     
     for (CXMLElement* componentElement in componenteNodes)
@@ -323,7 +326,7 @@
         [components addObject:c];
         [c release];
     }
-    
+
     return [NSArray arrayWithArray:components];
 
 }
@@ -331,7 +334,7 @@
 
 - (NSArray*) parseVideos:(CXMLElement*)videosElement
 {
-    NSMutableArray* videos = [[NSMutableArray alloc] init];
+    NSMutableArray* videos = [[[NSMutableArray alloc] init] autorelease];
     NSArray* videosNodes = [videosElement elementsForName:VIDEO_TAG];
     
     for (CXMLElement* videoElement in videosNodes)
@@ -350,7 +353,7 @@
 
 - (NSArray*) parsePictures:(CXMLElement*)fotosElement
 {
-    NSMutableArray* fotos = [[NSMutableArray alloc] init];
+    NSMutableArray* fotos = [[[NSMutableArray alloc] init] autorelease];
     NSArray* fotosNodes = [fotosElement elementsForName:PICTURE_TAG];
     
     for (CXMLElement* fotoElement in fotosNodes)
@@ -369,7 +372,7 @@
 
 - (NSArray*) parseComments:(CXMLElement*)commentsElement
 {
-    NSMutableArray* comments = [[NSMutableArray alloc] init];
+    NSMutableArray* comments = [[[NSMutableArray alloc] init] autorelease];
     NSArray* commentsNodes = [commentsElement elementsForName:COMMENT_TAG];
     
     for (CXMLElement* commentElement in commentsNodes)

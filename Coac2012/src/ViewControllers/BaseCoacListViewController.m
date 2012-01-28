@@ -216,7 +216,8 @@
 - (void) setMaskAsTitleView
 {
     UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"antifaz_52x37.png"]];    
-    self.navigationItem.titleView = imageView;
+    [self.navigationItem setTitleView:imageView];
+    [imageView release];
 }
 
 @end
