@@ -10,7 +10,7 @@
 #import "Link.h"
 
 
-@interface LinkViewerViewController : UIViewController
+@interface LinkViewerViewController : UIViewController <UIWebViewDelegate>
 {
     IBOutlet UIWebView* webView;    
     Link* link;

@@ -56,7 +56,7 @@
 
 #pragma mark - View Related methods
 
-#define PADDING 0
+#define PADDING 0.1
 
 - (void) loadView
 {

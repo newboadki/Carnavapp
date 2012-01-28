@@ -36,6 +36,14 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    UIActivityIndicatorView* activityIndicator = (UIActivityIndicatorView*)[self.view viewWithTag:1];
+    activityIndicator.hidden = YES;
+
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
