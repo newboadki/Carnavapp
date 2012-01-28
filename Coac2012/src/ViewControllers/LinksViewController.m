@@ -16,6 +16,8 @@
 
 
 
+#pragma mark - super class extension methods
+
 - (void) updateArrayOfElements
 {
     NSArray* linksArray = [modelData objectForKey:LINKS_KEY];
@@ -23,6 +25,20 @@
     [self.tableView reloadData];
 }
 
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+{
+    // Configure the cell..
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
+    
+    Link* link = [elementsArray objectAtIndex:[indexpath row]];    
+    groupNameLabel.text = link.desc;
+    categoryNameLabel.text = @"";    
+}
+
+
+
+# pragma mark - View lifecycle mthods
 
 - (void)didReceiveMemoryWarning
 {
@@ -36,22 +52,6 @@
 {
     [super viewDidLoad];
     [self setMaskAsTitleView];
-}
-
-
-
-#pragma mark - Table view data source
-
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
-{
-    // Configure the cell..
-    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-
-    Link* link = [elementsArray objectAtIndex:[indexpath row]];    
-    groupNameLabel.text = link.desc;
-    categoryNameLabel.text = @"";
-
 }
 
 

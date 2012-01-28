@@ -24,6 +24,10 @@
 @synthesize tableView;
 @synthesize loadingLabel;
 
+
+
+#pragma mark - Initializer methods
+
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -44,6 +48,10 @@
     
 }
 
+
+
+#pragma mark - Memory Management
+
 - (void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
@@ -53,6 +61,10 @@
     [tableView release];
     [super dealloc];
 }
+
+
+
+#pragma mark - Notification handlers
 
 - (void) handleDataIsReady:(NSNotification*)notif
 {
@@ -147,6 +159,7 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     int numberOfRows = 0;
@@ -158,6 +171,7 @@
     
 	return numberOfRows;	
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -183,6 +197,7 @@
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
@@ -195,8 +210,8 @@
         
         [[tableView cellForRowAtIndexPath:indexPath] setSelectedBackgroundView:nil];
     }];
-
 }
+
 
 - (void) setMaskAsTitleView
 {

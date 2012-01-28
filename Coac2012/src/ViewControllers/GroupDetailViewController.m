@@ -14,6 +14,9 @@
 @synthesize modalityLabel, authorLabel, directorLabel, cityLabel, nameLabel;
 @synthesize imageWebView;
 
+
+#pragma mark - Initializers 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -24,13 +27,7 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
+
 
 #pragma mark - View lifecycle
 
@@ -57,6 +54,7 @@
     }
 }
 
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -70,19 +68,25 @@
     [self setImageWebView:nil];
 }
 
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation))
-    {
-        modalityLabel.center = CGPointMake(300, 5);
-    }
-}
+
+
+#pragma mark - Memory Management
 
 - (void) dealloc
 {

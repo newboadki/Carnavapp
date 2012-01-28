@@ -13,6 +13,9 @@
 @implementation ContestPhasesViewController
 
 
+
+#pragma mark - Initializers
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -23,10 +26,9 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [super dealloc];
-}
+
+
+#pragma mark - View Life-cycle
 
 - (void)didReceiveMemoryWarning
 {
@@ -42,7 +44,9 @@
     [self setMaskAsTitleView];
 }
 
-#pragma mark - Table view data source
+
+
+#pragma mark - Super class extension methods
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
@@ -70,6 +74,15 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      
+}
+
+
+
+#pragma mark - Memory Management
+
+- (void) dealloc
+{
+    [super dealloc];
 }
 
 @end

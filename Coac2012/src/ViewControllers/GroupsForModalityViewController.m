@@ -19,6 +19,10 @@
 
 @synthesize modality;
 
+
+
+#pragma mark - Parent class extension methods
+
 - (void) setModelData:(NSDictionary *)theModelData
 {
     if (self->modelData != theModelData)
@@ -47,25 +51,6 @@
     [self setElementsArray:modalityGroups];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    self.title = NSLocalizedString(self.modality, self.modality);
-}
-
-
-#pragma mark - Table view data source
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
@@ -79,15 +64,29 @@
         groupNameLabel.text = ag.nombre;
         categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
     }    
-
+    
 }
 
 
-- (void) dealloc
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
 {
-    [modality release];
-    [super dealloc];    
+    [super viewDidLoad];
+    self.title = NSLocalizedString(self.modality, self.modality);
 }
+
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+
 
 #pragma mark - Table view delegate
 
@@ -102,5 +101,16 @@
     [detailViewController release];
      
 }
+
+
+
+#pragma mark - Memory Management
+
+- (void) dealloc
+{
+    [modality release];
+    [super dealloc];    
+}
+
 
 @end

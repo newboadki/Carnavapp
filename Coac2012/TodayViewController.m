@@ -17,6 +17,9 @@
 @implementation TodayViewController
 
 
+
+#pragma mark - Parent Class extentsion methods
+
 - (void) updateArrayOfElements
 {
     NSDate* today = [NSDate date];
@@ -33,31 +36,6 @@
     [self showAlertIfNoConstestToday];
 }
 
-
-- (void) showAlertIfNoConstestToday
-{
-    if (modelData && ([elementsArray count] == 0))
-    {
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Informacion" message:@"Hoy no hay concurso" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
-        [alertView show];
-        [alertView release];
-    }
-    
-}
-
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self showAlertIfNoConstestToday];
-    [self setMaskAsTitleView];
-}
-
-
-
-#pragma mark - Table view data source
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
@@ -78,6 +56,34 @@
     }
 }
 
+
+
+#pragma mark - Helper Methods
+
+- (void) showAlertIfNoConstestToday
+{
+    if (modelData && ([elementsArray count] == 0))
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Informacion" message:@"Hoy no hay concurso" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+        [alertView show];
+        [alertView release];
+    }    
+}
+
+
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self showAlertIfNoConstestToday];
+    [self setMaskAsTitleView];
+}
+
+
+
+#pragma mark - Table view data source
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

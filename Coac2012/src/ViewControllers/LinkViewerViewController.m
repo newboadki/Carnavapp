@@ -12,14 +12,8 @@
 
 @synthesize webView, link;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
+#pragma mark - Memory Management
 
 - (void) dealloc
 {
@@ -28,6 +22,7 @@
     [super dealloc];
     
 }
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -35,6 +30,10 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+
+
+
+#pragma mark - UIWebViewDelegate protocol
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {

@@ -14,6 +14,9 @@
 @implementation ModalitiesViewController
 
 
+
+#pragma mark - Parent Class extentsion methods
+
 - (void) updateArrayOfElements
 {
     NSDictionary* modalitiesDic = [modelData objectForKey:MODALITIES_KEY];
@@ -30,6 +33,17 @@
 }
 
 
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+{
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
+    
+    NSString* currentModality = [elementsArray objectAtIndex:[indexpath row]];    
+    groupNameLabel.text = currentModality;
+	categoryNameLabel.text = @"";
+}
+
+
 
 #pragma mark - View lifecycle
 
@@ -40,19 +54,6 @@
     [self setMaskAsTitleView];
 }
 
-
-#pragma mark -
-#pragma mark Table view data source
-
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
-{
-    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-    
-    NSString* currentModality = [elementsArray objectAtIndex:[indexpath row]];    
-    groupNameLabel.text = currentModality;
-	categoryNameLabel.text = @"";
-}
 
 
 #pragma mark -
@@ -74,4 +75,5 @@
     [[self navigationController] pushViewController:nextController animated:YES];
     [nextController release];
 }
+
 @end
