@@ -23,7 +23,7 @@
     NSOperationQueue*    queue;
 }
 
-@property (nonatomic, copy)   NSData*   xmlData;
+@property (nonatomic, retain)   NSData*   xmlData;
 @property (nonatomic, assign) id        delegate;
 
 - (id) initWithXMLData:(NSData*) theXml delegate:(id)theDelegate;

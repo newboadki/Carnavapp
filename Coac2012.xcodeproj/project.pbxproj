@@ -61,6 +61,8 @@
 		0088C14014D5A8C6001319EF /* SpacedOneLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0088C13E14D5A8C6001319EF /* SpacedOneLabelCell.xib */; };
 		0088C14214D5A91F001319EF /* SpacedOneLabelSlectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */; };
 		0088C14314D5A91F001319EF /* SpacedOneLabelSlectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */; };
+		0088C14514D5B5B6001319EF /* CoacParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0088C14414D5B5B6001319EF /* CoacParserSpec.m */; };
+		0088C14C14D5BB68001319EF /* group.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0088C14B14D5BB68001319EF /* group.xml */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
@@ -289,6 +291,8 @@
 		0088C13B14D5A1E4001319EF /* details_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_bg.png; sourceTree = "<group>"; };
 		0088C13E14D5A8C6001319EF /* SpacedOneLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpacedOneLabelCell.xib; sourceTree = "<group>"; };
 		0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpacedOneLabelSlectedCell.xib; sourceTree = "<group>"; };
+		0088C14414D5B5B6001319EF /* CoacParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParserSpec.m; sourceTree = "<group>"; };
+		0088C14B14D5BB68001319EF /* group.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = group.xml; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1096,6 +1100,8 @@
 			children = (
 				00C0BD5514CACD9500427E42 /* ParserTests.h */,
 				00C0BD5614CACD9500427E42 /* ParserTests.m */,
+				0088C14414D5B5B6001319EF /* CoacParserSpec.m */,
+				0088C14B14D5BB68001319EF /* group.xml */,
 			);
 			name = "Parser Tests";
 			path = ../Coac2012/src/Parser/Tests;
@@ -1313,6 +1319,7 @@
 				0088C13D14D5A1E4001319EF /* details_bg.png in Resources */,
 				0088C14014D5A8C6001319EF /* SpacedOneLabelCell.xib in Resources */,
 				0088C14314D5A91F001319EF /* SpacedOneLabelSlectedCell.xib in Resources */,
+				0088C14C14D5BB68001319EF /* group.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1484,6 +1491,7 @@
 				00DC4AC214D0B2F60018E3E3 /* LinkViewerViewController.m in Sources */,
 				00EA736514D1534400DD1DEF /* BaseCoacListViewController.m in Sources */,
 				00BC177014D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */,
+				0088C14514D5B5B6001319EF /* CoacParserSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

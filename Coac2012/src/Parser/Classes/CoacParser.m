@@ -77,6 +77,7 @@
 - (void) showCalendar;
 - (void) showLinks;
 - (void) showModalities;
+- (NSDictionary*) doParsingSync;
 @end
 
 
@@ -86,14 +87,14 @@
 @synthesize xmlData;
 @synthesize delegate;
 
-- (id) initWithXMLData:(NSData*)theXml delegate:(id)theDelegate;
+- (id) initWithXMLData:(NSData*)theXml delegate:(id)theDelegate
 {
 	/************************************************************************************/
 	/* Custom init method																*/
 	/************************************************************************************/	
 	if(self = [super init])
 	{
-		xmlData = [theXml copy];
+		xmlData = [theXml retain];
         delegate = theDelegate;
         groups = [[NSMutableArray alloc] init];
         calendar = [[NSMutableDictionary alloc] init];
@@ -118,36 +119,41 @@
 	/* stack.																			*/
 	/************************************************************************************/    
     NSBlockOperation* op = [NSBlockOperation blockOperationWithBlock:^{
-        // Clear data structures before loading any parsed data        
-        [groups removeAllObjects];
-        [calendar removeAllObjects];
-        [links removeAllObjects];
-        [modalities removeAllObjects];
-        
-        // Parse
-        [self parseElementsOfXpath:@"/coac2012/agrupaciones/agrupacion"];
-        [self parseElementsOfXpath:@"/coac2012/calendario/dia"];
-        [self parseElementsOfXpath:@"/coac2012/enlaces/enlace"];    
-        
-        // Debugging
-        /*[self showAgrupaciones];
-        [self showCalendar];
-        [self showLinks];
-        [self showModalities];    */    
-        
-        NSDictionary* results = [NSDictionary dictionaryWithObjectsAndKeys:groups, GROUPS_KEY, 
-                                                                           calendar, CALENDAR_KEY, 
-                                                                           links, LINKS_KEY, 
-                                                                           modalities, MODALITIES_KEY, nil];
-        
+        NSDictionary* results = [self doParsingSync];
         [(id)delegate performSelectorOnMainThread:@selector(parsingDidFinishWithResultsDictionary:) withObject:results waitUntilDone:YES];    
-
+        
     }];
-	
-    [queue addOperation:op];    
+    
+    [queue addOperation:op];   
 }
 
 
+- (NSDictionary*) doParsingSync
+{
+    // Clear data structures before loading any parsed data        
+    [groups removeAllObjects];
+    [calendar removeAllObjects];
+    [links removeAllObjects];
+    [modalities removeAllObjects];
+    
+    // Parse
+    [self parseElementsOfXpath:@"/coac2012/agrupaciones/agrupacion"];
+    [self parseElementsOfXpath:@"/coac2012/calendario/dia"];
+    [self parseElementsOfXpath:@"/coac2012/enlaces/enlace"];    
+    
+    // Debugging
+    /*[self showAgrupaciones];
+     [self showCalendar];
+     [self showLinks];
+     [self showModalities];*/    
+    
+    
+    NSDictionary* results = [NSDictionary dictionaryWithObjectsAndKeys:groups, GROUPS_KEY, 
+                             calendar, CALENDAR_KEY, 
+                             links, LINKS_KEY, 
+                             modalities, MODALITIES_KEY, nil];
+    return results;
+}
 
 #pragma mark - Parsing Helpers
 

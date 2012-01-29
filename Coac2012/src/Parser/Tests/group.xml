@@ -1,0 +1,29 @@
+<coac2012>    
+	<agrupaciones>
+		<agrupacion id="1" modalidad="CORO" nombre="Los hijos del 78" autor="Francisco Javier Sevilla Pecci/Manuel Sevilla Pecci/Tino Tovar" director="Antonio Cuesta Pino"
+            localidad="CÃ¡diz" coac2011="La infanterÃ­a (8Âº Cuartos)" cabeza_serie="false" 
+            info="El coro a pie"
+            url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
+            url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"
+            url_videos=""
+            puntos="">
+			<componentes>
+				<componente nombre="Paco" voz="Grave"/>
+			</componentes>
+			<videos>
+				<video descripcion="Preeliminar - ActuaciÃ³n completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
+			</videos>
+			<fotos>
+				<foto descripcion="" url=""/>
+			</fotos>
+			<comentarios>
+				<comentario origen="La Voz de CÃ¡diz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
+				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
+				<comentario origen="AndalucÃ­a InformaciÃ³n - Comentario preeliminares" url="http://goo.gl/jRCPg"/>
+				<comentario origen="Carnavaldecadiz.com - Comentarios" url="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78_comentarios.php"/>
+				<comentario origen="Diario BahÃ­a de CÃ¡diz - Comentarios preeliminares" url="http://www.diariobahiadecadiz.com/detalle-noticia-15905"/>
+				<comentario origen="Diario de CÃ¡diz - Comentarios preeliminares" url="http://www.diariodecadiz.es/article/carnavalcadiz2012/1165743/criacutetica/las/actuaciones/la/primera/noche/coac.html"/>
+			</comentarios>
+		</agrupacion>
+    </agrupaciones>
+</coac2012>
