@@ -763,6 +763,7 @@
 		00AECAAA14CAC6DC005CE4DC /* Coac2012Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00C0BD5414CACD9500427E42 /* Parser Tests */,
 				00C0BD1914CAC9B800427E42 /* OCMock */,
 				00C0BC3F14CAC99F00427E42 /* Kiwi */,
 				00AECAB014CAC6DC005CE4DC /* Coac2012Tests.h */,
@@ -1075,7 +1076,6 @@
 			isa = PBXGroup;
 			children = (
 				00C0BD5114CACD9500427E42 /* Classes */,
-				00C0BD5414CACD9500427E42 /* Tests */,
 			);
 			name = Parser;
 			path = src/Parser;
@@ -1091,13 +1091,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		00C0BD5414CACD9500427E42 /* Tests */ = {
+		00C0BD5414CACD9500427E42 /* Parser Tests */ = {
 			isa = PBXGroup;
 			children = (
 				00C0BD5514CACD9500427E42 /* ParserTests.h */,
 				00C0BD5614CACD9500427E42 /* ParserTests.m */,
 			);
-			path = Tests;
+			name = "Parser Tests";
+			path = ../Coac2012/src/Parser/Tests;
 			sourceTree = "<group>";
 		};
 		00C0BD7614CAE01800427E42 /* Models */ = {

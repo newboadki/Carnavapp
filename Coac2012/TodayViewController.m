@@ -12,6 +12,7 @@
 
 @interface TodayViewController(protected)
 - (void) showAlertIfNoConstestToday;
+- (NSString*) todaysDateString;
 @end
 
 @implementation TodayViewController
@@ -22,12 +23,7 @@
 
 - (void) updateArrayOfElements
 {
-    NSDate* today = [NSDate date];
-    NSDateFormatter* df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"dd/MM/yyyy"];
-    NSString* todaysDateString = [df stringFromDate:today];
-    [df release];
-    
+    NSString* todaysDateString = [self todaysDateString];
     NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];    
     NSArray* groupsForDate = [calendarDictionary objectForKey:todaysDateString];
     [self setElementsArray:groupsForDate];
@@ -71,6 +67,18 @@
 }
 
 
+- (NSString*) todaysDateString
+{
+    NSDate* today = [NSDate date];
+    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSString* todaysDateString = [df stringFromDate:today];
+    [df release];
+
+    return todaysDateString;
+}
+
+
 
 #pragma mark - View lifecycle
 
@@ -84,6 +92,13 @@
 
 
 #pragma mark - Table view data source
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+
+    return [self todaysDateString];
+}
+
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
