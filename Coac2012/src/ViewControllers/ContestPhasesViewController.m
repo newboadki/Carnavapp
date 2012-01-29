@@ -51,12 +51,8 @@
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell...
-    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-    
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];    
     groupNameLabel.text = [elementsArray objectAtIndex:[indexpath row]];
-    categoryNameLabel.text = @"";
-
 }
 
 
@@ -74,6 +70,20 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      
+}
+
+
+
+#pragma mark - custom cells
+
+- (NSString*) normalCellNibName
+{
+    return @"SpacedOneLabelCell";
+}
+
+- (NSString*) selectedCellNibName
+{
+    return @"SpacedOneLabelSlectedCell";
 }
 
 

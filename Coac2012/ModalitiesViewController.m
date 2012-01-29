@@ -45,6 +45,20 @@
 
 
 
+#pragma mark - custom cells
+
+- (NSString*) normalCellNibName
+{
+    return @"SpacedOneLabelCell";
+}
+
+- (NSString*) selectedCellNibName
+{
+    return @"SpacedOneLabelSlectedCell";
+}
+
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
