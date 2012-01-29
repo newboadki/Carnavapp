@@ -26,4 +26,8 @@
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void) setMaskAsTitleView;
 - (void) handleDataIsReady:(NSNotification*)notif;
+
+- (NSString*) normalCellNibName;
+- (NSString*) selectedCellNibName;
+
 @end

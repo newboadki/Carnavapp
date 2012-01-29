@@ -25,7 +25,6 @@
 @synthesize loadingLabel;
 
 
-
 #pragma mark - Initializer methods
 
 - (id) initWithCoder:(NSCoder *)aDecoder
@@ -186,7 +185,7 @@
     UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
+        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:[self normalCellNibName] owner:self options:nil] objectAtIndex:0];
         cell = cellFromNib;
         self.cellFromNib = nil;    
     }
@@ -201,7 +200,7 @@
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
-    cell.selectedBackgroundView = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCellSelected" owner:self options:nil] objectAtIndex:0] ;
+    cell.selectedBackgroundView = [[[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil] objectAtIndex:0] ;
     [self configureCell:cell indexPath:indexPath]; 
     
     [UIView animateWithDuration:0.5 animations:^{
@@ -218,6 +217,16 @@
     UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"antifaz_52x37.png"]];    
     [self.navigationItem setTitleView:imageView];
     [imageView release];
+}
+
+- (NSString*) normalCellNibName
+{
+    return @"GroupInfoCell";
+}
+
+- (NSString*) selectedCellNibName
+{
+    return @"GroupInfoCellSelected";
 }
 
 @end

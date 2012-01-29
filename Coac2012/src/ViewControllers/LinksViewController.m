@@ -29,11 +29,9 @@
 {
     // Configure the cell..
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
     Link* link = [elementsArray objectAtIndex:[indexpath row]];    
-    groupNameLabel.text = link.desc;
-    categoryNameLabel.text = @"";    
+    groupNameLabel.text = link.desc; 
 }
 
 
@@ -75,5 +73,26 @@
     [[self navigationController] pushViewController:nextController animated:YES];
     [nextController release];
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 40.0f;
+}
+
+
+
+#pragma mark - custom cells
+
+- (NSString*) normalCellNibName
+{
+    return @"LinkCell";
+}
+
+- (NSString*) selectedCellNibName
+{
+    return @"LinkCellSelected";
+}
+
 
 @end
