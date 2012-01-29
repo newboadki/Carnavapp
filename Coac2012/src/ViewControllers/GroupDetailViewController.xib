@@ -12,6 +12,7 @@
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBUIWebView</string>
+			<string>IBUIActivityIndicatorView</string>
 			<string>IBUIImageView</string>
 			<string>IBUIView</string>
 			<string>IBUILabel</string>
@@ -88,12 +89,12 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="185306787">
-							<int key="type">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="139737414">
+							<int key="type">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="368534782">
-							<string key="NSName">Helvetica</string>
+						<object class="NSFont" key="IBUIFont" id="392022864">
+							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -116,13 +117,20 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
-						<reference key="IBUIFontDescription" ref="185306787"/>
-						<reference key="IBUIFont" ref="368534782"/>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="185306787">
+							<int key="type">1</int>
+							<double key="pointSize">15</double>
+						</object>
+						<object class="NSFont" key="IBUIFont" id="71052669">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">15</double>
+							<int key="NSfFlags">16</int>
+						</object>
 					</object>
 					<object class="IBUILabel" id="551935386">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{68, 268}, {232, 21}}</string>
+						<string key="NSFrame">{{74, 268}, {226, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="843030613"/>
@@ -138,7 +146,7 @@
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<reference key="IBUIFontDescription" ref="185306787"/>
-						<reference key="IBUIFont" ref="368534782"/>
+						<reference key="IBUIFont" ref="71052669"/>
 					</object>
 					<object class="IBUILabel" id="138267451">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -158,13 +166,13 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
-						<reference key="IBUIFontDescription" ref="185306787"/>
-						<reference key="IBUIFont" ref="368534782"/>
+						<reference key="IBUIFontDescription" ref="139737414"/>
+						<reference key="IBUIFont" ref="392022864"/>
 					</object>
 					<object class="IBUILabel" id="921636823">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 326}, {80, 21}}</string>
+						<string key="NSFrame">{{20, 326}, {72, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="649881422"/>
@@ -179,8 +187,8 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
-						<reference key="IBUIFontDescription" ref="185306787"/>
-						<reference key="IBUIFont" ref="368534782"/>
+						<reference key="IBUIFontDescription" ref="139737414"/>
+						<reference key="IBUIFont" ref="392022864"/>
 					</object>
 					<object class="IBUILabel" id="843030613">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -200,8 +208,8 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
-						<reference key="IBUIFontDescription" ref="185306787"/>
-						<reference key="IBUIFont" ref="368534782"/>
+						<reference key="IBUIFontDescription" ref="139737414"/>
+						<reference key="IBUIFont" ref="392022864"/>
 					</object>
 					<object class="IBUIImageView" id="45659475">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -211,7 +219,7 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="993890403"/>
 						<string key="NSReuseIdentifierKey">_NS:567</string>
-						<object class="NSColor" key="IBUIBackgroundColor" id="845457090">
+						<object class="NSColor" key="IBUIBackgroundColor" id="86156657">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MCAwAA</bytes>
 						</object>
@@ -226,7 +234,7 @@
 					<object class="IBUILabel" id="1033561739">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{82, 297}, {218, 21}}</string>
+						<string key="NSFrame">{{87, 297}, {213, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="921636823"/>
@@ -242,7 +250,7 @@
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<reference key="IBUIFontDescription" ref="185306787"/>
-						<reference key="IBUIFont" ref="368534782"/>
+						<reference key="IBUIFont" ref="71052669"/>
 					</object>
 					<object class="IBUILabel" id="649881422">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -263,7 +271,7 @@
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<reference key="IBUIFontDescription" ref="185306787"/>
-						<reference key="IBUIFont" ref="368534782"/>
+						<reference key="IBUIFont" ref="71052669"/>
 					</object>
 					<object class="IBUIWebView" id="993890403">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -273,12 +281,23 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1044188540"/>
 						<string key="NSReuseIdentifierKey">_NS:693</string>
-						<reference key="IBUIBackgroundColor" ref="845457090"/>
+						<reference key="IBUIBackgroundColor" ref="86156657"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
+						<float key="IBUIAlpha">0.0</float>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIScalesPageToFit">YES</bool>
+					</object>
+					<object class="IBUIActivityIndicatorView" id="260826032">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">-2147483356</int>
+						<string key="NSFrame">{{269, 58}, {20, 20}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:1030</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 64}, {320, 367}}</string>
@@ -366,6 +385,22 @@
 					</object>
 					<int key="connectionID">21</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">loadingIndicator</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="260826032"/>
+					</object>
+					<int key="connectionID">24</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="993890403"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">22</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -390,6 +425,7 @@
 							<reference ref="45659475"/>
 							<reference ref="993890403"/>
 							<reference ref="551935386"/>
+							<reference ref="260826032"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -460,6 +496,11 @@
 						<reference key="object" ref="993890403"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">23</int>
+						<reference key="object" ref="260826032"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -473,6 +514,7 @@
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -484,7 +526,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">21</int>
+			<int key="maxID">24</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -497,6 +539,7 @@
 						<string key="cityLabel">UILabel</string>
 						<string key="directorLabel">UILabel</string>
 						<string key="imageWebView">UIWebView</string>
+						<string key="loadingIndicator">UIActivityIndicatorView</string>
 						<string key="modalityLabel">UILabel</string>
 						<string key="nameLabel">UILabel</string>
 					</dictionary>
@@ -520,6 +563,10 @@
 						<object class="IBToOneOutletInfo" key="imageWebView">
 							<string key="name">imageWebView</string>
 							<string key="candidateClassName">UIWebView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="loadingIndicator">
+							<string key="name">loadingIndicator</string>
+							<string key="candidateClassName">UIActivityIndicatorView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="modalityLabel">
 							<string key="name">modalityLabel</string>

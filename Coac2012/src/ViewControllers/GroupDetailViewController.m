@@ -17,7 +17,7 @@
 
 @synthesize group;
 @synthesize modalityLabel, authorLabel, directorLabel, cityLabel, nameLabel;
-@synthesize imageWebView, backgroundDefaultImage;
+@synthesize imageWebView, backgroundDefaultImage, loadingIndicator;
 
 
 
@@ -61,6 +61,7 @@
     [self setNameLabel:nil];
     [self setImageWebView:nil];
     [self setBackgroundDefaultImage:nil];    
+    [self setLoadingIndicator:nil];
 }
 
 
@@ -91,10 +92,33 @@
     [layer setBorderColor:[[UIColor blackColor] CGColor]];    
 }
 
+
+
+#pragma UIWEbViewDelegate protocol
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [loadingIndicator setHidden:NO];
+    [loadingIndicator startAnimating];
+}
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        imageWebView.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [loadingIndicator stopAnimating];
+    }];
+}
+
+
+
 #pragma mark - Memory Management
 
 - (void) dealloc
 {
+    imageWebView.delegate = nil;
     [group release];
     [nameLabel release];
     [modalityLabel release];
@@ -103,6 +127,7 @@
     [cityLabel release];
     [imageWebView release];
     [backgroundDefaultImage release];
+    [loadingIndicator release];
     [super dealloc];
 }
 

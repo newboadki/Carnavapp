@@ -10,7 +10,7 @@
 #import "Agrupacion.h"
 
 
-@interface GroupDetailViewController : UIViewController
+@interface GroupDetailViewController : UIViewController <UIWebViewDelegate>
 {
     Agrupacion*   group;
     
@@ -21,6 +21,7 @@
     IBOutlet UILabel* cityLabel;
     IBOutlet UIWebView* imageWebView;
     IBOutlet UIImageView* backgroundDefaultImage;
+    IBOutlet UIActivityIndicatorView* loadingIndicator;
 }
 
 @property (nonatomic, retain) Agrupacion*   group;
@@ -31,5 +32,6 @@
 @property (nonatomic, retain) UILabel* cityLabel;
 @property (nonatomic, retain) UIWebView* imageWebView;
 @property (nonatomic, retain) UIImageView* backgroundDefaultImage;
+@property (nonatomic, retain) UIActivityIndicatorView* loadingIndicator;
 
 @end
