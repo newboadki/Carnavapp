@@ -7,10 +7,11 @@
 //
 
 #import "LinkViewerViewController.h"
+#import "UIApplication+PRPNetworkActivity.h"
 
 @implementation LinkViewerViewController
 
-@synthesize webView, link;
+@synthesize webView, link, loadingIndicator;
 
 
 #pragma mark - Memory Management
@@ -18,9 +19,11 @@
 - (void) dealloc
 {
     [link release];
-    [webView release];
-    [super dealloc];
+    webView.delegate = nil;
+    [webView release];    
+    [loadingIndicator release];
     
+    [super dealloc];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,12 +38,21 @@
 
 #pragma mark - UIWebViewDelegate protocol
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webViewDidStartLoad:(UIWebView*)webView
 {
-    UIActivityIndicatorView* activityIndicator = (UIActivityIndicatorView*)[self.view viewWithTag:1];
-    activityIndicator.hidden = YES;
-
+    [loadingIndicator setHidesWhenStopped:NO];
+    [loadingIndicator startAnimating];
+    [[UIApplication sharedApplication] prp_pushNetworkActivity];
 }
+
+
+- (void)webViewDidFinishLoad:(UIWebView*)webView
+{
+    [loadingIndicator setHidesWhenStopped:YES];
+    [loadingIndicator stopAnimating];
+    [[UIApplication sharedApplication] prp_popNetworkActivity];
+}
+
 
 
 #pragma mark - View lifecycle
@@ -60,6 +72,8 @@
     [super viewDidUnload];
     [webView release];
     webView = nil;
+    [loadingIndicator release];
+    loadingIndicator = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

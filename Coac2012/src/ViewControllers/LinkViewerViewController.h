@@ -13,10 +13,12 @@
 @interface LinkViewerViewController : UIViewController <UIWebViewDelegate>
 {
     IBOutlet UIWebView* webView;    
+    IBOutlet UIActivityIndicatorView* loadingIndicator;
     Link* link;
 }
 
 @property (nonatomic, retain) UIWebView* webView;
 @property (nonatomic, retain) Link* link;
+@property (nonatomic, retain) UIActivityIndicatorView* loadingIndicator;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "GroupDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIApplication+PRPNetworkActivity.h"
+
 
 @interface GroupDetailViewController()
 - (void) roundCornersForView:(UIView*)theView;
@@ -100,6 +102,7 @@
 {
     [loadingIndicator setHidden:NO];
     [loadingIndicator startAnimating];
+    [[UIApplication sharedApplication] prp_pushNetworkActivity];
 }
 
 
@@ -109,6 +112,7 @@
         imageWebView.alpha = 1.0;
     } completion:^(BOOL finished) {
         [loadingIndicator stopAnimating];
+        [[UIApplication sharedApplication] prp_popNetworkActivity];
     }];
 }
 
