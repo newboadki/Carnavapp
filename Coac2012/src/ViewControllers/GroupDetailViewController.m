@@ -7,25 +7,17 @@
 //
 
 #import "GroupDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
+@interface GroupDetailViewController()
+- (void) roundCornersForView:(UIView*)theView;
+@end
 
 @implementation GroupDetailViewController
 
 @synthesize group;
 @synthesize modalityLabel, authorLabel, directorLabel, cityLabel, nameLabel;
-@synthesize imageWebView;
-
-
-#pragma mark - Initializers 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) 
-    {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize imageWebView, backgroundDefaultImage;
 
 
 
@@ -51,6 +43,8 @@
             NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             [imageWebView loadRequest:requestObj];
         }
+        [self roundCornersForView:imageWebView];
+        [self roundCornersForView:backgroundDefaultImage];
     }
 }
 
@@ -66,6 +60,7 @@
     [self setCityLabel:nil];    
     [self setNameLabel:nil];
     [self setImageWebView:nil];
+    [self setBackgroundDefaultImage:nil];    
 }
 
 
@@ -86,6 +81,16 @@
 
 
 
+#pragma mark - Helpers
+
+- (void) roundCornersForView:(UIView*)theView
+{
+    CALayer* layer = theView.layer;
+    [layer setBorderWidth:0.5];
+    [layer setCornerRadius:6.0];
+    [layer setBorderColor:[[UIColor blackColor] CGColor]];    
+}
+
 #pragma mark - Memory Management
 
 - (void) dealloc
@@ -97,6 +102,7 @@
     [directorLabel release];
     [cityLabel release];
     [imageWebView release];
+    [backgroundDefaultImage release];
     [super dealloc];
 }
 

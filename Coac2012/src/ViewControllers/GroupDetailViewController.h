@@ -20,6 +20,7 @@
     IBOutlet UILabel* directorLabel;
     IBOutlet UILabel* cityLabel;
     IBOutlet UIWebView* imageWebView;
+    IBOutlet UIImageView* backgroundDefaultImage;
 }
 
 @property (nonatomic, retain) Agrupacion*   group;
@@ -29,5 +30,6 @@
 @property (nonatomic, retain) UILabel* directorLabel;
 @property (nonatomic, retain) UILabel* cityLabel;
 @property (nonatomic, retain) UIWebView* imageWebView;
+@property (nonatomic, retain) UIImageView* backgroundDefaultImage;
 
 @end
