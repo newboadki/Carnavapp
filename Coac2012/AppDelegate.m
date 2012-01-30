@@ -48,7 +48,7 @@
             
     
     loadingScreen = [[[[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil] objectAtIndex:0] retain];
-    loadingScreen.frame = CGRectMake(0, 20, 320, 460);
+    loadingScreen.frame = CGRectMake(0, 0, 320, 480);
     [self.window addSubview:loadingScreen];
     
     // Override point for customization after application launch.

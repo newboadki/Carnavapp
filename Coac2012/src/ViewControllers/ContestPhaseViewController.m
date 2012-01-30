@@ -207,7 +207,7 @@
     
     NSArray* diasSemifinales = [NSArray arrayWithObjects:@"13/02/2012", 
                                                          @"14/02/2012",
-                                                         @"15/01/2012",
+                                                         @"15/02/2012",
                                                          nil];
     
     NSArray* diasFinal = [NSArray arrayWithObjects:@"17/02/2012", nil];
