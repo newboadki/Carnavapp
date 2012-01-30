@@ -308,7 +308,7 @@
 		0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpacedOneLabelSlectedCell.xib; sourceTree = "<group>"; };
 		0088C14414D5B5B6001319EF /* CoacParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParserSpec.m; sourceTree = "<group>"; };
 		0088C14B14D5BB68001319EF /* group.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = group.xml; sourceTree = "<group>"; };
-		00AECA7414CAC6DC005CE4DC /* Coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00AECA7414CAC6DC005CE4DC /* coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -736,7 +736,7 @@
 		00AECA7514CAC6DC005CE4DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00AECA7414CAC6DC005CE4DC /* Coac2012.app */,
+				00AECA7414CAC6DC005CE4DC /* coac2012.app */,
 				00AECAA314CAC6DC005CE4DC /* Coac2012Tests.octest */,
 			);
 			name = Products;
@@ -1196,9 +1196,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00AECA7314CAC6DC005CE4DC /* Coac2012 */ = {
+		00AECA7314CAC6DC005CE4DC /* coac2012 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Coac2012" */;
+			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */;
 			buildPhases = (
 				00AECA7014CAC6DC005CE4DC /* Sources */,
 				00AECA7114CAC6DC005CE4DC /* Frameworks */,
@@ -1208,9 +1208,9 @@
 			);
 			dependencies = (
 			);
-			name = Coac2012;
+			name = coac2012;
 			productName = Coac2012;
-			productReference = 00AECA7414CAC6DC005CE4DC /* Coac2012.app */;
+			productReference = 00AECA7414CAC6DC005CE4DC /* coac2012.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00AECAA214CAC6DC005CE4DC /* Coac2012Tests */ = {
@@ -1253,7 +1253,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00AECA7314CAC6DC005CE4DC /* Coac2012 */,
+				00AECA7314CAC6DC005CE4DC /* coac2012 */,
 				00AECAA214CAC6DC005CE4DC /* Coac2012Tests */,
 			);
 		};
@@ -1546,7 +1546,7 @@
 /* Begin PBXTargetDependency section */
 		00AECAA914CAC6DC005CE4DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 00AECA7314CAC6DC005CE4DC /* Coac2012 */;
+			target = 00AECA7314CAC6DC005CE4DC /* coac2012 */;
 			targetProxy = 00AECAA814CAC6DC005CE4DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1633,6 +1633,7 @@
 		00AECAB614CAC6DC005CE4DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Borja Arias (K2NMFRWB9T)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coac2012/Coac2012-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1640,6 +1641,7 @@
 				INFOPLIST_FILE = "Coac2012/Coac2012-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E5EB4D93-8D9F-4A3E-B21D-79A3D5535EBE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1740,7 +1742,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Coac2012" */ = {
+		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00AECAB614CAC6DC005CE4DC /* Debug */,
