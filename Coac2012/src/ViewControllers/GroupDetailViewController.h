@@ -22,6 +22,7 @@
     IBOutlet UIWebView* imageWebView;
     IBOutlet UIImageView* backgroundDefaultImage;
     IBOutlet UIActivityIndicatorView* loadingIndicator;
+    IBOutlet UIButton* videosButton;
 }
 
 @property (nonatomic, retain) Agrupacion*   group;
@@ -33,5 +34,9 @@
 @property (nonatomic, retain) UIWebView* imageWebView;
 @property (nonatomic, retain) UIImageView* backgroundDefaultImage;
 @property (nonatomic, retain) UIActivityIndicatorView* loadingIndicator;
+@property (nonatomic, retain) UIButton* videosButton;
+
+- (IBAction) videosButtonPressed;
+
 
 @end

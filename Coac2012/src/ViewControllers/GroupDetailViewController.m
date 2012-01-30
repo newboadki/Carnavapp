@@ -9,7 +9,7 @@
 #import "GroupDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIApplication+PRPNetworkActivity.h"
-
+#import "VideosForGroupViewController.h"
 
 @interface GroupDetailViewController()
 - (void) roundCornersForView:(UIView*)theView;
@@ -20,7 +20,7 @@
 @synthesize group;
 @synthesize modalityLabel, authorLabel, directorLabel, cityLabel, nameLabel;
 @synthesize imageWebView, backgroundDefaultImage, loadingIndicator;
-
+@synthesize videosButton;
 
 
 #pragma mark - View lifecycle
@@ -47,6 +47,11 @@
         }
         [self roundCornersForView:imageWebView];
         [self roundCornersForView:backgroundDefaultImage];
+        
+        if ([group.videos count] > 0)
+        {
+            [videosButton setHidden:NO];
+        }
     }
 }
 
@@ -64,6 +69,7 @@
     [self setImageWebView:nil];
     [self setBackgroundDefaultImage:nil];    
     [self setLoadingIndicator:nil];
+    [self setVideosButton:nil];
 }
 
 
@@ -118,6 +124,24 @@
 
 
 
+#pragma mark - IBActions
+
+- (IBAction) videosButtonPressed
+{
+    if ([group.videos count] > 0)
+    {
+        VideosForGroupViewController* controller = [[VideosForGroupViewController alloc] initWithNibName:@"VideosForGroupViewController" bundle:nil];
+        
+        [controller setElementsArray:group.videos];
+        [[self navigationController] pushViewController:controller animated:YES];
+        [controller release];
+    }
+    
+    
+}
+
+
+
 #pragma mark - Memory Management
 
 - (void) dealloc
@@ -132,6 +156,7 @@
     [imageWebView release];
     [backgroundDefaultImage release];
     [loadingIndicator release];
+    [videosButton release];
     [super dealloc];
 }
 

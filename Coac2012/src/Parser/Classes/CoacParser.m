@@ -349,7 +349,12 @@
         Video* v = [[Video alloc] init];
         v.desc = [[videoElement attributeForName:DESCRIPTION_ATTRIBUTE_NAME] stringValue];
         v.url = [[videoElement attributeForName:URL_ATTRIBUTE_NAME] stringValue];
-        [videos addObject:v];
+        
+        if (([v.desc length] > 0) && [v.url length] > 0)
+        {
+            [videos addObject:v];
+        }        
+        
         [v release];
     }
     

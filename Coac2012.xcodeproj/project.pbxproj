@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0019596814D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */; };
+		0019596914D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */; };
+		0019596A14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */; };
+		0019596B14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */; };
 		0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960514CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
@@ -82,6 +86,14 @@
 		00AECAA714CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECAAF14CAC6DC005CE4DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00AECAAD14CAC6DC005CE4DC /* InfoPlist.strings */; };
 		00AECAB214CAC6DC005CE4DC /* Coac2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */; };
+		00B8AF2814D72E3B002799BC /* videosButton4.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2414D72E3B002799BC /* videosButton4.png */; };
+		00B8AF2914D72E3B002799BC /* videosButton4.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2414D72E3B002799BC /* videosButton4.png */; };
+		00B8AF2A14D72E3B002799BC /* videosButton3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2514D72E3B002799BC /* videosButton3.png */; };
+		00B8AF2B14D72E3B002799BC /* videosButton3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2514D72E3B002799BC /* videosButton3.png */; };
+		00B8AF2C14D72E3B002799BC /* videosButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2614D72E3B002799BC /* videosButton2.png */; };
+		00B8AF2D14D72E3B002799BC /* videosButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2614D72E3B002799BC /* videosButton2.png */; };
+		00B8AF2E14D72E3B002799BC /* videosButton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2714D72E3B002799BC /* videosButton1.png */; };
+		00B8AF2F14D72E3B002799BC /* videosButton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B8AF2714D72E3B002799BC /* videosButton1.png */; };
 		00BC176F14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */; };
 		00BC177014D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */; };
 		00BC177614D4100B00D043E7 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC177514D4100B00D043E7 /* LoadingScreen.xib */; };
@@ -255,6 +267,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosForGroupViewController.h; sourceTree = "<group>"; };
+		0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosForGroupViewController.m; sourceTree = "<group>"; };
+		0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosForGroupViewController.xib; sourceTree = "<group>"; };
 		0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedCalendarBoxView.xib; sourceTree = "<group>"; };
 		0080960614CCA072000E1525 /* ContestPhaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseViewController.h; sourceTree = "<group>"; };
 		0080960714CCA072000E1525 /* ContestPhaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseViewController.m; sourceTree = "<group>"; };
@@ -319,6 +334,10 @@
 		00AECAAE14CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00AECAB014CAC6DC005CE4DC /* Coac2012Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coac2012Tests.h; sourceTree = "<group>"; };
 		00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coac2012Tests.m; sourceTree = "<group>"; };
+		00B8AF2414D72E3B002799BC /* videosButton4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videosButton4.png; sourceTree = "<group>"; };
+		00B8AF2514D72E3B002799BC /* videosButton3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videosButton3.png; sourceTree = "<group>"; };
+		00B8AF2614D72E3B002799BC /* videosButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videosButton2.png; sourceTree = "<group>"; };
+		00B8AF2714D72E3B002799BC /* videosButton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videosButton1.png; sourceTree = "<group>"; };
 		00BC176D14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+PRPNetworkActivity.h"; sourceTree = "<group>"; };
 		00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+PRPNetworkActivity.m"; sourceTree = "<group>"; };
 		00BC177514D4100B00D043E7 /* LoadingScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
@@ -634,6 +653,7 @@
 		00820C4714CC64BE008A914A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				00B8AF2214D72DED002799BC /* Group Details View */,
 				0088C13B14D5A1E4001319EF /* details_bg.png */,
 				0084FEEA14D20D3D002A074E /* activeDay2_45x68.png */,
 				0084FEEB14D20D3E002A074E /* inactiveDay2_45x68.png */,
@@ -696,6 +716,9 @@
 				00EA736114D1534400DD1DEF /* BaseCoacListViewController.h */,
 				00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */,
 				00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */,
+				0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */,
+				0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */,
+				0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -784,6 +807,17 @@
 				00AECAAD14CAC6DC005CE4DC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00B8AF2214D72DED002799BC /* Group Details View */ = {
+			isa = PBXGroup;
+			children = (
+				00B8AF2414D72E3B002799BC /* videosButton4.png */,
+				00B8AF2514D72E3B002799BC /* videosButton3.png */,
+				00B8AF2614D72E3B002799BC /* videosButton2.png */,
+				00B8AF2714D72E3B002799BC /* videosButton1.png */,
+			);
+			name = "Group Details View";
 			sourceTree = "<group>";
 		};
 		00BC176C14D3F72A00D043E7 /* NetworkActivityIndicator */ = {
@@ -1274,6 +1308,11 @@
 				0088C13C14D5A1E4001319EF /* details_bg.png in Resources */,
 				0088C13F14D5A8C6001319EF /* SpacedOneLabelCell.xib in Resources */,
 				0088C14214D5A91F001319EF /* SpacedOneLabelSlectedCell.xib in Resources */,
+				0019596A14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */,
+				00B8AF2814D72E3B002799BC /* videosButton4.png in Resources */,
+				00B8AF2A14D72E3B002799BC /* videosButton3.png in Resources */,
+				00B8AF2C14D72E3B002799BC /* videosButton2.png in Resources */,
+				00B8AF2E14D72E3B002799BC /* videosButton1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1320,6 +1359,11 @@
 				0088C14014D5A8C6001319EF /* SpacedOneLabelCell.xib in Resources */,
 				0088C14314D5A91F001319EF /* SpacedOneLabelSlectedCell.xib in Resources */,
 				0088C14C14D5BB68001319EF /* group.xml in Resources */,
+				0019596B14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */,
+				00B8AF2914D72E3B002799BC /* videosButton4.png in Resources */,
+				00B8AF2B14D72E3B002799BC /* videosButton3.png in Resources */,
+				00B8AF2D14D72E3B002799BC /* videosButton2.png in Resources */,
+				00B8AF2F14D72E3B002799BC /* videosButton1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1382,6 +1426,7 @@
 				00DC4AC114D0B2F60018E3E3 /* LinkViewerViewController.m in Sources */,
 				00EA736414D1534400DD1DEF /* BaseCoacListViewController.m in Sources */,
 				00BC176F14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */,
+				0019596814D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1492,6 +1537,7 @@
 				00EA736514D1534400DD1DEF /* BaseCoacListViewController.m in Sources */,
 				00BC177014D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */,
 				0088C14514D5B5B6001319EF /* CoacParserSpec.m in Sources */,
+				0019596914D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

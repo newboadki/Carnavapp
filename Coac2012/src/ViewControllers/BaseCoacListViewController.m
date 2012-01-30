@@ -98,7 +98,7 @@
     [super viewDidLoad];
     loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
     loadingLabel.center = CGPointMake(self.view.frame.size.width/2, (self.view.frame.size.height/2)-55);
-    loadingLabel.text = @"Loading...";
+    loadingLabel.text = @""; // Work in progress. Hidden for now
     loadingLabel.font = [UIFont boldSystemFontOfSize:18];
     loadingLabel.backgroundColor = [UIColor clearColor];
     if (!self.modelData)
