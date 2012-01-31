@@ -19,14 +19,6 @@
 @synthesize tabBarController = _tabBarController;
 @synthesize dataHandler;
 
-- (void)dealloc
-{
-    [_window release];
-    [_tabBarController release];
-    [dataHandler release];
-    [super dealloc];
-}
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -47,9 +39,6 @@
 
             
     
-    loadingScreen = [[[[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil] objectAtIndex:0] retain];
-    loadingScreen.frame = CGRectMake(0, 0, 320, 480);
-    [self.window addSubview:loadingScreen];
     
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
@@ -59,11 +48,11 @@
 
 - (void) handleDataIsReady:(NSNotification*)notif
 {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:1.0 animations:^{
         [loadingScreen setAlpha:0.0];
     } completion:^(BOOL finished) {
         [loadingScreen removeFromSuperview];
-        [loadingScreen release];
+        loadingScreen = nil;
     }];
 }
 
@@ -98,9 +87,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [loadingScreen removeFromSuperview]; // it might be nil by now, but it's ok
+    loadingScreen = [[[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil] objectAtIndex:0];
+    loadingScreen.frame = CGRectMake(0, 0, 320, 480);        
+    [self.window addSubview:loadingScreen];
+
     UILabel* label = (UILabel*)[loadingScreen viewWithTag:LOADING_SCREEN_LABEL_TAG];
     label.text = @"Buscando conexion a internet";
-
     [self.dataHandler downloadAndParseModelData];
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -116,18 +109,13 @@
      */
 }
 
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+- (void)dealloc
 {
+    [_window release];
+    [_tabBarController release];
+    [dataHandler release];
+    [super dealloc];
 }
-*/
 
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
 
 @end
