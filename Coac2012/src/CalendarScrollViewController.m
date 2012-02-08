@@ -11,6 +11,7 @@
 
 @interface CalendarScrollViewController()
 - (void) loadView;
+- (NSString*) todaysDateString;
 @end
 
 
@@ -100,18 +101,24 @@
 - (void) viewDidLoad
 {
     // The view will be on the hierarchy already
-    int i = 0;
+    BOOL todayIsInTheList = NO;
     for (RoundedCalendarBoxController* cont in dayBoxControllers)
     {
-        if (i == 0)
+        NSString* todaysDateString = [self todaysDateString];
+        if ([cont.dateString isEqualToString:todaysDateString])
         {
+            todayIsInTheList = YES;
             [cont setActiveLook];            
         }
-        i++;
 
         [cont viewDidLoad];        
     }
 
+    if (!todayIsInTheList)
+    {
+        RoundedCalendarBoxController* firstController = [dayBoxControllers objectAtIndex:0];
+        [firstController setActiveLook];        
+    }
 }
 
 - (void) viewDidUnload
@@ -160,6 +167,16 @@
     [delegate scrollableBoxTappedWith:tappedBox.dateString];
 }
 
+- (NSString*) todaysDateString
+{
+    NSDate* today = [NSDate date];
+    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSString* todaysDateString = [df stringFromDate:today];
+    [df release];
+    
+    return todaysDateString;
+}
 
 
 #pragma mark - Memory Management
