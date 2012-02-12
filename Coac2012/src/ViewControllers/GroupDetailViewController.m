@@ -136,7 +136,7 @@
 {
     if ([group.videos count] > 0)
     {
-        VideosForGroupViewController* controller = [[VideosForGroupViewController alloc] initWithNibName:@"VideosForGroupViewController" bundle:nil];
+        VideosForGroupViewController* controller = [[VideosForGroupViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
         
         [controller setElementsArray:group.videos];
         [[self navigationController] pushViewController:controller animated:YES];

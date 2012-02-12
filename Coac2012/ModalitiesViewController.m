@@ -82,7 +82,7 @@
     
 
     NSString* selectedModality = [elementsArray objectAtIndex:[indexPath row]];
-    GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"GroupsForModalityViewController" bundle:nil];
+    GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     [nextController setModality:selectedModality];
     [nextController setModelData:self.modelData];
     

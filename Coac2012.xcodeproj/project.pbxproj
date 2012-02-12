@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0019596814D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */; };
 		0019596914D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */; };
-		0019596A14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */; };
-		0019596B14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */; };
 		0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960514CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
@@ -29,8 +27,6 @@
 		00820C4A14CC6665008A914A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C4814CC6665008A914A /* MainWindow.xib */; };
 		00820C5314CC79AE008A914A /* GroupsForModalityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */; };
 		00820C5414CC79AE008A914A /* GroupsForModalityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */; };
-		00820C5514CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */; };
-		00820C5614CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */; };
 		00820C5A14CC8511008A914A /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5814CC8511008A914A /* GroupDetailViewController.m */; };
 		00820C5B14CC8511008A914A /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5814CC8511008A914A /* GroupDetailViewController.m */; };
 		00820C5C14CC8511008A914A /* GroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5914CC8511008A914A /* GroupDetailViewController.xib */; };
@@ -41,8 +37,6 @@
 		00820C6314CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */; };
 		00820C6714CC9A44008A914A /* ContestPhasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C6514CC9A44008A914A /* ContestPhasesViewController.m */; };
 		00820C6814CC9A44008A914A /* ContestPhasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C6514CC9A44008A914A /* ContestPhasesViewController.m */; };
-		00820C6914CC9A44008A914A /* ContestPhasesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */; };
-		00820C6A14CC9A44008A914A /* ContestPhasesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */; };
 		0083613614D7D84E006FA9D5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083613414D7D84E006FA9D5 /* Default.png */; };
 		0083613714D7D84E006FA9D5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083613414D7D84E006FA9D5 /* Default.png */; };
 		0083613814D7D84E006FA9D5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083613514D7D84E006FA9D5 /* Default@2x.png */; };
@@ -83,8 +77,6 @@
 		00AECA9314CAC6DC005CE4DC /* ModalitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */; };
 		00AECA9514CAC6DC005CE4DC /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9414CAC6DC005CE4DC /* second.png */; };
 		00AECA9714CAC6DC005CE4DC /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9614CAC6DC005CE4DC /* second@2x.png */; };
-		00AECA9A14CAC6DC005CE4DC /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */; };
-		00AECA9D14CAC6DC005CE4DC /* ModalitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */; };
 		00AECAA514CAC6DC005CE4DC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECAA414CAC6DC005CE4DC /* SenTestingKit.framework */; };
 		00AECAA614CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECAA714CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
@@ -240,8 +232,6 @@
 		00DC4AB514D0A0DE0018E3E3 /* hoyIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4A9D14D0A0DE0018E3E3 /* hoyIcon@2x.png */; };
 		00DC4ABA14D0AF740018E3E3 /* LinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC4AB814D0AF740018E3E3 /* LinksViewController.m */; };
 		00DC4ABB14D0AF740018E3E3 /* LinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC4AB814D0AF740018E3E3 /* LinksViewController.m */; };
-		00DC4ABC14D0AF740018E3E3 /* LinksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4AB914D0AF740018E3E3 /* LinksViewController.xib */; };
-		00DC4ABD14D0AF740018E3E3 /* LinksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4AB914D0AF740018E3E3 /* LinksViewController.xib */; };
 		00DC4AC114D0B2F60018E3E3 /* LinkViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC4ABF14D0B2F50018E3E3 /* LinkViewerViewController.m */; };
 		00DC4AC214D0B2F60018E3E3 /* LinkViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DC4ABF14D0B2F50018E3E3 /* LinkViewerViewController.m */; };
 		00DC4AC314D0B2F60018E3E3 /* LinkViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */; };
@@ -273,7 +263,6 @@
 /* Begin PBXFileReference section */
 		0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosForGroupViewController.h; sourceTree = "<group>"; };
 		0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosForGroupViewController.m; sourceTree = "<group>"; };
-		0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideosForGroupViewController.xib; sourceTree = "<group>"; };
 		0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedCalendarBoxView.xib; sourceTree = "<group>"; };
 		0080960614CCA072000E1525 /* ContestPhaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseViewController.h; sourceTree = "<group>"; };
 		0080960714CCA072000E1525 /* ContestPhaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseViewController.m; sourceTree = "<group>"; };
@@ -289,7 +278,6 @@
 		00820C4814CC6665008A914A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		00820C5014CC79AD008A914A /* GroupsForModalityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsForModalityViewController.h; sourceTree = "<group>"; };
 		00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsForModalityViewController.m; sourceTree = "<group>"; };
-		00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupsForModalityViewController.xib; path = src/ViewControllers/GroupsForModalityViewController.xib; sourceTree = "<group>"; };
 		00820C5714CC8511008A914A /* GroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailViewController.h; sourceTree = "<group>"; };
 		00820C5814CC8511008A914A /* GroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailViewController.m; sourceTree = "<group>"; };
 		00820C5914CC8511008A914A /* GroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupDetailViewController.xib; path = src/ViewControllers/GroupDetailViewController.xib; sourceTree = "<group>"; };
@@ -297,7 +285,6 @@
 		00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_imagen_agrupacion.jpg; sourceTree = "<group>"; };
 		00820C6414CC9A44008A914A /* ContestPhasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhasesViewController.h; sourceTree = "<group>"; };
 		00820C6514CC9A44008A914A /* ContestPhasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhasesViewController.m; sourceTree = "<group>"; };
-		00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContestPhasesViewController.xib; path = src/ViewControllers/ContestPhasesViewController.xib; sourceTree = "<group>"; };
 		0082FD4014CF631E00337516 /* ScrollableBoxTappedDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollableBoxTappedDelegateProtocol.h; path = ../ScrollableBoxTappedDelegateProtocol.h; sourceTree = "<group>"; };
 		0083613414D7D84E006FA9D5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0083613514D7D84E006FA9D5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -332,8 +319,6 @@
 		00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ModalitiesViewController.m; path = ../../ModalitiesViewController.m; sourceTree = "<group>"; };
 		00AECA9414CAC6DC005CE4DC /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		00AECA9614CAC6DC005CE4DC /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		00AECA9914CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TodayViewController.xib; sourceTree = "<group>"; };
-		00AECA9C14CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ModalitiesViewController.xib; sourceTree = "<group>"; };
 		00AECAA314CAC6DC005CE4DC /* Coac2012Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Coac2012Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECAA414CAC6DC005CE4DC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		00AECAAC14CAC6DC005CE4DC /* Coac2012Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coac2012Tests-Info.plist"; sourceTree = "<group>"; };
@@ -571,14 +556,13 @@
 		00DC4A9D14D0A0DE0018E3E3 /* hoyIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hoyIcon@2x.png"; sourceTree = "<group>"; };
 		00DC4AB714D0AF740018E3E3 /* LinksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinksViewController.h; sourceTree = "<group>"; };
 		00DC4AB814D0AF740018E3E3 /* LinksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinksViewController.m; sourceTree = "<group>"; };
-		00DC4AB914D0AF740018E3E3 /* LinksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinksViewController.xib; sourceTree = "<group>"; };
 		00DC4ABE14D0B2F50018E3E3 /* LinkViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkViewerViewController.h; sourceTree = "<group>"; };
 		00DC4ABF14D0B2F50018E3E3 /* LinkViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkViewerViewController.m; sourceTree = "<group>"; };
-		00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinkViewerViewController.xib; sourceTree = "<group>"; };
+		00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LinkViewerViewController.xib; path = src/ViewControllers/LinkViewerViewController.xib; sourceTree = "<group>"; };
 		00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupInfoCell.xib; sourceTree = "<group>"; };
 		00EA736114D1534400DD1DEF /* BaseCoacListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCoacListViewController.h; sourceTree = "<group>"; };
 		00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoacListViewController.m; sourceTree = "<group>"; };
-		00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCoacListViewController.xib; sourceTree = "<group>"; };
+		00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseCoacListViewController.xib; path = src/ViewControllers/BaseCoacListViewController.xib; sourceTree = "<group>"; };
 		00EA736914D1E3C300DD1DEF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = AppIcon/icon.png; sourceTree = "<group>"; };
 		00EA736A14D1E3C300DD1DEF /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "AppIcon/icon@2x.png"; sourceTree = "<group>"; };
 		00EA737514D1E72C00DD1DEF /* antifaz_52x37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = antifaz_52x37.png; sourceTree = "<group>"; };
@@ -637,13 +621,11 @@
 		00820C4614CC64A7008A914A /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */,
+				00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */,
 				0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */,
 				0080960814CCA072000E1525 /* ContestPhaseViewController.xib */,
 				00820C5914CC8511008A914A /* GroupDetailViewController.xib */,
-				00820C6614CC9A44008A914A /* ContestPhasesViewController.xib */,
-				00820C5214CC79AE008A914A /* GroupsForModalityViewController.xib */,
-				00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */,
-				00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */,
 				00820C4814CC6665008A914A /* MainWindow.xib */,
 				00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */,
 				0084FEF314D222CB002A074E /* GroupInfoCellSelected.xib */,
@@ -715,16 +697,12 @@
 				0080960714CCA072000E1525 /* ContestPhaseViewController.m */,
 				00DC4AB714D0AF740018E3E3 /* LinksViewController.h */,
 				00DC4AB814D0AF740018E3E3 /* LinksViewController.m */,
-				00DC4AB914D0AF740018E3E3 /* LinksViewController.xib */,
 				00DC4ABE14D0B2F50018E3E3 /* LinkViewerViewController.h */,
 				00DC4ABF14D0B2F50018E3E3 /* LinkViewerViewController.m */,
-				00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */,
 				00EA736114D1534400DD1DEF /* BaseCoacListViewController.h */,
 				00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */,
-				00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */,
 				0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */,
 				0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */,
-				0019596714D5EB9600DD5F35 /* VideosForGroupViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1277,14 +1255,10 @@
 				00AECA9014CAC6DC005CE4DC /* first@2x.png in Resources */,
 				00AECA9514CAC6DC005CE4DC /* second.png in Resources */,
 				00AECA9714CAC6DC005CE4DC /* second@2x.png in Resources */,
-				00AECA9A14CAC6DC005CE4DC /* TodayViewController.xib in Resources */,
-				00AECA9D14CAC6DC005CE4DC /* ModalitiesViewController.xib in Resources */,
 				00820C4914CC6665008A914A /* MainWindow.xib in Resources */,
-				00820C5514CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */,
 				00820C5C14CC8511008A914A /* GroupDetailViewController.xib in Resources */,
 				00820C6014CC8EE5008A914A /* cartel.jpg in Resources */,
 				00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
-				00820C6914CC9A44008A914A /* ContestPhasesViewController.xib in Resources */,
 				0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */,
 				0080960B14CCA072000E1525 /* ContestPhaseViewController.xib in Resources */,
 				00DC4A9E14D0A0DE0018E3E3 /* fondoBlanco.png in Resources */,
@@ -1297,7 +1271,6 @@
 				00DC4AB014D0A0DE0018E3E3 /* linksIcon@2x.png in Resources */,
 				00DC4AB214D0A0DE0018E3E3 /* hoyIcon.png in Resources */,
 				00DC4AB414D0A0DE0018E3E3 /* hoyIcon@2x.png in Resources */,
-				00DC4ABC14D0AF740018E3E3 /* LinksViewController.xib in Resources */,
 				00DC4AC314D0B2F60018E3E3 /* LinkViewerViewController.xib in Resources */,
 				00DC4AC614D0B6B70018E3E3 /* GroupInfoCell.xib in Resources */,
 				00EA736614D1534400DD1DEF /* BaseCoacListViewController.xib in Resources */,
@@ -1316,7 +1289,6 @@
 				0088C13C14D5A1E4001319EF /* details_bg.png in Resources */,
 				0088C13F14D5A8C6001319EF /* SpacedOneLabelCell.xib in Resources */,
 				0088C14214D5A91F001319EF /* SpacedOneLabelSlectedCell.xib in Resources */,
-				0019596A14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */,
 				00B8AF2814D72E3B002799BC /* videosButton4.png in Resources */,
 				00B8AF2A14D72E3B002799BC /* videosButton3.png in Resources */,
 				00B8AF2C14D72E3B002799BC /* videosButton2.png in Resources */,
@@ -1332,11 +1304,9 @@
 			files = (
 				00AECAAF14CAC6DC005CE4DC /* InfoPlist.strings in Resources */,
 				00820C4A14CC6665008A914A /* MainWindow.xib in Resources */,
-				00820C5614CC79AE008A914A /* GroupsForModalityViewController.xib in Resources */,
 				00820C5D14CC8511008A914A /* GroupDetailViewController.xib in Resources */,
 				00820C6114CC8EE5008A914A /* cartel.jpg in Resources */,
 				00820C6314CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */,
-				00820C6A14CC9A44008A914A /* ContestPhasesViewController.xib in Resources */,
 				0080960514CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */,
 				0080960C14CCA072000E1525 /* ContestPhaseViewController.xib in Resources */,
 				00DC4A9F14D0A0DE0018E3E3 /* fondoBlanco.png in Resources */,
@@ -1349,7 +1319,6 @@
 				00DC4AB114D0A0DE0018E3E3 /* linksIcon@2x.png in Resources */,
 				00DC4AB314D0A0DE0018E3E3 /* hoyIcon.png in Resources */,
 				00DC4AB514D0A0DE0018E3E3 /* hoyIcon@2x.png in Resources */,
-				00DC4ABD14D0AF740018E3E3 /* LinksViewController.xib in Resources */,
 				00DC4AC414D0B2F60018E3E3 /* LinkViewerViewController.xib in Resources */,
 				00DC4AC714D0B6B70018E3E3 /* GroupInfoCell.xib in Resources */,
 				00EA736714D1534400DD1DEF /* BaseCoacListViewController.xib in Resources */,
@@ -1369,7 +1338,6 @@
 				0088C14014D5A8C6001319EF /* SpacedOneLabelCell.xib in Resources */,
 				0088C14314D5A91F001319EF /* SpacedOneLabelSlectedCell.xib in Resources */,
 				0088C14C14D5BB68001319EF /* group.xml in Resources */,
-				0019596B14D5EB9600DD5F35 /* VideosForGroupViewController.xib in Resources */,
 				00B8AF2914D72E3B002799BC /* videosButton4.png in Resources */,
 				00B8AF2B14D72E3B002799BC /* videosButton3.png in Resources */,
 				00B8AF2D14D72E3B002799BC /* videosButton2.png in Resources */,
@@ -1570,22 +1538,6 @@
 				00AECA8214CAC6DC005CE4DC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		00AECA9814CAC6DC005CE4DC /* TodayViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00AECA9914CAC6DC005CE4DC /* en */,
-			);
-			name = TodayViewController.xib;
-			sourceTree = "<group>";
-		};
-		00AECA9B14CAC6DC005CE4DC /* ModalitiesViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00AECA9C14CAC6DC005CE4DC /* en */,
-			);
-			name = ModalitiesViewController.xib;
 			sourceTree = "<group>";
 		};
 		00AECAAD14CAC6DC005CE4DC /* InfoPlist.strings */ = {
