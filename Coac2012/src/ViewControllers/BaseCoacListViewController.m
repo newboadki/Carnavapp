@@ -22,7 +22,6 @@
 @synthesize elementsArray;
 @synthesize cellFromNib;
 @synthesize tableView;
-@synthesize loadingLabel;
 
 
 #pragma mark - Initializer methods
@@ -30,6 +29,7 @@
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
+    
     if (self)
     {
         [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -43,8 +43,8 @@
                                                    object:nil];
 
     }
-    return self;
     
+    return self;    
 }
 
 
@@ -70,7 +70,6 @@
     NSDictionary* data = [notif userInfo];
     [self setModelData:data];
     [self updateArrayOfElements];
-    [loadingLabel setAlpha:0];
 }
 
 - (void) handleNoNetwork:(NSNotification*)notif
@@ -96,31 +95,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
-    loadingLabel.center = CGPointMake(self.view.frame.size.width/2, (self.view.frame.size.height/2)-55);
-    loadingLabel.text = @""; // Work in progress. Hidden for now
-    loadingLabel.font = [UIFont boldSystemFontOfSize:18];
-    loadingLabel.backgroundColor = [UIColor clearColor];
-    if (!self.modelData)
-    {
-        [self.view addSubview:loadingLabel];
-    }
-    
-    
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     [tableView release];
-    tableView = nil;
-    
-    [loadingLabel release];
-    loadingLabel = nil;
-    
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    tableView = nil;    
 }
 
 - (void)viewWillAppear:(BOOL)animated

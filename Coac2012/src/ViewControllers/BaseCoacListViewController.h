@@ -14,14 +14,12 @@
     NSArray* elementsArray;
     UITableViewCell* cellFromNib;
     IBOutlet UITableView* tableView;
-    UILabel* loadingLabel;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSArray* elementsArray;
 @property (nonatomic, assign) UITableViewCell* cellFromNib;
 @property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, retain) UILabel* loadingLabel;
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void) setMaskAsTitleView;

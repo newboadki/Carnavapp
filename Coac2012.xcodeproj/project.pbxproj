@@ -210,6 +210,7 @@
 		00C0BD9514CAF5D500427E42 /* ChallengeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD9414CAF5D500427E42 /* ChallengeSender.m */; };
 		00C0BD9A14CAF7EC00427E42 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6D14CAD7C200427E42 /* CoreData.framework */; };
 		00C0BD9B14CAF80700427E42 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */; };
+		00D9494E14E83D63006959C2 /* BaseCoacListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */; };
 		00DC4A9E14D0A0DE0018E3E3 /* fondoBlanco.png in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4A9014D0A0DE0018E3E3 /* fondoBlanco.png */; };
 		00DC4A9F14D0A0DE0018E3E3 /* fondoBlanco.png in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4A9014D0A0DE0018E3E3 /* fondoBlanco.png */; };
 		00DC4AA014D0A0DE0018E3E3 /* fondoNegro_320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4A9114D0A0DE0018E3E3 /* fondoNegro_320x480.png */; };
@@ -544,6 +545,7 @@
 		00C0BD9314CAF5D500427E42 /* ChallengeSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeSender.h; sourceTree = "<group>"; };
 		00C0BD9414CAF5D500427E42 /* ChallengeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeSender.m; sourceTree = "<group>"; };
 		00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParserDelegateProtocol.h; sourceTree = "<group>"; };
+		00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoacListViewControllerSpec.m; sourceTree = "<group>"; };
 		00DC4A9014D0A0DE0018E3E3 /* fondoBlanco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondoBlanco.png; sourceTree = "<group>"; };
 		00DC4A9114D0A0DE0018E3E3 /* fondoNegro_320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondoNegro_320x480.png; sourceTree = "<group>"; };
 		00DC4A9614D0A0DE0018E3E3 /* groupsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupsIcon.png; sourceTree = "<group>"; };
@@ -773,6 +775,7 @@
 				00AECAB014CAC6DC005CE4DC /* Coac2012Tests.h */,
 				00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */,
 				00AECAAB14CAC6DC005CE4DC /* Supporting Files */,
+				00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */,
 			);
 			path = Coac2012Tests;
 			sourceTree = "<group>";
@@ -1534,6 +1537,7 @@
 				00BC177014D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */,
 				0088C14514D5B5B6001319EF /* CoacParserSpec.m in Sources */,
 				0019596914D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */,
+				00D9494E14E83D63006959C2 /* BaseCoacListViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
