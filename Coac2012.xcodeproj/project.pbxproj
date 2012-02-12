@@ -621,19 +621,10 @@
 		00820C4614CC64A7008A914A /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */,
-				00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */,
-				0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */,
-				0080960814CCA072000E1525 /* ContestPhaseViewController.xib */,
-				00820C5914CC8511008A914A /* GroupDetailViewController.xib */,
+				00D9494C14E827D4006959C2 /* Cells */,
+				00D9494B14E82786006959C2 /* ViewControllers */,
 				00820C4814CC6665008A914A /* MainWindow.xib */,
-				00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */,
-				0084FEF314D222CB002A074E /* GroupInfoCellSelected.xib */,
 				00BC177514D4100B00D043E7 /* LoadingScreen.xib */,
-				0088C13414D59C40001319EF /* LinkCell.xib */,
-				0088C13814D59DD9001319EF /* LinkCellSelected.xib */,
-				0088C13E14D5A8C6001319EF /* SpacedOneLabelCell.xib */,
-				0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -1145,6 +1136,31 @@
 			);
 			name = Models;
 			path = src/Models;
+			sourceTree = "<group>";
+		};
+		00D9494B14E82786006959C2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */,
+				00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */,
+				0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */,
+				0080960814CCA072000E1525 /* ContestPhaseViewController.xib */,
+				00820C5914CC8511008A914A /* GroupDetailViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		00D9494C14E827D4006959C2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */,
+				0084FEF314D222CB002A074E /* GroupInfoCellSelected.xib */,
+				0088C13414D59C40001319EF /* LinkCell.xib */,
+				0088C13814D59DD9001319EF /* LinkCellSelected.xib */,
+				0088C13E14D5A8C6001319EF /* SpacedOneLabelCell.xib */,
+				0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		00DC4A8F14D0A0DE0018E3E3 /* Backgrounds */ = {
