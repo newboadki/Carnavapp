@@ -103,6 +103,11 @@
 }
 
 
+- (BOOL) implementsSearch
+{
+    return YES;
+}
+
 
 #pragma mark - Memory Management
 

@@ -14,6 +14,8 @@
 @interface BaseCoacListViewController(protected)
 - (void) updateArrayOfElements;
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
+- (void) configureSearchResultCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
+- (BOOL) implementsSearch;
 @end
 
 @implementation BaseCoacListViewController
@@ -22,7 +24,7 @@
 @synthesize elementsArray;
 @synthesize cellFromNib;
 @synthesize tableView;
-
+@synthesize searchResultsTableViewController;
 
 #pragma mark - Initializer methods
 
@@ -41,7 +43,7 @@
                                                  selector:@selector(handleNoNetwork:) 
                                                      name:NO_NETWORK_NOTIFICATION 
                                                    object:nil];
-
+        
     }
     
     return self;    
@@ -55,9 +57,11 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NO_NETWORK_NOTIFICATION object:nil];
+    [groupNameSearchController release];
     [modelData release];
     [elementsArray release];
     [tableView release];
+    [searchResultsTableViewController release];
     [super dealloc];
 }
 
@@ -107,6 +111,18 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // Do geometry related customization here, rather than in view did load. Navigation bars and other elements resizing have already happened by now, but not before
+    if (![self implementsSearch])
+    {            
+        [self setSearchResultsTableViewController:nil];
+        [[self tableView] setContentOffset:CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height)];
+        [[self tableView] setContentInset:UIEdgeInsetsMake(-self.searchDisplayController.searchBar.frame.size.height, 0, 0, 0)];
+        float newHeight = self.tableView.contentSize.height - self.searchDisplayController.searchBar.frame.size.height;
+        [[self tableView] setContentSize:CGSizeMake(self.tableView.contentSize.width, newHeight)];
+        self.searchDisplayController.searchBar.hidden = YES;
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -140,7 +156,7 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section
 {
     int numberOfRows = 0;
     
@@ -200,14 +216,68 @@
     [imageView release];
 }
 
+
 - (NSString*) normalCellNibName
 {
     return @"GroupInfoCell";
 }
 
+
 - (NSString*) selectedCellNibName
 {
     return @"GroupInfoCellSelected";
 }
+
+
+- (BOOL) implementsSearch
+{
+    return NO;
+}
+
+
+
+#pragma mark - UISearchDisplayController
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    return YES;
+}
+
+
+#pragma mark - UISearchBarDelegateProtocol
+
+- (GroupNameSearchController*) groupNameSearchController
+{
+    if (![self implementsSearch])
+    {
+        return nil;
+    }
+    else
+    {
+        if (!groupNameSearchController)
+        {
+            groupNameSearchController = [[GroupNameSearchController alloc] initWithSampleArrayinSampleArray:nil andDelegate:self];
+        }
+        
+        return groupNameSearchController;
+    }
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    GroupNameSearchController* sc = [self groupNameSearchController];
+    sc.sampleArray = elementsArray;
+    [sc searchResultsForString:searchText];
+}
+
+
+- (void) resultsAreReady:(NSArray*)results forSearchString:(NSString*)searchString
+{
+    [[self searchResultsTableViewController] setResults:results];
+    [self.searchDisplayController.searchResultsTableView reloadData];
+}
+
+
+
 
 @end

@@ -211,6 +211,9 @@
 		00C0BD9A14CAF7EC00427E42 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6D14CAD7C200427E42 /* CoreData.framework */; };
 		00C0BD9B14CAF80700427E42 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */; };
 		00D9494E14E83D63006959C2 /* BaseCoacListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */; };
+		00D9495714E84FD0006959C2 /* TodayViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9495614E84FD0006959C2 /* TodayViewControllerSpec.m */; };
+		00D9495A14E87538006959C2 /* GroupNameSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9495914E87538006959C2 /* GroupNameSearchController.m */; };
+		00D9495B14E87538006959C2 /* GroupNameSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9495914E87538006959C2 /* GroupNameSearchController.m */; };
 		00DC4A9E14D0A0DE0018E3E3 /* fondoBlanco.png in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4A9014D0A0DE0018E3E3 /* fondoBlanco.png */; };
 		00DC4A9F14D0A0DE0018E3E3 /* fondoBlanco.png in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4A9014D0A0DE0018E3E3 /* fondoBlanco.png */; };
 		00DC4AA014D0A0DE0018E3E3 /* fondoNegro_320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4A9114D0A0DE0018E3E3 /* fondoNegro_320x480.png */; };
@@ -239,6 +242,10 @@
 		00DC4AC414D0B2F60018E3E3 /* LinkViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */; };
 		00DC4AC614D0B6B70018E3E3 /* GroupInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */; };
 		00DC4AC714D0B6B70018E3E3 /* GroupInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */; };
+		00E73ED614E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E73ED414E90BC6008961B9 /* SearchResultsTableViewController.m */; };
+		00E73ED714E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E73ED414E90BC6008961B9 /* SearchResultsTableViewController.m */; };
+		00E73ED814E90BC6008961B9 /* SearchResultsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E73ED514E90BC6008961B9 /* SearchResultsTableViewController.xib */; };
+		00E73ED914E90BC6008961B9 /* SearchResultsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E73ED514E90BC6008961B9 /* SearchResultsTableViewController.xib */; };
 		00EA736414D1534400DD1DEF /* BaseCoacListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */; };
 		00EA736514D1534400DD1DEF /* BaseCoacListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */; };
 		00EA736614D1534400DD1DEF /* BaseCoacListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */; };
@@ -546,6 +553,9 @@
 		00C0BD9414CAF5D500427E42 /* ChallengeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeSender.m; sourceTree = "<group>"; };
 		00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParserDelegateProtocol.h; sourceTree = "<group>"; };
 		00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoacListViewControllerSpec.m; sourceTree = "<group>"; };
+		00D9495614E84FD0006959C2 /* TodayViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewControllerSpec.m; sourceTree = "<group>"; };
+		00D9495814E87538006959C2 /* GroupNameSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupNameSearchController.h; path = Coac2012/src/GroupNameSearchController.h; sourceTree = SOURCE_ROOT; };
+		00D9495914E87538006959C2 /* GroupNameSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupNameSearchController.m; path = Coac2012/src/GroupNameSearchController.m; sourceTree = SOURCE_ROOT; };
 		00DC4A9014D0A0DE0018E3E3 /* fondoBlanco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondoBlanco.png; sourceTree = "<group>"; };
 		00DC4A9114D0A0DE0018E3E3 /* fondoNegro_320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondoNegro_320x480.png; sourceTree = "<group>"; };
 		00DC4A9614D0A0DE0018E3E3 /* groupsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupsIcon.png; sourceTree = "<group>"; };
@@ -562,6 +572,9 @@
 		00DC4ABF14D0B2F50018E3E3 /* LinkViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkViewerViewController.m; sourceTree = "<group>"; };
 		00DC4AC014D0B2F50018E3E3 /* LinkViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LinkViewerViewController.xib; path = src/ViewControllers/LinkViewerViewController.xib; sourceTree = "<group>"; };
 		00DC4AC514D0B6B70018E3E3 /* GroupInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupInfoCell.xib; sourceTree = "<group>"; };
+		00E73ED314E90BC6008961B9 /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
+		00E73ED414E90BC6008961B9 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
+		00E73ED514E90BC6008961B9 /* SearchResultsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewController.xib; sourceTree = "<group>"; };
 		00EA736114D1534400DD1DEF /* BaseCoacListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCoacListViewController.h; sourceTree = "<group>"; };
 		00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoacListViewController.m; sourceTree = "<group>"; };
 		00EA736314D1534400DD1DEF /* BaseCoacListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseCoacListViewController.xib; path = src/ViewControllers/BaseCoacListViewController.xib; sourceTree = "<group>"; };
@@ -669,6 +682,8 @@
 				0080961614CCA37C000E1525 /* RoundedCalendarBoxController.m */,
 				0080961914CCAB01000E1525 /* CalendarScrollViewController.h */,
 				0080961A14CCAB01000E1525 /* CalendarScrollViewController.m */,
+				00D9495814E87538006959C2 /* GroupNameSearchController.h */,
+				00D9495914E87538006959C2 /* GroupNameSearchController.m */,
 			);
 			name = "Custom Controllers";
 			sourceTree = "<group>";
@@ -696,6 +711,9 @@
 				00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */,
 				0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */,
 				0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */,
+				00E73ED314E90BC6008961B9 /* SearchResultsTableViewController.h */,
+				00E73ED414E90BC6008961B9 /* SearchResultsTableViewController.m */,
+				00E73ED514E90BC6008961B9 /* SearchResultsTableViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -776,6 +794,7 @@
 				00AECAB114CAC6DC005CE4DC /* Coac2012Tests.m */,
 				00AECAAB14CAC6DC005CE4DC /* Supporting Files */,
 				00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */,
+				00D9495614E84FD0006959C2 /* TodayViewControllerSpec.m */,
 			);
 			path = Coac2012Tests;
 			sourceTree = "<group>";
@@ -1314,6 +1333,7 @@
 				00B8AF2E14D72E3B002799BC /* videosButton1.png in Resources */,
 				0083613614D7D84E006FA9D5 /* Default.png in Resources */,
 				0083613814D7D84E006FA9D5 /* Default@2x.png in Resources */,
+				00E73ED814E90BC6008961B9 /* SearchResultsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1363,6 +1383,7 @@
 				00B8AF2F14D72E3B002799BC /* videosButton1.png in Resources */,
 				0083613714D7D84E006FA9D5 /* Default.png in Resources */,
 				0083613914D7D84E006FA9D5 /* Default@2x.png in Resources */,
+				00E73ED914E90BC6008961B9 /* SearchResultsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1426,6 +1447,8 @@
 				00EA736414D1534400DD1DEF /* BaseCoacListViewController.m in Sources */,
 				00BC176F14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */,
 				0019596814D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */,
+				00D9495A14E87538006959C2 /* GroupNameSearchController.m in Sources */,
+				00E73ED614E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1538,6 +1561,9 @@
 				0088C14514D5B5B6001319EF /* CoacParserSpec.m in Sources */,
 				0019596914D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */,
 				00D9494E14E83D63006959C2 /* BaseCoacListViewControllerSpec.m in Sources */,
+				00D9495714E84FD0006959C2 /* TodayViewControllerSpec.m in Sources */,
+				00D9495B14E87538006959C2 /* GroupNameSearchController.m in Sources */,
+				00E73ED714E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

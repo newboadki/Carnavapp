@@ -7,19 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BaseCoacListViewController : UIViewController <UITableViewDataSource, UITabBarDelegate>
+#import "GroupNameSearchController.h"
+#import "SearchResultsTableViewController.h"
+@interface BaseCoacListViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, UISearchDisplayDelegate, GroupNameSearchControllerDelegateProtocol>
 {
     NSDictionary* modelData;
     NSArray* elementsArray;
-    UITableViewCell* cellFromNib;
+    UITableViewCell* cellFromNib;    
+    GroupNameSearchController* groupNameSearchController;
+    
     IBOutlet UITableView* tableView;
+    IBOutlet SearchResultsTableViewController* searchResultsTableViewController;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSArray* elementsArray;
 @property (nonatomic, assign) UITableViewCell* cellFromNib;
 @property (nonatomic, retain) UITableView* tableView;
+@property (nonatomic, retain) SearchResultsTableViewController* searchResultsTableViewController;
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void) setMaskAsTitleView;
