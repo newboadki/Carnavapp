@@ -8,6 +8,7 @@
 
 #import "SearchResultsTableViewController.h"
 #import "Agrupacion.h"
+#import "GroupsForModalityViewController.h"
 
 @interface SearchResultsTableViewController(private)
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
@@ -16,6 +17,9 @@
 @implementation SearchResultsTableViewController
 @synthesize results;
 @synthesize cellFromNib;
+@synthesize modelData;
+@synthesize selectionDelegate;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,7 +33,8 @@
 
 - (void) dealloc
 {
-    [results dealloc];
+    [results release];
+    [modelData release];
     [super dealloc];
 }
 
@@ -106,9 +111,8 @@
     UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"GroupInfoCell" owner:self options:nil] objectAtIndex:0];
-        cell = cellFromNib;
-        self.cellFromNib = nil;    
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
     // Configure the cell...
@@ -126,64 +130,19 @@
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     Agrupacion* ag = [results objectAtIndex:[indexpath row]];
-    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-    
-    groupNameLabel.text = ag.nombre;
-    categoryNameLabel.text = @"";
+    cell.textLabel.text = ag.nombre;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+	/***********************************************************************************************/
+	/* didSelectRowAtIndexPath.																	   */
+	/***********************************************************************************************/
+    NSLog(@"ping");
+    Agrupacion* selectedGroup = [results objectAtIndex:[indexPath row]];
+    [selectionDelegate selectedElement:selectedGroup];
 }
 
 @end

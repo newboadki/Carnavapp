@@ -61,6 +61,7 @@
     [modelData release];
     [elementsArray release];
     [tableView release];
+    searchResultsTableViewController.selectionDelegate = nil;
     [searchResultsTableViewController release];
     [super dealloc];
 }
@@ -74,6 +75,7 @@
     NSDictionary* data = [notif userInfo];
     [self setModelData:data];
     [self updateArrayOfElements];
+    [self.searchResultsTableViewController setModelData:self.modelData];
 }
 
 - (void) handleNoNetwork:(NSNotification*)notif
@@ -99,6 +101,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    searchResultsTableViewController.selectionDelegate = self;
 }
 
 - (void)viewDidUnload
@@ -263,6 +266,7 @@
     }
 }
 
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     GroupNameSearchController* sc = [self groupNameSearchController];
@@ -271,10 +275,27 @@
 }
 
 
-- (void) resultsAreReady:(NSArray*)results forSearchString:(NSString*)searchString
+- (void) resultsAreReadyInDictionary:(NSDictionary*)resultsDictionary
 {
+    NSArray* results = [resultsDictionary objectForKey:SEARCH_RESULTS_KEY];
     [[self searchResultsTableViewController] setResults:results];
     [self.searchDisplayController.searchResultsTableView reloadData];
+}
+
+
+
+#pragma mark - SearchResultsTableViewControllerDelegateProtocol
+
+- (void)selectedElement:(id)element
+{    
+    Agrupacion* selectedGroup = (Agrupacion*)element;
+    int index = [elementsArray indexOfObject:selectedGroup];
+
+    if (index >= 0)
+    {
+        NSIndexPath* ip = [NSIndexPath indexPathForRow:index inSection:0];
+        [self tableView:self.tableView didSelectRowAtIndexPath:ip];
+    }    
 }
 
 

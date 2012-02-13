@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GroupNameSearchController.h"
 #import "SearchResultsTableViewController.h"
-@interface BaseCoacListViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, UISearchDisplayDelegate, GroupNameSearchControllerDelegateProtocol>
+@interface BaseCoacListViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, UISearchDisplayDelegate, GroupNameSearchControllerDelegateProtocol, SearchResultsTableViewControllerDelegateProtocol>
 {
     NSDictionary* modelData;
     NSArray* elementsArray;

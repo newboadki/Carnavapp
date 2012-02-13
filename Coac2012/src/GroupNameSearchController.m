@@ -22,6 +22,8 @@
     {
         resultsDelegate = del;
         sampleArray = [array retain];
+        queue = [[NSOperationQueue alloc] init];
+        queue.maxConcurrentOperationCount = 1;
     }
     
     return self;
@@ -30,14 +32,19 @@
 
 - (void) searchResultsForString:(NSString*)searchString
 {
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[c] %@", searchString]; // [c] to do a non case-sensitive search
-    NSArray* results = [sampleArray filteredArrayUsingPredicate:predicate];
-    [resultsDelegate resultsAreReady:results forSearchString:searchString];
+    [queue addOperationWithBlock:^{
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[c] %@", searchString]; // [c] to do a non case-sensitive search
+        NSArray* results = [sampleArray filteredArrayUsingPredicate:predicate];
+        
+        NSDictionary* resultsDic = [NSDictionary dictionaryWithObjectsAndKeys:results, SEARCH_RESULTS_KEY, searchString, SEARCH_STRING_KEY, nil];        
+        [(NSObject*)resultsDelegate performSelectorOnMainThread:@selector(resultsAreReadyInDictionary:) withObject:resultsDic waitUntilDone:YES];
+    }];
 }
 
 - (void) dealloc
 {
     [sampleArray release];
+    [queue release];
     [super dealloc];
 }
 

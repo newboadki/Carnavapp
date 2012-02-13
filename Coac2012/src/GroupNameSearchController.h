@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define SEARCH_RESULTS_KEY @"resultsKey"
+#define SEARCH_STRING_KEY @"searchStringKey"
+
+
 @protocol GroupNameSearchControllerDelegateProtocol <NSObject>
-- (void) resultsAreReady:(NSArray*)results forSearchString:(NSString*)searchString;
+- (void) resultsAreReadyInDictionary:(NSDictionary*)resultsDictionary;
 @end
 
 @interface GroupNameSearchController : NSObject
 {
     id<GroupNameSearchControllerDelegateProtocol> resultsDelegate;
     NSArray* sampleArray;
+    NSOperationQueue* queue;
 }
 
 @property (nonatomic, assign) id<GroupNameSearchControllerDelegateProtocol> resultsDelegate;

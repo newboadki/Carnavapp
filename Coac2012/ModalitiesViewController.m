@@ -80,7 +80,6 @@
 	/***********************************************************************************************/
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     
-
     NSString* selectedModality = [elementsArray objectAtIndex:[indexPath row]];
     GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     [nextController setModality:selectedModality];
