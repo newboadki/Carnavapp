@@ -82,11 +82,11 @@ describe(@"viewWillAppear:", ^{
         [controller release];
     });
 
-    it(@"should not set the searchResultsTableViewController to nil if self doesn't implement search", ^{
+    it(@"should not set the searchResultsTableViewController to nil if self implements search", ^{
         BaseCoacListViewController* controller = [[BaseCoacListViewController alloc] init];
-        [controller stub:@selector(implementsSearch) andReturn:theValue(NO)];
+        [controller stub:@selector(implementsSearch) andReturn:theValue(YES)];
         
-        [[controller should] receive:@selector(setSearchResultsTableViewController:) withArguments:nil];
+        [[controller shouldNot] receive:@selector(setSearchResultsTableViewController:) withArguments:nil];
         [controller viewWillAppear:YES];
         [controller release];
     });
@@ -95,7 +95,14 @@ describe(@"viewWillAppear:", ^{
     it(@"should set the tableView's contentOffset to hide the seach bar if self doesn't implement search", ^{
     });
 
+    it(@"should not set the tableView's contentOffset to hide the seach bar if self implements search", ^{
+    });
+
+    
     it(@"should hide the searchBar if self doesn't implement search", ^{
+    });
+    
+    it(@"should not hide the searchBar if self implements search", ^{
     });
 
 });

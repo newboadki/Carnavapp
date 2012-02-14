@@ -18,6 +18,7 @@
     
     IBOutlet UITableView* tableView;
     IBOutlet SearchResultsTableViewController* searchResultsTableViewController;
+    BOOL firstTimeViewWillAppear;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
