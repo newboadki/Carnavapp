@@ -241,6 +241,7 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
+    NSLog(@"YEAH");
     return YES;
 }
 

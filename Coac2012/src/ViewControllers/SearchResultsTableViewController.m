@@ -106,13 +106,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SearchCell";
     
     UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"SearchresultCell" owner:self options:nil] objectAtIndex:0];
+        cell = cellFromNib;
+        self.cellFromNib = nil;    
     }
     
     // Configure the cell...
@@ -123,14 +124,19 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60.0f;
+    return 44;
 }
 
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     Agrupacion* ag = [results objectAtIndex:[indexpath row]];
-    cell.textLabel.text = ag.nombre;
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];        
+        groupNameLabel.text = ag.nombre;
+        categoryNameLabel.text = @"";
+
+
 }
 
 #pragma mark - Table view delegate
@@ -140,9 +146,17 @@
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
-    NSLog(@"ping");
     Agrupacion* selectedGroup = [results objectAtIndex:[indexPath row]];
     [selectionDelegate selectedElement:selectedGroup];
+}
+
+
+
+#pragma mark - UISearchDisplayController
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller  shouldReloadTableForSearchString:(NSString *)searchString
+{
+    return NO;
 }
 
 @end
