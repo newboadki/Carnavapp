@@ -1,4 +1,4 @@
-
+/*
 
 #import "Kiwi.h"
 #import "CoacParser.h"
@@ -24,4 +24,4 @@ SPEC_BEGIN(CoacParserSpec)
     });
 
 
-SPEC_END
+SPEC_END*/

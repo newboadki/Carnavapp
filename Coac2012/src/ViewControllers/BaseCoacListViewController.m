@@ -42,8 +42,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self 
                                                  selector:@selector(handleNoNetwork:) 
                                                      name:NO_NETWORK_NOTIFICATION 
-                                                   object:nil];
-        
+                                                   object:nil];        
     }
     
     return self;    
@@ -117,7 +116,7 @@
     
     // Do geometry related customization here, rather than in view did load. Navigation bars and other elements resizing have already happened by now, but not before
     if (![self implementsSearch])
-    {            
+    {
         [self setSearchResultsTableViewController:nil];
         [[self tableView] setContentOffset:CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height)];
         [[self tableView] setContentInset:UIEdgeInsetsMake(-self.searchDisplayController.searchBar.frame.size.height, 0, 0, 0)];
@@ -125,7 +124,6 @@
         [[self tableView] setContentSize:CGSizeMake(self.tableView.contentSize.width, newHeight)];
         self.searchDisplayController.searchBar.hidden = YES;
     }
-
 }
 
 - (void)viewDidAppear:(BOOL)animated

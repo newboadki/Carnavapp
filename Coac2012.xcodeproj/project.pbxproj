@@ -1693,6 +1693,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Coac2012Tests/OCMock\"",
 					/usr/include/libxml2,
+					"\"$(SRCROOT)/Coac2012Tests/Kiwi\"",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1705,6 +1706,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Coac2012Tests/Kiwi\"";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1728,6 +1730,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Coac2012Tests/OCMock\"",
 					/usr/include/libxml2,
+					"\"$(SRCROOT)/Coac2012Tests/Kiwi\"",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1740,6 +1743,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Coac2012Tests/Kiwi\"";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;

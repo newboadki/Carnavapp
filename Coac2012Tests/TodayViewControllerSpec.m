@@ -1,10 +1,11 @@
+/*
 #import "Kiwi.h"
 #import "Constants.h"
 
 SPEC_BEGIN(TodayViewControllerViewControllerSpec)
 
 describe(@"updateArrayOfElements:", ^{
-    
+        
     it(@"should set the elementsArray with the groups for the current date", ^{
     });
     
@@ -69,3 +70,4 @@ describe(@"didSelectRowAtIndexPath:", ^{
 
 
 SPEC_END
+*/
