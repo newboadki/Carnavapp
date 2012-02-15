@@ -239,15 +239,6 @@
 
 
 
-#pragma mark - UISearchDisplayController
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    NSLog(@"YEAH");
-    return YES;
-}
-
-
 #pragma mark - UISearchBarDelegateProtocol
 
 - (GroupNameSearchController*) groupNameSearchController
