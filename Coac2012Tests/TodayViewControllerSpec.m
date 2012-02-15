@@ -1,4 +1,4 @@
-/*
+
 #import "Kiwi.h"
 #import "Constants.h"
 
@@ -70,4 +70,3 @@ describe(@"didSelectRowAtIndexPath:", ^{
 
 
 SPEC_END
-*/
