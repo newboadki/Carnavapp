@@ -45,6 +45,7 @@
             NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             [imageWebView loadRequest:requestObj];
         }
+        
         [self roundCornersForView:imageWebView];
         [self roundCornersForView:backgroundDefaultImage];
         
@@ -78,6 +79,7 @@
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] prp_popNetworkActivity];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -142,8 +144,6 @@
         [[self navigationController] pushViewController:controller animated:YES];
         [controller release];
     }
-    
-    
 }
 
 
