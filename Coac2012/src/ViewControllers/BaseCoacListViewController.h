@@ -15,10 +15,10 @@
     NSArray* elementsArray;
     UITableViewCell* cellFromNib;    
     GroupNameSearchController* groupNameSearchController;
+    BOOL firstTimeViewWillAppear;
     
     IBOutlet UITableView* tableView;
-    IBOutlet SearchResultsTableViewController* searchResultsTableViewController;
-    BOOL firstTimeViewWillAppear;
+    IBOutlet SearchResultsTableViewController* searchResultsTableViewController;    
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
@@ -33,5 +33,6 @@
 
 - (NSString*) normalCellNibName;
 - (NSString*) selectedCellNibName;
+- (BOOL) implementsSearch;
 
 @end

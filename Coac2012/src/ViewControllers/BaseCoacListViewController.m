@@ -15,7 +15,6 @@
 - (void) updateArrayOfElements;
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
 - (void) configureSearchResultCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
-- (BOOL) implementsSearch;
 @end
 
 @implementation BaseCoacListViewController
