@@ -19,7 +19,7 @@
 
 @synthesize phase;
 @synthesize calendarController;
-
+@synthesize noContentMessageLabel;
 
 
 #pragma mark - Super class extension methods
@@ -113,6 +113,8 @@
     
     [tableView release];
     tableView = nil;
+    [noContentMessageLabel release];
+    noContentMessageLabel = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -121,24 +123,25 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataIsReady:) name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     [calendarController viewWillAppear:animated];
+    
+    if ([self.elementsArray count] > 0)
+    {
+        self.noContentMessageLabel.hidden = YES;
+        
+    }
+    else
+    {
+        self.noContentMessageLabel.hidden = NO;
+    }
+
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     [calendarController viewWillDisappear:animated];
-}
-
-
-- (void) scrollableBoxTappedWith:(id)identifier
-{
-    NSString* date = (NSString*)identifier;
-    [self handleGroupsForDate:date];
-    
 }
 
 
@@ -161,6 +164,16 @@
     detailViewController.group = [elementsArray objectAtIndex:[indexPath row]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];    
+}
+
+
+
+#pragma mark - ScrollableBoxTappedDelegateProtocol
+
+- (void) scrollableBoxTappedWith:(id)identifier
+{
+    NSString* date = (NSString*)identifier;
+    [self handleGroupsForDate:date];    
 }
 
 
