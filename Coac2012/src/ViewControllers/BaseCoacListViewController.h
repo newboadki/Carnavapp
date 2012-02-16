@@ -19,6 +19,7 @@
     
     IBOutlet UITableView* tableView;
     IBOutlet SearchResultsTableViewController* searchResultsTableViewController;    
+    IBOutlet UILabel* noContentMessageLabel;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
@@ -26,6 +27,7 @@
 @property (nonatomic, assign) UITableViewCell* cellFromNib;
 @property (nonatomic, retain) UITableView* tableView;
 @property (nonatomic, retain) SearchResultsTableViewController* searchResultsTableViewController;
+@property (nonatomic, retain) UILabel* noContentMessageLabel;
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void) setMaskAsTitleView;

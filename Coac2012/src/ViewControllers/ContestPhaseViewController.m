@@ -19,7 +19,6 @@
 
 @synthesize phase;
 @synthesize calendarController;
-@synthesize noContentMessageLabel;
 
 
 #pragma mark - Super class extension methods
@@ -113,8 +112,6 @@
     
     [tableView release];
     tableView = nil;
-    [noContentMessageLabel release];
-    noContentMessageLabel = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

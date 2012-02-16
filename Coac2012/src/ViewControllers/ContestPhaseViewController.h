@@ -16,11 +16,9 @@
 {
     NSString* phase;
     CalendarScrollViewController* calendarController;
-    IBOutlet UILabel* noContentMessageLabel;
 }
 
 @property (nonatomic, retain) NSString* phase;
 @property (nonatomic, retain) CalendarScrollViewController* calendarController;
-@property (nonatomic, retain) UILabel* noContentMessageLabel;
 
 @end

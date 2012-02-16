@@ -89,6 +89,20 @@
     [self setMaskAsTitleView];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([elementsArray count] <= 0)
+    {
+        noContentMessageLabel.hidden = NO;
+        noContentMessageLabel.text = @"Hoy no hay concurso";
+    }
+    else
+    {
+        noContentMessageLabel.hidden = YES;
+    }
+}
+
 
 
 #pragma mark - Table view data source

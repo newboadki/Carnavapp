@@ -24,6 +24,7 @@
 @synthesize cellFromNib;
 @synthesize tableView;
 @synthesize searchResultsTableViewController;
+@synthesize noContentMessageLabel;
 
 #pragma mark - Initializer methods
 
@@ -62,6 +63,7 @@
     [tableView release];
     searchResultsTableViewController.selectionDelegate = nil;
     [searchResultsTableViewController release];
+    [noContentMessageLabel release];
     [super dealloc];
 }
 
@@ -108,6 +110,8 @@
     [super viewDidUnload];
     [tableView release];
     tableView = nil;    
+    [noContentMessageLabel release];
+    noContentMessageLabel = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
