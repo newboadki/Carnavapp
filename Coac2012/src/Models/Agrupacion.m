@@ -14,6 +14,25 @@
 
 #define RESTING_GROUP_ID -1
 
+#define GROUP_ID_KEY @"groupIdKey"
+#define GROUP_MODALITY_KEY @"groupModalityKey"
+#define GROUP_NAME_KEY @"groupNameKey"
+#define GROUP_AUTHOR_KEY @"groupAuthorKey"
+#define GROUP_DIRECTOR_KEY @"groupDirectorKey"
+#define GROUP_CITY_KEY @"GroupCityKey"
+#define GROUP_COAC2011_KEY @"groupCoac2011Key"
+#define GROUP_HEAD_KEY @"groupHeadKey"
+#define GROUP_INFO_KEY @"groupInfoKey"
+#define GROUP_SCORE_KEY @"groupScoreKey"
+#define GROUP_PICTURES_KEY @"geoupPicturesKey"
+#define GROUP_VIDEOS_KEY @"groupVideosKey"
+#define GROUP_URLCC_KEY @"groupUrlCCKey"
+#define GROUP_URL_PIC_KEY @"groupUrlPicKey"
+#define GROUP_URL_VIDEOS_KEY @"groupUrlVideosKey"
+#define GROUP_COMMENTS_KEY @"groupCommentsKey"
+#define GROUP_COMPONENTS_KEY @"groupComponentsKey"
+
+
 @implementation Agrupacion
 
 @synthesize identificador;
@@ -28,20 +47,20 @@
 @synthesize componentes;
 
 
-- (id) initWithId:(long int)theIdentifier modality:(NSString*)modality name:(NSString*)name author:(NSString*)theAuthor director:(NSString*)theDirector city:(NSString*)city coac2011:(NSString*)theCoac2011 isHeadOfGroup:(BOOL)isHead info:(NSString*)theInfo score:(NSString*)score pictures:(NSArray*)pictures videos:(NSArray*)theVideos urlCC:(NSString*)theUrlCC urlFoto:(NSString*)theUrlFoto urlVideos:(NSString*)theurlVideos comments:(NSArray*)comments components:(NSArray*)components
+- (id) initWithId:(NSNumber*)theIdentifier modality:(NSString*)modality name:(NSString*)name author:(NSString*)theAuthor director:(NSString*)theDirector city:(NSString*)city coac2011:(NSString*)theCoac2011 isHeadOfGroup:(NSNumber*)isHead info:(NSString*)theInfo score:(NSString*)score pictures:(NSArray*)pictures videos:(NSArray*)theVideos urlCC:(NSString*)theUrlCC urlFoto:(NSString*)theUrlFoto urlVideos:(NSString*)theurlVideos comments:(NSArray*)comments components:(NSArray*)components
 {
     self = [super init];
     
     if(self)
     {
-        identificador = theIdentifier;
+        identificador = [theIdentifier retain];
         modalidad = [modality copy];
         nombre = [name copy];
         autor = [theAuthor copy];
         director = [theDirector copy];
         localidad = [city copy];
         coac2011 = [theCoac2011 copy];
-        esCabezaDeSerie = isHead;
+        esCabezaDeSerie = [isHead retain];
         info = [theInfo copy];
         puntos = [score copy];
         urlCC = [theUrlCC copy];
@@ -60,14 +79,14 @@
 
 - (id) initAsRestingGroup
 {
-    return [self initWithId:RESTING_GROUP_ID 
+    return [self initWithId:[NSNumber numberWithInt:RESTING_GROUP_ID] 
                    modality:nil 
                        name:nil 
                      author:nil 
                    director:nil 
                        city:nil 
                    coac2011:nil
-              isHeadOfGroup:NO 
+              isHeadOfGroup:[NSNumber numberWithBool:NO]
                        info:nil 
                       score:nil 
                    pictures:nil 
@@ -78,6 +97,56 @@
                    comments:nil 
                  components:nil];
 }
+
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if ([super init])
+    {
+        identificador = [[decoder decodeObjectForKey:GROUP_ID_KEY] copy];
+        modalidad = [[decoder decodeObjectForKey:GROUP_MODALITY_KEY] copy];
+        nombre = [[decoder decodeObjectForKey:GROUP_NAME_KEY] copy];
+        autor = [[decoder decodeObjectForKey:GROUP_AUTHOR_KEY] copy];
+        director = [[decoder decodeObjectForKey:GROUP_DIRECTOR_KEY] copy];
+        localidad = [[decoder decodeObjectForKey:GROUP_CITY_KEY] copy];
+        coac2011 = [[decoder decodeObjectForKey:GROUP_COAC2011_KEY] copy];
+        esCabezaDeSerie = [[decoder decodeObjectForKey:GROUP_HEAD_KEY] copy];
+        info = [[decoder decodeObjectForKey:GROUP_INFO_KEY] copy];
+        puntos = [[decoder decodeObjectForKey:GROUP_SCORE_KEY] copy];
+        fotos = [[decoder decodeObjectForKey:GROUP_PICTURES_KEY] copy];
+        videos = [[decoder decodeObjectForKey:GROUP_VIDEOS_KEY] copy];
+        urlCC = [[decoder decodeObjectForKey:GROUP_URLCC_KEY] copy];
+        urlFoto = [[decoder decodeObjectForKey:GROUP_URL_PIC_KEY] copy];
+        urlVideos = [[decoder decodeObjectForKey:GROUP_URL_VIDEOS_KEY] copy];
+        comentatios = [[decoder decodeObjectForKey:GROUP_COMMENTS_KEY] copy];
+        componentes = [[decoder decodeObjectForKey:GROUP_COMPONENTS_KEY] copy];
+    }
+    
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.identificador forKey:GROUP_ID_KEY];
+    [encoder encodeObject:self.modalidad forKey:GROUP_MODALITY_KEY];
+    [encoder encodeObject:self.nombre forKey:GROUP_NAME_KEY];
+    [encoder encodeObject:self.autor forKey:GROUP_AUTHOR_KEY];
+    [encoder encodeObject:self.director forKey:GROUP_DIRECTOR_KEY];
+    [encoder encodeObject:self.localidad forKey:GROUP_CITY_KEY];
+    [encoder encodeObject:self.coac2011 forKey:GROUP_COAC2011_KEY];
+    [encoder encodeObject:self.esCabezaDeSerie forKey:GROUP_HEAD_KEY];
+    [encoder encodeObject:self.info forKey:GROUP_INFO_KEY];
+    [encoder encodeObject:self.puntos forKey:GROUP_SCORE_KEY];
+    [encoder encodeObject:self.fotos forKey:GROUP_PICTURES_KEY];
+    [encoder encodeObject:self.videos forKey:GROUP_VIDEOS_KEY];
+    [encoder encodeObject:self.urlCC forKey:GROUP_URLCC_KEY];
+    [encoder encodeObject:self.urlFoto forKey:GROUP_URL_PIC_KEY];
+    [encoder encodeObject:self.urlVideos forKey:GROUP_URL_VIDEOS_KEY];
+    [encoder encodeObject:self.comentatios forKey:GROUP_COMMENTS_KEY];
+    [encoder encodeObject:self.componentes forKey:GROUP_COMPONENTS_KEY];
+}
+
 
 + (Agrupacion*) restingGroup
 {

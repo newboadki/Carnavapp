@@ -8,6 +8,9 @@
 
 #import "Comentario.h"
 
+#define COMMENT_URL_KEY  @"commentUrlKey"
+#define COMMENT_ORIGEN_KEY @"commentOrigenKey"
+
 @implementation Comentario
 
 @synthesize origen, url;
@@ -25,6 +28,23 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if ([super init])
+    {
+        url = [[decoder decodeObjectForKey:COMMENT_URL_KEY] copy];
+        origen = [[decoder decodeObjectForKey:COMMENT_ORIGEN_KEY] copy];
+    }
+    
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.url forKey:COMMENT_URL_KEY];
+    [encoder encodeObject:self.origen forKey:COMMENT_ORIGEN_KEY];
+}
 
 - (void) dealloc
 {

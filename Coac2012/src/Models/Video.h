@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Video : NSObject
+@interface Video : NSObject <NSCoding>
 {
     @private
     NSString* desc;

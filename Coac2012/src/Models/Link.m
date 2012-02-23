@@ -8,6 +8,10 @@
 
 #import "Link.h"
 
+#define LINK_TYPE_KEY @"linkTypeKey"
+#define LINK_URL_KEY @"linkUrlKey"
+#define LINK_DESC_KEY @"linkDescKey"
+
 @implementation Link
 
 @synthesize type, desc, url;
@@ -24,6 +28,27 @@
     }
     
     return self;
+}
+
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if ([super init])
+    {
+        type = [[decoder decodeObjectForKey:LINK_TYPE_KEY] copy];
+        url = [[decoder decodeObjectForKey:LINK_URL_KEY] copy];
+        desc = [[decoder decodeObjectForKey:LINK_DESC_KEY] copy];
+    }
+    
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.type forKey:LINK_TYPE_KEY];
+    [encoder encodeObject:self.url forKey:LINK_URL_KEY];
+    [encoder encodeObject:self.desc forKey:LINK_DESC_KEY];
 }
 
 

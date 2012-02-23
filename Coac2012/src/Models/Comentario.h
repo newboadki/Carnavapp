@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Comentario : NSObject
+@interface Comentario : NSObject <NSCoding>
 {
     @private
     NSString* origen;

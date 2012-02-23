@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Componente : NSObject
+@interface Componente : NSObject <NSCoding>
 {
     @private
     NSString* nombre;

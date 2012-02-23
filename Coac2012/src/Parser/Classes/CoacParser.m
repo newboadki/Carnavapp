@@ -145,7 +145,7 @@
     /*[self showAgrupaciones];
      [self showCalendar];
      [self showLinks];
-     [self showModalities];*/    
+     [self showModalities];*/
     
     
     NSDictionary* results = [NSDictionary dictionaryWithObjectsAndKeys:groups, GROUPS_KEY, 
@@ -249,12 +249,12 @@
     
     ag.nombre = [[node attributeForName:GROUP_NAME_ATTRIBUTE] stringValue];
     ag.modalidad = [[node attributeForName:GROUP_MODALITY_ATTRIBUTE] stringValue];
-    ag.identificador = [[[node attributeForName:GROUP_ID_ATTRIBUTE] stringValue] intValue];
+    ag.identificador = [NSNumber numberWithInt:[[[node attributeForName:GROUP_ID_ATTRIBUTE] stringValue] intValue]];
     ag.autor = [[node attributeForName:GROUP_AUTHOR_ATTRIBUTE] stringValue];
     ag.director = [[node attributeForName:GROUP_DIRECTOR_ATTRIBUTE] stringValue];
     ag.localidad = [[node attributeForName:GROUP_CITY_ATTRIBUTE] stringValue];
     ag.coac2011 = [[node attributeForName:GROUP_COAC2011_ATTRIBUTE] stringValue];
-    ag.esCabezaDeSerie = [[[node attributeForName:GROUP_HEAD_OF_GROUP_ATTRIBUTE] stringValue] boolValue];
+    ag.esCabezaDeSerie = [NSNumber numberWithBool:[[[node attributeForName:GROUP_HEAD_OF_GROUP_ATTRIBUTE] stringValue] boolValue]];
     ag.info = [[node attributeForName:GROUP_INFO_ATTRIBUTE] stringValue];
     ag.urlCC = [[node attributeForName:GROUP_URL_CC_ATTRIBUTE] stringValue];
     ag.urlFoto = [[node attributeForName:GROUP_URL_PICTURE_ATTRIBUTE] stringValue];
@@ -427,7 +427,7 @@
         NSArray* agrupaciones = [calendar objectForKey:key];
         for (Agrupacion* ag in agrupaciones)
         {
-            NSLog(@"Ag: %ld", [ag identificador]);
+            NSLog(@"Ag: %d", [[ag identificador] intValue]);
         }
         NSLog(@"-----------------------");
     }

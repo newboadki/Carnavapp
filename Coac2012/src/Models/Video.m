@@ -8,6 +8,10 @@
 
 #import "Video.h"
 
+#define VIDEO_URL_KEY  @"videoUrlKey"
+#define VIDEO_DESC_KEY @"videoDescKey"
+
+
 @implementation Video
 
 @synthesize desc, url;
@@ -23,6 +27,25 @@
     }
     
     return self;
+}
+
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if ([super init])
+    {
+        url = [[decoder decodeObjectForKey:VIDEO_URL_KEY] copy];
+        desc = [[decoder decodeObjectForKey:VIDEO_DESC_KEY] copy];
+    }
+    
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.url forKey:VIDEO_URL_KEY];
+    [encoder encodeObject:self.desc forKey:VIDEO_DESC_KEY];
 }
 
 

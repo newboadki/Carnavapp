@@ -8,6 +8,9 @@
 
 #import "Picture.h"
 
+#define PIC_URL_KEY  @"picUrlKey"
+#define PIC_DESC_KEY @"picDescKey"
+
 @implementation Picture
 
 @synthesize desc, url;
@@ -23,6 +26,25 @@
     }
     
     return self;
+}
+
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if ([super init])
+    {
+        url = [[decoder decodeObjectForKey:PIC_URL_KEY] copy];
+        desc = [[decoder decodeObjectForKey:PIC_DESC_KEY] copy];
+    }
+    
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.url forKey:PIC_URL_KEY];
+    [encoder encodeObject:self.desc forKey:PIC_DESC_KEY];
 }
 
 

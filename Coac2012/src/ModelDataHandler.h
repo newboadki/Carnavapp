@@ -19,7 +19,6 @@
     FileDownloader* fileDownloader;
 }
 
-
 - (void) downloadAndParseModelData;
 - (void) cancelOperations;
 

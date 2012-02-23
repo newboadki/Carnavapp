@@ -64,7 +64,7 @@
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
-    if ([ag identificador] != -1)
+    if ([[ag identificador] intValue] != -1)
     {
         groupNameLabel.text = ag.nombre;
         categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];

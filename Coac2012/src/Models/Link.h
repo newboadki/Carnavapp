@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Link : NSObject
+@interface Link : NSObject <NSCoding>
 {
     @private
     NSString* type;
@@ -20,6 +20,8 @@
 @property (nonatomic, copy) NSString* desc;
 @property (nonatomic, copy) NSString* url;
 
+- (id)initWithCoder:(NSCoder *)decoder;
+- (void)encodeWithCoder:(NSCoder *)encoder;
 - (id) initWithType:(NSString*)theType description:(NSString*)theDesc url:(NSString*)theUrl;
 
 @end

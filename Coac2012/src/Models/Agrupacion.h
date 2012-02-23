@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Agrupacion : NSObject
+@interface Agrupacion : NSObject <NSCoding>
 {
     @private
-    long int  identificador;
+    NSNumber*  identificador;
     NSString* modalidad;
     NSString* nombre;
     NSString* autor;
     NSString* director;
     NSString* localidad;
     NSString* coac2011;
-    BOOL      esCabezaDeSerie;
+    NSNumber* esCabezaDeSerie;
     NSString* info;
     NSString* urlCC;
     NSString* urlFoto;
@@ -30,14 +30,14 @@
     NSArray*  comentatios;
 }
 
-@property (nonatomic, assign) long int  identificador;
+@property (nonatomic, retain) NSNumber* identificador;
 @property (nonatomic, copy)   NSString* modalidad;
 @property (nonatomic, copy)   NSString* nombre;
 @property (nonatomic, copy)   NSString* autor;
 @property (nonatomic, copy)   NSString* director;
 @property (nonatomic, copy)   NSString* localidad;
 @property (nonatomic, copy)   NSString* coac2011;
-@property (nonatomic, assign) BOOL      esCabezaDeSerie;
+@property (nonatomic, retain) NSNumber* esCabezaDeSerie;
 @property (nonatomic, copy)   NSString* info;
 @property (nonatomic, copy)   NSString* urlCC;
 @property (nonatomic, copy)   NSString* urlFoto;
@@ -50,14 +50,14 @@
 
 - (id) initAsRestingGroup;
 
-- (id) initWithId:(long int)theIdentifier
+- (id) initWithId:(NSNumber*)theIdentifier
          modality:(NSString*)modality 
              name:(NSString*)name 
            author:(NSString*)theAuthor 
          director:(NSString*)theDirector 
              city:(NSString*)city 
          coac2011:(NSString*)theCoac2011 
-    isHeadOfGroup:(BOOL)isHead 
+    isHeadOfGroup:(NSNumber*)isHead 
              info:(NSString*)theInfo 
             score:(NSString*)score 
          pictures:(NSArray*)pictures 

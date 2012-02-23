@@ -65,6 +65,8 @@
 		008EE9D814F5464C002BFA7F /* ContestResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */; };
 		008EE9DC14F573AD002BFA7F /* scoreboard_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */; };
 		008EE9DD14F573AD002BFA7F /* scoreboard_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */; };
+		008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */; };
+		008EE9FB14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
@@ -301,6 +303,8 @@
 		008EE9D414F5464C002BFA7F /* ContestResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestResultsViewController.h; sourceTree = "<group>"; };
 		008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestResultsViewController.m; sourceTree = "<group>"; };
 		008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard_icon3.png; sourceTree = "<group>"; };
+		008EE9F814F6B2F8002BFA7F /* FileSystemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemHelper.h; sourceTree = "<group>"; };
+		008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemHelper.m; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -694,6 +698,15 @@
 			name = Calendar;
 			sourceTree = "<group>";
 		};
+		008EE9F714F6B2D6002BFA7F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				008EE9F814F6B2F8002BFA7F /* FileSystemHelper.h */,
+				008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
@@ -730,6 +743,7 @@
 		00AECA7E14CAC6DC005CE4DC /* Coac2012 */ = {
 			isa = PBXGroup;
 			children = (
+				008EE9F714F6B2D6002BFA7F /* Helpers */,
 				0083613414D7D84E006FA9D5 /* Default.png */,
 				0083613514D7D84E006FA9D5 /* Default@2x.png */,
 				00EA736914D1E3C300DD1DEF /* icon.png */,
@@ -1409,6 +1423,7 @@
 				00D9495A14E87538006959C2 /* GroupNameSearchController.m in Sources */,
 				00E73ED614E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */,
 				008EE9D714F5464C002BFA7F /* ContestResultsViewController.m in Sources */,
+				008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1524,6 +1539,7 @@
 				00D9495B14E87538006959C2 /* GroupNameSearchController.m in Sources */,
 				00E73ED714E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */,
 				008EE9D814F5464C002BFA7F /* ContestResultsViewController.m in Sources */,
+				008EE9FB14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

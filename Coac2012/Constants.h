@@ -7,6 +7,9 @@
 //
 
 
+// Model data file
+#define MODEL_DATA_FILE_NAME @"dataModelDictionary.plist"
+
 // Notifications
 #define MODEL_DATA_IS_READY_NOTIFICATION @"ModelDataIsReadyNotification"
 #define NO_NETWORK_NOTIFICATION @"NoNetworkNotification"
@@ -29,3 +32,4 @@
 #define CATEGORY_LABEL_TAG 2
 #define LOADING_SCREEN_LABEL_TAG 1
 #define LINK_NAME_LABEL_TAG 1
+

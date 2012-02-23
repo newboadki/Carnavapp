@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Picture : NSObject
+@interface Picture : NSObject <NSCoding>
 {
     @private
     NSString* desc;

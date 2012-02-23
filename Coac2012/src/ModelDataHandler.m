@@ -8,8 +8,8 @@
 
 #import "ModelDataHandler.h"
 #import "UIApplication+PRPNetworkActivity.h"
+#import "FileSystemHelper.h"
 
-    
 @interface ModelDataHandler()
 @property (nonatomic, retain) CoacParser* parser;
 @end
@@ -40,6 +40,7 @@
 
 - (void) downloadAndParseModelData
 {
+    NSLog(@"puafff");
     [[UIApplication sharedApplication] prp_pushNetworkActivity];
     [fileDownloader start];
 }
@@ -68,6 +69,7 @@
 
 - (void) handleFailedDownloadWithError:(NSError *)error
 {
+    NSLog(@"000000");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 
@@ -75,12 +77,14 @@
 
 - (void) handleAuthenticationFailed
 {
+    NSLog(@"11111");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
 
 - (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode
 {
+    NSLog(@"11122");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
@@ -88,6 +92,7 @@
 
 - (void) connectionCouldNotBeCreated
 {
+    NSLog(@"11333");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
@@ -98,9 +103,14 @@
 
 - (void) parsingDidFinishWithResultsDictionary:(NSDictionary*)resultsDictionary
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:MODEL_DATA_IS_READY_NOTIFICATION object:self userInfo:resultsDictionary];
-    [self setParser:nil];
+    [FileSystemHelper archiveObject:resultsDictionary];                                             // Write to file system
+    [[NSNotificationCenter defaultCenter] postNotificationName:MODEL_DATA_IS_READY_NOTIFICATION     // Send notification
+                                                        object:self 
+                                                      userInfo:resultsDictionary];
+    [self setParser:nil];                                                                           // Clean up
 }
+
+
 
 
 - (void) dealloc
