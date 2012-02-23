@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "GroupNameSearchController.h"
 #import "SearchResultsTableViewController.h"
+#import "FileSystemHelper.h"
+
 @interface BaseCoacListViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, UISearchDisplayDelegate, GroupNameSearchControllerDelegateProtocol, SearchResultsTableViewControllerDelegateProtocol>
 {
     NSDictionary* modelData;

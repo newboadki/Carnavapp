@@ -81,7 +81,17 @@
 
 - (void) handleNoNetwork:(NSNotification*)notif
 {
-
+    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
+    if (data)
+    {
+        [self setModelData:data];
+        [self updateArrayOfElements];
+        [self.searchResultsTableViewController setModelData:self.modelData];    
+    }
+    else
+    {
+        // We do nothing as the app delegate handles this case to show the network needed screen.
+    }
 }
 
 - (void) updateArrayOfElements
