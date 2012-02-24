@@ -39,10 +39,6 @@
                                                      name:MODEL_DATA_IS_READY_NOTIFICATION 
                                                    object:nil];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                 selector:@selector(handleNoNetwork:) 
-                                                     name:NO_NETWORK_NOTIFICATION 
-                                                   object:nil];        
         firstTimeViewWillAppear = YES;
     }
     
@@ -56,7 +52,6 @@
 - (void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NO_NETWORK_NOTIFICATION object:nil];
     [groupNameSearchController release];
     [modelData release];
     [elementsArray release];
@@ -79,20 +74,6 @@
     [self.searchResultsTableViewController setModelData:self.modelData];
 }
 
-- (void) handleNoNetwork:(NSNotification*)notif
-{
-    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
-    if (data)
-    {
-        [self setModelData:data];
-        [self updateArrayOfElements];
-        [self.searchResultsTableViewController setModelData:self.modelData];    
-    }
-    else
-    {
-        // We do nothing as the app delegate handles this case to show the network needed screen.
-    }
-}
 
 - (void) updateArrayOfElements
 {
@@ -113,7 +94,17 @@
 {
     [super viewDidLoad];
     searchResultsTableViewController.selectionDelegate = self;
+    
+    // We first populate the tables with the data we already had if any. 
+    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
+    if (data)
+    {
+        [self setModelData:data];
+        [self updateArrayOfElements];
+        [self.searchResultsTableViewController setModelData:self.modelData];    
+    }
 }
+
 
 - (void)viewDidUnload
 {

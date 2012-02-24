@@ -25,7 +25,7 @@
     
     if (self)        
     {
-        fileDownloader = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:@"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"] 
+        fileDownloader = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:XML_SERVER_URL] 
                                                  andFilePath: nil // it won't write it to a file 
                                                andCredential: nil 
                                                  andDelegate: self];
@@ -40,7 +40,6 @@
 
 - (void) downloadAndParseModelData
 {
-    NSLog(@"puafff");
     [[UIApplication sharedApplication] prp_pushNetworkActivity];
     [fileDownloader start];
 }
@@ -69,7 +68,6 @@
 
 - (void) handleFailedDownloadWithError:(NSError *)error
 {
-    NSLog(@"000000");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 
@@ -77,14 +75,12 @@
 
 - (void) handleAuthenticationFailed
 {
-    NSLog(@"11111");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
 
 - (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode
 {
-    NSLog(@"11122");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }
@@ -92,7 +88,6 @@
 
 - (void) connectionCouldNotBeCreated
 {
-    NSLog(@"11333");
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     [[NSNotificationCenter defaultCenter] postNotificationName:NO_NETWORK_NOTIFICATION object:self userInfo:nil];
 }

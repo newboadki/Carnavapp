@@ -5,6 +5,7 @@
 #import "OCMock.h"
 #import "GroupNameSearchController.h"
 #import "Agrupacion.h"
+#import "FileSystemHelper.h"
 
 SPEC_BEGIN(BaseCoacListViewControllerSpec)
 
@@ -83,6 +84,75 @@ describe(@"handleDataIsReady:", ^{
     });
     
 });
+
+
+describe(@"viewDidLoad", ^{
+    
+    __block BaseCoacListViewController* controller;
+    
+    beforeEach(^{
+        controller = [[BaseCoacListViewController alloc] init];
+        id searchResultsTVCMock = [KWMock nullMockForClass:[SearchResultsTableViewController class]];
+        controller.searchResultsTableViewController = searchResultsTVCMock;
+    });
+    
+    afterEach(^{
+        [controller release];
+    });
+
+    it(@"should set itself as the searchResultsTableViewController's selection delegate", ^{
+        [[controller.searchResultsTableViewController should] receive:@selector(setSelectionDelegate:) withArguments:controller];
+        [controller viewDidLoad];
+    });
+
+
+    context(@"there's data in the file system", ^{
+        __block id dataMock;
+        
+        beforeEach(^{
+            dataMock = [KWMock nullMock];
+            [FileSystemHelper stub:@selector(unarchiveDataModel) andReturn:dataMock];            
+        });
+                
+        it(@"should set the model data on itself", ^{
+            [[controller should] receive:@selector(setModelData:) withArguments:dataMock];
+            [controller viewDidLoad]; 
+        });
+        
+        it(@"should set the tableView's contentSize to make up space for the search bar", ^{
+            [[controller should] receive:@selector(updateArrayOfElements)];
+            [controller viewDidLoad]; 
+        });
+        
+        it(@"should set the searchResultsTableViewController's model data", ^{
+            [[controller.searchResultsTableViewController should] receive:@selector(setModelData:) withArguments:dataMock];
+            [controller viewDidLoad]; 
+        });        
+    });
+    
+    context(@"there isn't any data in the file system", ^{        
+
+        beforeEach(^{
+            [FileSystemHelper stub:@selector(unarchiveDataModel) andReturn:nil];            
+        });
+        
+        it(@"should not set the model data on itself", ^{
+            [[controller shouldNot] receive:@selector(setModelData:) withArguments:nil];
+            [controller viewDidLoad];
+        });
+        
+        it(@"should not set the tableView's contentSize to make up space for the search bar", ^{
+            [[controller shouldNot] receive:@selector(updateArrayOfElements)];
+            [controller viewDidLoad];
+        });
+        
+        it(@"should not set the searchResultsTableViewController's model data", ^{
+            [[controller.searchResultsTableViewController shouldNot] receive:@selector(setModelData:) withArguments:nil];
+            [controller viewDidLoad];
+        });
+    });
+});
+
 
 describe(@"viewWillAppear:", ^{
     

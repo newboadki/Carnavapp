@@ -22,7 +22,6 @@
 
 - (void) updateArrayOfElements
 {
-    
     NSArray* groups = [NSArray arrayWithObjects:[self findGroupWithId:79], // Coros
                                                [self findGroupWithId:61],
                                                [self findGroupWithId:9],
@@ -123,6 +122,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setMaskAsTitleView];
     // Do any additional setup after loading the view from its nib.
 }
 

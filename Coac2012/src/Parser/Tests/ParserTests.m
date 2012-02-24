@@ -37,13 +37,13 @@
     Agrupacion* a1 = [groups objectAtIndex:0];
     
     STAssertTrue([a1.nombre isEqualToString:@"Los hijos del 78"], @"");
-    STAssertTrue(a1.identificador == 1, @"The group's id wasn't parsed correctly");
+    STAssertTrue([a1.identificador intValue] == 1, @"The group's id wasn't parsed correctly");
     STAssertTrue([a1.modalidad isEqualToString:@"CORO"], @"The group's modality wasn't parsed correctly");
     STAssertTrue([a1.autor isEqualToString:@"Francisco Javier Sevilla"], @"The group's author wasn't parsed correctly");
     STAssertTrue([a1.director isEqualToString:@"Antonio Cuesta Pino"], @"The group's director wasn't parsed correctly");
     STAssertTrue([a1.localidad isEqualToString:@"Cadiz"], @"The group's city wasn't parsed correctly");
     STAssertTrue([a1.coac2011 isEqualToString:@"La infanteria"], @"The group's coac2011 wasn't parsed correctly");
-    STAssertTrue(a1.esCabezaDeSerie == NO, @"The group's head of group wasn't parsed correctly");
+    STAssertTrue([a1.esCabezaDeSerie boolValue] == NO, @"The group's head of group wasn't parsed correctly");
     STAssertTrue([a1.info isEqualToString:@"El coro a pie"], @"The group's info wasn't parsed correctly");
     STAssertTrue([a1.urlCC isEqualToString:@"http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"], @"The group's urlCC wasn't parsed correctly");
     STAssertTrue([a1.urlFoto isEqualToString:@"http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"], @"The group's urlFoto wasn't parsed correctly");
@@ -94,12 +94,12 @@
     NSDictionary* calendar = [results objectForKey:CALENDAR_KEY];
     NSArray* groupsForDate1 = [calendar objectForKey:@"21/01/2012"];
     Agrupacion* ag1 = [groupsForDate1 objectAtIndex:0];
-    STAssertTrue(ag1.identificador == 1, @"The group's id wasn't parsed correctly");
+    STAssertTrue([ag1.identificador intValue] == 1, @"The group's id wasn't parsed correctly");
     
     NSArray* groupsForDate2 = [calendar objectForKey:@"22/01/2012"];
     Agrupacion* ag2 = [groupsForDate2 objectAtIndex:0];
     
-    STAssertTrue(ag2.identificador == 1, @"The group's id wasn't parsed correctly");
+    STAssertTrue([ag2.identificador intValue] == 1, @"The group's id wasn't parsed correctly");
 }
 
 

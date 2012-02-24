@@ -7,6 +7,9 @@
 //
 
 
+// XML Server Url
+#define XML_SERVER_URL @"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"
+
 // Model data file
 #define MODEL_DATA_FILE_NAME @"dataModelDictionary.plist"
 
