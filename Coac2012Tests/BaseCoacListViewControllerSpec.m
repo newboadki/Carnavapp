@@ -9,44 +9,7 @@
 
 SPEC_BEGIN(BaseCoacListViewControllerSpec)
 
-/*describe(@"initWithCoder:", ^{
-    
-    
-    it(@"should subscribe as an observer of MODEL_DATA_IS_READY_NOTIFICATION", ^{
-        //        id notificationCenterMock = [KWMock mockForClass:[NSNotificationCenter class]];
-        //        [NSNotificationCenter stub:@selector(defaultCenter) andReturn:notificationCenterMock];                
-        //        
-        //        [[notificationCenterMock should] receive:@selector(addObserver:selector:name:object:) withCount:1];
-        //
-        //        BaseCoacListViewController* controller = [[BaseCoacListViewController alloc] initWithCoder:nil];
-        //
-        //        [controller release];
-    });
 
-    it(@"should subscribe as an observer of NO_NETWORK_NOTIFICATION", ^{
-        //        id notificationCenterMock = [KWMock nullMockForClass:[NSNotificationCenter class]];
-        //        [NSNotificationCenter stub:@selector(defaultCenter) andReturn:notificationCenterMock];                
-        //        
-        ////        [[notificationCenterMock should] receive:@selector(addObserver:selector:name:object:) withArguments:controller, theValue(@selector(handleDataIsReady:)), NO_NETWORK_NOTIFICATION, nil];
-        //        BaseCoacListViewController* controller = [[BaseCoacListViewController alloc] init];
-        //        [[notificationCenterMock should] receive:@selector(addObserver:selector:name:object:) withArguments:controller, @selector(handleDataIsReady:), NO_NETWORK_NOTIFICATION, nil];
-        //        
-        //        controller = [[BaseCoacListViewController alloc] init];
-        //        
-        //        [controller release];
-    });
-    
-});
-
-describe(@"dealloc", ^{
-    
-    it(@"should unsubscribe as an observer of MODEL_DATA_IS_READY_NOTIFICATION", ^{
-    });
-    
-    it(@"should unsubscribe as an observer of NO_NETWORK_NOTIFICATION", ^{
-    });
-    
-});*/
 
 describe(@"handleDataIsReady:", ^{
 

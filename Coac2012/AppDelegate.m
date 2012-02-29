@@ -91,7 +91,19 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    [loadingScreen removeFromSuperview]; // it might be nil by now, but it's ok
+    
+    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
+    
+    if (!data)
+    {
+        loadingScreen = [[[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil] objectAtIndex:0];
+        loadingScreen.frame = CGRectMake(0, 0, 320, 480);        
+        [self.window addSubview:loadingScreen];
+        
+        UILabel* label = (UILabel*)[loadingScreen viewWithTag:LOADING_SCREEN_LABEL_TAG];
+        label.text = @"Descargando Datos.";
+    }
+    
     [self.dataHandler downloadAndParseModelData];
 }
 

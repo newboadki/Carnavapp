@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0019596814D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */; };
 		0019596914D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */; };
+		0052331414F7D7640034E314 /* ModelDataHandlerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052331314F7D7640034E314 /* ModelDataHandlerSpec.m */; };
+		0052335014F823DC0034E314 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334414F823DC0034E314 /* FileDownloader.m */; };
+		0052335414F823DC0034E314 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334F14F823DC0034E314 /* ConsoleLogger.m */; };
+		0052335514F823F00034E314 /* ChallengeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334814F823DC0034E314 /* ChallengeSender.m */; };
+		0052335614F823F00034E314 /* FileDownloaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334A14F823DC0034E314 /* FileDownloaderDelegate.m */; };
+		0052335714F823F00034E314 /* FileDownloaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334C14F823DC0034E314 /* FileDownloaderTests.m */; };
 		0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960514CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
@@ -87,11 +93,6 @@
 		00BC177014D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */; };
 		00BC177614D4100B00D043E7 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC177514D4100B00D043E7 /* LoadingScreen.xib */; };
 		00BC177714D4100B00D043E7 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC177514D4100B00D043E7 /* LoadingScreen.xib */; };
-		00C0BC3514CAC89D00427E42 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */; };
-		00C0BC3614CAC89D00427E42 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */; };
-		00C0BC3714CAC89D00427E42 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2714CAC89D00427E42 /* FileDownloader.m */; };
-		00C0BC3814CAC89D00427E42 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2714CAC89D00427E42 /* FileDownloader.m */; };
-		00C0BC3A14CAC89D00427E42 /* FileDownloaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2B14CAC89D00427E42 /* FileDownloaderTests.m */; };
 		00C0BCD614CAC99F00427E42 /* KWAfterAllNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC4614CAC99F00427E42 /* KWAfterAllNode.m */; };
 		00C0BCD714CAC99F00427E42 /* KWAfterEachNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC4814CAC99F00427E42 /* KWAfterEachNode.m */; };
 		00C0BCD814CAC99F00427E42 /* KWAsyncVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC4A14CAC99F00427E42 /* KWAsyncVerifier.m */; };
@@ -198,9 +199,6 @@
 		00C0BD8A14CAEFF200427E42 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8814CAEFF200427E42 /* Picture.m */; };
 		00C0BD8D14CAF04D00427E42 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8C14CAF04D00427E42 /* Video.m */; };
 		00C0BD8E14CAF04D00427E42 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8C14CAF04D00427E42 /* Video.m */; };
-		00C0BD8F14CAF4D500427E42 /* FileDownloaderDelegateProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BC2814CAC89D00427E42 /* FileDownloaderDelegateProtocol.h */; };
-		00C0BD9214CAF55A00427E42 /* FileDownloaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD9114CAF55A00427E42 /* FileDownloaderDelegate.m */; };
-		00C0BD9514CAF5D500427E42 /* ChallengeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD9414CAF5D500427E42 /* ChallengeSender.m */; };
 		00C0BD9A14CAF7EC00427E42 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6D14CAD7C200427E42 /* CoreData.framework */; };
 		00C0BD9B14CAF80700427E42 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */; };
 		00D9494E14E83D63006959C2 /* BaseCoacListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */; };
@@ -264,6 +262,18 @@
 /* Begin PBXFileReference section */
 		0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosForGroupViewController.h; sourceTree = "<group>"; };
 		0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosForGroupViewController.m; sourceTree = "<group>"; };
+		0052331314F7D7640034E314 /* ModelDataHandlerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelDataHandlerSpec.m; sourceTree = "<group>"; };
+		0052334314F823DC0034E314 /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
+		0052334414F823DC0034E314 /* FileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloader.m; sourceTree = "<group>"; };
+		0052334514F823DC0034E314 /* FileDownloaderDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloaderDelegateProtocol.h; sourceTree = "<group>"; };
+		0052334714F823DC0034E314 /* ChallengeSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeSender.h; sourceTree = "<group>"; };
+		0052334814F823DC0034E314 /* ChallengeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeSender.m; sourceTree = "<group>"; };
+		0052334914F823DC0034E314 /* FileDownloaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloaderDelegate.h; sourceTree = "<group>"; };
+		0052334A14F823DC0034E314 /* FileDownloaderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloaderDelegate.m; sourceTree = "<group>"; };
+		0052334B14F823DC0034E314 /* FileDownloaderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloaderTests.h; sourceTree = "<group>"; };
+		0052334C14F823DC0034E314 /* FileDownloaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloaderTests.m; sourceTree = "<group>"; };
+		0052334E14F823DC0034E314 /* ConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLogger.h; sourceTree = "<group>"; };
+		0052334F14F823DC0034E314 /* ConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleLogger.m; sourceTree = "<group>"; };
 		0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedCalendarBoxView.xib; sourceTree = "<group>"; };
 		0080960614CCA072000E1525 /* ContestPhaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseViewController.h; sourceTree = "<group>"; };
 		0080960714CCA072000E1525 /* ContestPhaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseViewController.m; sourceTree = "<group>"; };
@@ -298,8 +308,8 @@
 		0088C13B14D5A1E4001319EF /* details_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_bg.png; sourceTree = "<group>"; };
 		0088C13E14D5A8C6001319EF /* SpacedOneLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpacedOneLabelCell.xib; sourceTree = "<group>"; };
 		0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpacedOneLabelSlectedCell.xib; sourceTree = "<group>"; };
-		0088C14414D5B5B6001319EF /* CoacParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParserSpec.m; sourceTree = "<group>"; };
-		0088C14B14D5BB68001319EF /* group.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = group.xml; sourceTree = "<group>"; };
+		0088C14414D5B5B6001319EF /* CoacParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoacParserSpec.m; path = ../Coac2012/src/Parser/Tests/CoacParserSpec.m; sourceTree = "<group>"; };
+		0088C14B14D5BB68001319EF /* group.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = group.xml; path = ../Coac2012/src/Parser/Tests/group.xml; sourceTree = "<group>"; };
 		008EE9D414F5464C002BFA7F /* ContestResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestResultsViewController.h; sourceTree = "<group>"; };
 		008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestResultsViewController.m; sourceTree = "<group>"; };
 		008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard_icon3.png; sourceTree = "<group>"; };
@@ -328,13 +338,6 @@
 		00BC176D14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+PRPNetworkActivity.h"; sourceTree = "<group>"; };
 		00BC176E14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+PRPNetworkActivity.m"; sourceTree = "<group>"; };
 		00BC177514D4100B00D043E7 /* LoadingScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
-		00C0BC2214CAC89D00427E42 /* ConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLogger.h; sourceTree = "<group>"; };
-		00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleLogger.m; sourceTree = "<group>"; };
-		00C0BC2614CAC89D00427E42 /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
-		00C0BC2714CAC89D00427E42 /* FileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloader.m; sourceTree = "<group>"; };
-		00C0BC2814CAC89D00427E42 /* FileDownloaderDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloaderDelegateProtocol.h; sourceTree = "<group>"; };
-		00C0BC2A14CAC89D00427E42 /* FileDownloaderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloaderTests.h; sourceTree = "<group>"; };
-		00C0BC2B14CAC89D00427E42 /* FileDownloaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloaderTests.m; sourceTree = "<group>"; };
 		00C0BC4014CAC99F00427E42 /* Kiwi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kiwi.h; sourceTree = "<group>"; };
 		00C0BC4114CAC99F00427E42 /* KiwiBlockMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiBlockMacros.h; sourceTree = "<group>"; };
 		00C0BC4214CAC99F00427E42 /* KiwiConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiwiConfiguration.h; sourceTree = "<group>"; };
@@ -519,8 +522,8 @@
 		00C0BD4214CACC7300427E42 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		00C0BD5214CACD9500427E42 /* CoacParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParser.h; sourceTree = "<group>"; };
 		00C0BD5314CACD9500427E42 /* CoacParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParser.m; sourceTree = "<group>"; };
-		00C0BD5514CACD9500427E42 /* ParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserTests.h; sourceTree = "<group>"; };
-		00C0BD5614CACD9500427E42 /* ParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTests.m; sourceTree = "<group>"; };
+		00C0BD5514CACD9500427E42 /* ParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserTests.h; path = ../Coac2012/src/Parser/Tests/ParserTests.h; sourceTree = "<group>"; };
+		00C0BD5614CACD9500427E42 /* ParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserTests.m; path = ../Coac2012/src/Parser/Tests/ParserTests.m; sourceTree = "<group>"; };
 		00C0BD6D14CAD7C200427E42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		00C0BD7714CAE02900427E42 /* Agrupacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agrupacion.h; sourceTree = "<group>"; };
@@ -535,10 +538,6 @@
 		00C0BD8814CAEFF200427E42 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		00C0BD8B14CAF04C00427E42 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		00C0BD8C14CAF04D00427E42 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
-		00C0BD9014CAF55A00427E42 /* FileDownloaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloaderDelegate.h; sourceTree = "<group>"; };
-		00C0BD9114CAF55A00427E42 /* FileDownloaderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloaderDelegate.m; sourceTree = "<group>"; };
-		00C0BD9314CAF5D500427E42 /* ChallengeSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeSender.h; sourceTree = "<group>"; };
-		00C0BD9414CAF5D500427E42 /* ChallengeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeSender.m; sourceTree = "<group>"; };
 		00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParserDelegateProtocol.h; sourceTree = "<group>"; };
 		00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoacListViewControllerSpec.m; sourceTree = "<group>"; };
 		00D9495614E84FD0006959C2 /* TodayViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewControllerSpec.m; sourceTree = "<group>"; };
@@ -602,6 +601,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0052334114F823DC0034E314 /* FileDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				0052334214F823DC0034E314 /* Classes */,
+				0052334614F823DC0034E314 /* Tests */,
+			);
+			path = FileDownloader;
+			sourceTree = "<group>";
+		};
+		0052334214F823DC0034E314 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0052334314F823DC0034E314 /* FileDownloader.h */,
+				0052334414F823DC0034E314 /* FileDownloader.m */,
+				0052334514F823DC0034E314 /* FileDownloaderDelegateProtocol.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0052334614F823DC0034E314 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0052334714F823DC0034E314 /* ChallengeSender.h */,
+				0052334814F823DC0034E314 /* ChallengeSender.m */,
+				0052334914F823DC0034E314 /* FileDownloaderDelegate.h */,
+				0052334A14F823DC0034E314 /* FileDownloaderDelegate.m */,
+				0052334B14F823DC0034E314 /* FileDownloaderTests.h */,
+				0052334C14F823DC0034E314 /* FileDownloaderTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0052334D14F823DC0034E314 /* DegubLog */ = {
+			isa = PBXGroup;
+			children = (
+				0052334E14F823DC0034E314 /* ConsoleLogger.h */,
+				0052334F14F823DC0034E314 /* ConsoleLogger.m */,
+			);
+			path = DegubLog;
+			sourceTree = "<group>";
+		};
 		00820C4314CC63DC008A914A /* ModelDataHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,11 +783,11 @@
 		00AECA7E14CAC6DC005CE4DC /* Coac2012 */ = {
 			isa = PBXGroup;
 			children = (
-				008EE9F714F6B2D6002BFA7F /* Helpers */,
 				0083613414D7D84E006FA9D5 /* Default.png */,
 				0083613514D7D84E006FA9D5 /* Default@2x.png */,
 				00EA736914D1E3C300DD1DEF /* icon.png */,
 				00EA736A14D1E3C300DD1DEF /* icon@2x.png */,
+				008EE9F714F6B2D6002BFA7F /* Helpers */,
 				00820C4514CC648D008A914A /* Controllers */,
 				00C0BD7614CAE01800427E42 /* Models */,
 				00C0BD4F14CACCBB00427E42 /* Synchronizacion */,
@@ -776,12 +816,16 @@
 		00AECAAA14CAC6DC005CE4DC /* Coac2012Tests */ = {
 			isa = PBXGroup;
 			children = (
-				00C0BD5414CACD9500427E42 /* Parser Tests */,
+				00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */,
+				00D9495614E84FD0006959C2 /* TodayViewControllerSpec.m */,
+				00C0BD5514CACD9500427E42 /* ParserTests.h */,
+				00C0BD5614CACD9500427E42 /* ParserTests.m */,
+				0088C14414D5B5B6001319EF /* CoacParserSpec.m */,
+				0088C14B14D5BB68001319EF /* group.xml */,
 				00C0BD1914CAC9B800427E42 /* OCMock */,
 				00C0BC3F14CAC99F00427E42 /* Kiwi */,
 				00AECAAB14CAC6DC005CE4DC /* Supporting Files */,
-				00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */,
-				00D9495614E84FD0006959C2 /* TodayViewControllerSpec.m */,
+				0052331314F7D7640034E314 /* ModelDataHandlerSpec.m */,
 			);
 			path = Coac2012Tests;
 			sourceTree = "<group>";
@@ -818,54 +862,13 @@
 		00C0BC1D14CAC89D00427E42 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				0052334114F823DC0034E314 /* FileDownloader */,
+				0052334D14F823DC0034E314 /* DegubLog */,
 				00BC176C14D3F72A00D043E7 /* NetworkActivityIndicator */,
 				00C0BD2714CACC7300427E42 /* XMLTouch */,
-				00C0BC2114CAC89D00427E42 /* DegubLog */,
-				00C0BC2414CAC89D00427E42 /* FileDownloader */,
 			);
 			name = External;
 			path = src/External;
-			sourceTree = "<group>";
-		};
-		00C0BC2114CAC89D00427E42 /* DegubLog */ = {
-			isa = PBXGroup;
-			children = (
-				00C0BC2214CAC89D00427E42 /* ConsoleLogger.h */,
-				00C0BC2314CAC89D00427E42 /* ConsoleLogger.m */,
-			);
-			path = DegubLog;
-			sourceTree = "<group>";
-		};
-		00C0BC2414CAC89D00427E42 /* FileDownloader */ = {
-			isa = PBXGroup;
-			children = (
-				00C0BC2514CAC89D00427E42 /* Classes */,
-				00C0BC2914CAC89D00427E42 /* Tests */,
-			);
-			path = FileDownloader;
-			sourceTree = "<group>";
-		};
-		00C0BC2514CAC89D00427E42 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				00C0BC2614CAC89D00427E42 /* FileDownloader.h */,
-				00C0BC2714CAC89D00427E42 /* FileDownloader.m */,
-				00C0BC2814CAC89D00427E42 /* FileDownloaderDelegateProtocol.h */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		00C0BC2914CAC89D00427E42 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				00C0BD9314CAF5D500427E42 /* ChallengeSender.h */,
-				00C0BD9414CAF5D500427E42 /* ChallengeSender.m */,
-				00C0BD9014CAF55A00427E42 /* FileDownloaderDelegate.h */,
-				00C0BD9114CAF55A00427E42 /* FileDownloaderDelegate.m */,
-				00C0BC2A14CAC89D00427E42 /* FileDownloaderTests.h */,
-				00C0BC2B14CAC89D00427E42 /* FileDownloaderTests.m */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		00C0BC3F14CAC99F00427E42 /* Kiwi */ = {
@@ -1113,18 +1116,6 @@
 				00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		00C0BD5414CACD9500427E42 /* Parser Tests */ = {
-			isa = PBXGroup;
-			children = (
-				00C0BD5514CACD9500427E42 /* ParserTests.h */,
-				00C0BD5614CACD9500427E42 /* ParserTests.m */,
-				0088C14414D5B5B6001319EF /* CoacParserSpec.m */,
-				0088C14B14D5BB68001319EF /* group.xml */,
-			);
-			name = "Parser Tests";
-			path = ../Coac2012/src/Parser/Tests;
 			sourceTree = "<group>";
 		};
 		00C0BD7614CAE01800427E42 /* Models */ = {
@@ -1387,8 +1378,6 @@
 				00AECA8914CAC6DC005CE4DC /* AppDelegate.m in Sources */,
 				00AECA8C14CAC6DC005CE4DC /* TodayViewController.m in Sources */,
 				00AECA9314CAC6DC005CE4DC /* ModalitiesViewController.m in Sources */,
-				00C0BC3514CAC89D00427E42 /* ConsoleLogger.m in Sources */,
-				00C0BC3714CAC89D00427E42 /* FileDownloader.m in Sources */,
 				00C0BD4314CACC7300427E42 /* CXMLDocument_CreationExtensions.m in Sources */,
 				00C0BD4414CACC7300427E42 /* CXMLNode_CreationExtensions.m in Sources */,
 				00C0BD4514CACC7300427E42 /* CXMLDocument.m in Sources */,
@@ -1424,6 +1413,8 @@
 				00E73ED614E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */,
 				008EE9D714F5464C002BFA7F /* ContestResultsViewController.m in Sources */,
 				008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */,
+				0052335014F823DC0034E314 /* FileDownloader.m in Sources */,
+				0052335414F823DC0034E314 /* ConsoleLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1431,10 +1422,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C0BD8F14CAF4D500427E42 /* FileDownloaderDelegateProtocol.h in Sources */,
-				00C0BC3614CAC89D00427E42 /* ConsoleLogger.m in Sources */,
-				00C0BC3814CAC89D00427E42 /* FileDownloader.m in Sources */,
-				00C0BC3A14CAC89D00427E42 /* FileDownloaderTests.m in Sources */,
 				00C0BCD614CAC99F00427E42 /* KWAfterAllNode.m in Sources */,
 				00C0BCD714CAC99F00427E42 /* KWAfterEachNode.m in Sources */,
 				00C0BCD814CAC99F00427E42 /* KWAsyncVerifier.m in Sources */,
@@ -1519,8 +1506,6 @@
 				00C0BD8614CAEE8B00427E42 /* Link.m in Sources */,
 				00C0BD8A14CAEFF200427E42 /* Picture.m in Sources */,
 				00C0BD8E14CAF04D00427E42 /* Video.m in Sources */,
-				00C0BD9214CAF55A00427E42 /* FileDownloaderDelegate.m in Sources */,
-				00C0BD9514CAF5D500427E42 /* ChallengeSender.m in Sources */,
 				00820C3F14CC42C0008A914A /* ModelDataHandler.m in Sources */,
 				00820C5414CC79AE008A914A /* GroupsForModalityViewController.m in Sources */,
 				00820C5B14CC8511008A914A /* GroupDetailViewController.m in Sources */,
@@ -1540,6 +1525,10 @@
 				00E73ED714E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */,
 				008EE9D814F5464C002BFA7F /* ContestResultsViewController.m in Sources */,
 				008EE9FB14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */,
+				0052331414F7D7640034E314 /* ModelDataHandlerSpec.m in Sources */,
+				0052335514F823F00034E314 /* ChallengeSender.m in Sources */,
+				0052335614F823F00034E314 /* FileDownloaderDelegate.m in Sources */,
+				0052335714F823F00034E314 /* FileDownloaderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1626,6 +1615,10 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Coac2012/Coac2012-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Coac2012/src/External/FileDownloader\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E5EB4D93-8D9F-4A3E-B21D-79A3D5535EBE";
 				WRAPPER_EXTENSION = app;
@@ -1643,6 +1636,10 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Coac2012/Coac2012-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Coac2012/src/External/FileDownloader\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1DCC457F-E34B-4489-82EC-CEB16FD1D725";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1DCC457F-E34B-4489-82EC-CEB16FD1D725";
