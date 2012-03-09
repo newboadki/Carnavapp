@@ -12,26 +12,28 @@
 - (void) loadView;
 - (void) componentesFromDateString:(NSString*)ds day:(int*)d month:(int*)m year:(int*)y;
 - (void) handleTap:(id)sender;
+- (void) setBackgroundColorForDate:(NSString*)dateString inPhaseDictionary:(NSDictionary*)contestPhaseDates;
 @end
 
 @implementation RoundedCalendarBoxController
 
 @synthesize tapDelegate;
 @synthesize dateString;
-@synthesize monthLabel, dayLabel, view;
+@synthesize monthLabel, dayLabel, view, coloredAreaView;
 @synthesize backgroundView;
 
 
 
 #pragma mark - Initializators
 
-- (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds
+- (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds andContestPhasesDates:(NSDictionary*)phasesDictionary
 {
     self = [super init];
     if (self)
     {
         tapDelegate = delegate;
         dateString = [ds copy];
+        contestPhaseDates = [phasesDictionary retain];
         monthsNames = [[NSDictionary dictionaryWithObjectsAndKeys:@"ENE", [NSNumber numberWithInt:1],
                                                                   @"FEB", [NSNumber numberWithInt:2],
                                                                   @"MAR", [NSNumber numberWithInt:3],
@@ -109,6 +111,7 @@
     // The view will be on the hierarchy already    
     int day, month, year;
     [self componentesFromDateString:dateString day:(&day) month:(&month) year:(&year)];
+    [self setBackgroundColorForDate:dateString inPhaseDictionary:contestPhaseDates];
     self.monthLabel.text = [NSString stringWithFormat:@"%@", [monthsNames objectForKey:[NSNumber numberWithInt:month]]];
     self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 }
@@ -123,6 +126,8 @@
     dayLabel = nil;
     [backgroundView release];
     backgroundView = nil;
+    [coloredAreaView release];
+    coloredAreaView = nil;
     [view release];
     view = nil;
 }
@@ -152,13 +157,13 @@
 
 - (void) setNormalLook
 {
-    self.backgroundView.image = [UIImage imageNamed:@"inactiveDay_45x68.png"];
+    self.backgroundView.image = [UIImage imageNamed:@"inactive_day.png"];
 }
 
 
 - (void) setActiveLook
 {
-    self.backgroundView.image = [UIImage imageNamed:@"activeDay_45x68.png"];
+    self.backgroundView.image = [UIImage imageNamed:@"active_day.png"];
 }
 
 
@@ -180,6 +185,28 @@
 }
 
 
+- (void) setBackgroundColorForDate:(NSString*)theDateString inPhaseDictionary:(NSDictionary*)phasesDates
+{
+    if ([[phasesDates objectForKey:PRELIMINAR] containsObject:theDateString])
+    {
+        self.coloredAreaView.backgroundColor = [UIColor greenColor];
+    }
+    else if ([[phasesDates objectForKey:CUARTOS] containsObject:theDateString])
+    {
+        self.coloredAreaView.backgroundColor = [UIColor yellowColor];
+    }
+    else if ([[phasesDates objectForKey:SEMIFINALES] containsObject:theDateString])
+    {
+        self.coloredAreaView.backgroundColor = [UIColor orangeColor];
+    }
+    else if ([[phasesDates objectForKey:FINAL] containsObject:theDateString])
+    {
+        self.coloredAreaView.backgroundColor = [UIColor redColor];
+    }
+    else {
+        self.coloredAreaView.backgroundColor = [UIColor whiteColor];
+    }
+}
 
 #pragma mark - Memory Management
 
@@ -187,10 +214,12 @@
 {
     [monthsNames release];
     [dateString release];
+    [contestPhaseDates release];
     [monthLabel release];
     [dayLabel release];
     [backgroundView release];
-    [view release];
+    [coloredAreaView release];
+    [view release];    
     [super dealloc];
 }
 

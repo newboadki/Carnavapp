@@ -75,6 +75,12 @@
 		008EE9DD14F573AD002BFA7F /* scoreboard_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */; };
 		008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */; };
 		008EE9FB14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */; };
+		00A10FD0150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
+		00A10FD1150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
+		00A10FD5150A73D300D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD3150A73D300D1C425 /* inactive_day.png */; };
+		00A10FD6150A73D300D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD3150A73D300D1C425 /* inactive_day.png */; };
+		00A10FD7150A73D300D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD4150A73D300D1C425 /* active_day.png */; };
+		00A10FD8150A73D300D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD4150A73D300D1C425 /* active_day.png */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
@@ -321,6 +327,10 @@
 		008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard_icon3.png; sourceTree = "<group>"; };
 		008EE9F814F6B2F8002BFA7F /* FileSystemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemHelper.h; sourceTree = "<group>"; };
 		008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemHelper.m; sourceTree = "<group>"; };
+		00A10FCE150A6E4A00D1C425 /* ContestPhaseDatesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseDatesHelper.h; sourceTree = "<group>"; };
+		00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseDatesHelper.m; sourceTree = "<group>"; };
+		00A10FD3150A73D300D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
+		00A10FD4150A73D300D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -738,6 +748,8 @@
 		00861A1814EAB2F800E27829 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				00A10FD3150A73D300D1C425 /* inactive_day.png */,
+				00A10FD4150A73D300D1C425 /* active_day.png */,
 				0084FEC914D1E876002A074E /* activeDay_45x68.png */,
 				0084FECA14D1E876002A074E /* inactiveDay_45x68.png */,
 			);
@@ -749,6 +761,8 @@
 			children = (
 				008EE9F814F6B2F8002BFA7F /* FileSystemHelper.h */,
 				008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */,
+				00A10FCE150A6E4A00D1C425 /* ContestPhaseDatesHelper.h */,
+				00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1313,6 +1327,8 @@
 				008EE9DC14F573AD002BFA7F /* scoreboard_icon3.png in Resources */,
 				007864E01503CECC00499636 /* icon.png in Resources */,
 				007864E31503CEE700499636 /* icon@2x.png in Resources */,
+				00A10FD5150A73D300D1C425 /* inactive_day.png in Resources */,
+				00A10FD7150A73D300D1C425 /* active_day.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1360,6 +1376,8 @@
 				00E73ED914E90BC6008961B9 /* SearchResultsTableViewController.xib in Resources */,
 				00861A1614EA7EBD00E27829 /* SearchresultCell.xib in Resources */,
 				008EE9DD14F573AD002BFA7F /* scoreboard_icon3.png in Resources */,
+				00A10FD6150A73D300D1C425 /* inactive_day.png in Resources */,
+				00A10FD8150A73D300D1C425 /* active_day.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1427,6 +1445,7 @@
 				008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */,
 				0052335014F823DC0034E314 /* FileDownloader.m in Sources */,
 				0052335414F823DC0034E314 /* ConsoleLogger.m in Sources */,
+				00A10FD0150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1541,6 +1560,7 @@
 				0052335514F823F00034E314 /* ChallengeSender.m in Sources */,
 				0052335614F823F00034E314 /* FileDownloaderDelegate.m in Sources */,
 				0052335714F823F00034E314 /* FileDownloaderTests.m in Sources */,
+				00A10FD1150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

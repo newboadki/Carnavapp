@@ -8,6 +8,7 @@
 
 #import "CalendarScrollViewController.h"
 #import "RoundedCalendarBoxController.h"
+#import "ContestPhaseDatesHelper.h"
 
 @interface CalendarScrollViewController()
 - (void) loadView;
@@ -81,7 +82,7 @@
     {
         
         NSString* dateString = [dates objectAtIndex:i];
-        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString];
+        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDates:[ContestPhaseDatesHelper phasesDatesDictionary]];
         [dayBoxControllers addObject:controller];        
 
         // add the views        

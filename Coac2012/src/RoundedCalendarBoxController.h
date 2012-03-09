@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CalendarScrollViewController.h"
+#import "Constants.h"
 
 @interface RoundedCalendarBoxController : NSObject
 {
@@ -15,15 +16,18 @@
     IBOutlet UILabel* monthLabel;
     IBOutlet UILabel* dayLabel;
     IBOutlet UIImageView* backgroundView;
+    IBOutlet UIView* coloredAreaView;
     
     CalendarScrollViewController* tapDelegate;
     NSString* dateString;
+    NSDictionary* contestPhaseDates;
     NSDictionary* monthsNames;
 }
 
 @property (nonatomic, retain) UILabel* monthLabel;
 @property (nonatomic, retain) UILabel* dayLabel;
 @property (nonatomic, retain) UIView*  view;
+@property (nonatomic, retain) UIView*  coloredAreaView;
 @property (nonatomic, retain) UIImageView* backgroundView;
 @property (nonatomic, assign) CalendarScrollViewController* tapDelegate;
 @property (nonatomic, copy) NSString*  dateString;
@@ -36,6 +40,6 @@
 - (void) setNormalLook;
 - (void) setActiveLook;
 
-- (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds;
+- (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds andContestPhasesDates:(NSDictionary*)phasesDictionary;
 
 @end
