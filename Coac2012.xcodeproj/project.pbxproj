@@ -15,6 +15,8 @@
 		0052335514F823F00034E314 /* ChallengeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334814F823DC0034E314 /* ChallengeSender.m */; };
 		0052335614F823F00034E314 /* FileDownloaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334A14F823DC0034E314 /* FileDownloaderDelegate.m */; };
 		0052335714F823F00034E314 /* FileDownloaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334C14F823DC0034E314 /* FileDownloaderTests.m */; };
+		007864E01503CECC00499636 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 007864DF1503CECC00499636 /* icon.png */; };
+		007864E31503CEE700499636 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 007864E21503CEE700499636 /* icon@2x.png */; };
 		0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960514CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
@@ -260,6 +262,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000074491502A07E0046381E /* CoacEventDrivenParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacEventDrivenParser.h; sourceTree = "<group>"; };
+		0000744A1502A07E0046381E /* CoacEventDrivenParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacEventDrivenParser.m; sourceTree = "<group>"; };
 		0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosForGroupViewController.h; sourceTree = "<group>"; };
 		0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosForGroupViewController.m; sourceTree = "<group>"; };
 		0052331314F7D7640034E314 /* ModelDataHandlerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelDataHandlerSpec.m; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 		0052334C14F823DC0034E314 /* FileDownloaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloaderTests.m; sourceTree = "<group>"; };
 		0052334E14F823DC0034E314 /* ConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLogger.h; sourceTree = "<group>"; };
 		0052334F14F823DC0034E314 /* ConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleLogger.m; sourceTree = "<group>"; };
+		007864DF1503CECC00499636 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		007864E21503CEE700499636 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedCalendarBoxView.xib; sourceTree = "<group>"; };
 		0080960614CCA072000E1525 /* ContestPhaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseViewController.h; sourceTree = "<group>"; };
 		0080960714CCA072000E1525 /* ContestPhaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseViewController.m; sourceTree = "<group>"; };
@@ -750,6 +756,8 @@
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
+				007864E21503CEE700499636 /* icon@2x.png */,
+				007864DF1503CECC00499636 /* icon.png */,
 				00AECA7E14CAC6DC005CE4DC /* Coac2012 */,
 				00AECAAA14CAC6DC005CE4DC /* Coac2012Tests */,
 				00AECA7714CAC6DC005CE4DC /* Frameworks */,
@@ -1114,6 +1122,8 @@
 				00C0BD5214CACD9500427E42 /* CoacParser.h */,
 				00C0BD5314CACD9500427E42 /* CoacParser.m */,
 				00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */,
+				000074491502A07E0046381E /* CoacEventDrivenParser.h */,
+				0000744A1502A07E0046381E /* CoacEventDrivenParser.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1301,6 +1311,8 @@
 				00E73ED814E90BC6008961B9 /* SearchResultsTableViewController.xib in Resources */,
 				00861A1514EA7EBD00E27829 /* SearchresultCell.xib in Resources */,
 				008EE9DC14F573AD002BFA7F /* scoreboard_icon3.png in Resources */,
+				007864E01503CECC00499636 /* icon.png in Resources */,
+				007864E31503CEE700499636 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
