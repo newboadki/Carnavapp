@@ -13,13 +13,14 @@
 - (void) componentesFromDateString:(NSString*)ds day:(int*)d month:(int*)m year:(int*)y;
 - (void) handleTap:(id)sender;
 - (void) setBackgroundColorForDate:(NSString*)dateString inPhaseDictionary:(NSDictionary*)contestPhaseDates;
+- (void) setPhaseLabelWithDateString:(NSString*)dateString inPhaseDictionary:(NSDictionary*)contestPhaseDates;
 @end
 
 @implementation RoundedCalendarBoxController
 
 @synthesize tapDelegate;
 @synthesize dateString;
-@synthesize monthLabel, dayLabel, view, coloredAreaView;
+@synthesize monthLabel, dayLabel, view, coloredAreaView, phaseLabel;
 @synthesize backgroundView;
 
 
@@ -112,6 +113,7 @@
     int day, month, year;
     [self componentesFromDateString:dateString day:(&day) month:(&month) year:(&year)];
     [self setBackgroundColorForDate:dateString inPhaseDictionary:contestPhaseDates];
+    [self setPhaseLabelWithDateString:dateString inPhaseDictionary:contestPhaseDates];
     self.monthLabel.text = [NSString stringWithFormat:@"%@", [monthsNames objectForKey:[NSNumber numberWithInt:month]]];
     self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 }
@@ -128,8 +130,10 @@
     backgroundView = nil;
     [coloredAreaView release];
     coloredAreaView = nil;
+    [phaseLabel release];
+    phaseLabel = nil;
     [view release];
-    view = nil;
+    view = nil;    
 }
 
 
@@ -157,13 +161,15 @@
 
 - (void) setNormalLook
 {
-    self.backgroundView.image = [UIImage imageNamed:@"inactive_day.png"];
+    //self.backgroundView.image = [UIImage imageNamed:@"inactive_day.png"];
+    [self setBackgroundColorForDate:dateString inPhaseDictionary:contestPhaseDates];
 }
 
 
 - (void) setActiveLook
 {
-    self.backgroundView.image = [UIImage imageNamed:@"active_day.png"];
+    //self.backgroundView.image = [UIImage imageNamed:@"active_day.png"];
+    self.coloredAreaView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:153.0/255.0 alpha:1.0];
 }
 
 
@@ -189,24 +195,51 @@
 {
     if ([[phasesDates objectForKey:PRELIMINAR] containsObject:theDateString])
     {
-        self.coloredAreaView.backgroundColor = [UIColor greenColor];
+        self.coloredAreaView.backgroundColor = [UIColor colorWithRed:196.0/255.0 green:128.0/255.0 blue:158.0/255.0 alpha:1.0];
     }
     else if ([[phasesDates objectForKey:CUARTOS] containsObject:theDateString])
     {
-        self.coloredAreaView.backgroundColor = [UIColor yellowColor];
+        self.coloredAreaView.backgroundColor = [UIColor colorWithRed:140.0/255.0 green:64.0/255.0 blue:97.0/255.0 alpha:1.0];
     }
     else if ([[phasesDates objectForKey:SEMIFINALES] containsObject:theDateString])
     {
-        self.coloredAreaView.backgroundColor = [UIColor orangeColor];
+        self.coloredAreaView.backgroundColor = [UIColor colorWithRed:137.0/255.0 green:0/255.0 blue:61.0/255.0 alpha:1.0];
     }
     else if ([[phasesDates objectForKey:FINAL] containsObject:theDateString])
     {
-        self.coloredAreaView.backgroundColor = [UIColor redColor];
+        self.coloredAreaView.backgroundColor = [UIColor colorWithRed:69.0/255.0 green:.0/255.0 blue:31.0/255.0 alpha:1.0];
     }
     else {
         self.coloredAreaView.backgroundColor = [UIColor whiteColor];
     }
 }
+
+
+- (void) setPhaseLabelWithDateString:(NSString*)theDateString inPhaseDictionary:(NSDictionary*)phasesDates
+{
+    if ([[[phasesDates objectForKey:PRELIMINAR] objectAtIndex:0] isEqualToString:theDateString])
+    {
+        self.phaseLabel.text = @"pre";
+    }
+    else if ([[[phasesDates objectForKey:CUARTOS] objectAtIndex:0] isEqualToString:theDateString])
+    {
+        self.phaseLabel.text = @"cuartos";
+    }
+    else if ([[[phasesDates objectForKey:SEMIFINALES] objectAtIndex:0] isEqualToString:theDateString])
+    {
+        self.phaseLabel.text = @"semi";
+    }
+    else if ([[[phasesDates objectForKey:FINAL] objectAtIndex:0] isEqualToString:theDateString])
+    {
+        self.phaseLabel.text = @"final";
+    }
+    else
+    {
+        self.phaseLabel.text = @"";
+    }
+}
+
+
 
 #pragma mark - Memory Management
 
@@ -217,6 +250,7 @@
     [contestPhaseDates release];
     [monthLabel release];
     [dayLabel release];
+    [phaseLabel release];
     [backgroundView release];
     [coloredAreaView release];
     [view release];    
