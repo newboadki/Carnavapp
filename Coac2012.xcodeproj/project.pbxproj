@@ -585,6 +585,7 @@
 				000C3BF3164860B900B8E92D /* NSValue+KiwiAdditions.m */,
 			);
 			name = KiwiImpFiles;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0052334114F823DC0034E314 /* FileDownloader */ = {
@@ -750,7 +751,6 @@
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
-				000C3C3E164860D300B8E92D /* KiwiImpFiles */,
 				00FEA550160F94D3004AA9D9 /* Default-568h@2x.png */,
 				0072377C1567F88C0075CBFE /* libxml2.2.dylib */,
 				007864E21503CEE700499636 /* icon@2x.png */,
@@ -819,6 +819,7 @@
 		00AECAAA14CAC6DC005CE4DC /* Coac2012Tests */ = {
 			isa = PBXGroup;
 			children = (
+				000C3C3E164860D300B8E92D /* KiwiImpFiles */,
 				007237771567F61E0075CBFE /* coac2012Tests-Info.plist */,
 				007237781567F61E0075CBFE /* coac2012Tests-Prefix.pch */,
 				00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */,
