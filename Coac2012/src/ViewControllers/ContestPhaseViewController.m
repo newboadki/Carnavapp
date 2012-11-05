@@ -25,8 +25,8 @@
 
 - (void) handleGroupsForDate:(NSString*) selectedDate
 {
-    NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];
-    NSArray* groupsForDate = [calendarDictionary objectForKey:selectedDate];
+    NSDictionary* calendarDictionary = modelData[CALENDAR_KEY];
+    NSArray* groupsForDate = calendarDictionary[selectedDate];
     
     [self setElementsArray:groupsForDate];
     [tableView reloadData];
@@ -38,7 +38,7 @@
     NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest];
     if([daysForCurrentPhase count] > 0)
     {
-        NSString* selectedDate = [daysForCurrentPhase objectAtIndex:0];
+        NSString* selectedDate = daysForCurrentPhase[0];
         [self handleGroupsForDate:selectedDate];
     }
 }
@@ -60,7 +60,7 @@
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    Agrupacion* ag = [elementsArray objectAtIndex:[indexpath row]];
+    Agrupacion* ag = elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
@@ -158,7 +158,7 @@
     
 
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = [elementsArray objectAtIndex:[indexPath row]];
+    detailViewController.group = elementsArray[[indexPath row]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];    
 }

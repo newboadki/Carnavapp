@@ -22,7 +22,7 @@
 
 - (void) updateArrayOfElements
 {
-    NSArray* groups = [NSArray arrayWithObjects:[self findGroupWithId:79], // Coros
+    NSArray* groups = @[[self findGroupWithId:79], // Coros
                                                [self findGroupWithId:61],
                                                [self findGroupWithId:9],
                                                [self findGroupWithId:48], // Comparsas
@@ -33,7 +33,7 @@
                                                [self findGroupWithId:92],
                                                [self findGroupWithId:38], // Cuartetos
                                                [self findGroupWithId:109],
-                                               [self findGroupWithId:73], nil];
+                                               [self findGroupWithId:73]];
     [self setElementsArray:groups];
     [self.tableView reloadData];
 }
@@ -45,7 +45,7 @@
     int row = [indexpath row];
     int linealIndex = row + (section * 3);
     
-    Agrupacion* ag = [elementsArray objectAtIndex:linealIndex];
+    Agrupacion* ag = elementsArray[linealIndex];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
@@ -102,7 +102,7 @@
     int linealIndex = row + (section * 3);
 
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = [elementsArray objectAtIndex:linealIndex];
+    detailViewController.group = elementsArray[linealIndex];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];    
 }
@@ -145,14 +145,14 @@
 
 - (Agrupacion*) findGroupWithId:(int)soughtId
 {
-    NSArray* allgroups = [modelData objectForKey:GROUPS_KEY];
+    NSArray* allgroups = modelData[GROUPS_KEY];
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"self.identificador = %ld", soughtId];
     NSArray* results = [allgroups filteredArrayUsingPredicate:predicate];
     Agrupacion* group = nil;
     
     if ([results count] > 0)
     {
-        group = [results objectAtIndex:0];        
+        group = results[0];        
     }
     
     return group;    

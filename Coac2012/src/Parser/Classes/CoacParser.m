@@ -148,10 +148,10 @@
      [self showModalities];*/
     
     
-    NSDictionary* results = [NSDictionary dictionaryWithObjectsAndKeys:groups, GROUPS_KEY, 
-                             calendar, CALENDAR_KEY, 
-                             links, LINKS_KEY, 
-                             modalities, MODALITIES_KEY, nil];
+    NSDictionary* results = @{GROUPS_KEY: groups, 
+                             CALENDAR_KEY: calendar, 
+                             LINKS_KEY: links, 
+                             MODALITIES_KEY: modalities};
     return results;
 }
 
@@ -223,7 +223,7 @@
         }
     }
     
-    [calendar setObject:groupsInDay forKey:dateString];
+    calendar[dateString] = groupsInDay;
 }
 
 
@@ -249,12 +249,12 @@
     
     ag.nombre = [[node attributeForName:GROUP_NAME_ATTRIBUTE] stringValue];
     ag.modalidad = [[node attributeForName:GROUP_MODALITY_ATTRIBUTE] stringValue];
-    ag.identificador = [NSNumber numberWithInt:[[[node attributeForName:GROUP_ID_ATTRIBUTE] stringValue] intValue]];
+    ag.identificador = @([[[node attributeForName:GROUP_ID_ATTRIBUTE] stringValue] intValue]);
     ag.autor = [[node attributeForName:GROUP_AUTHOR_ATTRIBUTE] stringValue];
     ag.director = [[node attributeForName:GROUP_DIRECTOR_ATTRIBUTE] stringValue];
     ag.localidad = [[node attributeForName:GROUP_CITY_ATTRIBUTE] stringValue];
     ag.coac2011 = [[node attributeForName:GROUP_COAC2011_ATTRIBUTE] stringValue];
-    ag.esCabezaDeSerie = [NSNumber numberWithBool:[[[node attributeForName:GROUP_HEAD_OF_GROUP_ATTRIBUTE] stringValue] boolValue]];
+    ag.esCabezaDeSerie = @([[[node attributeForName:GROUP_HEAD_OF_GROUP_ATTRIBUTE] stringValue] boolValue]);
     ag.info = [[node attributeForName:GROUP_INFO_ATTRIBUTE] stringValue];
     ag.urlCC = [[node attributeForName:GROUP_URL_CC_ATTRIBUTE] stringValue];
     ag.urlFoto = [[node attributeForName:GROUP_URL_PICTURE_ATTRIBUTE] stringValue];
@@ -265,7 +265,7 @@
     NSArray*  componentsNodes = [node elementsForName:COMPONENTS_TAG];
     if ([componentsNodes count] > 0)
     {
-        CXMLElement* componentsElement = [componentsNodes objectAtIndex:0];
+        CXMLElement* componentsElement = componentsNodes[0];
         componentes = [self parseComponents:componentsElement];
     }    
     ag.componentes = componentes;
@@ -275,7 +275,7 @@
     NSArray*  videosNodes = [node elementsForName:VIDEOS_TAG];
     if ([videosNodes count] > 0)
     {
-        CXMLElement* videosElement = [videosNodes objectAtIndex:0];
+        CXMLElement* videosElement = videosNodes[0];
         videos = [self parseVideos:videosElement];
     }    
     ag.videos = videos;
@@ -284,7 +284,7 @@
     NSArray*  fotosNodes = [node elementsForName:PICTURES_TAG];
     if ([fotosNodes count] > 0)
     {
-        CXMLElement* fotosElement = [fotosNodes objectAtIndex:0];
+        CXMLElement* fotosElement = fotosNodes[0];
         fotos = [self parsePictures:fotosElement];
     }    
     ag.fotos = fotos;
@@ -293,7 +293,7 @@
     NSArray*  comentariosNodes = [node elementsForName:COMMENTS_TAG];
     if ([comentariosNodes count] > 0)
     {
-        CXMLElement* comentariosElement = [comentariosNodes objectAtIndex:0];
+        CXMLElement* comentariosElement = comentariosNodes[0];
         comentarios = [self parseComments:comentariosElement];
     }    
     ag.comentatios = comentarios;
@@ -302,7 +302,7 @@
     // Add it to the collection
     [groups addObject:ag];
     NSString* modality = [ag.modalidad capitalizedString];
-    NSMutableArray* groupsForModality = [modalities objectForKey:modality];
+    NSMutableArray* groupsForModality = modalities[modality];
     if (groupsForModality)
     {
         [groupsForModality addObject:ag];
@@ -311,7 +311,7 @@
     {
         NSMutableArray* newGroupsForModalidy = [[NSMutableArray alloc] init];
         [newGroupsForModalidy addObject:ag];
-        [modalities setObject:newGroupsForModalidy forKey:modality];
+        modalities[modality] = newGroupsForModalidy;
         [newGroupsForModalidy release];
     }
     
@@ -407,7 +407,7 @@
     
     if([filteredArray count] > 0)
     {
-        result = [filteredArray objectAtIndex:0];
+        result = filteredArray[0];
     }
     
     return result;    
@@ -424,7 +424,7 @@
     for (NSString* key in keys)
     {
         NSLog(@"- %@  -----------------", key);
-        NSArray* agrupaciones = [calendar objectForKey:key];
+        NSArray* agrupaciones = calendar[key];
         for (Agrupacion* ag in agrupaciones)
         {
             NSLog(@"Ag: %d", [[ag identificador] intValue]);
@@ -440,7 +440,7 @@
     for (NSString* key in keys)
     {
         NSLog(@"- %@  -----------------", key);
-        NSArray* agrupaciones = [modalities objectForKey:key];
+        NSArray* agrupaciones = modalities[key];
         for (Agrupacion* ag in agrupaciones)
         {
             NSLog(@"Ag: %@", [ag nombre]);

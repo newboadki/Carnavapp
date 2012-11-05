@@ -12,5 +12,6 @@
 }
 
 void DebugLog(NSString* format, ...);
+void BSAssertIfDebugging(BOOL condition);
 
 @end

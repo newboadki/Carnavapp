@@ -19,7 +19,7 @@
 
 - (void) updateArrayOfElements
 {
-    NSDictionary* modalitiesDic = [modelData objectForKey:MODALITIES_KEY];
+    NSDictionary* modalitiesDic = modelData[MODALITIES_KEY];
     NSArray* mk = [modalitiesDic allKeys];
     
     // Order an assign the relevant parts of information for this class
@@ -38,7 +38,7 @@
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
-    NSString* currentModality = [elementsArray objectAtIndex:[indexpath row]];    
+    NSString* currentModality = elementsArray[[indexpath row]];    
     groupNameLabel.text = currentModality;
 	categoryNameLabel.text = @"";
 }
@@ -80,7 +80,7 @@
 	/***********************************************************************************************/
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     
-    NSString* selectedModality = [elementsArray objectAtIndex:[indexPath row]];
+    NSString* selectedModality = elementsArray[[indexPath row]];
     GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     [nextController setModality:selectedModality];
     [nextController setModelData:self.modelData];

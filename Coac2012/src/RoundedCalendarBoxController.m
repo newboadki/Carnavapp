@@ -35,19 +35,18 @@
         tapDelegate = delegate;
         dateString = [ds copy];
         contestPhaseDates = [phasesDictionary retain];
-        monthsNames = [[NSDictionary dictionaryWithObjectsAndKeys:@"ENE", [NSNumber numberWithInt:1],
-                                                                  @"FEB", [NSNumber numberWithInt:2],
-                                                                  @"MAR", [NSNumber numberWithInt:3],
-                                                                  @"ABR", [NSNumber numberWithInt:4],
-                                                                  @"MAY", [NSNumber numberWithInt:5],
-                                                                  @"JUN", [NSNumber numberWithInt:6],
-                                                                  @"JUL", [NSNumber numberWithInt:7],
-                                                                  @"AGO", [NSNumber numberWithInt:8],
-                                                                  @"SEP", [NSNumber numberWithInt:9],
-                                                                  @"OCT", [NSNumber numberWithInt:10],
-                                                                  @"NOV", [NSNumber numberWithInt:11],
-                                                                  @"DIC", [NSNumber numberWithInt:12], 
-                                                                  nil] retain];
+        monthsNames = [@{@1: @"ENE",
+                                                                  @2: @"FEB",
+                                                                  @3: @"MAR",
+                                                                  @4: @"ABR",
+                                                                  @5: @"MAY",
+                                                                  @6: @"JUN",
+                                                                  @7: @"JUL",
+                                                                  @8: @"AGO",
+                                                                  @9: @"SEP",
+                                                                  @10: @"OCT",
+                                                                  @11: @"NOV",
+                                                                  @12: @"DIC"} retain];
     }
     
     return self;
@@ -97,7 +96,7 @@
 {
     // Create the view
     // will only be called once, only form the view getter.
-    view = [[[[NSBundle mainBundle] loadNibNamed:@"RoundedCalendarBoxView" owner:self options:nil] objectAtIndex:0] retain];            
+    view = [[[NSBundle mainBundle] loadNibNamed:@"RoundedCalendarBoxView" owner:self options:nil][0] retain];            
     
     // Gesture recognizer
     UITapGestureRecognizer* tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
@@ -114,7 +113,7 @@
     [self componentesFromDateString:dateString day:(&day) month:(&month) year:(&year)];
     [self setBackgroundColorForDate:dateString inPhaseDictionary:contestPhaseDates];
     [self setPhaseLabelWithDateString:dateString inPhaseDictionary:contestPhaseDates];
-    self.monthLabel.text = [NSString stringWithFormat:@"%@", [monthsNames objectForKey:[NSNumber numberWithInt:month]]];
+    self.monthLabel.text = [NSString stringWithFormat:@"%@", monthsNames[@(month)]];
     self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 }
 
@@ -193,19 +192,19 @@
 
 - (void) setBackgroundColorForDate:(NSString*)theDateString inPhaseDictionary:(NSDictionary*)phasesDates
 {
-    if ([[phasesDates objectForKey:PRELIMINAR] containsObject:theDateString])
+    if ([phasesDates[PRELIMINAR] containsObject:theDateString])
     {
         self.coloredAreaView.backgroundColor = [UIColor colorWithRed:196.0/255.0 green:128.0/255.0 blue:158.0/255.0 alpha:1.0];
     }
-    else if ([[phasesDates objectForKey:CUARTOS] containsObject:theDateString])
+    else if ([phasesDates[CUARTOS] containsObject:theDateString])
     {
         self.coloredAreaView.backgroundColor = [UIColor colorWithRed:140.0/255.0 green:64.0/255.0 blue:97.0/255.0 alpha:1.0];
     }
-    else if ([[phasesDates objectForKey:SEMIFINALES] containsObject:theDateString])
+    else if ([phasesDates[SEMIFINALES] containsObject:theDateString])
     {
         self.coloredAreaView.backgroundColor = [UIColor colorWithRed:137.0/255.0 green:0/255.0 blue:61.0/255.0 alpha:1.0];
     }
-    else if ([[phasesDates objectForKey:FINAL] containsObject:theDateString])
+    else if ([phasesDates[FINAL] containsObject:theDateString])
     {
         self.coloredAreaView.backgroundColor = [UIColor colorWithRed:69.0/255.0 green:.0/255.0 blue:31.0/255.0 alpha:1.0];
     }
@@ -217,19 +216,19 @@
 
 - (void) setPhaseLabelWithDateString:(NSString*)theDateString inPhaseDictionary:(NSDictionary*)phasesDates
 {
-    if ([[[phasesDates objectForKey:PRELIMINAR] objectAtIndex:0] isEqualToString:theDateString])
+    if ([phasesDates[PRELIMINAR][0] isEqualToString:theDateString])
     {
         self.phaseLabel.text = @"pre";
     }
-    else if ([[[phasesDates objectForKey:CUARTOS] objectAtIndex:0] isEqualToString:theDateString])
+    else if ([phasesDates[CUARTOS][0] isEqualToString:theDateString])
     {
         self.phaseLabel.text = @"cuartos";
     }
-    else if ([[[phasesDates objectForKey:SEMIFINALES] objectAtIndex:0] isEqualToString:theDateString])
+    else if ([phasesDates[SEMIFINALES][0] isEqualToString:theDateString])
     {
         self.phaseLabel.text = @"semi";
     }
-    else if ([[[phasesDates objectForKey:FINAL] objectAtIndex:0] isEqualToString:theDateString])
+    else if ([phasesDates[FINAL][0] isEqualToString:theDateString])
     {
         self.phaseLabel.text = @"final";
     }

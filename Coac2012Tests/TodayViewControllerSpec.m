@@ -7,6 +7,7 @@ SPEC_BEGIN(TodayViewControllerViewControllerSpec)
 describe(@"updateArrayOfElements:", ^{
         
     it(@"should set the elementsArray with the groups for the current date", ^{
+
     });
     
     it(@"should realod the tableView's data", ^{

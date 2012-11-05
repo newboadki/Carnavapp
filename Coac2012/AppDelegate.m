@@ -57,7 +57,7 @@
     
     if (!data)
     {
-        loadingScreen = [[[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil] objectAtIndex:0];
+        loadingScreen = [[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil][0];
         loadingScreen.frame = CGRectMake(0, 0, 320, 480);        
         [self.window addSubview:loadingScreen];
         
@@ -96,7 +96,7 @@
     
     if (!data)
     {
-        loadingScreen = [[[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil] objectAtIndex:0];
+        loadingScreen = [[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil][0];
         loadingScreen.frame = CGRectMake(0, 0, 320, 480);        
         [self.window addSubview:loadingScreen];
         

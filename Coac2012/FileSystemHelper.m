@@ -19,7 +19,7 @@
     
     if ([paths count] > 0)
     {        
-        documentsDirectoryPath = [paths objectAtIndex:0];
+        documentsDirectoryPath = paths[0];
         NSString* dictionaryFilePath =  [documentsDirectoryPath stringByAppendingFormat:@"/%@", MODEL_DATA_FILE_NAME];
         success = [NSKeyedArchiver archiveRootObject:obj toFile:dictionaryFilePath];
     }
@@ -36,7 +36,7 @@
     
     if ([paths count] > 0)
     {        
-        documentsDirectoryPath = [paths objectAtIndex:0];
+        documentsDirectoryPath = paths[0];
         NSString* dictionaryFilePath =  [documentsDirectoryPath stringByAppendingFormat:@"/%@", MODEL_DATA_FILE_NAME];
         record = [NSKeyedUnarchiver unarchiveObjectWithFile:dictionaryFilePath];
     }

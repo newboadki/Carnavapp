@@ -20,7 +20,7 @@
 {
     NSError* err = nil;
     NSString* path = [[NSBundle bundleForClass:[self class]] pathForResource:@"group" ofType:@"xml"];
-    NSData* xmlData = [[NSData alloc] initWithContentsOfFile:path options:NULL error:&err];
+    NSData* xmlData = [[NSData alloc] initWithContentsOfFile:path options:0 error:&err];
     parser = [[CoacParser alloc] initWithXMLData:xmlData delegate:self];
 }
 

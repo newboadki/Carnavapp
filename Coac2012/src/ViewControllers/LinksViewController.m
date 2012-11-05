@@ -20,7 +20,7 @@
 
 - (void) updateArrayOfElements
 {
-    NSArray* linksArray = [modelData objectForKey:LINKS_KEY];
+    NSArray* linksArray = modelData[LINKS_KEY];
     [self setElementsArray:linksArray];
     [self.tableView reloadData];
 }
@@ -30,7 +30,7 @@
     // Configure the cell..
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     
-    Link* link = [elementsArray objectAtIndex:[indexpath row]];    
+    Link* link = elementsArray[[indexpath row]];    
     groupNameLabel.text = link.desc; 
 }
 
@@ -65,7 +65,7 @@
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     
 
-    Link* selectedLink = [elementsArray objectAtIndex:[indexPath row]];
+    Link* selectedLink = elementsArray[[indexPath row]];
     NSLog(@"link: %@", selectedLink.url);
     LinkViewerViewController* nextController = [[LinkViewerViewController alloc] initWithNibName:@"LinkViewerViewController" bundle:nil];
     [nextController setLink:selectedLink];

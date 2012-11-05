@@ -111,7 +111,7 @@
     UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:@"SearchresultCell" owner:self options:nil] objectAtIndex:0];
+        self.cellFromNib = [[NSBundle mainBundle] loadNibNamed:@"SearchresultCell" owner:self options:nil][0];
         cell = cellFromNib;
         self.cellFromNib = nil;    
     }
@@ -130,7 +130,7 @@
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    Agrupacion* ag = [results objectAtIndex:[indexpath row]];
+    Agrupacion* ag = results[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];        
         groupNameLabel.text = ag.nombre;
@@ -146,7 +146,7 @@
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
-    Agrupacion* selectedGroup = [results objectAtIndex:[indexPath row]];
+    Agrupacion* selectedGroup = results[[indexPath row]];
     [selectionDelegate selectedElement:selectedGroup];
 }
 

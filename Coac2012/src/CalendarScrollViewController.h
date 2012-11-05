@@ -12,7 +12,7 @@
 
 @interface CalendarScrollViewController : NSObject
 {
-    IBOutlet UIScrollView* scrollView;
+    UIScrollView* scrollView;
     @private    
     NSArray* dates;
     NSMutableArray* dayBoxControllers;

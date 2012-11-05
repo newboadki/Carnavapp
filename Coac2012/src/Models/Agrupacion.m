@@ -79,14 +79,14 @@
 
 - (id) initAsRestingGroup
 {
-    return [self initWithId:[NSNumber numberWithInt:RESTING_GROUP_ID] 
+    return [self initWithId:@RESTING_GROUP_ID 
                    modality:nil 
                        name:nil 
                      author:nil 
                    director:nil 
                        city:nil 
                    coac2011:nil
-              isHeadOfGroup:[NSNumber numberWithBool:NO]
+              isHeadOfGroup:@NO
                        info:nil 
                       score:nil 
                    pictures:nil 
@@ -160,12 +160,12 @@
     desc = [desc stringByAppendingString:@"=======================================================\n"];
     desc = [desc stringByAppendingFormat:@"= Nombre: %@\n", self.nombre];
     desc = [desc stringByAppendingFormat:@"= Modalidad: %@\n", self.modalidad];
-    desc = [desc stringByAppendingFormat:@"= Ident: %ld\n", identificador];
+    desc = [desc stringByAppendingFormat:@"= Ident: %ld\n", [identificador longValue]];
     desc = [desc stringByAppendingFormat:@"= Autor: %@\n", self.autor];
     desc = [desc stringByAppendingFormat:@"= Director: %@\n", self.director];
     desc = [desc stringByAppendingFormat:@"= Localidad: %@\n", self.localidad];
     desc = [desc stringByAppendingFormat:@"= Coac2011: %@\n", self.coac2011];
-    desc = [desc stringByAppendingFormat:@"= Cabeza de serie: %d\n", self.esCabezaDeSerie];
+    desc = [desc stringByAppendingFormat:@"= Cabeza de serie: %d\n", [self.esCabezaDeSerie boolValue]];
     desc = [desc stringByAppendingFormat:@"= Info: %@\n", self.info];
     desc = [desc stringByAppendingFormat:@"= urlCC: %@\n", self.urlCC];
     desc = [desc stringByAppendingFormat:@"= urlFoto: %@\n", self.urlFoto];

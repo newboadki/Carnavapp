@@ -12,7 +12,7 @@
 
 + (NSDictionary*) phasesDatesDictionary
 {
-    NSArray* diasPreliminar = [NSArray arrayWithObjects:@"21/01/2012",
+    NSArray* diasPreliminar = @[@"21/01/2012",
                                @"22/01/2012",
                                @"23/01/2012",
                                @"24/01/2012",
@@ -26,23 +26,20 @@
                                @"01/02/2012",
                                @"02/02/2012",
                                @"03/02/2012",
-                               @"04/02/2012",
-                               nil];
+                               @"04/02/2012"];
     
-    NSArray* diasCuartos = [NSArray arrayWithObjects:@"06/02/2012", 
+    NSArray* diasCuartos = @[@"06/02/2012", 
                             @"07/02/2012", 
                             @"08/02/2012", 
                             @"09/02/2012",
                             @"10/02/2012",
-                            @"11/02/2012", 
-                            nil];
+                            @"11/02/2012"];
     
-    NSArray* diasSemifinales = [NSArray arrayWithObjects:@"13/02/2012", 
+    NSArray* diasSemifinales = @[@"13/02/2012", 
                                 @"14/02/2012",
-                                @"15/02/2012",
-                                nil];
+                                @"15/02/2012"];
     
-    NSArray* diasFinal = [NSArray arrayWithObjects:@"17/02/2012", nil];
+    NSArray* diasFinal = @[@"17/02/2012"];
     
     NSDictionary* daysForPhases = [[[NSDictionary alloc] initWithObjectsAndKeys:diasPreliminar, PRELIMINAR, 
                                     diasCuartos, CUARTOS, 
@@ -55,13 +52,13 @@
 
 + (NSArray*) daysForPhase:(NSString*) currentPhase
 {
-    return [[self phasesDatesDictionary] objectForKey:currentPhase];
+    return [self phasesDatesDictionary][currentPhase];
 }
 
 
 + (NSArray*) allDaysForcontest
 {
-    NSArray* days = [NSArray arrayWithObjects:@"21/01/2012",
+    NSArray* days = @[@"21/01/2012",
                      @"22/01/2012",
                      @"23/01/2012",
                      @"24/01/2012",
@@ -85,8 +82,7 @@
                      @"13/02/2012", 
                      @"14/02/2012",
                      @"15/02/2012",
-                     @"17/02/2012",
-                     nil];
+                     @"17/02/2012"];
     
     return days;
 }

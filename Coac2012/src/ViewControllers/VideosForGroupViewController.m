@@ -24,7 +24,7 @@
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    Video* video = [elementsArray objectAtIndex:[indexpath row]];
+    Video* video = elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     groupNameLabel.text = video.desc;
     
@@ -48,7 +48,7 @@
 {
     
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
-    Video* video = [elementsArray objectAtIndex:[indexPath row]];
+    Video* video = elementsArray[[indexPath row]];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:video.url]];
 }
 

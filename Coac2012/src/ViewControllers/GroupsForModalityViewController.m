@@ -38,8 +38,8 @@
 
 - (void) updateArrayOfElements
 {
-    NSDictionary* modalitiesDic = [modelData objectForKey:MODALITIES_KEY];
-    NSArray* modalityGroups = [modalitiesDic objectForKey:modality];
+    NSDictionary* modalitiesDic = modelData[MODALITIES_KEY];
+    NSArray* modalityGroups = modalitiesDic[modality];
     
     modalityGroups = [modalityGroups sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Agrupacion* a1 = (Agrupacion*)obj1;
@@ -55,7 +55,7 @@
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell...
-    Agrupacion* ag = [elementsArray objectAtIndex:[indexpath row]];
+    Agrupacion* ag = elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
@@ -96,7 +96,7 @@
     
 
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = [elementsArray objectAtIndex:[indexPath row]];
+    detailViewController.group = elementsArray[[indexPath row]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
      

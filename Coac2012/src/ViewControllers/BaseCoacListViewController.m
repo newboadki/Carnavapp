@@ -189,7 +189,7 @@
     UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        self.cellFromNib = [[[NSBundle mainBundle] loadNibNamed:[self normalCellNibName] owner:self options:nil] objectAtIndex:0];
+        self.cellFromNib = [[NSBundle mainBundle] loadNibNamed:[self normalCellNibName] owner:self options:nil][0];
         cell = cellFromNib;
         self.cellFromNib = nil;    
     }
@@ -204,7 +204,7 @@
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
-    cell.selectedBackgroundView = [[[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil] objectAtIndex:0] ;
+    cell.selectedBackgroundView = [[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil][0] ;
     [self configureCell:cell indexPath:indexPath]; 
     
     [UIView animateWithDuration:0.5 animations:^{
@@ -273,7 +273,7 @@
 
 - (void) resultsAreReadyInDictionary:(NSDictionary*)resultsDictionary
 {
-    NSArray* results = [resultsDictionary objectForKey:SEARCH_RESULTS_KEY];
+    NSArray* results = resultsDictionary[SEARCH_RESULTS_KEY];
     [[self searchResultsTableViewController] setResults:results];
     [self.searchDisplayController.searchResultsTableView reloadData];
 }

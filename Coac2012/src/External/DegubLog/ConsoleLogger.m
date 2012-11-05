@@ -32,4 +32,12 @@ void DebugLog(NSString* format, ...)
     #endif
 }
 
+
+void BSAssertIfDebugging(BOOL condition)
+{
+    #ifdef DEBUG
+        assert(condition);
+    #endif
+}
+
 @end

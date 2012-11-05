@@ -36,7 +36,7 @@
         NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[c] %@", searchString]; // [c] to do a non case-sensitive search
         NSArray* results = [sampleArray filteredArrayUsingPredicate:predicate];
         
-        NSDictionary* resultsDic = [NSDictionary dictionaryWithObjectsAndKeys:results, SEARCH_RESULTS_KEY, searchString, SEARCH_STRING_KEY, nil];        
+        NSDictionary* resultsDic = @{SEARCH_RESULTS_KEY: results, SEARCH_STRING_KEY: searchString};        
         [(NSObject*)resultsDelegate performSelectorOnMainThread:@selector(resultsAreReadyInDictionary:) withObject:resultsDic waitUntilDone:YES];
     }];
 }

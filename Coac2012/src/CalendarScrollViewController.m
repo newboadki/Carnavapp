@@ -81,7 +81,7 @@
     for (int i=0; i<[dates count]; i++)
     {
         
-        NSString* dateString = [dates objectAtIndex:i];
+        NSString* dateString = dates[i];
         RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDates:[ContestPhaseDatesHelper phasesDatesDictionary]];
         [dayBoxControllers addObject:controller];        
 
@@ -117,7 +117,7 @@
 
     if (!todayIsInTheList)
     {
-        RoundedCalendarBoxController* firstController = [dayBoxControllers objectAtIndex:0];
+        RoundedCalendarBoxController* firstController = dayBoxControllers[0];
         [firstController setActiveLook];        
     }
 }
