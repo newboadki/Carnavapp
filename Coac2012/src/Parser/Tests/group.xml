@@ -1,41 +1,43 @@
-<coac2012>    
-	<agrupaciones>
-		<agrupacion id="1" modalidad="CORO" nombre="Los hijos del 78" autor="Francisco Javier Sevilla" director="Antonio Cuesta Pino"
-            localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false" 
-            info="El coro a pie"
-            url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
-            url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"
-            url_videos="url of the video"
-            puntos="">
-			<componentes>
-				<componente nombre="Paco" voz="Grave"/>
-                <componente nombre="Maruja" voz="Muy Aguda"/>
-			</componentes>
-			<videos>
-				<video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
-                <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
-			</videos>
-			<fotos>
-				<foto descripcion="foto1" url="url1"/>
-			</fotos>
-			<comentarios>
-				<comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
-				<comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
-			</comentarios>
-		</agrupacion>
-    </agrupaciones>
-    
-    <calendario>
-		<dia fecha="21/01/2012">
-			<puesto no="1" agrupacion="1"/>
-		</dia>
-		<dia fecha="22/01/2012">
-			<puesto no="1" agrupacion="1"/>
-		</dia>
-    </calendario>
-    
-    <enlaces>
-		<enlace tipo="Agrupaciones" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
-		<enlace tipo="Agrupaciones" descripcion="La Comparsa de J.C.Aragon" url="http://www.lacomparsadejuancarlos.com/" />
-    </enlaces>
-</coac2012>
+
+    <coac2012>
+        <agrupaciones>
+            <agrupacion id="1" modalidad="CORO" nombre="Los hijos del 78" autor="Francisco Javier Sevilla" director="Antonio Cuesta Pino"
+                localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false" 
+                info="El coro a pie"
+                url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
+                url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"
+                url_videos="url of the video"
+                puntos="">
+                <componentes>
+                    <componente nombre="Paco" voz="Grave"/>
+                    <componente nombre="Maruja" voz="Muy Aguda"/>
+                </componentes>
+                <videos>
+                    <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
+                    <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
+                </videos>
+                <fotos>
+                    <foto descripcion="foto1" url="url1"/>
+                </fotos>
+                <comentarios>
+                    <comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
+                    <comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
+                </comentarios>
+            </agrupacion>
+        </agrupaciones>
+        
+        <calendario>
+            <dia fecha="21/01/2012">
+                <puesto no="1" agrupacion="1"/>
+            </dia>
+            <dia fecha="22/01/2012">
+                <puesto no="1" agrupacion="1"/>
+            </dia>
+        </calendario>
+        
+        <enlaces>
+            <enlace tipo="Agrupaciones" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
+            <enlace tipo="Agrupaciones" descripcion="La Comparsa de J.C.Aragon" url="http://www.lacomparsadejuancarlos.com/" />
+        </enlaces>
+    </coac2012>
+

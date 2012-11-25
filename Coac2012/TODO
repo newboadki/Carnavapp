@@ -1,0 +1,7 @@
+// 1. Adjustments to the parser and data to allow multiple years and the search easily.
+    - Create a new root of the XML file <carnavapp>...</carnavapp>
+
+// 2. Create a new view contoller to select years.
+// 3. Changes to the view controllers that come from the year-selection view controller to store the year they're showing information about.
+// 4. Insert the year-selection view controller in the application navigation-flow
+// 5. What's wrong with the loading screen on iOS6?

@@ -82,7 +82,7 @@
     {
         
         NSString* dateString = dates[i];
-        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDates:[ContestPhaseDatesHelper phasesDatesDictionary]];
+        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDates:[ContestPhaseDatesHelper phasesDatesDictionary][@"2012"]];
         [dayBoxControllers addObject:controller];        
 
         // add the views        

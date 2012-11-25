@@ -14,7 +14,6 @@
 #import "Comentario.h"
 #import "Link.h"
 
-
 #define CALENDAR_DATE_ATTRIBUTE_NAME        @"fecha"
 #define CALENDAR_POSITION_TAG_NAME          @"puesto"
 #define CALENDAR_GROUP_ATTRIBUTE_NAME       @"agrupacion"

@@ -167,6 +167,7 @@
 		00A10FD0150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
 		00A10FDB150A89F900D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD9150A89F900D1C425 /* active_day.png */; };
 		00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FDA150A89F900D1C425 /* inactive_day.png */; };
+		00AD902A16621FC10099DEA6 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 00AD902916621FC10099DEA6 /* TODO */; };
 		00AECA7914CAC6DC005CE4DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7814CAC6DC005CE4DC /* UIKit.framework */; };
 		00AECA7B14CAC6DC005CE4DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7A14CAC6DC005CE4DC /* Foundation.framework */; };
 		00AECA7D14CAC6DC005CE4DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */; };
@@ -370,6 +371,8 @@
 		00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseDatesHelper.m; sourceTree = "<group>"; };
 		00A10FD9150A89F900D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00A10FDA150A89F900D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
+		00AD902916621FC10099DEA6 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		00AD902C166221C20099DEA6 /* Carnavapp.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Carnavapp.xml; path = ../../../Desktop/Carnavapp.xml; sourceTree = "<group>"; };
 		00AECA7414CAC6DC005CE4DC /* coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -386,7 +389,6 @@
 		00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ModalitiesViewController.m; path = ../../ModalitiesViewController.m; sourceTree = "<group>"; };
 		00AECAA414CAC6DC005CE4DC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		00AECAAC14CAC6DC005CE4DC /* Coac2012Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coac2012Tests-Info.plist"; sourceTree = "<group>"; };
-		00AECAAE14CAC6DC005CE4DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00B8AF2414D72E3B002799BC /* videosButton4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videosButton4.png; sourceTree = "<group>"; };
 		00B8AF2514D72E3B002799BC /* videosButton3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videosButton3.png; sourceTree = "<group>"; };
 		00BC176D14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+PRPNetworkActivity.h"; sourceTree = "<group>"; };
@@ -751,6 +753,7 @@
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
+				00AD902C166221C20099DEA6 /* Carnavapp.xml */,
 				00FEA550160F94D3004AA9D9 /* Default-568h@2x.png */,
 				0072377C1567F88C0075CBFE /* libxml2.2.dylib */,
 				007864E21503CEE700499636 /* icon@2x.png */,
@@ -799,6 +802,7 @@
 				00AECA8814CAC6DC005CE4DC /* AppDelegate.m */,
 				00AECA7F14CAC6DC005CE4DC /* Supporting Files */,
 				00820C4214CC6340008A914A /* Constants.h */,
+				00AD902916621FC10099DEA6 /* TODO */,
 			);
 			path = Coac2012;
 			sourceTree = "<group>";
@@ -839,7 +843,6 @@
 			isa = PBXGroup;
 			children = (
 				00AECAAC14CAC6DC005CE4DC /* Coac2012Tests-Info.plist */,
-				00AECAAD14CAC6DC005CE4DC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1167,6 +1170,7 @@
 				00FEA551160F94D3004AA9D9 /* Default-568h@2x.png in Resources */,
 				00EE617E160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png in Resources */,
 				00EE6180160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png in Resources */,
+				00AD902A16621FC10099DEA6 /* TODO in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,14 +1371,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				00AECA8214CAC6DC005CE4DC /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		00AECAAD14CAC6DC005CE4DC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00AECAAE14CAC6DC005CE4DC /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

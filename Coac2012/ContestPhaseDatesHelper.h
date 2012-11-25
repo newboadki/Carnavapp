@@ -10,8 +10,23 @@
 
 @interface ContestPhaseDatesHelper : NSObject
 
+
+#pragma mark - Generic
+/**
+ @param forYearDescriptor It's a string representing a year with the following format 'YYYY'
+ */
++ (NSArray*) daysForPhase:(NSString*)currentPhase forYearDescriptor:(NSString*)yearDescriptor;
+
 + (NSDictionary*) phasesDatesDictionary;
-+ (NSArray*) daysForPhase:(NSString*) currentPhase;
-+ (NSArray*) allDaysForcontest;
+
+
+#pragma mark - Year specific
++ (NSArray*) allDaysForcontest2012;
++ (NSDictionary*) phasesDatesDictionary2012;
+
++ (NSArray*) allDaysForcontest2013;
++ (NSDictionary*) phasesDatesDictionary2013;
+
+
 
 @end

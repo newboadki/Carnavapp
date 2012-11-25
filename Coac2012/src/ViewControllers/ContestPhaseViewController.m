@@ -35,7 +35,7 @@
 
 - (void) updateArrayOfElements
 {
-    NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest];
+    NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest2012];
     if([daysForCurrentPhase count] > 0)
     {
         NSString* selectedDate = daysForCurrentPhase[0];
@@ -87,7 +87,7 @@
     self.title = phase;
     
     // Create here
-    NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest];
+    NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest2012];
     CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForCurrentPhase andDelegate:self];        
     [self setCalendarController:cc];
     [cc release];
