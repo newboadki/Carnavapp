@@ -22,6 +22,7 @@
 #define CALENDAR_KEY @"CalendarKey"
 #define LINKS_KEY @"LinksKey"
 #define MODALITIES_KEY @"ModalitiesKey"
+#define YEARS_KEY @"YearsKey"
 
 
 // Contest Phases
@@ -36,3 +37,5 @@
 #define LOADING_SCREEN_LABEL_TAG 1
 #define LINK_NAME_LABEL_TAG 1
 
+// YearHearderViewLabel NIB
+#define YEAR_HEADER_VIEW_LABEL_TAG  1

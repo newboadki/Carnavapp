@@ -9,6 +9,7 @@
 #import "ContestPhaseDatesHelper.h"
 
 #define PHASES_DICTIONARY_SELECTOR_STRING @"phasesDatesDictionary"
+#define YEAR_KEYS_ARRAY @[@"2013", @"2012"]
 
 @implementation ContestPhaseDatesHelper
 
@@ -159,9 +160,20 @@
     return days;
 }
 
++ (NSArray*) yearKeys
+{
+    return YEAR_KEYS_ARRAY;
+}
 
 + (NSDictionary*) phasesDatesDictionary
 {
+//    NSDictionary *phasesDataDictionary = @{};
+//    for (NSString *yearKey in YEAR_KEYS_ARRAY)
+//    {
+//        NSString *selectorString = [NSString stringWithFormat:@"%@%@", @"phasesDatesDictionary", yearKey];
+//        SEL selector = NSSelectorFromString(selectorString);
+//        phasesDataDictionary[yearKey] = [[ContestPhaseDatesHelper class] perform];
+//    }
     return @{@"2012":[self phasesDatesDictionary2012],
              @"2013":[self phasesDatesDictionary2013]};
 }

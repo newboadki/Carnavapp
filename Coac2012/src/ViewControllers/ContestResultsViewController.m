@@ -9,7 +9,7 @@
 #import "ContestResultsViewController.h"
 #import "Agrupacion.h"
 #import "GroupDetailViewController.h"
-
+#import "YearSelectionViewController.h"
 @interface ContestResultsViewController(private)
 - (Agrupacion*) findGroupWithId:(int)soughtId;
 @end
@@ -41,31 +41,44 @@
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    int section = [indexpath section];
-    int row = [indexpath row];
-    int linealIndex = row + (section * 3);
-    
-    Agrupacion* ag = elementsArray[linealIndex];
-    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-    
-    groupNameLabel.text = ag.nombre;
-    categoryNameLabel.text = @"";
+    if ( (indexpath.section != 0) && ((indexpath.section != 5)))
+    {
+        int section = [indexpath section]-1; // Because the content sections go from 1 to 4 (because 0 is the header) but the linear index starts at 0.
+        int row = [indexpath row];
+        int linealIndex = row + (section * 3);
+        NSLog(@"%@", elementsArray);
+        Agrupacion* ag = elementsArray[linealIndex];
+        UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+        UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
+        
+        groupNameLabel.text = ag.nombre;
+        categoryNameLabel.text = @"";
+    }
 }
 
 
 
 #pragma mark - TableView data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView
 {
-    return 4;
+    return 6;
 }
 
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section
 {
-	return 3;	
+	switch (section) {
+        case 0: // Header
+            return 1;
+            break;
+        case 5: // Footer, last one
+            return 1;
+            break;
+        default:
+            return 3;
+            break;
+    };
 }
 
 
@@ -75,20 +88,25 @@
     
     switch (section)
     {
-        case 0:
+        case 1:
             title = @"Coros";
             break;
-        case 1:
+        case 2:
             title = @"Comparsas";
             break;
-        case 2:
+        case 3:
             title = @"Chirigotas";
             break;
-        case 3:
+        case 4:
             title = @"Cuartetos";
             break;
+        default:
+            title = nil;
+            break;
+        
     }
     
+    NSLog(@"Returning title %@ for section %d", title, section);
     return title;
 }
 
@@ -97,16 +115,41 @@
 {
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     
-    int section = [indexPath section];
+    int section = [indexPath section] - 1;
     int row = [indexPath row];
     int linealIndex = row + (section * 3);
 
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
     detailViewController.group = elementsArray[linealIndex];
     [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];    
+    [detailViewController release];
+    
+//    YearSelectionViewController *yearVC = [[YearSelectionViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
+//    [self.navigationController pushViewController:yearVC animated:YES];
+//    [yearVC release];
+    
+    
+    
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 || indexPath.section == 5) {
+        return 44;
+    }
+    else
+    {
+        return 60.0f;
+    }
+}
+
+
+
+- (int) numberOfSections
+{
+    return [super numberOfSectionsInTableView:self.tableView] + 3;
+}
 
 
 - (void)didReceiveMemoryWarning

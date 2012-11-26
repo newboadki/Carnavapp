@@ -11,9 +11,9 @@
 #import "GroupDetailViewController.h"
 #import "AppDelegate.h"
 
+
 @interface BaseCoacListViewController(protected)
 - (void) updateArrayOfElements;
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
 - (void) configureSearchResultCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
 @end
 
@@ -37,9 +37,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self 
                                                  selector:@selector(handleDataIsReady:) 
                                                      name:MODEL_DATA_IS_READY_NOTIFICATION 
-                                                   object:nil];
-        
-        firstTimeViewWillAppear = YES;
+                                                   object:nil];        
     }
     
     return self;    
@@ -120,8 +118,9 @@
     [super viewWillAppear:animated];
     
     // Do geometry related customization here, rather than in view did load. Navigation bars and other elements resizing have already happened by now, but not before
-    if (![self implementsSearch] && firstTimeViewWillAppear)
+    if (![self implementsSearch])
     {
+        // Hide the Search Bar
         [self setSearchResultsTableViewController:nil];
         [[self tableView] setContentOffset:CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height)];
         [[self tableView] setContentInset:UIEdgeInsetsMake(-self.searchDisplayController.searchBar.frame.size.height, 0, 0, 0)];
@@ -129,7 +128,6 @@
         [[self tableView] setContentSize:CGSizeMake(self.tableView.contentSize.width, newHeight)];
         self.searchDisplayController.searchBar.hidden = YES;
     }
-    firstTimeViewWillAppear = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -172,7 +170,7 @@
         numberOfRows = [elementsArray count];
     }
     
-	return numberOfRows;	
+	return numberOfRows;
 }
 
 
@@ -200,6 +198,10 @@
     return cell;
 }
 
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+{
+    // Implement in subclasses.
+}
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -99,6 +99,7 @@
         calendar = [[NSMutableDictionary alloc] init];
         links = [[NSMutableArray alloc] init];
         modalities = [[NSMutableDictionary alloc] init];
+        _yearKeys = [[NSMutableArray alloc] initWithObjects:@"2013", @"2012", nil];
         
         queue = [[NSOperationQueue alloc] init];
         queue.maxConcurrentOperationCount = 1;
@@ -150,7 +151,8 @@
     NSDictionary* results = @{GROUPS_KEY: groups, 
                              CALENDAR_KEY: calendar, 
                              LINKS_KEY: links, 
-                             MODALITIES_KEY: modalities};
+                             MODALITIES_KEY: modalities,
+                             YEARS_KEY:_yearKeys};
     return results;
 }
 
@@ -476,6 +478,7 @@
 	[xmlData release];
     [links release];
     [modalities release];
+    [_yearKeys release];
     [queue release];
 	[super dealloc];
 }

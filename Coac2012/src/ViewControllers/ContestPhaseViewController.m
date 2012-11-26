@@ -86,7 +86,7 @@
     [super viewDidLoad];
     self.title = phase;
     
-    // Create here
+    // Create the contest's calendar
     NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest2012];
     CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForCurrentPhase andDelegate:self];        
     [self setCalendarController:cc];
@@ -94,6 +94,9 @@
     
     [self.view addSubview:calendarController.view];
     [calendarController viewDidLoad];
+    
+    // Set the mask in the title-view
+    [self setMaskAsTitleView];
 }
 
 

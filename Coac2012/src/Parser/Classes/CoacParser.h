@@ -18,6 +18,7 @@
     NSMutableArray*      links;
     NSMutableDictionary* calendar;
     NSMutableDictionary* modalities;
+    NSMutableArray*      _yearKeys;
 	NSData*              xmlData;
 	id <CoacParserDelegateProtocol> delegate;
     NSOperationQueue*    queue;

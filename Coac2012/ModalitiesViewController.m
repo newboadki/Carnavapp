@@ -36,11 +36,11 @@
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
     
-    NSString* currentModality = elementsArray[[indexpath row]];    
+    NSString* currentModality = elementsArray[[indexpath row]];
     groupNameLabel.text = currentModality;
-	categoryNameLabel.text = @"";
+    categoryNameLabel.text = @"";
 }
 
 

@@ -119,13 +119,12 @@ describe(@"viewDidLoad", ^{
 
 describe(@"viewWillAppear:", ^{
     
-    context(@"self doesn't implement search and firstTimeViewWillAppear is true", ^{
+    context(@"self doesn't implement search", ^{
  
         __block BaseCoacListViewController* controller;
         
         beforeEach(^{
             controller = [[BaseCoacListViewController alloc] init];
-            [controller setValue:[NSNumber numberWithInt:1] forKey:@"firstTimeViewWillAppear"];
             [controller stub:@selector(implementsSearch) andReturn:theValue(NO)];        
         });
         
@@ -214,104 +213,10 @@ describe(@"viewWillAppear:", ^{
         });
     });
 
-    context(@"self doesn't implement search and firstTimeViewWillAppear is false", ^{
+    context(@"self implements search", ^{
         __block BaseCoacListViewController* controller;
         beforeEach(^{
             controller = [[BaseCoacListViewController alloc] init];
-            [controller setValue:[NSNumber numberWithInt:0] forKey:@"firstTimeViewWillAppear"];
-            [controller stub:@selector(implementsSearch) andReturn:theValue(NO)];        
-        });
-        
-        afterEach(^{
-            [controller release];
-        });
-
-        it(@"should not set searchResultsTableViewController to nil", ^{
-            [[controller shouldNot] receive:@selector(setSearchResultsTableViewController:) withArguments:nil];
-            [controller viewWillAppear:YES];
-        });
-        
-        it(@"should not set the tableView's contentSize to make up space for the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            CGRect searchBarMockFrame = CGRectMake(0, 0, 320, 33);
-            [searchBarMock stub:@selector(frame) andReturn:theValue(searchBarMockFrame)];
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            CGPoint offset = CGPointMake(0, 33);
-            [[tableViewMock shouldNot] receive:@selector(setContentOffset:) withArguments:theValue(offset)];
-            [controller viewWillAppear:YES]; 
-        });
-        
-        it(@"should not set the tableView's contentInset to make up space for the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            CGRect searchBarMockFrame = CGRectMake(0, 0, 320, 33);
-            [searchBarMock stub:@selector(frame) andReturn:theValue(searchBarMockFrame)];
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            UIEdgeInsets inset = UIEdgeInsetsMake(-33, 0, 0, 0);
-            [[tableViewMock shouldNot] receive:@selector(setContentInset:) withArguments:theValue(inset)];
-            [controller viewWillAppear:YES]; 
-        });
-        
-        it(@"should not set the tableView's contentSize not have space for the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            CGSize tableViewContentSize = CGSizeMake(320, 480);
-            CGRect searchBarMockFrame = CGRectMake(0, 0, 320, 33);
-            [searchBarMock stub:@selector(frame) andReturn:theValue(searchBarMockFrame)];
-            [tableViewMock stub:@selector(contentSize) andReturn:theValue(tableViewContentSize)];
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            [[tableViewMock shouldNot] receive:@selector(setContentSize:) withArguments:theValue(CGSizeMake(320, 447))];
-            [controller viewWillAppear:YES]; 
-        });
-        
-        it(@"should not hide the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            [[searchBarMock shouldNot] receive:@selector(setHidden:) withArguments:theValue(YES)];
-            [controller viewWillAppear:YES]; 
-        });
-
-    });
-
-    context(@"self implements search and firstTimeViewWillAppear is true", ^{
-        __block BaseCoacListViewController* controller;
-        beforeEach(^{
-            controller = [[BaseCoacListViewController alloc] init];
-            [controller setValue:[NSNumber numberWithInt:1] forKey:@"firstTimeViewWillAppear"];
             [controller stub:@selector(implementsSearch) andReturn:theValue(YES)];        
         });
         
@@ -399,98 +304,6 @@ describe(@"viewWillAppear:", ^{
         });
     });
 
-
-    context(@"self implements search and firstTimeViewWillAppear is false", ^{
-        __block BaseCoacListViewController* controller;
-        beforeEach(^{
-            controller = [[BaseCoacListViewController alloc] init];
-            [controller setValue:[NSNumber numberWithInt:0] forKey:@"firstTimeViewWillAppear"];
-            [controller stub:@selector(implementsSearch) andReturn:theValue(YES)];        
-        });
-        
-        afterEach(^{
-            [controller release];
-        });
-
-        it(@"should not set searchResultsTableViewController to nil", ^{
-            [[controller shouldNot] receive:@selector(setSearchResultsTableViewController:) withArguments:nil];
-            [controller viewWillAppear:YES];
-        });
-        
-        it(@"should not set the tableView's contentSize to make up space for the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            CGRect searchBarMockFrame = CGRectMake(0, 0, 320, 33);
-            [searchBarMock stub:@selector(frame) andReturn:theValue(searchBarMockFrame)];
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            CGPoint offset = CGPointMake(0, 33);
-            [[tableViewMock shouldNot] receive:@selector(setContentOffset:) withArguments:theValue(offset)];
-            [controller viewWillAppear:YES]; 
-        });
-        
-        it(@"should not set the tableView's contentInset to make up space for the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            CGRect searchBarMockFrame = CGRectMake(0, 0, 320, 33);
-            [searchBarMock stub:@selector(frame) andReturn:theValue(searchBarMockFrame)];
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            UIEdgeInsets inset = UIEdgeInsetsMake(-33, 0, 0, 0);
-            [[tableViewMock shouldNot] receive:@selector(setContentInset:) withArguments:theValue(inset)];
-            [controller viewWillAppear:YES]; 
-        });
-        
-        it(@"should not set the tableView's contentSize not have space for the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            CGSize tableViewContentSize = CGSizeMake(320, 480);
-            CGRect searchBarMockFrame = CGRectMake(0, 0, 320, 33);
-            [searchBarMock stub:@selector(frame) andReturn:theValue(searchBarMockFrame)];
-            [tableViewMock stub:@selector(contentSize) andReturn:theValue(tableViewContentSize)];
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            [[tableViewMock shouldNot] receive:@selector(setContentSize:) withArguments:theValue(CGSizeMake(320, 447))];
-            [controller viewWillAppear:YES]; 
-        });
-        
-        it(@"should not hide the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            [[searchBarMock shouldNot] receive:@selector(setHidden:) withArguments:theValue(YES)];
-            [controller viewWillAppear:YES]; 
-        });
-    });
 });
 
 
@@ -511,7 +324,6 @@ describe(@"numberOfRowsInSection:", ^{
     
     beforeEach(^{
         controller = [[BaseCoacListViewController alloc] init];
-        [controller setValue:[NSNumber numberWithInt:1] forKey:@"firstTimeViewWillAppear"];
         [controller stub:@selector(implementsSearch) andReturn:theValue(NO)];        
     });
     

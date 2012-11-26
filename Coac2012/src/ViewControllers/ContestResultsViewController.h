@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Borja Arias Drake. All rights reserved.
 //
 
-#import "BaseCoacListViewController.h"
+#import "HeaderAndFooterListViewController.h"
 
-@interface ContestResultsViewController : BaseCoacListViewController
+@interface ContestResultsViewController : HeaderAndFooterListViewController
 
 @end

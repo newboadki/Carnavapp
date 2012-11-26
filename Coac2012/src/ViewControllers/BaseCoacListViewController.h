@@ -16,8 +16,7 @@
     NSDictionary* modelData;
     NSArray* elementsArray;
     UITableViewCell* cellFromNib;    
-    GroupNameSearchController* groupNameSearchController;
-    BOOL firstTimeViewWillAppear;
+    GroupNameSearchController* groupNameSearchController;    
     
     IBOutlet UITableView* tableView;
     IBOutlet SearchResultsTableViewController* searchResultsTableViewController;    
@@ -38,5 +37,8 @@
 - (NSString*) normalCellNibName;
 - (NSString*) selectedCellNibName;
 - (BOOL) implementsSearch;
+
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath; //make protected
+
 
 @end
