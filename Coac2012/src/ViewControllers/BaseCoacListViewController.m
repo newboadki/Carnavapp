@@ -124,8 +124,6 @@
         [self setSearchResultsTableViewController:nil];
         [[self tableView] setContentOffset:CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height)];
         [[self tableView] setContentInset:UIEdgeInsetsMake(-self.searchDisplayController.searchBar.frame.size.height, 0, 0, 0)];
-        float newHeight = self.tableView.contentSize.height - self.searchDisplayController.searchBar.frame.size.height;
-        [[self tableView] setContentSize:CGSizeMake(self.tableView.contentSize.width, newHeight)];
         self.searchDisplayController.searchBar.hidden = YES;
     }
 }

@@ -176,25 +176,6 @@ describe(@"viewWillAppear:", ^{
             [controller viewWillAppear:YES]; 
         });
         
-        it(@"should set the tableView's contentSize not have space for the search bar", ^{
-            // Create the mocks
-            id tableViewMock = [KWMock nullMockForClass:[UITableView class]];
-            id searchDisplayControllerMock = [KWMock nullMockForClass:[UISearchDisplayController class]];
-            id searchBarMock = [KWMock nullMockForClass:[UISearchBar class]];
-            
-            // Set up the mocks
-            CGSize tableViewContentSize = CGSizeMake(320, 480);
-            CGRect searchBarMockFrame = CGRectMake(0, 0, 320, 33);
-            [searchBarMock stub:@selector(frame) andReturn:theValue(searchBarMockFrame)];
-            [tableViewMock stub:@selector(contentSize) andReturn:theValue(tableViewContentSize)];
-            [searchDisplayControllerMock stub:@selector(searchBar) andReturn:searchBarMock];
-            
-            // Connect the mocks to the controller
-            [controller stub:@selector(searchDisplayController) andReturn:searchDisplayControllerMock];
-            controller.tableView = tableViewMock;
-            [[tableViewMock should] receive:@selector(setContentSize:) withArguments:theValue(CGSizeMake(320, 447))];
-            [controller viewWillAppear:YES]; 
-        });
         
         it(@"should hide the search bar", ^{
             // Create the mocks
