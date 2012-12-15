@@ -91,6 +91,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Set up Search Bar
     searchResultsTableViewController.selectionDelegate = self;
     
     // We first populate the tables with the data we already had if any. 

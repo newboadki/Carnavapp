@@ -43,8 +43,6 @@
     NSArray* modalityGroups = modalitiesDic[modality]; // that is from that modality from all years
     // now we should re-filter, selecting just the current year
     
-    
-    
     modalityGroups = [modalityGroups sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Agrupacion* a1 = (Agrupacion*)obj1;
         Agrupacion* a2 = (Agrupacion*)obj2;
@@ -78,7 +76,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = NSLocalizedString(self.modality, self.modality);
+    
+    // Set up title
+    [self setTitle:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(self.modality, self.modality), self.yearString]]; // This is affecting the TabBar's item, why?
+
 }
 
 

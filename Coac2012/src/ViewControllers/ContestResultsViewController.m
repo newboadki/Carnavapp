@@ -25,6 +25,9 @@
 {
     if (self.yearString)
     {
+        // Setting the title here, and not in viewDidLoad, because this controller is currently selected on the tabBar, view did load gerts called before the app delegate sets some of its properties (ie.yearString)
+        [self setTitle:[NSString stringWithFormat:@"Resultados %@", self.yearString]]; // This is affecting the TabBar's item, why?
+        
         NSArray* selectedYearResults = [ContestPhaseDatesHelper resultsDictionary][self.yearString];
         NSMutableArray* groups = [[NSMutableArray alloc] init];
         for (NSNumber* groupId in selectedYearResults)
@@ -50,7 +53,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:[NSString stringWithFormat:@"Resultados %@", self.yearString]]; // This is affecting the TabBar's item, why?
+    
 }
 
 

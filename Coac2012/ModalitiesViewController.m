@@ -9,7 +9,7 @@
 #import "ModalitiesViewController.h"
 #import "GroupsForModalityViewController.h"
 #import "Agrupacion.h"
-
+#import "ContestPhaseDatesHelper.h"
 
 @implementation ModalitiesViewController
 
@@ -82,8 +82,11 @@
     
     NSString* selectedModality = elementsArray[[indexPath row]];
     GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
+    nextController.showHeader = NO;
+    nextController.showFooter = YES;
     [nextController setModality:selectedModality];
     [nextController setModelData:self.modelData];
+    [nextController setYearString:[ContestPhaseDatesHelper yearKeys][0]];
     
     [[self navigationController] pushViewController:nextController animated:YES];
     [nextController release];
