@@ -160,6 +160,14 @@
     return days;
 }
 
++ (NSDictionary*) resultsDictionary
+{
+                       // 3 coros, 3 comparsas, 3 chirigotas 3 cuartetos
+    return @{@"2012":@[@79, @61, @9, @48, @101, @83, @103, @32, @92, @38, @109, @73],
+             @"2013":@[@79, @61, @9, @48, @101, @83, @103, @32, @92, @38, @109, @73]};
+}
+
+
 + (NSArray*) yearKeys
 {
     return YEAR_KEYS_ARRAY;

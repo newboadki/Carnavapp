@@ -148,6 +148,8 @@
 		00820C5A14CC8511008A914A /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5814CC8511008A914A /* GroupDetailViewController.m */; };
 		00820C5C14CC8511008A914A /* GroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5914CC8511008A914A /* GroupDetailViewController.xib */; };
 		00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */; };
+		0082B296167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0082B295167BB8EE008529A9 /* LoadingScreenViewController.m */; };
+		0082B297167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0082B295167BB8EE008529A9 /* LoadingScreenViewController.m */; };
 		0083613614D7D84E006FA9D5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083613414D7D84E006FA9D5 /* Default.png */; };
 		0083613814D7D84E006FA9D5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083613514D7D84E006FA9D5 /* Default@2x.png */; };
 		0084FECB14D1E876002A074E /* activeDay_45x68.png in Resources */ = {isa = PBXBuildFile; fileRef = 0084FEC914D1E876002A074E /* activeDay_45x68.png */; };
@@ -351,6 +353,8 @@
 		00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_imagen_agrupacion.jpg; sourceTree = "<group>"; };
 		00820C6414CC9A44008A914A /* ContestPhasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhasesViewController.h; sourceTree = "<group>"; };
 		00820C6514CC9A44008A914A /* ContestPhasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhasesViewController.m; sourceTree = "<group>"; };
+		0082B294167BB8EE008529A9 /* LoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenViewController.h; sourceTree = "<group>"; };
+		0082B295167BB8EE008529A9 /* LoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenViewController.m; sourceTree = "<group>"; };
 		0082FD4014CF631E00337516 /* ScrollableBoxTappedDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollableBoxTappedDelegateProtocol.h; path = ../ScrollableBoxTappedDelegateProtocol.h; sourceTree = "<group>"; };
 		0083613414D7D84E006FA9D5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0083613514D7D84E006FA9D5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -728,6 +732,8 @@
 				00AD902E166230F20099DEA6 /* YearSelectionViewController.m */,
 				00E22C0B1662BF5E00CFB9ED /* HeaderAndFooterListViewController.h */,
 				00E22C0C1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m */,
+				0082B294167BB8EE008529A9 /* LoadingScreenViewController.h */,
+				0082B295167BB8EE008529A9 /* LoadingScreenViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -770,7 +776,6 @@
 			children = (
 				00AD902C166221C20099DEA6 /* Carnavapp.xml */,
 				00FEA550160F94D3004AA9D9 /* Default-568h@2x.png */,
-				0072377C1567F88C0075CBFE /* libxml2.2.dylib */,
 				007864E21503CEE700499636 /* icon@2x.png */,
 				007864DF1503CECC00499636 /* icon.png */,
 				00AECA7E14CAC6DC005CE4DC /* Coac2012 */,
@@ -792,6 +797,7 @@
 		00AECA7714CAC6DC005CE4DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0072377C1567F88C0075CBFE /* libxml2.2.dylib */,
 				00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */,
 				0080960D14CCA1A1000E1525 /* QuartzCore.framework */,
 				00C0BD6D14CAD7C200427E42 /* CoreData.framework */,
@@ -1333,6 +1339,7 @@
 				002E7C251648544500B69153 /* CXMLNode_XPathExtensions.m in Sources */,
 				00AD9031166230F20099DEA6 /* YearSelectionViewController.m in Sources */,
 				00E22C0E1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */,
+				0082B297167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1383,6 +1390,7 @@
 				0085D9591568469500BB819D /* BSViewController.m in Sources */,
 				00AD9030166230F20099DEA6 /* YearSelectionViewController.m in Sources */,
 				00E22C0D1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */,
+				0082B296167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

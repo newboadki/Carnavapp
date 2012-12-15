@@ -13,5 +13,5 @@
 /** This is a generic class, therefore it can take to different view controllers. This property stores the class of the 
  view controller this class will take you to when tapping on a row.*/
 @property (nonatomic, assign) Class classOfTheNextViewController;
-
+@property (nonatomic, retain) NSDictionary *keyValuesToSetInNewInstance;
 @end

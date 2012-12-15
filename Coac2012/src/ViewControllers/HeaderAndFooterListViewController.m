@@ -8,12 +8,36 @@
 
 #import "HeaderAndFooterListViewController.h"
 
+#define HEADER_SECTION_INDEX 0
+#define FOOTER_SECTION_INDEX ([self numberOfSectionsInTableView:self.tableView] - 1)
+
 @interface HeaderAndFooterListViewController ()
 
 @end
 
 @implementation HeaderAndFooterListViewController
 
+@synthesize yearString;
+@synthesize showHeader = _showHeader, showFooter = _showFooter;
+
+- (void) dealloc
+{
+    [yearString release];
+    [super dealloc];
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self)
+    {
+        _showHeader = NO;
+        _showFooter = YES;
+    }
+    
+    return self;
+}
 
 
 #pragma mark - Table view data source
@@ -23,7 +47,42 @@
     // This class assumes there are 3 sections: HEADER, CONTENT, FOOTER
     // If a subclass wants to have more sentions in the content section, it can override this method, but it will have
     // to take into account the superclass'es expectations.
-    return 3;
+    
+    NSInteger numberOfSections = 0;
+    if (self.showHeader)
+    {
+        numberOfSections++;
+    }
+
+    if (self.showFooter)
+    {
+        numberOfSections++;
+    }
+
+    return numberOfSections + [self numberOfContentSections];
+}
+
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if ((section == HEADER_SECTION_INDEX) && self.showHeader)
+    {        
+        return 1;
+    }
+    else if ((section == FOOTER_SECTION_INDEX) && self.showFooter)
+    {
+        return 1;
+    }
+    else
+    {
+        NSInteger contentSectionIndex = section;
+        if (self.showHeader)
+        {
+            contentSectionIndex = section - 1;
+        }
+
+        return [self numberOfRowsContentSection:contentSectionIndex];
+    }
 }
 
 
@@ -34,18 +93,13 @@
     static NSString *FooterCellIdentifier = @"FooterCell";
     NSString * cellIdentifier = @"NormalCell";
     NSString* nibToLoad = [self normalCellNibName];
-    
-
-    const int FirstSection = 0;
-    const int LastSection = [self numberOfSections] - 1;
-    
-    
-    if (indexPath.section == FirstSection)
+        
+    if ((indexPath.section == HEADER_SECTION_INDEX) && self.showHeader)
     {
         nibToLoad = [self headerCellNibName];
         cellIdentifier = HeaderCellIdentifier;
     }
-    else if (indexPath.section == LastSection)
+    else if ((indexPath.section == FOOTER_SECTION_INDEX) && self.showFooter)
     {
         nibToLoad = [self footerCellNibName];
         cellIdentifier = FooterCellIdentifier;
@@ -70,17 +124,156 @@
     return cell;
 }
 
-- (NSInteger) numberOfSections
+
+- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexPath
 {
-    @throw @"implement in subclasses";
-    return 1;
+    if ((indexPath.section == HEADER_SECTION_INDEX) && self.showHeader)
+    {        
+        [self configureHeaderCell:cell inTableView:(UITableView*)self.tableView];
+    }
+    else if ((indexPath.section == FOOTER_SECTION_INDEX) && self.showFooter)
+    {
+        [self configureHeaderCell:cell inTableView:(UITableView*)self.tableView];
+    }
+    else
+    {
+        NSIndexPath *contentSectionsIndexPath = indexPath;
+        if (self.showHeader)
+        {
+            contentSectionsIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section-1];
+        }
+        [self configureContentCell:cell inTableView:(UITableView*)self.tableView indexPath:contentSectionsIndexPath];
+    }
 }
 
-- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInContentSection:(NSInteger)section
 {
-    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
+    // implement in subclasses
+    return nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
     
-    // do something depending on the index, keep in mind footer acts differently
+    NSInteger contentSection = section;
+    
+    if ((section == HEADER_SECTION_INDEX) && self.showHeader)
+    {
+        return nil;
+    }
+    else if ((section == FOOTER_SECTION_INDEX) && self.showFooter)
+    {
+        return nil;
+    }
+    else
+    {
+        // transform the indexPath to a content-section-only indexpath
+        if (self.showHeader)
+        {
+            contentSection = section - 1;
+        }
+        return [self tableView:self.tableView titleForHeaderInContentSection:contentSection];
+    }
+}
+
+
+- (void) tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        
+    if ((indexPath.section == HEADER_SECTION_INDEX) && self.showHeader)
+    {        
+        [self handleHeaderSelected];
+    }
+    else if ((indexPath.section == FOOTER_SECTION_INDEX) && self.showFooter)
+    {
+        [self handleFooterSelected];
+    }
+    else
+    {
+        // transform the indexPath to a content-section-only indexpath
+        NSIndexPath *contentIndexPath = indexPath;
+        if (self.showHeader) {
+            contentIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section-1];
+        }
+        [super tableView:theTableView didSelectRowAtIndexPath:contentIndexPath];
+        [self tableView:(UITableView *)theTableView didSelectContentRowAtIndexPath:contentIndexPath];
+    }
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ((indexPath.section == FOOTER_SECTION_INDEX) && self.showFooter)
+    {
+        return 44;
+    }
+    else if ((indexPath.section == FOOTER_SECTION_INDEX) && self.showFooter)
+    {
+        return 44;
+    }
+    else
+    {
+        return 60.0f;
+    }
+}
+
+
+
+#pragma mark - Header & Footer subclass hooks
+
+/* Configure Cells */
+
+- (void) configureHeaderCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
+{
+    // Implement in subclasses
+}
+
+
+- (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
+{
+    // Implement in subclasses
+}
+
+
+- (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
+{
+    // Implement in subclasses
+}
+
+
+/* Content Delegate */
+
+- (void) handleHeaderSelected
+{
+    // Implement in subclasses
+}
+
+
+- (void) handleFooterSelected
+{
+    //implement in subclases
+}
+
+
+- (void) tableView:(UITableView *)theTableView didSelectContentRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // implement in subclasses
+}
+
+
+
+/* Content Data Source */
+
+- (NSInteger) numberOfContentSections
+{
+    @throw @"implement in subclasses";
+}
+
+
+- (NSInteger) numberOfRowsContentSection:(NSInteger)contentSection
+{
+    @throw @"implement in subclasses";
 }
 
 
@@ -94,5 +287,6 @@
 {
     return @"YearHeaderView";
 }
+
 
 @end

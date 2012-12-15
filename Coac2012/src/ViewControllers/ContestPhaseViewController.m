@@ -84,7 +84,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = phase;
+    
+    // Set the Title:
+    [self setTitle:[NSString stringWithFormat:@"Concurso %@", self.yearString]]; // This is affecting the TabBar's item, why?
     
     // Create the contest's calendar
     NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest2012];
@@ -93,10 +95,7 @@
     [cc release];
     
     [self.view addSubview:calendarController.view];
-    [calendarController viewDidLoad];
-    
-    // Set the mask in the title-view
-    [self setMaskAsTitleView];
+    [calendarController viewDidLoad];    
 }
 
 

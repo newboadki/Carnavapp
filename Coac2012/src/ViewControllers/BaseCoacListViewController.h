@@ -30,6 +30,9 @@
 @property (nonatomic, retain) SearchResultsTableViewController* searchResultsTableViewController;
 @property (nonatomic, retain) UILabel* noContentMessageLabel;
 
+/** Defines the year the viewController is showing information from.*/
+@property (nonatomic, retain) NSString *yearString;
+
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void) setMaskAsTitleView;
 - (void) handleDataIsReady:(NSNotification*)notif;
@@ -39,6 +42,8 @@
 - (BOOL) implementsSearch;
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath; //make protected
+- (void) updateArrayOfElements;
+
 
 
 @end

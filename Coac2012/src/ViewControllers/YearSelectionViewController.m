@@ -15,7 +15,7 @@
 @implementation YearSelectionViewController
 
 @synthesize classOfTheNextViewController = _classOfTheNextViewController;
-
+@synthesize keyValuesToSetInNewInstance;
 
 #pragma mark - Parent Class extentsion methods
 
@@ -23,7 +23,9 @@
 {
     //NSArray* yearKeys = modelData[YEARS_KEY];
     
-    [self setElementsArray:@[@"2013", @"2012"]];
+    NSArray* years = self.modelData[YEARS_KEY];
+    NSArray* pastYears = [years subarrayWithRange:NSMakeRange(1, [years count]-1)];
+    [self setElementsArray:pastYears];
 }
 
 
@@ -74,14 +76,22 @@
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
+    NSString* selectedYear = elementsArray[[indexPath row]];
+    id nextController = [[self.classOfTheNextViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     
-//    NSString* selectedModality = elementsArray[[indexPath row]];
-//    GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
-//    [nextController setModality:selectedModality];
-//    [nextController setModelData:self.modelData];
-//    
-//    [[self navigationController] pushViewController:nextController animated:YES];
-//    [nextController release];
+    for (id key in [self.keyValuesToSetInNewInstance allKeys])
+    {
+        if ([nextController respondsToSelector:NSSelectorFromString(key)]) {
+            id value = [self.keyValuesToSetInNewInstance valueForKey:key];
+            [nextController setValue:value forKey:key];
+        }
+    }
+    
+    [nextController performSelector:@selector(setYearString:) withObject:selectedYear];
+    [nextController setModelData:self.modelData];
+    
+    [[self navigationController] pushViewController:nextController animated:YES];
+    [nextController release];
 }
 
 @end

@@ -10,9 +10,18 @@
 
 @interface HeaderAndFooterListViewController : BaseCoacListViewController
 
+@property (nonatomic, assign) BOOL showHeader;
+@property (nonatomic, assign) BOOL showFooter;
 
 - (NSString*) headerCellNibName;
 - (NSString*) footerCellNibName;
 
-- (NSInteger) numberOfSections;//make protected
+
+//make protected
+- (NSInteger) numberOfContentSections;
+- (NSInteger) numberOfRowsContentSection:(NSInteger)contentSection;
+- (void) configureHeaderCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView;
+- (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView;
+- (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInContentSection:(NSInteger)section;
 @end

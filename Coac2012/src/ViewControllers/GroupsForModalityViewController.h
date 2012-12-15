@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseCoacListViewController.h"
+#import "HeaderAndFooterListViewController.h"
 
-@interface GroupsForModalityViewController : BaseCoacListViewController
+@interface GroupsForModalityViewController : HeaderAndFooterListViewController
 {
     NSString* modality;
 }

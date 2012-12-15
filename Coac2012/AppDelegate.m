@@ -10,7 +10,10 @@
 #import "TodayViewController.h"
 #import "ModalitiesViewController.h"
 #import "FileSystemHelper.h"
-
+#import "ContestResultsViewController.h"
+#import "ContestPhaseDatesHelper.h"
+#import "LoadingScreenViewController.h"
+#import "ContestPhaseViewController.h"
 
 @implementation AppDelegate
 
@@ -21,13 +24,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Create dataModel Handler
     ModelDataHandler* dh = [[ModelDataHandler alloc] init];
     [self setDataHandler:dh];
     [dh release];    
     
+    // Subscribe to notifications
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(handleDataIsReady:) 
-                                                 name:MODEL_DATA_IS_READY_NOTIFICATION 
+                                                 name:MODEL_DATA_IS_READY_NOTIFICATION
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -35,35 +40,34 @@
                                                  name:NO_NETWORK_NOTIFICATION 
                                                object:nil];
 
+    // Set the year for the current results VC.
+    UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:0];
+    ContestResultsViewController* resultController = (ContestResultsViewController*)[navController topViewController];
+    resultController.yearString = [ContestPhaseDatesHelper yearKeys][0];
+    [resultController updateArrayOfElements];
+    
+    // Set the year for the current Contest Phases VC.
+    UINavigationController* contestPhasesNavController = [[self.tabBarController viewControllers] objectAtIndex:1];
+    ContestPhaseViewController* contestPhasesViewController = (ContestPhaseViewController*)[contestPhasesNavController topViewController];
+    contestPhasesViewController.yearString = [ContestPhaseDatesHelper yearKeys][0];
+    [contestPhasesViewController updateArrayOfElements];
+
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
 }
 
 
-- (void) handleDataIsReady:(NSNotification*)notif
+- (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    [UIView animateWithDuration:1.0 animations:^{
-        [loadingScreen setAlpha:0.0];
-    } completion:^(BOOL finished) {
-        [loadingScreen removeFromSuperview];
-        loadingScreen = nil;
-    }];
-}
-
-- (void) handleNoNetwork:(NSNotification*)notif
-{    
     NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
     
     if (!data)
     {
-        loadingScreen = [[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil][0];
-        loadingScreen.frame = CGRectMake(0, 0, 320, 480);        
-        [self.window addSubview:loadingScreen];
-        
-        UILabel* label = (UILabel*)[loadingScreen viewWithTag:LOADING_SCREEN_LABEL_TAG];
-        label.text = @"No hay acceso a internet";
+        [self presentLoadingScreenWithLoadingMessage:@"Descargando Datos." andModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     }
+    
+    [self.dataHandler downloadAndParseModelData];
 }
 
 
@@ -89,23 +93,6 @@
      */
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    
-    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
-    
-    if (!data)
-    {
-        loadingScreen = [[NSBundle mainBundle] loadNibNamed:@"LoadingScreen" owner:self options:nil][0];
-        loadingScreen.frame = CGRectMake(0, 0, 320, 480);        
-        [self.window addSubview:loadingScreen];
-        
-        UILabel* label = (UILabel*)[loadingScreen viewWithTag:LOADING_SCREEN_LABEL_TAG];
-        label.text = @"Descargando Datos.";
-    }
-    
-    [self.dataHandler downloadAndParseModelData];
-}
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
@@ -116,8 +103,62 @@
      */
 }
 
+
+#pragma mark - Event handlers
+
+- (void) handleDataIsReady:(NSNotification*)notif
+{
+    // Fade out loading screen
+    [UIView animateWithDuration:0.5 animations:^{
+        self.tabBarController.presentedViewController.view.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [self.tabBarController dismissViewControllerAnimated:NO completion:nil];
+    }];
+}
+
+
+- (void) handleNoNetwork:(NSNotification*)notif
+{
+    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
+    
+    if (!data)
+    {
+        [self presentLoadingScreenWithLoadingMessage:@"No hay acceso a internet" andModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    }
+}
+
+
+
+#pragma mark - Loading Screen
+
+- (void) presentLoadingScreenWithLoadingMessage:(NSString*)loadingMessage andModalTransitionStyle:(UIModalPresentationStyle)modalStyle
+{
+    // Create and set Up
+    LoadingScreenViewController *loadingScreenViewController = [[LoadingScreenViewController alloc] initWithNibName:@"LoadingScreen" bundle:nil];
+    loadingScreenViewController.modalPresentationStyle = modalStyle;
+    UILabel* label = (UILabel*)[loadingScreenViewController.view viewWithTag:LOADING_SCREEN_LABEL_TAG];
+    label.text = loadingMessage;
+    
+    // Fade in loading screen    
+    loadingScreenViewController.view.alpha = 0.0;
+    [self.tabBarController presentViewController:loadingScreenViewController animated:NO completion:^{
+        [UIView animateWithDuration:2.0 animations:^{
+            loadingScreenViewController.view.alpha = 1.0;
+        }];
+    }];
+    
+    // Clean up
+    [loadingScreenViewController release];
+}
+
+
+
+#pragma mark - Memory Management
+
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NO_NETWORK_NOTIFICATION object:nil];
     [_window release];
     [_tabBarController release];
     [dataHandler release];
