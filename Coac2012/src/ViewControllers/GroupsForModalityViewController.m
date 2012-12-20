@@ -40,34 +40,19 @@
 - (void) updateArrayOfElements
 {
     NSDictionary* modalitiesDic = modelData[MODALITIES_KEY];
-    NSArray* modalityGroups = modalitiesDic[modality]; // that is from that modality from all years
+    NSDictionary* modalityGroupsForAllYears = modalitiesDic[modality]; // that is from that modality from all years
+    NSArray* moddalityGroupsInYear = modalityGroupsForAllYears[self.yearString];    
     // now we should re-filter, selecting just the current year
     
-    modalityGroups = [modalityGroups sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    moddalityGroupsInYear = [moddalityGroupsInYear sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Agrupacion* a1 = (Agrupacion*)obj1;
         Agrupacion* a2 = (Agrupacion*)obj2;
         
         return [a1.nombre compare:a2.nombre];
     }];
     
-    [self setElementsArray:modalityGroups];
+    [self setElementsArray:moddalityGroupsInYear];
 }
-
-
-//- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
-//{
-//    // Configure the cell...
-//    Agrupacion* ag = elementsArray[[indexpath row]];
-//    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-//    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-//    
-//    if ([[ag identificador] intValue] != -1)
-//    {
-//        groupNameLabel.text = ag.nombre;
-//        categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
-//    }    
-//    
-//}
 
 
 
@@ -85,19 +70,6 @@
 
 
 #pragma mark - Table view delegate
-
-//- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
-//    
-//
-//    GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-//    detailViewController.group = elementsArray[[indexPath row]];
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-//    [detailViewController release];
-//     
-//}
-
 
 - (BOOL) implementsSearch
 {
@@ -127,7 +99,7 @@
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
     
-    if ([[ag identificador] intValue] != -1)
+    if (![ag isRestingGroup])
     {
         groupNameLabel.text = ag.nombre;
         categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
@@ -160,7 +132,7 @@
     contestResultsYearSelectorViewController.classOfTheNextViewController = [GroupsForModalityViewController class];
     
     // Key-values to be set when the user selects a year in the year-selector VC
-    NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO };
+    NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO, @"modality" : modality };
     contestResultsYearSelectorViewController.keyValuesToSetInNewInstance = dictionaryOfValuesToSetInNewInstance;
     
     // Push the year-selector VC to the stack

@@ -13,7 +13,7 @@
 #import "ContestPhaseDatesHelper.h"
 
 @interface ContestResultsViewController(private)
-- (Agrupacion*) findGroupWithId:(int)soughtId;
+- (Agrupacion*) findGroupWithId:(int)soughtId inYear:(NSString*)yearString;
 @end
 
 @implementation ContestResultsViewController
@@ -28,16 +28,15 @@
         // Setting the title here, and not in viewDidLoad, because this controller is currently selected on the tabBar, view did load gerts called before the app delegate sets some of its properties (ie.yearString)
         [self setTitle:[NSString stringWithFormat:@"Resultados %@", self.yearString]]; // This is affecting the TabBar's item, why?
         
-        NSArray* selectedYearResults = [ContestPhaseDatesHelper resultsDictionary][self.yearString];
+        NSDictionary* selectedYearResults = self.modelData[RESULTS_KEY][self.yearString];
         NSMutableArray* groups = [[NSMutableArray alloc] init];
-        for (NSNumber* groupId in selectedYearResults)
+        for (NSString* modalityKey in [selectedYearResults allKeys])
         {
-            Agrupacion *group = [self findGroupWithId:[groupId intValue]];
-            if (group)
+            NSArray *groupsForCategory = selectedYearResults[modalityKey];
+            for (Agrupacion* ag in groupsForCategory)
             {
-                [groups addObject:[self findGroupWithId:[groupId intValue]]];
+                [groups addObject:ag];
             }
-        
         }
         
         [self setElementsArray:groups];
@@ -125,6 +124,13 @@
 }
 
 
+- (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
+{
+    UILabel *footerLabel = (UILabel*)[cell viewWithTag:1];
+    footerLabel.text = @"Ver años anteriores";
+}
+
+
 /**
  @param contentSectionIndexPath this takes values from 0 to numberOfContentSections-1
  */
@@ -161,11 +167,12 @@
 
 #pragma mark - Helpers
 
-- (Agrupacion*) findGroupWithId:(int)soughtId
+- (Agrupacion*) findGroupWithId:(int)soughtId inYear:(NSString*)yearString
 {
-    NSArray* allgroups = modelData[GROUPS_KEY];
+    NSDictionary* allgroupsForAllYears = modelData[GROUPS_KEY];
+    NSArray* allGroupsForYear = allgroupsForAllYears[yearString];
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"self.identificador = %ld", soughtId];
-    NSArray* results = [allgroups filteredArrayUsingPredicate:predicate];
+    NSArray* results = [allGroupsForYear filteredArrayUsingPredicate:predicate];
     Agrupacion* group = nil;
     
     if ([results count] > 0)

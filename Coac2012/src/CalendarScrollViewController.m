@@ -21,12 +21,12 @@
 @synthesize view=scrollView;
 @synthesize dates;
 @synthesize delegate;
-
+@synthesize yearString = _yearString;
 
 
 #pragma mark - Initializators
 
-- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del
+- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year
 {
     self = [super init];
     
@@ -35,6 +35,7 @@
         dates = [theDates retain];
         dayBoxControllers = [[NSMutableArray alloc] init];
         delegate = del;
+        _yearString = [year copy];
     }
     
     return self;
@@ -82,7 +83,7 @@
     {
         
         NSString* dateString = dates[i];
-        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDates:[ContestPhaseDatesHelper phasesDatesDictionary][@"2012"]];
+        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDatesInYear:[ContestPhaseDatesHelper phasesDates][self.yearString]];
         [dayBoxControllers addObject:controller];        
 
         // add the views        
@@ -187,6 +188,7 @@
     [dayBoxControllers release];
     [scrollView release];    
     [dates release];
+    [_yearString release];
     [super dealloc];
 }
 

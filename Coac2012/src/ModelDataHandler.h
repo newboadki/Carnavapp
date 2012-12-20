@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FileDownloader.h"
 #import "FileDownloaderDelegateProtocol.h"
-#import "CoacParser.h"
+#import "CoacParser_v_1_0_4.h"
 #import "CoacParserDelegateProtocol.h"
 #import "Constants.h"
 

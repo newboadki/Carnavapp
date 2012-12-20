@@ -8,7 +8,8 @@
 
 
 // XML Server Url
-#define XML_SERVER_URL @"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"
+//#define XML_SERVER_URL @"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"
+#define XML_SERVER_URL @"https://dl.dropbox.com/u/35927076/data_parser_v_1_0_4.xml"
 
 // Model data file
 #define MODEL_DATA_FILE_NAME @"dataModelDictionary.plist"
@@ -23,6 +24,7 @@
 #define LINKS_KEY @"LinksKey"
 #define MODALITIES_KEY @"ModalitiesKey"
 #define YEARS_KEY @"YearsKey"
+#define RESULTS_KEY @"ResultsKey"
 
 
 // Contest Phases

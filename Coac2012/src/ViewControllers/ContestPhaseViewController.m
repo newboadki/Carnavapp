@@ -10,6 +10,7 @@
 #import "CalendarScrollViewController.h"
 #import "GroupDetailViewController.h"
 #import "ContestPhaseDatesHelper.h"
+#import "YearSelectionViewController.h"
 
 @interface ContestPhaseViewController()
 - (void) handleGroupsForDate:(NSString*) selectedDate;
@@ -25,20 +26,25 @@
 
 - (void) handleGroupsForDate:(NSString*) selectedDate
 {
-    NSDictionary* calendarDictionary = modelData[CALENDAR_KEY];
-    NSArray* groupsForDate = calendarDictionary[selectedDate];
-    
-    [self setElementsArray:groupsForDate];
-    [tableView reloadData];
+    NSArray* dateComponents = [selectedDate componentsSeparatedByString:@"/"];
+    if ([dateComponents count] == 3) {
+        NSString *yearOfSelectedDate = [dateComponents objectAtIndex:2];
+        NSDictionary* calendarDictionaryForAllYears = modelData[CALENDAR_KEY];
+        NSDictionary* calendarForGivenYear = calendarDictionaryForAllYears[yearOfSelectedDate];
+        NSArray* groupsForDate = calendarForGivenYear[selectedDate];
+        
+        [self setElementsArray:groupsForDate];
+        [tableView reloadData];
+    }
 }
 
 
 - (void) updateArrayOfElements
 {
-    NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest2012];
-    if([daysForCurrentPhase count] > 0)
+    NSArray* daysForContestInCurrentYear = [ContestPhaseDatesHelper allDaysForContestInYear:self.yearString];
+    if([daysForContestInCurrentYear count] > 0)
     {
-        NSString* selectedDate = daysForCurrentPhase[0];
+        NSString* selectedDate = daysForContestInCurrentYear[0];
         [self handleGroupsForDate:selectedDate];
     }
 }
@@ -58,26 +64,6 @@
 }
 
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
-{
-    Agrupacion* ag = elementsArray[[indexpath row]];
-    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
-    
-    if ([[ag identificador] intValue] != -1)
-    {
-        groupNameLabel.text = ag.nombre;
-        categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
-    }
-    else
-    {
-        groupNameLabel.text = @"-- DESCANSO --";
-        categoryNameLabel.text = @"";
-        [cell setUserInteractionEnabled:NO];
-    }
-}
-
-
 
 #pragma mark - View lifecycle
 
@@ -89,8 +75,8 @@
     [self setTitle:[NSString stringWithFormat:@"Concurso %@", self.yearString]]; // This is affecting the TabBar's item, why?
     
     // Create the contest's calendar
-    NSArray* daysForCurrentPhase = [ContestPhaseDatesHelper allDaysForcontest2012];
-    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForCurrentPhase andDelegate:self];        
+    NSArray* daysForContestInYear = [ContestPhaseDatesHelper allDaysForContestInYear:self.yearString];
+    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForContestInYear andDelegate:self andYearString:self.yearString];
     [self setCalendarController:cc];
     [cc release];
     
@@ -152,27 +138,89 @@
 
 
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
-    
-
-    GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = elementsArray[[indexPath row]];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];    
-}
-
-
-
 #pragma mark - ScrollableBoxTappedDelegateProtocol
 
 - (void) scrollableBoxTappedWith:(id)identifier
 {
     NSString* date = (NSString*)identifier;
     [self handleGroupsForDate:date];    
+}
+
+
+
+#pragma mark - Hooks to implement by subclasses of HeaderAndFooterVC class
+
+- (NSInteger) numberOfContentSections
+{
+    return 1;
+}
+
+
+- (NSInteger) numberOfRowsContentSection:(NSInteger)contentSection
+{
+    return [self.elementsArray count];
+}
+
+
+- (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
+{
+    // Configure the cell...
+    Agrupacion* ag = elementsArray[[indexpath row]];
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
+    
+    if (![ag isRestingGroup])
+    {
+        groupNameLabel.text = ag.nombre;
+        categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
+    }
+    else
+    {
+        groupNameLabel.text = @"-- DESCANSO --";
+        categoryNameLabel.text = @"";
+        [cell setUserInteractionEnabled:NO];
+    }
+}
+
+
+- (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
+{
+    UILabel *footerLabel = (UILabel*)[cell viewWithTag:1];
+    footerLabel.text = @"Ver años anteriores";
+}
+
+
+/**
+ @param contentSectionIndexPath this takes values from 0 to numberOfContentSections-1
+ */
+- (void) tableView:(UITableView *)theTableView didSelectContentRowAtIndexPath:(NSIndexPath *)contentSectionIndexPath
+{
+    int section = [contentSectionIndexPath section];
+    int row = [contentSectionIndexPath row];
+    int linealIndex = row + (section * 3);
+    
+    GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
+    detailViewController.group = elementsArray[linealIndex];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+}
+
+
+- (void) handleFooterSelected
+{
+    // Create the year selection view controller
+    YearSelectionViewController *contestResultsYearSelectorViewController = [[YearSelectionViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
+    
+    // Class of the new VC after the user selects a year in the year selector VC
+    contestResultsYearSelectorViewController.classOfTheNextViewController = [ContestPhaseViewController class];
+    
+    // Key-values to be set when the user selects a year in the year-selector VC
+    NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO };
+    contestResultsYearSelectorViewController.keyValuesToSetInNewInstance = dictionaryOfValuesToSetInNewInstance;
+    
+    // Push the year-selector VC to the stack
+    [self.navigationController pushViewController:contestResultsYearSelectorViewController animated:YES];
+    [contestResultsYearSelectorViewController release];
 }
 
 

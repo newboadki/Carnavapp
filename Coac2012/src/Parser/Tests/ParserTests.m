@@ -19,9 +19,9 @@
 - (void) setUp
 {
     NSError* err = nil;
-    NSString* path = [[NSBundle bundleForClass:[self class]] pathForResource:@"group" ofType:@"xml"];
+    NSString* path = [[NSBundle bundleForClass:[self class]] pathForResource:@"group_v_1_0_3" ofType:@"xml"];
     NSData* xmlData = [[NSData alloc] initWithContentsOfFile:path options:0 error:&err];
-    parser = [[CoacParser alloc] initWithXMLData:xmlData delegate:self];
+    parser = [[CoacParser_v_1_0_3 alloc] initWithXMLData:xmlData delegate:self];
 }
 
 

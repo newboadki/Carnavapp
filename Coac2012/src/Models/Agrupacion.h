@@ -69,5 +69,7 @@
        components:(NSArray*)components;
 
 + (Agrupacion*) restingGroup;
+- (BOOL) isRestingGroup;
+
 
 @end

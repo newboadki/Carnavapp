@@ -154,6 +154,12 @@
 }
 
 
+- (BOOL) isRestingGroup
+{
+    return [self.identificador integerValue] == RESTING_GROUP_ID;
+}
+
+
 - (NSString*) description
 {
     NSString* desc = @"";

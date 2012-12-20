@@ -88,7 +88,7 @@
 		000C3C3B164860B900B8E92D /* NSObject+KiwiStubAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 000C3BF1164860B900B8E92D /* NSObject+KiwiStubAdditions.m */; };
 		000C3C3C164860B900B8E92D /* NSObject+KiwiVerifierAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 000C3BF2164860B900B8E92D /* NSObject+KiwiVerifierAdditions.m */; };
 		000C3C3D164860B900B8E92D /* NSValue+KiwiAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 000C3BF3164860B900B8E92D /* NSValue+KiwiAdditions.m */; };
-		000C3C3F164862CF00B8E92D /* group.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0088C14B14D5BB68001319EF /* group.xml */; };
+		000C3C3F164862CF00B8E92D /* group_v_1_0_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0088C14B14D5BB68001319EF /* group_v_1_0_3.xml */; };
 		0019596814D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0019596614D5EB9600DD5F35 /* VideosForGroupViewController.m */; };
 		002E7BFA16484F2500B69153 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */; };
 		002E7BFC16484F5700B69153 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080960D14CCA1A1000E1525 /* QuartzCore.framework */; };
@@ -120,7 +120,7 @@
 		002E7C16164851B900B69153 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
 		002E7C17164851F400B69153 /* Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 00820C4214CC6340008A914A /* Constants.h */; };
 		002E7C18164852AA00B69153 /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
-		002E7C19164852AA00B69153 /* CoacParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* CoacParser.m */; };
+		002E7C19164852AA00B69153 /* CoacParser_v_1_0_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* CoacParser_v_1_0_4.m */; };
 		002E7C1B164852AA00B69153 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334414F823DC0034E314 /* FileDownloader.m */; };
 		002E7C1C164853F500B69153 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334F14F823DC0034E314 /* ConsoleLogger.m */; };
 		002E7C1D1648544500B69153 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD2E14CACC7300427E42 /* CXMLDocument.m */; };
@@ -150,6 +150,10 @@
 		00820C6214CC8EE5008A914A /* no_imagen_agrupacion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00820C5F14CC8EE5008A914A /* no_imagen_agrupacion.jpg */; };
 		0082B296167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0082B295167BB8EE008529A9 /* LoadingScreenViewController.m */; };
 		0082B297167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0082B295167BB8EE008529A9 /* LoadingScreenViewController.m */; };
+		0082BBA2167E4E98007D6CF4 /* group_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0082BBA1167E4E98007D6CF4 /* group_v_1_0_4.xml */; };
+		0082BBA5167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0082BBA4167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m */; };
+		0082BBA8167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 0082BBA7167E5447007D6CF4 /* CoacParser_v_1_0_3.m */; };
+		0082BBA9167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 0082BBA7167E5447007D6CF4 /* CoacParser_v_1_0_3.m */; };
 		0083613614D7D84E006FA9D5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083613414D7D84E006FA9D5 /* Default.png */; };
 		0083613814D7D84E006FA9D5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0083613514D7D84E006FA9D5 /* Default@2x.png */; };
 		0084FECB14D1E876002A074E /* activeDay_45x68.png in Resources */ = {isa = PBXBuildFile; fileRef = 0084FEC914D1E876002A074E /* activeDay_45x68.png */; };
@@ -166,6 +170,10 @@
 		008EE9D714F5464C002BFA7F /* ContestResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */; };
 		008EE9DC14F573AD002BFA7F /* scoreboard_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */; };
 		008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */; };
+		00985C281683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */; };
+		00985C291683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */; };
+		00985C2A1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */; };
+		00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */; };
 		00A10FD0150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
 		00A10FDB150A89F900D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD9150A89F900D1C425 /* active_day.png */; };
 		00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FDA150A89F900D1C425 /* inactive_day.png */; };
@@ -195,7 +203,7 @@
 		00C0BD4C14CACC7300427E42 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD3C14CACC7300427E42 /* CXMLNode_PrivateExtensions.m */; };
 		00C0BD4D14CACC7300427E42 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD3E14CACC7300427E42 /* CXMLNode_XPathExtensions.m */; };
 		00C0BD4E14CACC7300427E42 /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD4114CACC7300427E42 /* CTidy.m */; };
-		00C0BD5714CACD9500427E42 /* CoacParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* CoacParser.m */; };
+		00C0BD5714CACD9500427E42 /* CoacParser_v_1_0_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* CoacParser_v_1_0_4.m */; };
 		00C0BD6E14CAD7C200427E42 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6D14CAD7C200427E42 /* CoreData.framework */; };
 		00C0BD7014CAD7CD00427E42 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */; };
 		00C0BD7914CAE02900427E42 /* Agrupacion.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD7814CAE02900427E42 /* Agrupacion.m */; };
@@ -355,6 +363,11 @@
 		00820C6514CC9A44008A914A /* ContestPhasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhasesViewController.m; sourceTree = "<group>"; };
 		0082B294167BB8EE008529A9 /* LoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenViewController.h; sourceTree = "<group>"; };
 		0082B295167BB8EE008529A9 /* LoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenViewController.m; sourceTree = "<group>"; };
+		0082BBA1167E4E98007D6CF4 /* group_v_1_0_4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = group_v_1_0_4.xml; path = Coac2012/src/Parser/Tests/group_v_1_0_4.xml; sourceTree = SOURCE_ROOT; };
+		0082BBA3167E53CB007D6CF4 /* Parser_v_1_0_4Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parser_v_1_0_4Tests.h; path = Coac2012/src/Parser/Tests/Parser_v_1_0_4Tests.h; sourceTree = SOURCE_ROOT; };
+		0082BBA4167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Parser_v_1_0_4Tests.m; path = Coac2012/src/Parser/Tests/Parser_v_1_0_4Tests.m; sourceTree = SOURCE_ROOT; };
+		0082BBA6167E5447007D6CF4 /* CoacParser_v_1_0_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParser_v_1_0_3.h; sourceTree = "<group>"; };
+		0082BBA7167E5447007D6CF4 /* CoacParser_v_1_0_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParser_v_1_0_3.m; sourceTree = "<group>"; };
 		0082FD4014CF631E00337516 /* ScrollableBoxTappedDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollableBoxTappedDelegateProtocol.h; path = ../ScrollableBoxTappedDelegateProtocol.h; sourceTree = "<group>"; };
 		0083613414D7D84E006FA9D5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0083613514D7D84E006FA9D5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -371,21 +384,22 @@
 		0088C13E14D5A8C6001319EF /* SpacedOneLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpacedOneLabelCell.xib; sourceTree = "<group>"; };
 		0088C14114D5A91E001319EF /* SpacedOneLabelSlectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpacedOneLabelSlectedCell.xib; sourceTree = "<group>"; };
 		0088C14414D5B5B6001319EF /* CoacParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoacParserSpec.m; path = ../Coac2012/src/Parser/Tests/CoacParserSpec.m; sourceTree = "<group>"; };
-		0088C14B14D5BB68001319EF /* group.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = group.xml; path = ../Coac2012/src/Parser/Tests/group.xml; sourceTree = "<group>"; };
+		0088C14B14D5BB68001319EF /* group_v_1_0_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = group_v_1_0_3.xml; path = ../Coac2012/src/Parser/Tests/group_v_1_0_3.xml; sourceTree = "<group>"; };
 		008EE9D414F5464C002BFA7F /* ContestResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestResultsViewController.h; sourceTree = "<group>"; };
 		008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestResultsViewController.m; sourceTree = "<group>"; };
 		008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard_icon3.png; sourceTree = "<group>"; };
 		008EE9F814F6B2F8002BFA7F /* FileSystemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemHelper.h; sourceTree = "<group>"; };
 		008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemHelper.m; sourceTree = "<group>"; };
+		00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Carnavapp_v_1_0_3.xml; sourceTree = "<group>"; };
+		00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Carnavapp_v_1_0_4.xml; sourceTree = "<group>"; };
 		00A10FCE150A6E4A00D1C425 /* ContestPhaseDatesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseDatesHelper.h; sourceTree = "<group>"; };
 		00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseDatesHelper.m; sourceTree = "<group>"; };
 		00A10FD9150A89F900D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00A10FDA150A89F900D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
 		00AD902916621FC10099DEA6 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
-		00AD902C166221C20099DEA6 /* Carnavapp.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Carnavapp.xml; path = ../../../Desktop/Carnavapp.xml; sourceTree = "<group>"; };
 		00AD902D166230F20099DEA6 /* YearSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearSelectionViewController.h; sourceTree = "<group>"; };
 		00AD902E166230F20099DEA6 /* YearSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearSelectionViewController.m; sourceTree = "<group>"; };
-		00AECA7414CAC6DC005CE4DC /* coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00AECA7414CAC6DC005CE4DC /* Carnavapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carnavapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -438,8 +452,8 @@
 		00C0BD4014CACC7300427E42 /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		00C0BD4114CACC7300427E42 /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		00C0BD4214CACC7300427E42 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		00C0BD5214CACD9500427E42 /* CoacParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParser.h; sourceTree = "<group>"; };
-		00C0BD5314CACD9500427E42 /* CoacParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParser.m; sourceTree = "<group>"; };
+		00C0BD5214CACD9500427E42 /* CoacParser_v_1_0_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoacParser_v_1_0_4.h; sourceTree = "<group>"; };
+		00C0BD5314CACD9500427E42 /* CoacParser_v_1_0_4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoacParser_v_1_0_4.m; sourceTree = "<group>"; };
 		00C0BD5514CACD9500427E42 /* ParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserTests.h; path = ../Coac2012/src/Parser/Tests/ParserTests.h; sourceTree = "<group>"; };
 		00C0BD5614CACD9500427E42 /* ParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserTests.m; path = ../Coac2012/src/Parser/Tests/ParserTests.m; sourceTree = "<group>"; };
 		00C0BD6D14CAD7C200427E42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -774,7 +788,8 @@
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
-				00AD902C166221C20099DEA6 /* Carnavapp.xml */,
+				00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */,
+				00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */,
 				00FEA550160F94D3004AA9D9 /* Default-568h@2x.png */,
 				007864E21503CEE700499636 /* icon@2x.png */,
 				007864DF1503CECC00499636 /* icon.png */,
@@ -788,7 +803,7 @@
 		00AECA7514CAC6DC005CE4DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00AECA7414CAC6DC005CE4DC /* coac2012.app */,
+				00AECA7414CAC6DC005CE4DC /* Carnavapp.app */,
 				00021BEB15EFACC700536D6E /* coac2012Tests.octest */,
 			);
 			name = Products;
@@ -849,10 +864,13 @@
 				007237781567F61E0075CBFE /* coac2012Tests-Prefix.pch */,
 				00D9494D14E83D63006959C2 /* BaseCoacListViewControllerSpec.m */,
 				00D9495614E84FD0006959C2 /* TodayViewControllerSpec.m */,
+				0082BBA3167E53CB007D6CF4 /* Parser_v_1_0_4Tests.h */,
+				0082BBA4167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m */,
 				00C0BD5514CACD9500427E42 /* ParserTests.h */,
 				00C0BD5614CACD9500427E42 /* ParserTests.m */,
 				0088C14414D5B5B6001319EF /* CoacParserSpec.m */,
-				0088C14B14D5BB68001319EF /* group.xml */,
+				0088C14B14D5BB68001319EF /* group_v_1_0_3.xml */,
+				0082BBA1167E4E98007D6CF4 /* group_v_1_0_4.xml */,
 				00C0BD1914CAC9B800427E42 /* OCMock */,
 				00AECAAB14CAC6DC005CE4DC /* Supporting Files */,
 				0052331314F7D7640034E314 /* ModelDataHandlerSpec.m */,
@@ -983,11 +1001,13 @@
 		00C0BD5114CACD9500427E42 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				00C0BD5214CACD9500427E42 /* CoacParser.h */,
-				00C0BD5314CACD9500427E42 /* CoacParser.m */,
+				00C0BD5214CACD9500427E42 /* CoacParser_v_1_0_4.h */,
+				00C0BD5314CACD9500427E42 /* CoacParser_v_1_0_4.m */,
 				00C0BD9C14CB0B8100427E42 /* CoacParserDelegateProtocol.h */,
 				000074491502A07E0046381E /* CoacEventDrivenParser.h */,
 				0000744A1502A07E0046381E /* CoacEventDrivenParser.m */,
+				0082BBA6167E5447007D6CF4 /* CoacParser_v_1_0_3.h */,
+				0082BBA7167E5447007D6CF4 /* CoacParser_v_1_0_3.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1089,9 +1109,9 @@
 			productReference = 00021BEB15EFACC700536D6E /* coac2012Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		00AECA7314CAC6DC005CE4DC /* coac2012 */ = {
+		00AECA7314CAC6DC005CE4DC /* Carnavapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */;
+			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Carnavapp" */;
 			buildPhases = (
 				00AECA7014CAC6DC005CE4DC /* Sources */,
 				00AECA7114CAC6DC005CE4DC /* Frameworks */,
@@ -1101,9 +1121,9 @@
 			);
 			dependencies = (
 			);
-			name = coac2012;
+			name = Carnavapp;
 			productName = Coac2012;
-			productReference = 00AECA7414CAC6DC005CE4DC /* coac2012.app */;
+			productReference = 00AECA7414CAC6DC005CE4DC /* Carnavapp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1127,7 +1147,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00AECA7314CAC6DC005CE4DC /* coac2012 */,
+				00AECA7314CAC6DC005CE4DC /* Carnavapp */,
 				00021BEA15EFACC700536D6E /* coac2012Tests */,
 			);
 		};
@@ -1140,8 +1160,11 @@
 			files = (
 				00EE617F160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png in Resources */,
 				00EE6181160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png in Resources */,
-				000C3C3F164862CF00B8E92D /* group.xml in Resources */,
+				000C3C3F164862CF00B8E92D /* group_v_1_0_3.xml in Resources */,
 				00E22BC916628E6500CFB9ED /* YearHeaderView.xib in Resources */,
+				0082BBA2167E4E98007D6CF4 /* group_v_1_0_4.xml in Resources */,
+				00985C291683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */,
+				00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,6 +1218,8 @@
 				00EE6180160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png in Resources */,
 				00AD902A16621FC10099DEA6 /* TODO in Resources */,
 				00E22BC816628E6500CFB9ED /* YearHeaderView.xib in Resources */,
+				00985C281683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */,
+				00985C2A1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1296,7 +1321,7 @@
 				000C3C3C164860B900B8E92D /* NSObject+KiwiVerifierAdditions.m in Sources */,
 				000C3C3D164860B900B8E92D /* NSValue+KiwiAdditions.m in Sources */,
 				002E7C18164852AA00B69153 /* ModelDataHandler.m in Sources */,
-				002E7C19164852AA00B69153 /* CoacParser.m in Sources */,
+				002E7C19164852AA00B69153 /* CoacParser_v_1_0_4.m in Sources */,
 				002E7C1B164852AA00B69153 /* FileDownloader.m in Sources */,
 				002E7C17164851F400B69153 /* Constants.h in Sources */,
 				00021BFC15EFAD6600536D6E /* TodayViewControllerSpec.m in Sources */,
@@ -1340,6 +1365,8 @@
 				00AD9031166230F20099DEA6 /* YearSelectionViewController.m in Sources */,
 				00E22C0E1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */,
 				0082B297167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
+				0082BBA5167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m in Sources */,
+				0082BBA9167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1362,7 +1389,7 @@
 				00C0BD4C14CACC7300427E42 /* CXMLNode_PrivateExtensions.m in Sources */,
 				00C0BD4D14CACC7300427E42 /* CXMLNode_XPathExtensions.m in Sources */,
 				00C0BD4E14CACC7300427E42 /* CTidy.m in Sources */,
-				00C0BD5714CACD9500427E42 /* CoacParser.m in Sources */,
+				00C0BD5714CACD9500427E42 /* CoacParser_v_1_0_4.m in Sources */,
 				00C0BD7914CAE02900427E42 /* Agrupacion.m in Sources */,
 				00C0BD7D14CAE7C200427E42 /* Componente.m in Sources */,
 				00C0BD8114CAEC9A00427E42 /* Comentario.m in Sources */,
@@ -1391,6 +1418,7 @@
 				00AD9030166230F20099DEA6 /* YearSelectionViewController.m in Sources */,
 				00E22C0D1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */,
 				0082B296167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
+				0082BBA8167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1588,7 +1616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */ = {
+		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Carnavapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00AECAB614CAC6DC005CE4DC /* Debug */,

@@ -21,7 +21,7 @@
     
     CalendarScrollViewController* tapDelegate;
     NSString* dateString;
-    NSDictionary* contestPhaseDates;
+    NSDictionary* contestPhaseDatesInYear;
     NSDictionary* monthsNames;
 }
 
@@ -42,6 +42,6 @@
 - (void) setNormalLook;
 - (void) setActiveLook;
 
-- (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds andContestPhasesDates:(NSDictionary*)phasesDictionary;
+- (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds andContestPhasesDatesInYear:(NSDictionary*)phasesDictionaryInYear;
 
 @end

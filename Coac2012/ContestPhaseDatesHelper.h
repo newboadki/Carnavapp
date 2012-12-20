@@ -15,23 +15,23 @@
 #pragma mark - Generic
 
 /**
- @param forYearDescriptor It's a string representing a year with the following format 'YYYY'
+ @param year It's a string representing a year with the following format 'YYYY'
  */
-+ (NSArray*) daysForPhase:(NSString*)currentPhase forYearDescriptor:(NSString*)yearDescriptor;
++ (NSArray*) allDaysForContestInYear:(NSString*)year;
 
-+ (NSDictionary*) phasesDatesDictionary;
+/**
+ @param year It's a string representing a year with the following format 'YYYY'
+ */
++ (NSArray*) allPhasesDatesForContestInYear:(NSString*)year;
 
+/**
+ @return Dictionary containing the days of the contests per year.
+ */
++ (NSDictionary*) contestsDays;
 
-
-#pragma mark - Year specific
-
-+ (NSArray*) allDaysForcontest2012;
-+ (NSDictionary*) phasesDatesDictionary2012;
-
-+ (NSArray*) allDaysForcontest2013;
-+ (NSDictionary*) phasesDatesDictionary2013;
-
-+ (NSDictionary*) resultsDictionary;
-
+/**
+ @return Dictionary containing the phases of the contests per year.
+ */
++ (NSDictionary*) phasesDates;
 + (NSArray*) yearKeys;
 @end

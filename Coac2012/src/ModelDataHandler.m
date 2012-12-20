@@ -11,7 +11,7 @@
 #import "FileSystemHelper.h"
 
 @interface ModelDataHandler()
-@property (nonatomic, retain) CoacParser* parser;
+@property (nonatomic, retain) CoacParser_v_1_0_4* parser;
 @end
 
 @implementation ModelDataHandler
@@ -60,7 +60,7 @@
 {
     [[UIApplication sharedApplication] prp_popNetworkActivity];      // Hide Network indicator
     
-    CoacParser* p = [[CoacParser alloc] initWithXMLData:data delegate:self];
+    CoacParser_v_1_0_4* p = [[CoacParser_v_1_0_4 alloc] initWithXMLData:data delegate:self];
     [self setParser:p];
     [p release];
     [self.parser start];

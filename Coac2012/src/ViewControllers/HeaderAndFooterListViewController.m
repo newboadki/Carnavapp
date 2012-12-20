@@ -133,7 +133,7 @@
     }
     else if ((indexPath.section == FOOTER_SECTION_INDEX) && self.showFooter)
     {
-        [self configureHeaderCell:cell inTableView:(UITableView*)self.tableView];
+        [self configureFooterCell:cell inTableView:(UITableView*)self.tableView];
     }
     else
     {

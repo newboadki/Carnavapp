@@ -1,8 +1,8 @@
 //
-//  Parser.h
+//  CoacPaser_v_1_0_3.h
 //  DownloadFromURL
 //
-//  Created by Borja Arias Drake on 25/09/2010.
+//  Created by Borja Arias Drake on 16/12/2012.
 //  Copyright 2010 Borja Arias Drake. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 #import "CoacParserDelegateProtocol.h"
 #import "Constants.h"
 
-@interface CoacParser : NSObject
+@interface CoacParser_v_1_0_3 : NSObject
 {
     NSMutableArray*      groups;
     NSMutableArray*      links;
@@ -31,3 +31,5 @@
 - (void) start;
 
 @end
+
+

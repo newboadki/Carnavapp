@@ -22,8 +22,9 @@
 @property (nonatomic, retain) UIView* view;
 @property (nonatomic, retain) NSArray* dates;
 @property (nonatomic, assign) id<ScrollableBoxTappedDelegateProtocol> delegate;
+@property (nonatomic, copy) NSString *yearString;
 
-- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del;
+- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year;
 
 - (void) viewDidLoad;
 - (void) viewDidUnload;

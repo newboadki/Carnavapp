@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CalendarScrollViewController.h"
 #import "ScrollableBoxTappedDelegateProtocol.h"
-#import "BaseCoacListViewController.h"
+#import "HeaderAndFooterListViewController.h"
 
-
-@interface ContestPhaseViewController : BaseCoacListViewController <ScrollableBoxTappedDelegateProtocol>
+@interface ContestPhaseViewController : HeaderAndFooterListViewController <ScrollableBoxTappedDelegateProtocol>
 {
     NSString* phase;
     CalendarScrollViewController* calendarController;

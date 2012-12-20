@@ -1,8 +1,11 @@
 // 1. Adjustments to the parser and data to allow multiple years and the search easily.
-    - Create a new root of the XML file <carnavapp>...</carnavapp>
+    - There are now new tags for <agrupaciones anio="2013"></agrupaciones>
+    - There are now new tags for <calendario anio="2013"></calendario>
     - What to do with the old versions of the app? Submit an update to handle this? Make the new version use a different URL?
+        Yes, using new URL on newer versions of the app
 
-// 2. Create a new view contoller to select years.
-// 3. Changes to the view controllers that come from the year-selection view controller to store the year they're showing information about.
-// 4. Insert the year-selection view controller in the application navigation-flow
-// 5. What's wrong with the loading screen on iOS6?
+// 2. years are hardcoded
+// 3. Results are not included in the xml file
+// 4. Handle when there are no results for a year
+// 5. Tildes se ven mal en las cadenas de texto
+// 6. Remove cache the first time the new version of the app

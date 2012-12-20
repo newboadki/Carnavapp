@@ -1,12 +1,12 @@
 //
-//  Parser.m
+//  CoacPaser_v_1_0_3.m
 //  DownloadFromURL
 //
-//  Created by Borja Arias Drake on 25/09/2010.
+//  Created by Borja Arias Drake on 16/12/2012.
 //  Copyright 2010 Borja Arias Drake. All rights reserved.
 //
 
-#import "CoacParser.h"
+#import "CoacParser_v_1_0_3.h"
 #import "Agrupacion.h"
 #import "Componente.h"
 #import "Video.h"
@@ -59,7 +59,7 @@
 #define MODALIDAD_ROMANCERO "ROMANCERO";
 
 
-@interface CoacParser(private)
+@interface CoacParser_v_1_0_3(private)
 - (void) storeNode:(CXMLElement*)node asClass:(Class*) klass;
 - (void) parseAgrupacion:(CXMLElement*) node;
 - (NSArray*) parseVideos:(CXMLElement*)videosElement;
@@ -80,7 +80,7 @@
 @end
 
 
-@implementation CoacParser
+@implementation CoacParser_v_1_0_3
 
 
 @synthesize xmlData;
@@ -90,7 +90,7 @@
 {
 	/************************************************************************************/
 	/* Custom init method																*/
-	/************************************************************************************/	
+	/************************************************************************************/
 	if(self = [super init])
 	{
 		xmlData = [theXml retain];
@@ -105,7 +105,7 @@
         queue.maxConcurrentOperationCount = 1;
 	}
 	
-	return self;	
+	return self;
 }
 
 
@@ -117,20 +117,20 @@
 	/************************************************************************************/
 	/* Parse the contents of the xml file and create a representation of it in the core */
 	/* stack.																			*/
-	/************************************************************************************/    
+	/************************************************************************************/
     NSBlockOperation* op = [NSBlockOperation blockOperationWithBlock:^{
         NSDictionary* results = [self doParsingSync];
-        [(id)delegate performSelectorOnMainThread:@selector(parsingDidFinishWithResultsDictionary:) withObject:results waitUntilDone:YES];    
+        [(id)delegate performSelectorOnMainThread:@selector(parsingDidFinishWithResultsDictionary:) withObject:results waitUntilDone:YES];
         
     }];
     
-    [queue addOperation:op];   
+    [queue addOperation:op];
 }
 
 
 - (NSDictionary*) doParsingSync
 {
-    // Clear data structures before loading any parsed data        
+    // Clear data structures before loading any parsed data
     [groups removeAllObjects];
     [calendar removeAllObjects];
     [links removeAllObjects];
@@ -139,7 +139,7 @@
     // Parse
     [self parseElementsOfXpath:@"/coac2012/agrupaciones/agrupacion"];
     [self parseElementsOfXpath:@"/coac2012/calendario/dia"];
-    [self parseElementsOfXpath:@"/coac2012/enlaces/enlace"];    
+    [self parseElementsOfXpath:@"/coac2012/enlaces/enlace"];
     
     // Debugging
     /*[self showAgrupaciones];
@@ -148,11 +148,11 @@
      [self showModalities];*/
     
     
-    NSDictionary* results = @{GROUPS_KEY: groups, 
-                             CALENDAR_KEY: calendar, 
-                             LINKS_KEY: links, 
-                             MODALITIES_KEY: modalities,
-                             YEARS_KEY:_yearKeys};
+    NSDictionary* results = @{GROUPS_KEY: groups,
+CALENDAR_KEY: calendar,
+LINKS_KEY: links,
+MODALITIES_KEY: modalities,
+YEARS_KEY:_yearKeys};
     return results;
 }
 
@@ -163,7 +163,7 @@
 	/************************************************************************************/
 	/* Parse the elements that match the given xpath. Stores each of those elements as  */
 	/* objects of type klass.															*/
-	/************************************************************************************/	
+	/************************************************************************************/
 	NSError* err;
 	CXMLDocument* doc = [[[CXMLDocument alloc] initWithData:xmlData options:0 error:&err] autorelease];
 	
@@ -173,15 +173,15 @@
 	}
 	else
 	{
-		NSArray* nodes = nil;		
+		NSArray* nodes = nil;
         err = nil;
 		nodes = [doc nodesForXPath:xpath error:&err];
-
-		for (CXMLElement* node in nodes)			
+        
+		for (CXMLElement* node in nodes)
 		{
-			if([xpath isEqualToString:@"/coac2012/agrupaciones/agrupacion"])		
+			if([xpath isEqualToString:@"/coac2012/agrupaciones/agrupacion"])
             {
-				[self parseAgrupacion:node];                
+				[self parseAgrupacion:node];
             }
             else if ([xpath isEqualToString:@"/coac2012/calendario/dia"])
             {
@@ -202,9 +202,9 @@
     
     NSMutableArray*  groupsInDay = [NSMutableArray array];
     NSArray*  positionsNode = [node elementsForName:CALENDAR_POSITION_TAG_NAME];
-
+    
     for (CXMLElement* position in positionsNode)
-    {        
+    {
         NSString* agIdString = [[position attributeForName:CALENDAR_GROUP_ATTRIBUTE_NAME] stringValue];
         
         Agrupacion* ag = nil;
@@ -215,7 +215,7 @@
             [groupsInDay addObject:ag];
         }
         else
-        {            
+        {
             ag = [self groupWithID:[agIdString intValue] inGroups:groups];
             if (ag)
             {
@@ -235,7 +235,7 @@
     l.url = [[linkElement attributeForName:URL_ATTRIBUTE_NAME] stringValue];
     l.type = [[linkElement attributeForName:TYPE_ATTRIBUTE_NAME] stringValue];
     l.desc = [[linkElement attributeForName:DESCRIPTION_ATTRIBUTE_NAME] stringValue];
-
+    
     [links addObject:l];
     [l release];
 }
@@ -268,9 +268,9 @@
     {
         CXMLElement* componentsElement = componentsNodes[0];
         componentes = [self parseComponents:componentsElement];
-    }    
+    }
     ag.componentes = componentes;
-
+    
     
     NSArray* videos = nil;
     NSArray*  videosNodes = [node elementsForName:VIDEOS_TAG];
@@ -278,27 +278,27 @@
     {
         CXMLElement* videosElement = videosNodes[0];
         videos = [self parseVideos:videosElement];
-    }    
+    }
     ag.videos = videos;
-
+    
     NSArray* fotos = nil;
     NSArray*  fotosNodes = [node elementsForName:PICTURES_TAG];
     if ([fotosNodes count] > 0)
     {
         CXMLElement* fotosElement = fotosNodes[0];
         fotos = [self parsePictures:fotosElement];
-    }    
+    }
     ag.fotos = fotos;
-
+    
     NSArray* comentarios = nil;
     NSArray*  comentariosNodes = [node elementsForName:COMMENTS_TAG];
     if ([comentariosNodes count] > 0)
     {
         CXMLElement* comentariosElement = comentariosNodes[0];
         comentarios = [self parseComments:comentariosElement];
-    }    
+    }
     ag.comentatios = comentarios;
-
+    
     
     // Add it to the collection
     [groups addObject:ag];
@@ -333,9 +333,9 @@
         [components addObject:c];
         [c release];
     }
-
+    
     return [NSArray arrayWithArray:components];
-
+    
 }
 
 
@@ -354,12 +354,12 @@
         if (([v.desc length] > 0) && [v.url length] > 0)
         {
             [videos addObject:v];
-        }        
+        }
         
         [v release];
     }
     
-    return [NSArray arrayWithArray:videos];    
+    return [NSArray arrayWithArray:videos];
 }
 
 
@@ -378,7 +378,7 @@
         [p release];
     }
     
-    return [NSArray arrayWithArray:fotos];    
+    return [NSArray arrayWithArray:fotos];
 }
 
 
@@ -388,7 +388,7 @@
     NSArray* commentsNodes = [commentsElement elementsForName:COMMENT_TAG];
     
     for (CXMLElement* commentElement in commentsNodes)
-    {        
+    {
         Comentario* c = [[Comentario alloc] init];
         c.origen = [[commentElement attributeForName:ORIGEN_ATTRIBUTE_NAME] stringValue];
         c.url = [[commentElement attributeForName:URL_ATTRIBUTE_NAME] stringValue];
@@ -411,7 +411,7 @@
         result = filteredArray[0];
     }
     
-    return result;    
+    return result;
 }
 
 
@@ -472,7 +472,7 @@
 {
 	/************************************************************************************/
 	/* Tidy-up.																			*/
-	/************************************************************************************/	
+	/************************************************************************************/
     [calendar release];
     [groups release];
 	[xmlData release];

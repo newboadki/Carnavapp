@@ -1,5 +1,5 @@
 //
-//  ParserTests.h
+//  Parser_v_1_0_4Tests.h
 //  Farmacy
 //
 //  Created by Borja Arias Drake on 23/10/2010.
@@ -15,12 +15,11 @@
 #import "Kiwi.h"
 #import "Constants.h"
 #import "CoacParserDelegateProtocol.h"
-#import "CoacParser_v_1_0_3.h"
+#import "CoacParser_v_1_0_4.h"
 
-@interface ParserTests : SenTestCase <CoacParserDelegateProtocol>
+@interface Parser_v_1_0_4Tests : SenTestCase <CoacParserDelegateProtocol>
 {
-    CoacParser_v_1_0_3* parser;
-    NSDictionary* results;
+    CoacParser_v_1_0_4* parser;
 }
 
 @end
