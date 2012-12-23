@@ -21,6 +21,7 @@
     IBOutlet UITableView* tableView;
     IBOutlet SearchResultsTableViewController* searchResultsTableViewController;    
     IBOutlet UILabel* noContentMessageLabel;
+    IBOutlet UIView* noContentMessageView;
 }
 
 @property (nonatomic, retain) NSDictionary* modelData;
@@ -29,6 +30,8 @@
 @property (nonatomic, retain) UITableView* tableView;
 @property (nonatomic, retain) SearchResultsTableViewController* searchResultsTableViewController;
 @property (nonatomic, retain) UILabel* noContentMessageLabel;
+@property (nonatomic, retain) UIView* noContentMessageView;
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundImageView;
 
 /** Defines the year the viewController is showing information from.*/
 @property (nonatomic, retain) NSString *yearString;

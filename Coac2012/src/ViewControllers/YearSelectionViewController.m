@@ -15,6 +15,7 @@
 @implementation YearSelectionViewController
 
 @synthesize classOfTheNextViewController = _classOfTheNextViewController;
+@synthesize nibNameOfTheNextViewController = _nibNameOfTheNextViewController;
 @synthesize keyValuesToSetInNewInstance;
 
 #pragma mark - Parent Class extentsion methods
@@ -61,7 +62,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Select a Year", nil);
+    self.title = NSLocalizedString(@"Selecciona año", nil);
 }
 
 
@@ -76,7 +77,7 @@
 	/***********************************************************************************************/
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     NSString* selectedYear = elementsArray[[indexPath row]];
-    id nextController = [[self.classOfTheNextViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
+    id nextController = [[self.classOfTheNextViewController alloc] initWithNibName:self.nibNameOfTheNextViewController bundle:nil];
     
     for (id key in [self.keyValuesToSetInNewInstance allKeys])
     {
@@ -88,10 +89,18 @@
     
     [nextController performSelector:@selector(setYearString:) withObject:selectedYear];
     [nextController setModelData:self.modelData];
-    [nextController performSelector:@selector(updateArrayOfElements)];
+    //[nextController performSelector:@selector(updateArrayOfElements)];
     
     [[self navigationController] pushViewController:nextController animated:YES];
     [nextController release];
+}
+
+
+- (void) dealloc
+{
+    [keyValuesToSetInNewInstance release];
+    [_nibNameOfTheNextViewController release];
+    [super dealloc];
 }
 
 @end

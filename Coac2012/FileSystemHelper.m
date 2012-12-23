@@ -11,7 +11,7 @@
 @implementation FileSystemHelper
 
 
-+ (BOOL) archiveObject:(id)obj
++ (BOOL) archiveObject:(id)obj fileName:(NSString*)fileName
 {
     BOOL success = NO;   
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
@@ -20,7 +20,7 @@
     if ([paths count] > 0)
     {        
         documentsDirectoryPath = paths[0];
-        NSString* dictionaryFilePath =  [documentsDirectoryPath stringByAppendingFormat:@"/%@", MODEL_DATA_FILE_NAME];
+        NSString* dictionaryFilePath =  [documentsDirectoryPath stringByAppendingFormat:@"/%@", fileName];
         success = [NSKeyedArchiver archiveRootObject:obj toFile:dictionaryFilePath];
     }
     
@@ -28,7 +28,7 @@
 }
 
 
-+ (id) unarchiveDataModel
++ (id) unarchiveObjectWithFileName:(NSString*)fileName
 {
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectoryPath = nil;
@@ -37,11 +37,27 @@
     if ([paths count] > 0)
     {        
         documentsDirectoryPath = paths[0];
-        NSString* dictionaryFilePath =  [documentsDirectoryPath stringByAppendingFormat:@"/%@", MODEL_DATA_FILE_NAME];
+        NSString* dictionaryFilePath =  [documentsDirectoryPath stringByAppendingFormat:@"/%@", fileName];
         record = [NSKeyedUnarchiver unarchiveObjectWithFile:dictionaryFilePath];
     }
     
     return record;
+}
+
++ (BOOL) deleteObjectWithFileName:(NSString*)fileName
+{
+    BOOL removed = NO;
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectoryPath = nil;
+    
+    if ([paths count] > 0)
+    {
+        documentsDirectoryPath = paths[0];
+        NSString* filePath =  [documentsDirectoryPath stringByAppendingFormat:@"/%@", fileName];
+        removed = [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
+    
+    return removed;
 }
 
 @end

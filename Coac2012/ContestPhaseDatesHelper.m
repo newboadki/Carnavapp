@@ -9,7 +9,7 @@
 #import "ContestPhaseDatesHelper.h"
 
 #define PHASES_DICTIONARY_SELECTOR_STRING @"phasesDatesDictionary"
-#define YEAR_KEYS_ARRAY @[@"2013", @"2012"]
+#define YEAR_KEYS_ARRAY @[@"2012", @"2013"]
 
 @implementation ContestPhaseDatesHelper
 
@@ -189,6 +189,17 @@
 + (NSArray*) yearKeys
 {
     return YEAR_KEYS_ARRAY;
+}
+
++ (NSString*) backgroundForYear:(NSString*)year
+{
+    if ([year isEqualToString:@"2012"]) {
+        return @"appbackground_320x480";
+    } else if ([year isEqualToString:@"2013"]) {
+        return @"cartel_carnaval_2013";
+    } else {
+        return @"cartel_carnaval_2013";
+    }
 }
 
 

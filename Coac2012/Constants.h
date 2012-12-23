@@ -11,12 +11,20 @@
 //#define XML_SERVER_URL @"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"
 #define XML_SERVER_URL @"https://dl.dropbox.com/u/35927076/data_parser_v_1_0_4.xml"
 
+
+#define BACKGROUND_IMAGES_DISK_CACHE_FILE_NAME @"backgroundImagesDiskCacheFileName"
+
+// Settings file
+#define PARSER_1_0_3_HAS_BEEN_DELETED @"parser_1_0_3_hasBeenDeleted"
+
 // Model data file
 #define MODEL_DATA_FILE_NAME @"dataModelDictionary.plist"
+#define SETTINGS_FILE_NAME @"settingsDictionary.plist"
 
 // Notifications
 #define MODEL_DATA_IS_READY_NOTIFICATION @"ModelDataIsReadyNotification"
 #define NO_NETWORK_NOTIFICATION @"NoNetworkNotification"
+#define BACKGROUND_IMAGE_FINISHED_PROCESSING @"BackgroundImageFinishedProcessing"
 
 // Modalities
 #define GROUPS_KEY @"GroupsKey"

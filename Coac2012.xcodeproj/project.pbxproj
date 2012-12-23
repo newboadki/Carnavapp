@@ -136,6 +136,7 @@
 		0052335414F823DC0034E314 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334F14F823DC0034E314 /* ConsoleLogger.m */; };
 		007864E01503CECC00499636 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 007864DF1503CECC00499636 /* icon.png */; };
 		007864E31503CEE700499636 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 007864E21503CEE700499636 /* icon@2x.png */; };
+		007A6E6616876DD6006AFFE1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0086C2171685FC45003F35F1 /* CoreImage.framework */; };
 		0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
 		0080960B14CCA072000E1525 /* ContestPhaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960814CCA072000E1525 /* ContestPhaseViewController.xib */; };
@@ -162,6 +163,21 @@
 		0084FEF414D222CB002A074E /* GroupInfoCellSelected.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084FEF314D222CB002A074E /* GroupInfoCellSelected.xib */; };
 		0085D9591568469500BB819D /* BSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085D9581568469500BB819D /* BSViewController.m */; };
 		00861A1514EA7EBD00E27829 /* SearchresultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00861A1414EA7EBD00E27829 /* SearchresultCell.xib */; };
+		0086C2151685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */; };
+		0086C2161685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */; };
+		0086C2181685FC45003F35F1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0086C2171685FC45003F35F1 /* CoreImage.framework */; };
+		0086C21B16861658003F35F1 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* ImageManager.m */; };
+		0086C21C16861658003F35F1 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* ImageManager.m */; };
+		0086C22316861A48003F35F1 /* gradientMap1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22116861A48003F35F1 /* gradientMap1.png */; };
+		0086C22416861A48003F35F1 /* gradientMap1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22116861A48003F35F1 /* gradientMap1.png */; };
+		0086C22516861A48003F35F1 /* gradientMap2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22216861A48003F35F1 /* gradientMap2.png */; };
+		0086C22616861A48003F35F1 /* gradientMap2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22216861A48003F35F1 /* gradientMap2.png */; };
+		0086C22A16861F65003F35F1 /* cartel_2013.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22716861F64003F35F1 /* cartel_2013.png */; };
+		0086C22B16861F65003F35F1 /* cartel_2013.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22716861F64003F35F1 /* cartel_2013.png */; };
+		0086C22C16861F65003F35F1 /* cartel_2012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22816861F64003F35F1 /* cartel_2012@2x.png */; };
+		0086C22D16861F65003F35F1 /* cartel_2012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22816861F64003F35F1 /* cartel_2012@2x.png */; };
+		0086C22E16861F65003F35F1 /* cartel_2012.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22916861F65003F35F1 /* cartel_2012.png */; };
+		0086C22F16861F65003F35F1 /* cartel_2012.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22916861F65003F35F1 /* cartel_2012.png */; };
 		0088C13514D59C40001319EF /* LinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0088C13414D59C40001319EF /* LinkCell.xib */; };
 		0088C13914D59DDA001319EF /* LinkCellSelected.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0088C13814D59DD9001319EF /* LinkCellSelected.xib */; };
 		0088C13C14D5A1E4001319EF /* details_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0088C13B14D5A1E4001319EF /* details_bg.png */; };
@@ -378,6 +394,15 @@
 		0085D9571568469500BB819D /* BSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSViewController.h; sourceTree = "<group>"; };
 		0085D9581568469500BB819D /* BSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSViewController.m; sourceTree = "<group>"; };
 		00861A1414EA7EBD00E27829 /* SearchresultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchresultCell.xib; sourceTree = "<group>"; };
+		0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartel_carnaval_2013.png; sourceTree = "<group>"; };
+		0086C2171685FC45003F35F1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		0086C21916861658003F35F1 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		0086C21A16861658003F35F1 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		0086C22116861A48003F35F1 /* gradientMap1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientMap1.png; sourceTree = "<group>"; };
+		0086C22216861A48003F35F1 /* gradientMap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientMap2.png; sourceTree = "<group>"; };
+		0086C22716861F64003F35F1 /* cartel_2013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartel_2013.png; sourceTree = "<group>"; };
+		0086C22816861F64003F35F1 /* cartel_2012@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartel_2012@2x.png"; sourceTree = "<group>"; };
+		0086C22916861F65003F35F1 /* cartel_2012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartel_2012.png; sourceTree = "<group>"; };
 		0088C13414D59C40001319EF /* LinkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinkCell.xib; sourceTree = "<group>"; };
 		0088C13814D59DD9001319EF /* LinkCellSelected.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinkCellSelected.xib; sourceTree = "<group>"; };
 		0088C13B14D5A1E4001319EF /* details_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_bg.png; sourceTree = "<group>"; };
@@ -399,7 +424,7 @@
 		00AD902916621FC10099DEA6 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		00AD902D166230F20099DEA6 /* YearSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearSelectionViewController.h; sourceTree = "<group>"; };
 		00AD902E166230F20099DEA6 /* YearSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearSelectionViewController.m; sourceTree = "<group>"; };
-		00AECA7414CAC6DC005CE4DC /* Carnavapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carnavapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00AECA7414CAC6DC005CE4DC /* coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -511,6 +536,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007A6E6616876DD6006AFFE1 /* CoreImage.framework in Frameworks */,
 				002E7BFE16484F6800B69153 /* CoreData.framework in Frameworks */,
 				002E7BFD16484F5C00B69153 /* CoreGraphics.framework in Frameworks */,
 				002E7BFC16484F5700B69153 /* QuartzCore.framework in Frameworks */,
@@ -525,6 +551,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0086C2181685FC45003F35F1 /* CoreImage.framework in Frameworks */,
 				0080960E14CCA1A1000E1525 /* QuartzCore.framework in Frameworks */,
 				00C0BD7014CAD7CD00427E42 /* libxml2.dylib in Frameworks */,
 				00C0BD6E14CAD7C200427E42 /* CoreData.framework in Frameworks */,
@@ -770,6 +797,8 @@
 				008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */,
 				00A10FCE150A6E4A00D1C425 /* ContestPhaseDatesHelper.h */,
 				00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */,
+				0086C21916861658003F35F1 /* ImageManager.h */,
+				0086C21A16861658003F35F1 /* ImageManager.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -803,7 +832,7 @@
 		00AECA7514CAC6DC005CE4DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00AECA7414CAC6DC005CE4DC /* Carnavapp.app */,
+				00AECA7414CAC6DC005CE4DC /* coac2012.app */,
 				00021BEB15EFACC700536D6E /* coac2012Tests.octest */,
 			);
 			name = Products;
@@ -812,6 +841,7 @@
 		00AECA7714CAC6DC005CE4DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0086C2171685FC45003F35F1 /* CoreImage.framework */,
 				0072377C1567F88C0075CBFE /* libxml2.2.dylib */,
 				00C0BD6F14CAD7CD00427E42 /* libxml2.dylib */,
 				0080960D14CCA1A1000E1525 /* QuartzCore.framework */,
@@ -869,11 +899,11 @@
 				00C0BD5514CACD9500427E42 /* ParserTests.h */,
 				00C0BD5614CACD9500427E42 /* ParserTests.m */,
 				0088C14414D5B5B6001319EF /* CoacParserSpec.m */,
+				0052331314F7D7640034E314 /* ModelDataHandlerSpec.m */,
 				0088C14B14D5BB68001319EF /* group_v_1_0_3.xml */,
 				0082BBA1167E4E98007D6CF4 /* group_v_1_0_4.xml */,
 				00C0BD1914CAC9B800427E42 /* OCMock */,
 				00AECAAB14CAC6DC005CE4DC /* Supporting Files */,
-				0052331314F7D7640034E314 /* ModelDataHandlerSpec.m */,
 			);
 			path = Coac2012Tests;
 			sourceTree = "<group>";
@@ -1063,6 +1093,12 @@
 		00DC4A8F14D0A0DE0018E3E3 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				0086C22716861F64003F35F1 /* cartel_2013.png */,
+				0086C22816861F64003F35F1 /* cartel_2012@2x.png */,
+				0086C22916861F65003F35F1 /* cartel_2012.png */,
+				0086C22116861A48003F35F1 /* gradientMap1.png */,
+				0086C22216861A48003F35F1 /* gradientMap2.png */,
+				0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */,
 				00EE617C160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png */,
 				00EE617D160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png */,
 				0084FECF14D1ED28002A074E /* appbackground_320x480.png */,
@@ -1109,9 +1145,9 @@
 			productReference = 00021BEB15EFACC700536D6E /* coac2012Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		00AECA7314CAC6DC005CE4DC /* Carnavapp */ = {
+		00AECA7314CAC6DC005CE4DC /* coac2012 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Carnavapp" */;
+			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */;
 			buildPhases = (
 				00AECA7014CAC6DC005CE4DC /* Sources */,
 				00AECA7114CAC6DC005CE4DC /* Frameworks */,
@@ -1121,9 +1157,9 @@
 			);
 			dependencies = (
 			);
-			name = Carnavapp;
+			name = coac2012;
 			productName = Coac2012;
-			productReference = 00AECA7414CAC6DC005CE4DC /* Carnavapp.app */;
+			productReference = 00AECA7414CAC6DC005CE4DC /* coac2012.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1147,7 +1183,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00AECA7314CAC6DC005CE4DC /* Carnavapp */,
+				00AECA7314CAC6DC005CE4DC /* coac2012 */,
 				00021BEA15EFACC700536D6E /* coac2012Tests */,
 			);
 		};
@@ -1165,6 +1201,12 @@
 				0082BBA2167E4E98007D6CF4 /* group_v_1_0_4.xml in Resources */,
 				00985C291683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */,
 				00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */,
+				0086C2161685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */,
+				0086C22416861A48003F35F1 /* gradientMap1.png in Resources */,
+				0086C22616861A48003F35F1 /* gradientMap2.png in Resources */,
+				0086C22B16861F65003F35F1 /* cartel_2013.png in Resources */,
+				0086C22D16861F65003F35F1 /* cartel_2012@2x.png in Resources */,
+				0086C22F16861F65003F35F1 /* cartel_2012.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,6 +1262,12 @@
 				00E22BC816628E6500CFB9ED /* YearHeaderView.xib in Resources */,
 				00985C281683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */,
 				00985C2A1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */,
+				0086C2151685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */,
+				0086C22316861A48003F35F1 /* gradientMap1.png in Resources */,
+				0086C22516861A48003F35F1 /* gradientMap2.png in Resources */,
+				0086C22A16861F65003F35F1 /* cartel_2013.png in Resources */,
+				0086C22C16861F65003F35F1 /* cartel_2012@2x.png in Resources */,
+				0086C22E16861F65003F35F1 /* cartel_2012.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1415,7 @@
 				0082B297167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
 				0082BBA5167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m in Sources */,
 				0082BBA9167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
+				0086C21C16861658003F35F1 /* ImageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1419,6 +1468,7 @@
 				00E22C0D1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */,
 				0082B296167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
 				0082BBA8167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
+				0086C21B16861658003F35F1 /* ImageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1616,7 +1666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Carnavapp" */ = {
+		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00AECAB614CAC6DC005CE4DC /* Debug */,

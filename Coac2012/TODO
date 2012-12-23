@@ -1,11 +1,16 @@
-// 1. Adjustments to the parser and data to allow multiple years and the search easily.
+(done)// 1. Adjustments to the parser and data to allow multiple years and the search easily.
     - There are now new tags for <agrupaciones anio="2013"></agrupaciones>
     - There are now new tags for <calendario anio="2013"></calendario>
     - What to do with the old versions of the app? Submit an update to handle this? Make the new version use a different URL?
         Yes, using new URL on newer versions of the app
 
 // 2. years are hardcoded
-// 3. Results are not included in the xml file
-// 4. Handle when there are no results for a year
+(done)// 3. Results are not included in the xml file
+(done)// 4. Handle when there are no results for a year
 // 5. Tildes se ven mal en las cadenas de texto
-// 6. Remove cache the first time the new version of the app
+(done)// 6. Remove cache the first time the new version of the app
+// 8. Contest Phases should select the current day if it's in the list
+(done)// 9. Add different backgrounds for different years
+// 10. Make methods protected for header and footer VC
+// 11. Design the view previous years cell
+(done)// 12. Move the results tab out of the first place, shall we bring 'Hoy' back ?

@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface FileSystemHelper : NSObject
-{}
 
-+ (BOOL) archiveObject:(id)obj;
-+ (id) unarchiveDataModel;
++ (BOOL) archiveObject:(id)obj fileName:(NSString*)fileName;
++ (id) unarchiveObjectWithFileName:(NSString*)fileName;
++ (BOOL) deleteObjectWithFileName:(NSString*)fileName;
 
 @end

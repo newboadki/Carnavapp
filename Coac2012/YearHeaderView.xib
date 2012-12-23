@@ -49,6 +49,7 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{20, 0}, {266, 44}}</string>
 										<reference key="NSSuperview" ref="115685248"/>
+										<reference key="NSWindow"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -77,18 +78,21 @@
 								</array>
 								<string key="NSFrameSize">{320, 44}</string>
 								<reference key="NSSuperview" ref="999305131"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1063078749"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<object class="NSColor" key="IBUIBackgroundColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC42NjI3NDUwOTggMC4wMTE3NjQ3MDU4OCAwLjMwOTgwMzkyMTYAA</bytes>
+								<object class="NSColor" key="IBUIBackgroundColor" id="1028890636">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 								</object>
+								<float key="IBUIAlpha">0.60000002384185791</float>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
 						<string key="NSFrameSize">{300, 43}</string>
 						<reference key="NSSuperview" ref="813319147"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="115685248"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -104,12 +108,11 @@
 				</array>
 				<string key="NSFrameSize">{320, 44}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="999305131"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC42NjI3NDUwOTggMC4wMTE3NjQ3MDU4OCAwLjMwOTgwMzkyMTYAA</bytes>
-				</object>
+				<reference key="IBUIBackgroundColor" ref="1028890636"/>
+				<float key="IBUIAlpha">0.60000002384185791</float>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUIAccessoryType">1</int>
 				<reference key="IBUIContentView" ref="999305131"/>

@@ -92,7 +92,7 @@
     static NSString *HeaderCellIdentifier = @"HeaderCell";
     static NSString *FooterCellIdentifier = @"FooterCell";
     NSString * cellIdentifier = @"NormalCell";
-    NSString* nibToLoad = [self normalCellNibName];
+    NSString* nibToLoad = nil;
         
     if ((indexPath.section == HEADER_SECTION_INDEX) && self.showHeader)
     {
@@ -232,6 +232,7 @@
 
 - (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
 {
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Implement in subclasses
 }
 

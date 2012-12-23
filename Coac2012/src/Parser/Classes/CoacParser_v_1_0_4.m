@@ -256,7 +256,6 @@
 
 - (void) parseResultsForModalityNode:(CXMLElement*)modalityNode fromYear:(NSString*)yearString
 {
-    //NSString *modality = [modalityNode name];
     for (CXMLElement* groupInResultsForModalityInYearNode in [modalityNode elementsForName:RESULTS_POSITION_TAG_NAME])
     {
         NSString *groupId = [[groupInResultsForModalityInYearNode attributeForName:RESULTS_GROUP_ATTRIBUTE_NAME] stringValue];
@@ -278,6 +277,7 @@
             if (!groupsForModalityInYear) {
                 groupsForModalityInYear = [[NSMutableArray alloc] init];
                 [resultsForYear setObject:groupsForModalityInYear forKey:modality];
+                [groupsForModalityInYear release];
             }
             
             [groupsForModalityInYear addObject:ag];
@@ -460,11 +460,11 @@
     if (!groupsForModalityInYear) {
         groupsForModalityInYear = [[NSMutableArray alloc] init];
         [groupsForModalityIncludingAllYears setObject:groupsForModalityInYear forKey:yearString];
+        [groupsForModalityInYear release];
     }
     
     [groupsForModalityInYear addObject:ag];
-    
-    
+        
     [ag release];
 }
 
@@ -603,9 +603,12 @@
 
 - (void) showAgrupaciones
 {
-    for (Agrupacion* ag in groups)
+    for (NSString* yearKey in [groups allKeys])
     {
-        DebugLog(@"%@", ag);
+        for (Agrupacion* ag in groups[yearKey])
+        {
+            DebugLog(@"%@", ag);
+        }        
     }
 }
 

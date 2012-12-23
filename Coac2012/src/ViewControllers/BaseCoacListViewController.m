@@ -10,7 +10,10 @@
 #import "Agrupacion.h"
 #import "GroupDetailViewController.h"
 #import "AppDelegate.h"
-
+#import "ContestPhaseDatesHelper.h"
+#import <CoreImage/CoreImage.h>
+#import "ImageManager.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface BaseCoacListViewController(protected)
 - (void) updateArrayOfElements;
@@ -25,6 +28,9 @@
 @synthesize tableView;
 @synthesize searchResultsTableViewController;
 @synthesize noContentMessageLabel;
+@synthesize noContentMessageView;
+@synthesize backgroundImageView = _backgroundImageView;
+@synthesize yearString = _yearString;
 
 #pragma mark - Initializer methods
 
@@ -34,10 +40,19 @@
     
     if (self)
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                 selector:@selector(handleDataIsReady:) 
-                                                     name:MODEL_DATA_IS_READY_NOTIFICATION 
-                                                   object:nil];        
+        // Subscribe to notifications
+        [[NSNotificationCenter defaultCenter] addObserver: self 
+                                                 selector: @selector(handleDataIsReady:)
+                                                     name: MODEL_DATA_IS_READY_NOTIFICATION
+                                                   object: nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(handleBackgroundImageFinishedProcessing)
+                                                     name: BACKGROUND_IMAGE_FINISHED_PROCESSING
+                                                   object: nil];
+        
+        // Default the year to the last one. There are circumstances where we can not set it before the view did load.
+        self.yearString = [[[[ContestPhaseDatesHelper yearKeys] lastObject] copy] autorelease];
     }
     
     return self;    
@@ -57,6 +72,9 @@
     searchResultsTableViewController.selectionDelegate = nil;
     [searchResultsTableViewController release];
     [noContentMessageLabel release];
+    [noContentMessageView release];
+    [_backgroundImageView release];
+    [_yearString release];
     [super dealloc];
 }
 
@@ -68,7 +86,6 @@
 {
     NSDictionary* data = [notif userInfo];
     [self setModelData:data];
-    [self updateArrayOfElements];
     [self.searchResultsTableViewController setModelData:self.modelData];
 }
 
@@ -80,11 +97,46 @@
     // We should call tableView's reloadData method most likely
 }
 
+
+- (void) setModelData:(NSDictionary *)theModelData
+{
+    
+    if (self->modelData != theModelData)
+    {
+        [theModelData retain];
+        [self->modelData release];
+        self->modelData = theModelData;
+        
+        [self updateArrayOfElements];
+    }
+}
+
+
+- (void) setElementsArray:(NSArray*)newElementsArray
+{
+    // We override it to be able to show/hide the noContent views
+    if (self->elementsArray != newElementsArray)
+    {
+        // Set the ivar
+        [newElementsArray retain];
+        [self->elementsArray release];
+        self->elementsArray = newElementsArray;
+        
+        // Show or hide the noContent views
+        BOOL noContentViewHidden = ([self.elementsArray count] > 0);
+        self.noContentMessageView.hidden = noContentViewHidden;
+        self.noContentMessageLabel.hidden = noContentViewHidden;
+    }
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
+
+
 
 #pragma mark - View lifecycle
 
@@ -95,13 +147,18 @@
     searchResultsTableViewController.selectionDelegate = self;
     
     // We first populate the tables with the data we already had if any. 
-    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
+    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveObjectWithFileName:MODEL_DATA_FILE_NAME];
     if (data)
     {
         [self setModelData:data];
-        [self updateArrayOfElements];
-        [self.searchResultsTableViewController setModelData:self.modelData];    
+        [self.searchResultsTableViewController setModelData:self.modelData];
     }
+    
+    // Set the year-dependant background
+    [self setUpBackgroundForYear:self.yearString];
+    
+    // Round corners of noContentView
+    self.noContentMessageView.layer.cornerRadius = 8.0;
 }
 
 
@@ -295,7 +352,26 @@
     }    
 }
 
+- (void) handleBackgroundImageFinishedProcessing
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.backgroundImageView.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.backgroundImageView.image = [[ImageManager sharedInstance] imageForYear:self.yearString];
+            self.backgroundImageView.alpha = 0.3;
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:BACKGROUND_IMAGE_FINISHED_PROCESSING object:nil];
+        }];
+    }];
+}
 
 
+
+#pragma mark - Background Image Helpers
+
+- (void) setUpBackgroundForYear:(NSString*)year
+{
+    [[ImageManager sharedInstance] setBackgroundImageInView:self.backgroundImageView forYear:year];
+}
 
 @end

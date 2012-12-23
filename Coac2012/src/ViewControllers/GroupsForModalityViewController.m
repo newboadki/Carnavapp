@@ -24,19 +24,6 @@
 
 #pragma mark - Parent class extension methods
 
-- (void) setModelData:(NSDictionary *)theModelData
-{
-    if (self->modelData != theModelData)
-    {
-        [theModelData retain];
-        [self->modelData release];
-        self->modelData = theModelData;
-            
-        [self updateArrayOfElements];
-    }
-}
-
-
 - (void) updateArrayOfElements
 {
     NSDictionary* modalitiesDic = modelData[MODALITIES_KEY];
@@ -130,6 +117,7 @@
     
     // Class of the new VC after the user selects a year in the year selector VC
     contestResultsYearSelectorViewController.classOfTheNextViewController = [GroupsForModalityViewController class];
+    contestResultsYearSelectorViewController.nibNameOfTheNextViewController = @"BaseCoacListViewController";
     
     // Key-values to be set when the user selects a year in the year-selector VC
     NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO, @"modality" : modality };

@@ -14,6 +14,8 @@
 #import "ContestPhaseDatesHelper.h"
 #import "LoadingScreenViewController.h"
 #import "ContestPhaseViewController.h"
+#import "ImageManager.h"
+
 
 @implementation AppDelegate
 
@@ -24,6 +26,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Start caching the background Images because they have filters applied
+    [[ImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2012"];
+    [[ImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2013"];
+    
+    // As of v1.0.4 there's a new parser. Therefore We need to check for the dataModel cache in the file system.
+    // If it's the first time we do this check, and the file exists, we delete it.
+    [self deleteParser_1_0_3_cache];
+    
     // Create dataModel Handler
     ModelDataHandler* dh = [[ModelDataHandler alloc] init];
     [self setDataHandler:dh];
@@ -41,17 +51,17 @@
                                                object:nil];
 
     // Set the year for the current results VC.
-    UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:0];
+    UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:2];
     ContestResultsViewController* resultController = (ContestResultsViewController*)[navController topViewController];
-    resultController.yearString = [ContestPhaseDatesHelper yearKeys][0];
+    resultController.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
     [resultController updateArrayOfElements];
     
     // Set the year for the current Contest Phases VC.
-    UINavigationController* contestPhasesNavController = [[self.tabBarController viewControllers] objectAtIndex:1];
+    UINavigationController* contestPhasesNavController = [[self.tabBarController viewControllers] objectAtIndex:0];
     ContestPhaseViewController* contestPhasesViewController = (ContestPhaseViewController*)[contestPhasesNavController topViewController];
-    contestPhasesViewController.yearString = [ContestPhaseDatesHelper yearKeys][0];
+    contestPhasesViewController.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
     [contestPhasesViewController updateArrayOfElements];
-
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
@@ -60,7 +70,11 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
+    // As of v1.0.4 there's a new parser. Therefore We need to check for the dataModel cache in the file system.
+    // If it's the first time we do this check, and the file exists, we delete it.
+    [self deleteParser_1_0_3_cache];
+
+    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveObjectWithFileName:MODEL_DATA_FILE_NAME];
     
     if (!data)
     {
@@ -119,7 +133,7 @@
 
 - (void) handleNoNetwork:(NSNotification*)notif
 {
-    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveDataModel];
+    NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveObjectWithFileName:MODEL_DATA_FILE_NAME];
     
     if (!data)
     {
@@ -149,6 +163,31 @@
     
     // Clean up
     [loadingScreenViewController release];
+}
+
+
+
+#pragma mark - Helpers
+
+- (void) deleteParser_1_0_3_cache
+{
+    // As of v1.0.4 there's a new parser. Therefore We need to check for the dataModel cache in the file system.
+    // If it's the first time we do this check, and the file exists, we delete it.
+    NSMutableDictionary* settings = (NSMutableDictionary*)[FileSystemHelper unarchiveObjectWithFileName:SETTINGS_FILE_NAME];
+    if (!settings)
+    {
+        settings = [NSMutableDictionary dictionaryWithObject:@NO forKey:PARSER_1_0_3_HAS_BEEN_DELETED];
+    }
+    
+    if (![settings[PARSER_1_0_3_HAS_BEEN_DELETED] boolValue])
+    {
+        BOOL deleteSuceeded = [FileSystemHelper deleteObjectWithFileName:MODEL_DATA_FILE_NAME];
+        if (deleteSuceeded)
+        {
+            settings[PARSER_1_0_3_HAS_BEEN_DELETED] = @YES;
+            [FileSystemHelper archiveObject:settings fileName:SETTINGS_FILE_NAME];
+        }
+    }
 }
 
 

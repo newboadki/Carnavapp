@@ -101,7 +101,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if ([super init])
+    if (self = [super init])
     {
         identificador = [[decoder decodeObjectForKey:GROUP_ID_KEY] copy];
         modalidad = [[decoder decodeObjectForKey:GROUP_MODALITY_KEY] copy];

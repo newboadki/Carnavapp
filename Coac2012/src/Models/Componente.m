@@ -31,7 +31,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if ([super init])
+    if (self = [super init])
     {
         nombre = [[decoder decodeObjectForKey:COMPONENT_NAME_KEY] copy];
         voz = [[decoder decodeObjectForKey:COMPONENT_VOICE_KEY] copy];

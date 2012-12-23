@@ -98,7 +98,7 @@
 
 - (void) parsingDidFinishWithResultsDictionary:(NSDictionary*)resultsDictionary
 {
-    [FileSystemHelper archiveObject:resultsDictionary];                                             // Write to file system
+    [FileSystemHelper archiveObject:resultsDictionary fileName:MODEL_DATA_FILE_NAME];
     [[NSNotificationCenter defaultCenter] postNotificationName:MODEL_DATA_IS_READY_NOTIFICATION     // Send notification
                                                         object:self 
                                                       userInfo:resultsDictionary];

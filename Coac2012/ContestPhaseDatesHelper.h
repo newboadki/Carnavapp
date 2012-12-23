@@ -33,5 +33,17 @@
  @return Dictionary containing the phases of the contests per year.
  */
 + (NSDictionary*) phasesDates;
+
+
+/**
+ @return array of years the app supports.
+ */
 + (NSArray*) yearKeys;
+
+/**
+ @return The name of the background image for a year.
+ */
++ (NSString*) backgroundForYear:(NSString*)year;
+
+
 @end

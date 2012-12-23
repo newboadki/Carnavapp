@@ -27,6 +27,7 @@
     {
         // Setting the title here, and not in viewDidLoad, because this controller is currently selected on the tabBar, view did load gerts called before the app delegate sets some of its properties (ie.yearString)
         [self setTitle:[NSString stringWithFormat:@"Resultados %@", self.yearString]]; // This is affecting the TabBar's item, why?
+        [(UITabBarItem*)[self.tabBarController.tabBar.items objectAtIndex:2] setTitle:@"Resultados"];
         
         NSDictionary* selectedYearResults = self.modelData[RESULTS_KEY][self.yearString];
         NSMutableArray* groups = [[NSMutableArray alloc] init];
@@ -41,7 +42,8 @@
         
         [self setElementsArray:groups];
         [groups release];
-        [self.tableView reloadData];        
+        [self.tableView reloadData];
+    
     }
 }
 
@@ -54,7 +56,11 @@
     [super viewDidLoad];
     
 }
-
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData]; // This is a hack. By doing this, the tableview's delegate methods get called and we can again recalculate the height of the rows depending on whether there's data in the elements array or not.
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -68,13 +74,25 @@
 
 - (NSInteger) numberOfContentSections
 {
-    return 4;
+    if ([self.elementsArray count] > 0)
+    {
+        return 4;
+    }
+    else
+    {
+        self.noContentMessageLabel.text = @"Aún no hay resultados";
+        return 1;
+    }
 }
 
 
 - (NSInteger) numberOfRowsContentSection:(NSInteger)contentSection
 {
-    return 3;
+    if ([self.elementsArray count] > 0) {
+        return 3;
+    } else {
+        return 1;
+    }
 }
 
 
@@ -82,6 +100,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInContentSection:(NSInteger)section
 {
     NSString* title = nil;
+    
+    if ([self.elementsArray count] == 0) {
+        return nil;
+    }
     
     switch (section)
     {
@@ -106,26 +128,52 @@
 }
 
 
+- (CGFloat)tableView:(UITableView *)_tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.elementsArray count] > 0) {
+        return [super tableView:_tableView heightForRowAtIndexPath:indexPath];
+    }
+    else if (indexPath.row == 0 && indexPath.section ==0){
+        NSLog(@"%@", NSStringFromCGRect(_tableView.frame));
+        return _tableView.frame.size.height - 44;
+    } else {
+        return 44;
+    }
+
+}
+
+
+
 - (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
 {
     int section = [indexpath section];
     int row = [indexpath row];
     int linealIndex = row + (section * 3);
-    
+
+    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
+
     if ([elementsArray count] > 0)
     {
         Agrupacion* ag = elementsArray[linealIndex];
-        UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-        UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
-        
         groupNameLabel.text = ag.nombre;
-        categoryNameLabel.text = @"";        
+        categoryNameLabel.text = @"";
+        cell.userInteractionEnabled = YES;
     }
+    else
+    {
+        // To override what's on the nib file, which I want to be descriptive
+        groupNameLabel.text = @"";
+        categoryNameLabel.text = @"";
+        cell.userInteractionEnabled = NO;
+    }
+
 }
 
 
 - (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
 {
+    [super configureFooterCell:cell inTableView:theTableView];
     UILabel *footerLabel = (UILabel*)[cell viewWithTag:1];
     footerLabel.text = @"Ver años anteriores";
 }
@@ -139,11 +187,15 @@
     int section = [contentSectionIndexPath section];
     int row = [contentSectionIndexPath row];
     int linealIndex = row + (section * 3);
-    
-    GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = elementsArray[linealIndex];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
+
+    int count = [[self elementsArray] count];
+    if (count > 0 && linealIndex >=0 && linealIndex<count)
+    {
+        GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
+        detailViewController.group = elementsArray[linealIndex];
+        [self.navigationController pushViewController:detailViewController animated:YES];
+        [detailViewController release];
+    }
 }
 
 
@@ -154,6 +206,7 @@
     
     // Class of the new VC after the user selects a year in the year selector VC
     contestResultsYearSelectorViewController.classOfTheNextViewController = [ContestResultsViewController class];
+    contestResultsYearSelectorViewController.nibNameOfTheNextViewController = @"BaseCoacListViewController";
     
     // Key-values to be set when the user selects a year in the year-selector VC
     NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO };

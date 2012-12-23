@@ -31,7 +31,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if ([super init])
+    if (self = [super init])
     {
         url = [[decoder decodeObjectForKey:PIC_URL_KEY] copy];
         desc = [[decoder decodeObjectForKey:PIC_DESC_KEY] copy];

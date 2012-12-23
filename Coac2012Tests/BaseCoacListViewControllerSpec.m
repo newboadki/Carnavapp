@@ -74,7 +74,7 @@ describe(@"viewDidLoad", ^{
         
         beforeEach(^{
             dataMock = [KWMock nullMock];
-            [FileSystemHelper stub:@selector(unarchiveDataModel) andReturn:dataMock];            
+            [FileSystemHelper stub:@selector(unarchiveObjectWithFileName:) andReturn:dataMock];
         });
                 
         it(@"should set the model data on itself", ^{
@@ -96,7 +96,7 @@ describe(@"viewDidLoad", ^{
     context(@"there isn't any data in the file system", ^{        
 
         beforeEach(^{
-            [FileSystemHelper stub:@selector(unarchiveDataModel) andReturn:nil];            
+            [FileSystemHelper stub:@selector(unarchiveObjectWithFileName:) andReturn:nil];
         });
         
         it(@"should not set the model data on itself", ^{

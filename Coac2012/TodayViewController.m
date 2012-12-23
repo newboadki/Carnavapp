@@ -94,12 +94,14 @@
     [super viewWillAppear:animated];
     if ([elementsArray count] <= 0)
     {
-        noContentMessageLabel.hidden = NO;
+        noContentMessageView.hidden = NO;
+        self.noContentMessageLabel.hidden = NO;
         noContentMessageLabel.text = @"Hoy no hay concurso";
     }
     else
     {
-        noContentMessageLabel.hidden = YES;
+        noContentMessageView.hidden = YES;
+        self.noContentMessageLabel.hidden = YES;
     }
 }
 

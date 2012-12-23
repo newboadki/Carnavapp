@@ -50,20 +50,6 @@
 }
 
 
-- (void) setModelData:(NSDictionary *)theModelData
-{
-
-    if (self->modelData != theModelData)
-    {
-        [theModelData retain];
-        [self->modelData release];
-        self->modelData = theModelData;
-
-        [self updateArrayOfElements];
-    }
-}
-
-
 
 #pragma mark - View lifecycle
 
@@ -72,16 +58,24 @@
     [super viewDidLoad];
     
     // Set the Title:
-    [self setTitle:[NSString stringWithFormat:@"Concurso %@", self.yearString]]; // This is affecting the TabBar's item, why?
+    [self setTitle:[NSString stringWithFormat:@"Concurso %@", self.yearString]]; // This is affecting the TabBar's item, why?    
+    [(UITabBarItem*)[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Concurso"];
     
     // Create the contest's calendar
+    if (!self.yearString)
+    {
+        self.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
+    }
     NSArray* daysForContestInYear = [ContestPhaseDatesHelper allDaysForContestInYear:self.yearString];
     CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForContestInYear andDelegate:self andYearString:self.yearString];
     [self setCalendarController:cc];
     [cc release];
     
-    [self.view addSubview:calendarController.view];
-    [calendarController viewDidLoad];    
+    [self.view addSubview:calendarController.view];    
+    [calendarController viewDidLoad];
+    
+    
+    
 }
 
 
@@ -108,18 +102,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [calendarController viewWillAppear:animated];
-    
-    if ([self.elementsArray count] > 0)
-    {
-        self.noContentMessageLabel.hidden = YES;
-        
-    }
-    else
-    {
-        self.noContentMessageLabel.hidden = NO;
-    }
-
+    [calendarController viewWillAppear:animated];    
 }
 
 
@@ -213,6 +196,7 @@
     
     // Class of the new VC after the user selects a year in the year selector VC
     contestResultsYearSelectorViewController.classOfTheNextViewController = [ContestPhaseViewController class];
+    contestResultsYearSelectorViewController.nibNameOfTheNextViewController = @"ContestPhaseViewController";
     
     // Key-values to be set when the user selects a year in the year-selector VC
     NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO };

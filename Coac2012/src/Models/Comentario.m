@@ -30,7 +30,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if ([super init])
+    if (self = [super init])
     {
         url = [[decoder decodeObjectForKey:COMMENT_URL_KEY] copy];
         origen = [[decoder decodeObjectForKey:COMMENT_ORIGEN_KEY] copy];

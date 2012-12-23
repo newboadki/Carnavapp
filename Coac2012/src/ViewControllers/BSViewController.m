@@ -34,7 +34,7 @@
 - (id) init
 {
     NSString *theNibName = [[self class] description];
-    NSBundle *theNibBundle = [[NSBundle bundleForClass:[self class]] retain];
+    NSBundle *theNibBundle = [NSBundle bundleForClass:[self class]];
     
     return [self initWithNibName:theNibName bundle:theNibBundle];
 }

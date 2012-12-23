@@ -32,7 +32,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if ([super init])
+    if (self = [super init])
     {
         url = [[decoder decodeObjectForKey:VIDEO_URL_KEY] copy];
         desc = [[decoder decodeObjectForKey:VIDEO_DESC_KEY] copy];

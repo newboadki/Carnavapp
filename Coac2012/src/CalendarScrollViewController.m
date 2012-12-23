@@ -118,8 +118,11 @@
 
     if (!todayIsInTheList)
     {
-        RoundedCalendarBoxController* firstController = dayBoxControllers[0];
-        [firstController setActiveLook];        
+        if ([dayBoxControllers count] > 0)
+        {
+            RoundedCalendarBoxController* firstController = dayBoxControllers[0];
+            [firstController setActiveLook];
+        }
     }
 }
 

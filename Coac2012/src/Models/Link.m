@@ -33,7 +33,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if ([super init])
+    if (self = [super init])
     {
         type = [[decoder decodeObjectForKey:LINK_TYPE_KEY] copy];
         url = [[decoder decodeObjectForKey:LINK_URL_KEY] copy];

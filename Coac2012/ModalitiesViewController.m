@@ -86,7 +86,7 @@
     nextController.showFooter = YES;
     [nextController setModality:selectedModality];
     [nextController setModelData:self.modelData];
-    [nextController setYearString:[ContestPhaseDatesHelper yearKeys][0]];
+    [nextController setYearString:[[ContestPhaseDatesHelper yearKeys] lastObject]];
     
     [[self navigationController] pushViewController:nextController animated:YES];
     [nextController release];
