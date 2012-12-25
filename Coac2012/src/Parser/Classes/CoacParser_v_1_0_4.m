@@ -13,18 +13,20 @@
 #import "Picture.h"
 #import "Comentario.h"
 #import "Link.h"
+#import "Result.h"
 
-#define YEAR_ATTRIBUTE @"año"
-#define RESULT_TAG @"resultado"
+#define YEAR_ATTRIBUTE @"anio"
+#define RESULTS_TAG @"puntuaciones"
+#define RESULT_TAG @"puntuacion"
 
 #define CALENDAR_DATE_ATTRIBUTE_NAME        @"fecha"
 #define CALENDAR_POSITION_TAG_NAME          @"puesto"
 #define CALENDAR_GROUP_ATTRIBUTE_NAME       @"agrupacion"
 #define CALENDAR_REST_TOKEN                 @"DESCANSO"
 
-#define RESULTS_POSITION_TAG_NAME          @"puesto"
-#define RESULTS_GROUP_ATTRIBUTE_NAME       @"agrupacion"
-#define RESULTS_NUMBER_ATTRIBUTE_NAME       @"no"
+#define RESULTS_GROUP_ID_TAG   @"agrupacion"
+#define RESULTS_PHASE_TAG      @"fase"
+#define RESULTS_POINTS_TAG     @"puntos"
 
 #define URL_ATTRIBUTE_NAME             @"url"
 #define TYPE_ATTRIBUTE_NAME            @"tipo"
@@ -152,10 +154,8 @@
     [modalities removeAllObjects];
     
     // Parse
-    [self parseElementsOfXpath:@"/coac2012/agrupaciones"];
-    [self parseElementsOfXpath:@"/coac2012/calendario"];
-    [self parseElementsOfXpath:@"/coac2012/resultados"];
-    [self parseElementsOfXpath:@"/coac2012/enlaces/enlace"];    
+    [self parseElementsOfXpath:@"/carnavapp/anio"];
+    [self parseElementsOfXpath:@"/carnavapp/enlaces/enlace"];
     
     // Debugging
     /*[self showAgrupaciones];
@@ -164,12 +164,12 @@
      [self showModalities];*/
     
     
-    NSDictionary* results = @{GROUPS_KEY: groups, 
-                             CALENDAR_KEY: calendar, 
-                             LINKS_KEY: links, 
-                             MODALITIES_KEY: modalities,
-                             YEARS_KEY:_yearKeys,
-                             RESULTS_KEY: _results};
+    NSDictionary* results = @{ GROUPS_KEY: groups,
+                               CALENDAR_KEY: calendar,
+                               LINKS_KEY: links,
+                               MODALITIES_KEY: modalities,
+                               YEARS_KEY:_yearKeys,
+                               RESULTS_KEY: _results};
     return results;
 }
 
@@ -196,19 +196,11 @@
 
 		for (CXMLElement* node in nodes)			
 		{            
-			if([xpath isEqualToString:@"/coac2012/agrupaciones"])		
+			if([xpath isEqualToString:@"/carnavapp/anio"])		
             {
-				[self parseGroups:node];
-            }
-            else if ([xpath isEqualToString:@"/coac2012/calendario"])
-            {
-                [self parseCalendar:node];
-            }
-            else if ([xpath isEqualToString:@"/coac2012/resultados"])
-            {
-                [self parseResults:node];
-            }
-            else if ([xpath isEqualToString:@"/coac2012/enlaces/enlace"])
+				[self parseYear:node];
+            }            
+            else if ([xpath isEqualToString:@"/carnavapp/enlaces/enlace"])
             {
                 [self parseLink:node];
             }
@@ -216,6 +208,41 @@
 	}
 }
 
+- (void) parseYear:(CXMLElement*)yearNode
+{
+    NSString *yearString = [[yearNode attributeForName:YEAR_ATTRIBUTE] stringValue];
+    NSArray* groupsNode = [yearNode elementsForName:GROUPS_TAG];
+    NSArray* groupNodes = nil;
+    NSArray* resultsNode = [yearNode elementsForName:RESULTS_TAG];
+    NSArray* resultNodes = nil;
+    NSArray* calendarNode = [yearNode elementsForName:CALENDAR_TAG];
+    NSArray* dayNodes = nil;
+
+    if ([groupsNode count] > 0)
+    {
+        groupNodes = [[groupsNode objectAtIndex:0] elementsForName:GROUP_TAG];
+        for (CXMLElement* groupNode in groupNodes) {
+            [self parseAgrupacion:groupNode fromYear:yearString];
+        }
+    }
+    
+    if ([resultsNode count] > 0)
+    {
+        resultNodes = [[resultsNode objectAtIndex:0] elementsForName:RESULT_TAG];
+        for (CXMLElement* resultNode in resultNodes) {
+            [self parseResultsNode:resultNode fromYear:yearString];
+        }
+    }
+
+    if ([calendarNode count] > 0)
+    {
+        dayNodes = [[calendarNode objectAtIndex:0] elementsForName:CALENDAR_DAY_TAG];
+        for (CXMLElement* dayNode in dayNodes) {
+            [self parseDay:dayNode fromYear:yearString];
+        }
+    }
+
+}
 
 - (void) parseGroups:(CXMLElement*)groupsNode
 {
@@ -240,80 +267,31 @@
     }
 }
 
-- (void) parseResults:(CXMLElement*)resultsNode
+
+- (void) parseResultsNode:(CXMLElement*)resultNode fromYear:(NSString*)yearString
 {
-    NSString *yearString = [[resultsNode attributeForName:YEAR_ATTRIBUTE] stringValue];
-    NSArray* modalityNodes = [resultsNode children];
+    NSString* groupId = [[resultNode attributeForName:RESULTS_GROUP_ID_TAG] stringValue];
+    NSString* phase = [[resultNode attributeForName:RESULTS_PHASE_TAG] stringValue];
+    NSNumber* points = [NSNumber numberWithInt:[[[resultNode attributeForName:RESULTS_POINTS_TAG] stringValue] intValue]];
     
-    for (CXMLElement* modalityNode in modalityNodes)
+    NSMutableArray* resultsForYear = _results[yearString];
+
+    if (!resultsForYear)
     {
-        if ([modalityNode isKindOfClass:[CXMLElement class]]) {
-            [self parseResultsForModalityNode:modalityNode fromYear:yearString];
-        }
-    
+        resultsForYear = [[NSMutableArray alloc] init];
+        [_results setObject:resultsForYear forKey:yearString];
+        [resultsForYear release];
+    }
+
+    Agrupacion *ag = [self groupWithID:[groupId intValue] inGroups:[groups objectForKey:yearString]];
+    if (ag)
+    {
+        Result* result = [[Result alloc] initWithGroupId:groupId phase:phase points:points modality:ag.modalidad];
+        [resultsForYear addObject:result];
+        [result release];
     }
 }
 
-- (void) parseResultsForModalityNode:(CXMLElement*)modalityNode fromYear:(NSString*)yearString
-{
-    for (CXMLElement* groupInResultsForModalityInYearNode in [modalityNode elementsForName:RESULTS_POSITION_TAG_NAME])
-    {
-        NSString *groupId = [[groupInResultsForModalityInYearNode attributeForName:RESULTS_GROUP_ATTRIBUTE_NAME] stringValue];
-        NSArray* groupsForYear = groups[yearString];
-        Agrupacion *ag = [self groupWithID:[groupId intValue] inGroups:groupsForYear];
-        
-        if (ag) {
-            
-            NSString* modality = [ag.modalidad capitalizedString];
-            NSMutableDictionary* resultsForYear = _results[yearString];
-            
-            if (!resultsForYear) {
-                resultsForYear = [[NSMutableDictionary alloc] init];
-                [_results setObject:resultsForYear forKey:yearString];
-                [resultsForYear release];
-            }
-            
-            NSMutableArray *groupsForModalityInYear = resultsForYear[modality];
-            if (!groupsForModalityInYear) {
-                groupsForModalityInYear = [[NSMutableArray alloc] init];
-                [resultsForYear setObject:groupsForModalityInYear forKey:modality];
-                [groupsForModalityInYear release];
-            }
-            
-            [groupsForModalityInYear addObject:ag];
-            
-        }
-    }
-    
-}
-
-//- (void) parseResult:(CXMLElement*)node fromYear:(NSString*)yearString
-//{
-//    NSString *groupId = [[node attributeForName:GROUP_ID_ATTRIBUTE] stringValue];
-//    NSArray* groupsForYear = groups[yearString];
-//    Agrupacion *ag = [self groupWithID:[groupId intValue] inGroups:groupsForYear];
-//    
-//    if (ag) {
-//        
-//        NSString* modality = [ag.modalidad capitalizedString];
-//        NSMutableDictionary* resultsForYear = _results[yearString];
-//        
-//        if (!resultsForYear) {
-//            resultsForYear = [[NSMutableDictionary alloc] init];
-//            [_results setObject:resultsForYear forKey:yearString];
-//            [resultsForYear release];
-//        }
-//        
-//        NSMutableArray *groupsForModalityInYear = resultsForYear[modality];
-//        if (!groupsForModalityInYear) {
-//            groupsForModalityInYear = [[NSMutableArray alloc] init];
-//            [resultsForYear setObject:groupsForModalityInYear forKey:modality];
-//        }
-//        
-//        [groupsForModalityInYear addObject:ag];
-//
-//    }
-//}
 
 - (void) parseDay:(CXMLElement*)node fromYear:(NSString*)yearString
 {

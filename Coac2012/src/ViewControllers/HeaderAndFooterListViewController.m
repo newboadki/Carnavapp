@@ -7,6 +7,8 @@
 //
 
 #import "HeaderAndFooterListViewController.h"
+#import "HeaderAndFooterListViewController+Protected.h"
+#import "BaseCoacListViewController+Protected.h"
 
 #define HEADER_SECTION_INDEX 0
 #define FOOTER_SECTION_INDEX ([self numberOfSectionsInTableView:self.tableView] - 1)
@@ -114,7 +116,7 @@
     if (cell == nil)
     {
         self.cellFromNib = [[NSBundle mainBundle] loadNibNamed:nibToLoad owner:self options:nil][0];
-        cell = cellFromNib;
+        cell = self.cellFromNib;
         self.cellFromNib = nil;
     }
     
@@ -187,7 +189,7 @@
     }
     else if ((indexPath.section == FOOTER_SECTION_INDEX) && self.showFooter)
     {
-        [self handleFooterSelected];
+        [self handleFooterSelected:[theTableView cellForRowAtIndexPath:indexPath]];
     }
     else
     {
@@ -232,8 +234,8 @@
 
 - (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
 {
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Implement in subclasses
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
 }
 
 
@@ -251,9 +253,11 @@
 }
 
 
-- (void) handleFooterSelected
+- (void) handleFooterSelected:(UITableViewCell*)footerCell
 {
     //implement in subclases
+    NSIndexPath *footerCellIndexPath = [self.tableView indexPathForCell:footerCell];
+    [self.tableView deselectRowAtIndexPath:footerCellIndexPath animated:YES];
 }
 
 

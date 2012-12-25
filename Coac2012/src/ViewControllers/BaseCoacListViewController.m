@@ -14,15 +14,24 @@
 #import <CoreImage/CoreImage.h>
 #import "ImageManager.h"
 #import <QuartzCore/QuartzCore.h>
+#import "BaseCoacListViewController+Protected.h"
 
-@interface BaseCoacListViewController(protected)
-- (void) updateArrayOfElements;
-- (void) configureSearchResultCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
-@end
 
 @implementation BaseCoacListViewController
+{
+    @protected
+    NSDictionary* _modelData;
+    NSArray* elementsArray;
+    UITableViewCell* cellFromNib;
+    GroupNameSearchController* groupNameSearchController;
+    
+    IBOutlet UITableView* tableView;
+    IBOutlet SearchResultsTableViewController* searchResultsTableViewController;
+    IBOutlet UILabel* noContentMessageLabel;
+    IBOutlet UIView* noContentMessageView;
+}
 
-@synthesize modelData;
+@synthesize modelData = _modelData;
 @synthesize elementsArray;
 @synthesize cellFromNib;
 @synthesize tableView;
@@ -66,7 +75,7 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
     [groupNameSearchController release];
-    [modelData release];
+    [_modelData release];
     [elementsArray release];
     [tableView release];
     searchResultsTableViewController.selectionDelegate = nil;
@@ -101,11 +110,11 @@
 - (void) setModelData:(NSDictionary *)theModelData
 {
     
-    if (self->modelData != theModelData)
+    if (_modelData != theModelData)
     {
         [theModelData retain];
-        [self->modelData release];
-        self->modelData = theModelData;
+        [_modelData release];
+        _modelData = theModelData;
         
         [self updateArrayOfElements];
     }

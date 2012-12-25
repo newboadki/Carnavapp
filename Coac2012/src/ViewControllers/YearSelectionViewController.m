@@ -7,10 +7,8 @@
 //
 
 #import "YearSelectionViewController.h"
+#import "BaseCoacListViewController+Protected.h"
 
-@interface YearSelectionViewController ()
-
-@end
 
 @implementation YearSelectionViewController
 
@@ -35,7 +33,7 @@
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
     
-    NSString* yearItem = elementsArray[[indexpath row]];
+    NSString* yearItem = self.elementsArray[[indexpath row]];
     groupNameLabel.text = yearItem;
 	categoryNameLabel.text = @""; // We are not using this here
 }
@@ -76,7 +74,7 @@
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
-    NSString* selectedYear = elementsArray[[indexPath row]];
+    NSString* selectedYear = self.elementsArray[[indexPath row]];
     id nextController = [[self.classOfTheNextViewController alloc] initWithNibName:self.nibNameOfTheNextViewController bundle:nil];
     
     for (id key in [self.keyValuesToSetInNewInstance allKeys])

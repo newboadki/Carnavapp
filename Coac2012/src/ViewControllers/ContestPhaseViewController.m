@@ -11,6 +11,7 @@
 #import "GroupDetailViewController.h"
 #import "ContestPhaseDatesHelper.h"
 #import "YearSelectionViewController.h"
+#import "HeaderAndFooterListViewController+Protected.h"
 
 @interface ContestPhaseViewController()
 - (void) handleGroupsForDate:(NSString*) selectedDate;
@@ -29,22 +30,24 @@
     NSArray* dateComponents = [selectedDate componentsSeparatedByString:@"/"];
     if ([dateComponents count] == 3) {
         NSString *yearOfSelectedDate = [dateComponents objectAtIndex:2];
-        NSDictionary* calendarDictionaryForAllYears = modelData[CALENDAR_KEY];
+        NSDictionary* calendarDictionaryForAllYears = self.modelData[CALENDAR_KEY];
         NSDictionary* calendarForGivenYear = calendarDictionaryForAllYears[yearOfSelectedDate];
         NSArray* groupsForDate = calendarForGivenYear[selectedDate];
         
         [self setElementsArray:groupsForDate];
-        [tableView reloadData];
+        [self.tableView reloadData];
     }
 }
 
 
 - (void) updateArrayOfElements
 {
-    NSArray* daysForContestInCurrentYear = [ContestPhaseDatesHelper allDaysForContestInYear:self.yearString];
-    if([daysForContestInCurrentYear count] > 0)
+    NSDictionary* calendarDictionaryForAllYears = self.modelData[CALENDAR_KEY];
+    NSArray* calendarForGivenYear = [calendarDictionaryForAllYears[self.yearString] allKeys];
+
+    if([calendarForGivenYear count] > 0)
     {
-        NSString* selectedDate = daysForContestInCurrentYear[0];
+        NSString* selectedDate = calendarForGivenYear[0];
         [self handleGroupsForDate:selectedDate];
     }
 }
@@ -92,8 +95,8 @@
     [super viewDidUnload];
     [calendarController viewDidUnload];
     
-    [tableView release];
-    tableView = nil;
+    [self.tableView release];
+    self.tableView = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -148,7 +151,7 @@
 - (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell...
-    Agrupacion* ag = elementsArray[[indexpath row]];
+    Agrupacion* ag = self.elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
     
@@ -168,6 +171,8 @@
 
 - (void) configureFooterCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView
 {
+    [super configureFooterCell:cell inTableView:theTableView];
+    
     UILabel *footerLabel = (UILabel*)[cell viewWithTag:1];
     footerLabel.text = @"Ver años anteriores";
 }
@@ -183,14 +188,16 @@
     int linealIndex = row + (section * 3);
     
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = elementsArray[linealIndex];
+    detailViewController.group = self.elementsArray[linealIndex];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 }
 
 
-- (void) handleFooterSelected
+- (void) handleFooterSelected:(UITableViewCell*)footerCell
 {
+    [super handleFooterSelected:footerCell];
+    
     // Create the year selection view controller
     YearSelectionViewController *contestResultsYearSelectorViewController = [[YearSelectionViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     

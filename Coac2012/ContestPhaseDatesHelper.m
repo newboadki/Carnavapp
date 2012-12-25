@@ -71,7 +71,7 @@
 
 + (NSDictionary*) phasesDatesDictionary2013
 {
-    NSArray* diasPreliminar = @[@"21/01/2013",
+    NSArray* diasPreliminar = @[@"13/01/2013",
     @"22/01/2013",
     @"23/01/2013",
     @"24/01/2013",
@@ -156,7 +156,7 @@
 
 + (NSArray*) allDaysForcontest2013
 {
-    NSArray* days = @[@"21/01/2013",
+    NSArray* days = @[@"13/01/2013",
     @"22/01/2013",
     @"23/01/2013",
     @"24/01/2013",
@@ -190,17 +190,5 @@
 {
     return YEAR_KEYS_ARRAY;
 }
-
-+ (NSString*) backgroundForYear:(NSString*)year
-{
-    if ([year isEqualToString:@"2012"]) {
-        return @"appbackground_320x480";
-    } else if ([year isEqualToString:@"2013"]) {
-        return @"cartel_carnaval_2013";
-    } else {
-        return @"cartel_carnaval_2013";
-    }
-}
-
 
 @end

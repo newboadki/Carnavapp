@@ -8,7 +8,7 @@
 
 #import "ContestPhasesViewController.h"
 #import "ContestPhaseViewController.h"
-
+#import "BaseCoacListViewController+Protected.h"
 
 @implementation ContestPhasesViewController
 

@@ -11,6 +11,8 @@
 #import "GroupDetailViewController.h"
 #import "YearSelectionViewController.h"
 #import "ContestPhaseDatesHelper.h"
+#import "HeaderAndFooterListViewController+Protected.h"
+#import "Result.h"
 
 @interface ContestResultsViewController(private)
 - (Agrupacion*) findGroupWithId:(int)soughtId inYear:(NSString*)yearString;
@@ -29,21 +31,75 @@
         [self setTitle:[NSString stringWithFormat:@"Resultados %@", self.yearString]]; // This is affecting the TabBar's item, why?
         [(UITabBarItem*)[self.tabBarController.tabBar.items objectAtIndex:2] setTitle:@"Resultados"];
         
-        NSDictionary* selectedYearResults = self.modelData[RESULTS_KEY][self.yearString];
+        NSArray* selectedYearResults = self.modelData[RESULTS_KEY][self.yearString];
         NSMutableArray* groups = [[NSMutableArray alloc] init];
-        for (NSString* modalityKey in [selectedYearResults allKeys])
+        
+        
+        NSPredicate *finalGroupsPredicate = [NSPredicate predicateWithFormat:@"self.phase LIKE 'FINAL'"];
+        NSArray *finalGroups = [selectedYearResults filteredArrayUsingPredicate:finalGroupsPredicate];
+
+        NSPredicate* corosResultsPredicate = [NSPredicate predicateWithFormat:@"self.modality LIKE 'CORO'"];
+        NSPredicate* comparsasResultsPredicate = [NSPredicate predicateWithFormat:@"self.modality LIKE 'COMPARSA'"];
+        NSPredicate* chirigotasResultsPredicate = [NSPredicate predicateWithFormat:@"self.modality LIKE 'CHIRIGOTA'"];
+        NSPredicate* cuartetosResultsPredicate = [NSPredicate predicateWithFormat:@"self.modality LIKE 'CUARTETO'"];
+        
+        NSArray *coros = [finalGroups filteredArrayUsingPredicate:corosResultsPredicate];
+        NSArray *comparsas = [finalGroups filteredArrayUsingPredicate:comparsasResultsPredicate];
+        NSArray *chirigotas = [finalGroups filteredArrayUsingPredicate:chirigotasResultsPredicate];
+        NSArray *cuartetos = [finalGroups filteredArrayUsingPredicate:cuartetosResultsPredicate];
+        
+        
+        NSComparisonResult (^comparatorBlock) (id obj1, id obj2) = ^NSComparisonResult(id obj1, id obj2) {
+            Result* r1 = (Result*)obj1;
+            Result* r2 = (Result*)obj2;            
+            return [r1.points compare:r2.points];
+        };
+        
+        NSArray *orderedCoros = [coros sortedArrayUsingComparator:comparatorBlock];
+        NSArray *orderedComparsas = [comparsas sortedArrayUsingComparator:comparatorBlock];
+        NSArray *orderedChirigotas = [chirigotas sortedArrayUsingComparator:comparatorBlock];
+        NSArray *orderedCuartetos = [cuartetos sortedArrayUsingComparator:comparatorBlock];
+        
+        
+        for (Result* res in orderedCoros)
         {
-            NSArray *groupsForCategory = selectedYearResults[modalityKey];
-            for (Agrupacion* ag in groupsForCategory)
+            Agrupacion* ag = [self findGroupWithId:[res.groupId intValue] inYear:self.yearString];
+            if (ag)
             {
                 [groups addObject:ag];
             }
         }
-        
+
+        for (Result* res in orderedComparsas)
+        {
+            Agrupacion* ag = [self findGroupWithId:[res.groupId intValue] inYear:self.yearString];
+            if (ag)
+            {
+                [groups addObject:ag];
+            }
+        }
+
+        for (Result* res in orderedChirigotas)
+        {
+            Agrupacion* ag = [self findGroupWithId:[res.groupId intValue] inYear:self.yearString];
+            if (ag)
+            {
+                [groups addObject:ag];
+            }
+        }
+
+        for (Result* res in orderedCuartetos)
+        {
+            Agrupacion* ag = [self findGroupWithId:[res.groupId intValue] inYear:self.yearString];
+            if (ag)
+            {
+                [groups addObject:ag];
+            }
+        }        
+
         [self setElementsArray:groups];
         [groups release];
-        [self.tableView reloadData];
-    
+        [self.tableView reloadData];    
     }
 }
 
@@ -153,9 +209,9 @@
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
 
-    if ([elementsArray count] > 0)
+    if ([self.elementsArray count] > 0)
     {
-        Agrupacion* ag = elementsArray[linealIndex];
+        Agrupacion* ag = self.elementsArray[linealIndex];
         groupNameLabel.text = ag.nombre;
         categoryNameLabel.text = @"";
         cell.userInteractionEnabled = YES;
@@ -192,15 +248,17 @@
     if (count > 0 && linealIndex >=0 && linealIndex<count)
     {
         GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-        detailViewController.group = elementsArray[linealIndex];
+        detailViewController.group = self.elementsArray[linealIndex];
         [self.navigationController pushViewController:detailViewController animated:YES];
         [detailViewController release];
     }
 }
 
 
-- (void) handleFooterSelected
+- (void) handleFooterSelected:(UITableViewCell*)footerCell
 {
+    [super handleFooterSelected:footerCell];
+    
     // Create the year selection view controller
     YearSelectionViewController *contestResultsYearSelectorViewController = [[YearSelectionViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     
@@ -222,7 +280,7 @@
 
 - (Agrupacion*) findGroupWithId:(int)soughtId inYear:(NSString*)yearString
 {
-    NSDictionary* allgroupsForAllYears = modelData[GROUPS_KEY];
+    NSDictionary* allgroupsForAllYears = self.modelData[GROUPS_KEY];
     NSArray* allGroupsForYear = allgroupsForAllYears[yearString];
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"self.identificador = %ld", soughtId];
     NSArray* results = [allGroupsForYear filteredArrayUsingPredicate:predicate];

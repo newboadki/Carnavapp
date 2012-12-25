@@ -40,10 +40,5 @@
  */
 + (NSArray*) yearKeys;
 
-/**
- @return The name of the background image for a year.
- */
-+ (NSString*) backgroundForYear:(NSString*)year;
-
 
 @end

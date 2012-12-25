@@ -10,6 +10,7 @@
 #import "GroupsForModalityViewController.h"
 #import "Agrupacion.h"
 #import "ContestPhaseDatesHelper.h"
+#import "BaseCoacListViewController+Protected.h"
 
 @implementation ModalitiesViewController
 
@@ -19,7 +20,7 @@
 
 - (void) updateArrayOfElements
 {
-    NSDictionary* modalitiesDic = modelData[MODALITIES_KEY];
+    NSDictionary* modalitiesDic = self.modelData[MODALITIES_KEY];
     NSArray* mk = [modalitiesDic allKeys];
     
     // Order an assign the relevant parts of information for this class
@@ -38,7 +39,7 @@
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
     
-    NSString* currentModality = elementsArray[[indexpath row]];
+    NSString* currentModality = self.elementsArray[[indexpath row]];
     groupNameLabel.text = currentModality;
     categoryNameLabel.text = @"";
 }
@@ -80,7 +81,7 @@
 	/***********************************************************************************************/
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     
-    NSString* selectedModality = elementsArray[[indexPath row]];
+    NSString* selectedModality = self.elementsArray[[indexPath row]];
     GroupsForModalityViewController* nextController = [[GroupsForModalityViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     nextController.showHeader = NO;
     nextController.showFooter = YES;

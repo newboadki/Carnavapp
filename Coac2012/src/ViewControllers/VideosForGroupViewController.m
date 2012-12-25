@@ -8,6 +8,7 @@
 
 #import "VideosForGroupViewController.h"
 #import "Video.h"
+#import "BaseCoacListViewController+Protected.h"
 
 @implementation VideosForGroupViewController
 
@@ -24,7 +25,7 @@
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    Video* video = elementsArray[[indexpath row]];
+    Video* video = self.elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     groupNameLabel.text = video.desc;
     
@@ -48,7 +49,7 @@
 {
     
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
-    Video* video = elementsArray[[indexPath row]];
+    Video* video = self.elementsArray[[indexPath row]];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:video.url]];
 }
 

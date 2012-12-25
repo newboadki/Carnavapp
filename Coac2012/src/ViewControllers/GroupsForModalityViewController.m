@@ -10,7 +10,7 @@
 #import "Agrupacion.h"
 #import "GroupDetailViewController.h"
 #import "YearSelectionViewController.h"
-
+#import "HeaderAndFooterListViewController+Protected.h"
 
 @interface GroupsForModalityViewController(protected)
 - (void) updateArrayOfElements;
@@ -26,7 +26,7 @@
 
 - (void) updateArrayOfElements
 {
-    NSDictionary* modalitiesDic = modelData[MODALITIES_KEY];
+    NSDictionary* modalitiesDic = self.modelData[MODALITIES_KEY];
     NSDictionary* modalityGroupsForAllYears = modalitiesDic[modality]; // that is from that modality from all years
     NSArray* moddalityGroupsInYear = modalityGroupsForAllYears[self.yearString];    
     // now we should re-filter, selecting just the current year
@@ -82,7 +82,7 @@
 - (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell...
-    Agrupacion* ag = elementsArray[[indexpath row]];
+    Agrupacion* ag = self.elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
     
@@ -104,14 +104,16 @@
     int linealIndex = row + (section * 3);
     
     GroupDetailViewController* detailViewController = [[GroupDetailViewController alloc] initWithNibName:@"GroupDetailViewController" bundle:nil];
-    detailViewController.group = elementsArray[linealIndex];
+    detailViewController.group = self.elementsArray[linealIndex];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 }
 
 
-- (void) handleFooterSelected
+- (void) handleFooterSelected:(UITableViewCell*)footerCell
 {
+    [super handleFooterSelected:footerCell];
+    
     // Create the year selection view controller
     YearSelectionViewController *contestResultsYearSelectorViewController = [[YearSelectionViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
     

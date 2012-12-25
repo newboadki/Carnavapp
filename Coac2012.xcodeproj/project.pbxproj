@@ -163,8 +163,8 @@
 		0084FEF414D222CB002A074E /* GroupInfoCellSelected.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084FEF314D222CB002A074E /* GroupInfoCellSelected.xib */; };
 		0085D9591568469500BB819D /* BSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085D9581568469500BB819D /* BSViewController.m */; };
 		00861A1514EA7EBD00E27829 /* SearchresultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00861A1414EA7EBD00E27829 /* SearchresultCell.xib */; };
-		0086C2151685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */; };
-		0086C2161685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */; };
+		0086C2151685F9DE003F35F1 /* cartel_2013@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */; };
+		0086C2161685F9DE003F35F1 /* cartel_2013@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */; };
 		0086C2181685FC45003F35F1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0086C2171685FC45003F35F1 /* CoreImage.framework */; };
 		0086C21B16861658003F35F1 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* ImageManager.m */; };
 		0086C21C16861658003F35F1 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* ImageManager.m */; };
@@ -193,6 +193,8 @@
 		00A10FD0150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
 		00A10FDB150A89F900D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD9150A89F900D1C425 /* active_day.png */; };
 		00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FDA150A89F900D1C425 /* inactive_day.png */; };
+		00A2B5981688C3AA00FA8C40 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A2B5971688C3AA00FA8C40 /* Result.m */; };
+		00A2B5991688C3AA00FA8C40 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A2B5971688C3AA00FA8C40 /* Result.m */; };
 		00AD902A16621FC10099DEA6 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 00AD902916621FC10099DEA6 /* TODO */; };
 		00AD9030166230F20099DEA6 /* YearSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AD902E166230F20099DEA6 /* YearSelectionViewController.m */; };
 		00AD9031166230F20099DEA6 /* YearSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AD902E166230F20099DEA6 /* YearSelectionViewController.m */; };
@@ -394,7 +396,7 @@
 		0085D9571568469500BB819D /* BSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSViewController.h; sourceTree = "<group>"; };
 		0085D9581568469500BB819D /* BSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSViewController.m; sourceTree = "<group>"; };
 		00861A1414EA7EBD00E27829 /* SearchresultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchresultCell.xib; sourceTree = "<group>"; };
-		0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartel_carnaval_2013.png; sourceTree = "<group>"; };
+		0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartel_2013@2x.png"; sourceTree = "<group>"; };
 		0086C2171685FC45003F35F1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		0086C21916861658003F35F1 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
 		0086C21A16861658003F35F1 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
@@ -421,6 +423,10 @@
 		00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseDatesHelper.m; sourceTree = "<group>"; };
 		00A10FD9150A89F900D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00A10FDA150A89F900D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
+		00A2B593168863F800FA8C40 /* HeaderAndFooterListViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HeaderAndFooterListViewController+Protected.h"; sourceTree = "<group>"; };
+		00A2B595168865EE00FA8C40 /* BaseCoacListViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseCoacListViewController+Protected.h"; sourceTree = "<group>"; };
+		00A2B5961688C3AA00FA8C40 /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		00A2B5971688C3AA00FA8C40 /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
 		00AD902916621FC10099DEA6 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		00AD902D166230F20099DEA6 /* YearSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearSelectionViewController.h; sourceTree = "<group>"; };
 		00AD902E166230F20099DEA6 /* YearSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearSelectionViewController.m; sourceTree = "<group>"; };
@@ -761,6 +767,7 @@
 				00DC4AB814D0AF740018E3E3 /* LinksViewController.m */,
 				00DC4ABE14D0B2F50018E3E3 /* LinkViewerViewController.h */,
 				00DC4ABF14D0B2F50018E3E3 /* LinkViewerViewController.m */,
+				00A2B595168865EE00FA8C40 /* BaseCoacListViewController+Protected.h */,
 				00EA736114D1534400DD1DEF /* BaseCoacListViewController.h */,
 				00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */,
 				0019596514D5EB9600DD5F35 /* VideosForGroupViewController.h */,
@@ -771,6 +778,7 @@
 				008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */,
 				00AD902D166230F20099DEA6 /* YearSelectionViewController.h */,
 				00AD902E166230F20099DEA6 /* YearSelectionViewController.m */,
+				00A2B593168863F800FA8C40 /* HeaderAndFooterListViewController+Protected.h */,
 				00E22C0B1662BF5E00CFB9ED /* HeaderAndFooterListViewController.h */,
 				00E22C0C1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m */,
 				0082B294167BB8EE008529A9 /* LoadingScreenViewController.h */,
@@ -1057,6 +1065,8 @@
 				00C0BD8814CAEFF200427E42 /* Picture.m */,
 				00C0BD8B14CAF04C00427E42 /* Video.h */,
 				00C0BD8C14CAF04D00427E42 /* Video.m */,
+				00A2B5961688C3AA00FA8C40 /* Result.h */,
+				00A2B5971688C3AA00FA8C40 /* Result.m */,
 			);
 			name = Models;
 			path = src/Models;
@@ -1093,12 +1103,12 @@
 		00DC4A8F14D0A0DE0018E3E3 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				0086C22716861F64003F35F1 /* cartel_2013.png */,
-				0086C22816861F64003F35F1 /* cartel_2012@2x.png */,
 				0086C22916861F65003F35F1 /* cartel_2012.png */,
+				0086C22816861F64003F35F1 /* cartel_2012@2x.png */,
+				0086C22716861F64003F35F1 /* cartel_2013.png */,
+				0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */,
 				0086C22116861A48003F35F1 /* gradientMap1.png */,
 				0086C22216861A48003F35F1 /* gradientMap2.png */,
-				0086C2141685F9DE003F35F1 /* cartel_carnaval_2013.png */,
 				00EE617C160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png */,
 				00EE617D160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png */,
 				0084FECF14D1ED28002A074E /* appbackground_320x480.png */,
@@ -1201,7 +1211,7 @@
 				0082BBA2167E4E98007D6CF4 /* group_v_1_0_4.xml in Resources */,
 				00985C291683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */,
 				00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */,
-				0086C2161685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */,
+				0086C2161685F9DE003F35F1 /* cartel_2013@2x.png in Resources */,
 				0086C22416861A48003F35F1 /* gradientMap1.png in Resources */,
 				0086C22616861A48003F35F1 /* gradientMap2.png in Resources */,
 				0086C22B16861F65003F35F1 /* cartel_2013.png in Resources */,
@@ -1262,7 +1272,7 @@
 				00E22BC816628E6500CFB9ED /* YearHeaderView.xib in Resources */,
 				00985C281683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */,
 				00985C2A1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */,
-				0086C2151685F9DE003F35F1 /* cartel_carnaval_2013.png in Resources */,
+				0086C2151685F9DE003F35F1 /* cartel_2013@2x.png in Resources */,
 				0086C22316861A48003F35F1 /* gradientMap1.png in Resources */,
 				0086C22516861A48003F35F1 /* gradientMap2.png in Resources */,
 				0086C22A16861F65003F35F1 /* cartel_2013.png in Resources */,
@@ -1416,6 +1426,7 @@
 				0082BBA5167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m in Sources */,
 				0082BBA9167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
 				0086C21C16861658003F35F1 /* ImageManager.m in Sources */,
+				00A2B5991688C3AA00FA8C40 /* Result.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1469,6 +1480,7 @@
 				0082B296167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
 				0082BBA8167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
 				0086C21B16861658003F35F1 /* ImageManager.m in Sources */,
+				00A2B5981688C3AA00FA8C40 /* Result.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

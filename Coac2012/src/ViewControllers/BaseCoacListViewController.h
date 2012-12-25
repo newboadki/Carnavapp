@@ -12,17 +12,6 @@
 #import "FileSystemHelper.h"
 
 @interface BaseCoacListViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, UISearchDisplayDelegate, GroupNameSearchControllerDelegateProtocol, SearchResultsTableViewControllerDelegateProtocol>
-{
-    NSDictionary* modelData;
-    NSArray* elementsArray;
-    UITableViewCell* cellFromNib;    
-    GroupNameSearchController* groupNameSearchController;    
-    
-    IBOutlet UITableView* tableView;
-    IBOutlet SearchResultsTableViewController* searchResultsTableViewController;    
-    IBOutlet UILabel* noContentMessageLabel;
-    IBOutlet UIView* noContentMessageView;
-}
 
 @property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSArray* elementsArray;
@@ -37,16 +26,14 @@
 @property (nonatomic, retain) NSString *yearString;
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void) setMaskAsTitleView;
-- (void) handleDataIsReady:(NSNotification*)notif;
 
+// Customising the look of the view controller
+- (void) setMaskAsTitleView;
 - (NSString*) normalCellNibName;
 - (NSString*) selectedCellNibName;
 - (BOOL) implementsSearch;
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath; //make protected
-- (void) updateArrayOfElements;
-
+- (void) updateArrayOfElements; // Made public because the app delegate uses them
 
 
 @end

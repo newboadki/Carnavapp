@@ -9,6 +9,7 @@
 #import "TodayViewController.h"
 #import "Agrupacion.h"
 #import "GroupDetailViewController.h"
+#import "BaseCoacListViewController+Protected.h"
 
 @interface TodayViewController(protected)
 - (void) showAlertIfNoConstestToday;
