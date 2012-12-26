@@ -13,6 +13,7 @@
 #import "Componente.h"
 #import "Comentario.h"
 #import "Link.h"
+#import "Result.h"
 
 @implementation Parser_v_1_0_4Tests
 
@@ -192,6 +193,28 @@
 
 }
 
+- (void) testParsingResults
+{
+    NSDictionary* results = [parser doParsingSync]; // Calling the private method as NSOperation wasn't working on the tests.
+    NSDictionary* calendar = [results objectForKey:RESULTS_KEY];
+    NSArray* results2012 = calendar[@"2012"];
+    NSArray* results2013 = calendar[@"2013"];
+    
+    NSArray *points2012 = [results2012 valueForKeyPath:@"points"];
+    NSArray *phases2012 = [results2012 valueForKeyPath:@"phase"];
+    NSArray *groupIds2012 = [results2012 valueForKeyPath:@"groupId"];
+    
+    Result * r1 = results2012[0];
+    STAssertTrue([r1.groupId isEqualToString:@"2"], @"Results for 2012 should contain the ID 1");
+    STAssertTrue([r1.points isEqualToNumber:@23], @"Results for 2012 should contain the points 23");
+    STAssertTrue([r1.phase isEqualToString:@"FINAL"], @"Results for 2012 should contain the phase FINAL");
+    Result * r2 = results2012[1];
+    STAssertTrue([r2.groupId isEqualToString:@"1"], @"Results for 2012 should contain the ID 2");
+    STAssertTrue([r2.points isEqualToNumber:@31], @"Results for 2012 should contain the points 31");
+    STAssertTrue([r2.phase isEqualToString:@"CUARTOS"], @"Results for 2012 should contain the phase CUARTOS");
+        
+    STAssertTrue(0 == [results2013 count], @"Results for 2013 should be empty");
+}
 
 - (void) testParsingLinks
 {
@@ -209,6 +232,8 @@
     STAssertTrue([l2.url isEqualToString:@"http://www.lacomparsadejuancarlos.com/"], @"The link's iurld wasn't parsed correctly");
 
 }
+
+
 - (void) parsingDidFinishWithResultsDictionary:(NSDictionary*)resultsDictionary
 {
     //self->results = [resultsDictionary retain];

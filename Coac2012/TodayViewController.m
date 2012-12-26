@@ -25,7 +25,7 @@
 - (void) updateArrayOfElements
 {
     NSString* todaysDateString = [self todaysDateString];
-    NSDictionary* calendarDictionary = [modelData objectForKey:CALENDAR_KEY];    
+    NSDictionary* calendarDictionary = [self.modelData objectForKey:CALENDAR_KEY];
     NSArray* groupsForDate = [calendarDictionary objectForKey:todaysDateString];
     [self setElementsArray:groupsForDate];
     [self.tableView reloadData];
@@ -36,7 +36,7 @@
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    Agrupacion* ag = [elementsArray objectAtIndex:[indexpath row]];
+    Agrupacion* ag = [self.elementsArray objectAtIndex:[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];    
     
@@ -59,7 +59,7 @@
 
 - (void) showAlertIfNoConstestToday
 {
-    if (modelData && ([elementsArray count] == 0))
+    if (modelData && ([self.elementsArray count] == 0))
     {
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Informacion" message:@"Hoy no hay concurso" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
         [alertView show];
@@ -93,11 +93,11 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if ([elementsArray count] <= 0)
+    if ([self.elementsArray count] <= 0)
     {
-        noContentMessageView.hidden = NO;
+        self.noContentMessageView.hidden = NO;
         self.noContentMessageLabel.hidden = NO;
-        noContentMessageLabel.text = @"Hoy no hay concurso";
+        self.noContentMessageLabel.text = @"Hoy no hay concurso";
     }
     else
     {

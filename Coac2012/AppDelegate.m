@@ -153,13 +153,8 @@
     UILabel* label = (UILabel*)[loadingScreenViewController.view viewWithTag:LOADING_SCREEN_LABEL_TAG];
     label.text = loadingMessage;
     
-    // Fade in loading screen    
-    loadingScreenViewController.view.alpha = 0.0;
-    [self.tabBarController presentViewController:loadingScreenViewController animated:NO completion:^{
-        [UIView animateWithDuration:2.0 animations:^{
-            loadingScreenViewController.view.alpha = 1.0;
-        }];
-    }];
+    // Fade in loading screen
+    [self.tabBarController presentViewController:loadingScreenViewController animated:NO completion:nil];
     
     // Clean up
     [loadingScreenViewController release];

@@ -1,133 +1,144 @@
 
-    <coac2012>
-        <agrupaciones año="2012">
-            <agrupacion id="1" modalidad="CORO" nombre="Los hijos del 78" autor="Francisco Javier Sevilla" director="Antonio Cuesta Pino"
-                localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false" 
-                info="El coro a pie"
-                url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
-                url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"
-                url_videos="url of the video"
-                puntos="">
-                <componentes>
-                    <componente nombre="Paco" voz="Grave"/>
-                    <componente nombre="Maruja" voz="Muy Aguda"/>
-                </componentes>
-                <videos>
-                    <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
-                    <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
-                </videos>
-                <fotos>
-                    <foto descripcion="foto1" url="url1"/>
-                </fotos>
-                <comentarios>
-                    <comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
-                    <comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
-                </comentarios>
-            </agrupacion>
+    <carnavapp>
+        <anio anio="2012">
+            <agrupaciones>
+                <agrupacion id="1" modalidad="CORO" nombre="Los hijos del 78" autor="Francisco Javier Sevilla" director="Antonio Cuesta Pino"
+                    localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false" 
+                    info="El coro a pie"
+                    url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Los_hijos_del_78.php"
+                    url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/Los_hijos_del_78_1.jpg"
+                    url_videos="url of the video"
+                    puntos="">
+                    <componentes>
+                        <componente nombre="Paco" voz="Grave"/>
+                        <componente nombre="Maruja" voz="Muy Aguda"/>
+                    </componentes>
+                    <videos>
+                        <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
+                        <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
+                    </videos>
+                    <fotos>
+                        <foto descripcion="foto1" url="url1"/>
+                    </fotos>
+                    <comentarios>
+                        <comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
+                        <comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
+                    </comentarios>
+                </agrupacion>
+                
+                <agrupacion id="2" modalidad="CHIRIGOTA" nombre="Los capullos del 98" autor="Bartolo Panes" director="Francisco Rodante"
+                    localidad="Cadiz" coac2011="Topollillo" cabeza_serie="false"
+                    info="Una chirigota cualquiera"
+                    url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/LosCapullosDel98.php"
+                    url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/LosCapullosDel98_1.jpg"
+                    url_videos="url of the video"
+                    puntos="">
+                    <componentes>
+                        <componente nombre="Pinto" voz="Grave"/>
+                        <componente nombre="Minto" voz="Muy Aguda"/>
+                    </componentes>
+                    <videos>
+                        <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
+                        <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
+                    </videos>
+                    <fotos>
+                        <foto descripcion="foto1" url="url1"/>
+                    </fotos>
+                    <comentarios>
+                        <comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
+                        <comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
+                    </comentarios>
+                </agrupacion>
+            </agrupaciones>
             
-            <agrupacion id="2" modalidad="CHIRIGOTA" nombre="Los capullos del 98" autor="Bartolo Panes" director="Francisco Rodante"
-                localidad="Cadiz" coac2011="Topollillo" cabeza_serie="false"
-                info="Una chirigota cualquiera"
-                url_cc="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/LosCapullosDel98.php"
-                url_foto="http://www.carnavaldecadiz.com/Carnaval2012/Absoluta/Imagenes/LosCapullosDel98_1.jpg"
-                url_videos="url of the video"
-                puntos="">
-                <componentes>
-                    <componente nombre="Pinto" voz="Grave"/>
-                    <componente nombre="Minto" voz="Muy Aguda"/>
-                </componentes>
-                <videos>
-                    <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
-                    <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
-                </videos>
-                <fotos>
-                    <foto descripcion="foto1" url="url1"/>
-                </fotos>
-                <comentarios>
-                    <comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2012/los-hijos-del.html"/>
-                    <comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2012.carnavalistas.com/agrupaciones?act=1"/>
-                </comentarios>
-            </agrupacion>
+            <calendario>
+                <dia fecha="21/01/2012">
+                    <puesto no="1" agrupacion="1"/>
+                    <puesto no="1" agrupacion="2"/>
+                </dia>
+                <dia fecha="22/01/2012">
+                    <puesto no="1" agrupacion="2"/>
+                    <puesto no="1" agrupacion="1"/>
+                </dia>
+            </calendario>
 
-        </agrupaciones>
+            <puntuaciones>
+                <puntuacion agrupacion="2" fase="FINAL" puntos="23" />
+                <puntuacion agrupacion="1" fase="CUARTOS" puntos="31" />
+            </puntuaciones>
 
-        <agrupaciones año="2013">
-            <agrupacion id="1" modalidad="CORO" nombre="Los hijos del 79" autor="Francisco Javier Sevilla" director="Antonio Cuesta Pino"
-                localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false"
-                info="Los hijos del 79"
-                url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_hijos_del_79.php"
-                url_foto="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Imagenes/Los_hijos_del_79_1.jpg"
-                url_videos="url of the video"
-                puntos="">
-                <componentes>
-                    <componente nombre="Paco" voz="Grave"/>
-                    <componente nombre="Maruja" voz="Muy Aguda"/>
-                </componentes>
-                <videos>
-                    <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
-                    <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
-                </videos>
-                <fotos>
-                    <foto descripcion="foto14" url="url1"/>
-                </fotos>
-                <comentarios>
-                    <comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-hijos-del79.html"/>
-                    <comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2013.carnavalistas.com/agrupaciones?act=1"/>
-                </comentarios>
-            </agrupacion>
+        </anio>
+
+        <anio anio="2013">
+            <agrupaciones>
+                <agrupacion id="1" modalidad="CORO" nombre="Los hijos del 79" autor="Francisco Javier Sevilla" director="Antonio Cuesta Pino"
+                    localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false"
+                    info="Los hijos del 79"
+                    url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Los_hijos_del_79.php"
+                    url_foto="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Imagenes/Los_hijos_del_79_1.jpg"
+                    url_videos="url of the video"
+                    puntos="">
+                    <componentes>
+                        <componente nombre="Paco" voz="Grave"/>
+                        <componente nombre="Maruja" voz="Muy Aguda"/>
+                    </componentes>
+                    <videos>
+                        <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8imaJGu6c"/>
+                        <video descripcion="final" url="http://www.youtube.com/watch?v=kk"/>
+                    </videos>
+                    <fotos>
+                        <foto descripcion="foto14" url="url1"/>
+                    </fotos>
+                    <comentarios>
+                        <comentario origen="La Voz de Cadiz - Ficha" url="http://carnaval.lavozdigital.es/agrupaciones/2013/los-hijos-del79.html"/>
+                        <comentario origen="Carnavalitas - Comentario preeliminares" url="http://coac2013.carnavalistas.com/agrupaciones?act=1"/>
+                    </comentarios>
+                </agrupacion>
+                
+                <agrupacion id="3" modalidad="COMPARSA" nombre="La Tacita" autor="Gonzalo de Treviso" director="Perra"
+                    localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false"
+                    info="Una comparsa con guasa"
+                    url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/latacita.php"
+                    url_foto="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Imagenes/latacita.jpg"
+                    url_videos="url of the video"
+                    puntos="">
+                    <componentes>
+                        <componente nombre="Gonzalo" voz="Grave"/>
+                        <componente nombre="Lucas" voz="Muy Aguda"/>
+                    </componentes>
+                    <videos>
+                        <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8i556mc"/>
+                        <video descripcion="final" url="http://www.youtube.com/watch?v=kk4"/>
+                    </videos>
+                    <fotos>
+                        <foto descripcion="foto54" url="url1"/>
+                    </fotos>
+                    <comentarios>
+                        <comentario origen="La Voz de Cadiz habla sobre la tacita" url="http://carnaval.lavozdigital.es/agrupaciones/2013/latacita.html"/>
+                        <comentario origen="Carnavalitas - Comentario preeliminares sobre la tacita" url="http://coac2013.carnavalistas.com/agrupaciones?act=3"/>
+                    </comentarios>
+                </agrupacion>
+            </agrupaciones>
             
-            <agrupacion id="3" modalidad="COMPARSA" nombre="La Tacita" autor="Gonzalo de Treviso" director="Perra"
-                localidad="Cadiz" coac2011="La infanteria" cabeza_serie="false"
-                info="Una comparsa con guasa"
-                url_cc="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/latacita.php"
-                url_foto="http://www.carnavaldecadiz.com/Carnaval2013/Absoluta/Imagenes/latacita.jpg"
-                url_videos="url of the video"
-                puntos="">
-                <componentes>
-                    <componente nombre="Gonzalo" voz="Grave"/>
-                    <componente nombre="Lucas" voz="Muy Aguda"/>
-                </componentes>
-                <videos>
-                    <video descripcion="Preeliminar - Actuacion completa" url="http://www.youtube.com/watch?v=lk8i556mc"/>
-                    <video descripcion="final" url="http://www.youtube.com/watch?v=kk4"/>
-                </videos>
-                <fotos>
-                    <foto descripcion="foto54" url="url1"/>
-                </fotos>
-                <comentarios>
-                    <comentario origen="La Voz de Cadiz habla sobre la tacita" url="http://carnaval.lavozdigital.es/agrupaciones/2013/latacita.html"/>
-                    <comentario origen="Carnavalitas - Comentario preeliminares sobre la tacita" url="http://coac2013.carnavalistas.com/agrupaciones?act=3"/>
-                </comentarios>
-            </agrupacion>
-        </agrupaciones>
+            <calendario>
+                <dia fecha="18/01/2013">
+                    <puesto no="1" agrupacion="1"/>
+                    <puesto no="1" agrupacion="3"/>
+                </dia>
+                <dia fecha="24/02/2013">
+                    <puesto no="1" agrupacion="3"/>
+                    <puesto no="1" agrupacion="1"/>
+                </dia>
+            </calendario>
 
-        
-        <calendario año="2012">
-            <dia fecha="21/01/2012">
-                <puesto no="1" agrupacion="1"/>
-                <puesto no="1" agrupacion="2"/>
-            </dia>
-            <dia fecha="22/01/2012">
-                <puesto no="1" agrupacion="2"/>
-                <puesto no="1" agrupacion="1"/>
-            </dia>
-        </calendario>
+            <puntuaciones>
+            </puntuaciones>
 
-        <calendario año="2013">
-            <dia fecha="18/01/2013">
-                <puesto no="1" agrupacion="1"/>
-                <puesto no="1" agrupacion="3"/>
-            </dia>
-            <dia fecha="24/02/2013">
-                <puesto no="1" agrupacion="3"/>
-                <puesto no="1" agrupacion="1"/>
-            </dia>
-        </calendario>
-
+        </anio>
         
         <enlaces>
             <enlace tipo="Agrupaciones" descripcion="La Comparsa de Tino" url="http://www.lacomparsadetino.com/" />
             <enlace tipo="Agrupaciones" descripcion="La Comparsa de J.C.Aragon" url="http://www.lacomparsadejuancarlos.com/" />
         </enlaces>
-    </coac2012>
+    </carnavapp>
 

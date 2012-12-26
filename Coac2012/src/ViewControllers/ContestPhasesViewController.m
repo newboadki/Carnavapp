@@ -21,7 +21,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        elementsArray = [[NSArray arrayWithObjects:PRELIMINAR, CUARTOS, SEMIFINALES, FINAL, nil] retain];
+        self.elementsArray = [[NSArray arrayWithObjects:PRELIMINAR, CUARTOS, SEMIFINALES, FINAL, nil] retain];
     }
     return self;
 }
@@ -52,7 +52,7 @@
 {
     // Configure the cell...
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];    
-    groupNameLabel.text = [elementsArray objectAtIndex:[indexpath row]];
+    groupNameLabel.text = [self.elementsArray objectAtIndex:[indexpath row]];
 }
 
 
@@ -65,7 +65,7 @@
     
 
      ContestPhaseViewController *detailViewController = [[ContestPhaseViewController alloc] initWithNibName:@"ContestPhaseViewController" bundle:nil];
-    detailViewController.phase = [elementsArray objectAtIndex:[indexPath row]];
+    detailViewController.phase = [self.elementsArray objectAtIndex:[indexPath row]];
     detailViewController.modelData = self.modelData;
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
