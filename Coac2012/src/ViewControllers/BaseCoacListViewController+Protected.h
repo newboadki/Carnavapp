@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BaseCoacListViewController (Protected)
+@interface BaseCoacListViewController ()
+
+@property (nonatomic, retain) GroupNameSearchController *groupNameSearchController;
 
 - (void) handleDataIsReady:(NSNotification*)notif;
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
-- (void) configureSearchResultCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
 
 @end

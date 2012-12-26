@@ -12,13 +12,9 @@
 #import "YearSelectionViewController.h"
 #import "HeaderAndFooterListViewController+Protected.h"
 
-@interface GroupsForModalityViewController(protected)
-- (void) updateArrayOfElements;
-@end
+
 
 @implementation GroupsForModalityViewController
-
-@synthesize modality;
 
 
 
@@ -27,7 +23,7 @@
 - (void) updateArrayOfElements
 {
     NSDictionary* modalitiesDic = self.modelData[MODALITIES_KEY];
-    NSDictionary* modalityGroupsForAllYears = modalitiesDic[modality]; // that is from that modality from all years
+    NSDictionary* modalityGroupsForAllYears = modalitiesDic[self.modality]; // that is from that modality from all years
     NSArray* moddalityGroupsInYear = modalityGroupsForAllYears[self.yearString];    
     // now we should re-filter, selecting just the current year
     
@@ -122,7 +118,7 @@
     contestResultsYearSelectorViewController.nibNameOfTheNextViewController = @"BaseCoacListViewController";
     
     // Key-values to be set when the user selects a year in the year-selector VC
-    NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO, @"modality" : modality };
+    NSDictionary *dictionaryOfValuesToSetInNewInstance = @{ @"showHeader" : @NO, @"showFooter" : @NO, @"modality" : self.modality };
     contestResultsYearSelectorViewController.keyValuesToSetInNewInstance = dictionaryOfValuesToSetInNewInstance;
     
     // Push the year-selector VC to the stack
@@ -134,7 +130,7 @@
 
 - (void) dealloc
 {
-    [modality release];
+    [_modality release];
     [super dealloc];    
 }
 

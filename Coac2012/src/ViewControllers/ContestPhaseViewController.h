@@ -12,10 +12,6 @@
 #import "HeaderAndFooterListViewController.h"
 
 @interface ContestPhaseViewController : HeaderAndFooterListViewController <ScrollableBoxTappedDelegateProtocol>
-{
-    NSString* phase;
-    CalendarScrollViewController* calendarController;
-}
 
 @property (nonatomic, retain) NSString* phase;
 @property (nonatomic, retain) CalendarScrollViewController* calendarController;

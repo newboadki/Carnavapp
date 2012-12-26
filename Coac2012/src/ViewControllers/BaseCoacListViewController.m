@@ -18,28 +18,8 @@
 
 
 @implementation BaseCoacListViewController
-{
-    @protected
-    NSDictionary* _modelData;
-    NSArray* elementsArray;
-    UITableViewCell* cellFromNib;
-    GroupNameSearchController* groupNameSearchController;
-    
-    IBOutlet UITableView* tableView;
-    IBOutlet SearchResultsTableViewController* searchResultsTableViewController;
-    IBOutlet UILabel* noContentMessageLabel;
-    IBOutlet UIView* noContentMessageView;
-}
 
-@synthesize modelData = _modelData;
-@synthesize elementsArray;
-@synthesize cellFromNib;
-@synthesize tableView;
-@synthesize searchResultsTableViewController;
-@synthesize noContentMessageLabel;
-@synthesize noContentMessageView;
-@synthesize backgroundImageView = _backgroundImageView;
-@synthesize yearString = _yearString;
+
 
 #pragma mark - Initializer methods
 
@@ -74,14 +54,14 @@
 - (void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MODEL_DATA_IS_READY_NOTIFICATION object:nil];
-    [groupNameSearchController release];
+    [_groupNameSearchController release];
     [_modelData release];
-    [elementsArray release];
-    [tableView release];
-    searchResultsTableViewController.selectionDelegate = nil;
-    [searchResultsTableViewController release];
-    [noContentMessageLabel release];
-    [noContentMessageView release];
+    [_elementsArray release];
+    [_tableView release];
+    _searchResultsTableViewController.selectionDelegate = nil;
+    [_searchResultsTableViewController release];
+    [_noContentMessageLabel release];
+    [_noContentMessageView release];
     [_backgroundImageView release];
     [_yearString release];
     [super dealloc];
@@ -124,25 +104,18 @@
 - (void) setElementsArray:(NSArray*)newElementsArray
 {
     // We override it to be able to show/hide the noContent views
-    if (self->elementsArray != newElementsArray)
+    if (_elementsArray != newElementsArray)
     {
         // Set the ivar
         [newElementsArray retain];
-        [self->elementsArray release];
-        self->elementsArray = newElementsArray;
+        [_elementsArray release];
+        _elementsArray = newElementsArray;
         
         // Show or hide the noContent views
         BOOL noContentViewHidden = ([self.elementsArray count] > 0);
         self.noContentMessageView.hidden = noContentViewHidden;
         self.noContentMessageLabel.hidden = noContentViewHidden;
     }
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 
@@ -153,7 +126,7 @@
 {
     [super viewDidLoad];
     // Set up Search Bar
-    searchResultsTableViewController.selectionDelegate = self;
+    self.searchResultsTableViewController.selectionDelegate = self;
     
     // We first populate the tables with the data we already had if any. 
     NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveObjectWithFileName:MODEL_DATA_FILE_NAME];
@@ -174,11 +147,12 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [tableView release];
-    tableView = nil;    
-    [noContentMessageLabel release];
-    noContentMessageLabel = nil;
+    [_tableView release];
+    _tableView = nil;
+    [_noContentMessageLabel release];
+    _noContentMessageLabel = nil;
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -195,20 +169,35 @@
     }
 }
 
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
 }
 
+
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
 }
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Release any cached data, images, etc that aren't in use.
+}
+
+
+
+
+#pragma mark - Rotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -230,9 +219,9 @@
 {
     int numberOfRows = 0;
     
-    if (elementsArray) // we can just check for this as we set it as soon as we get the data
+    if (self.elementsArray) // we can just check for this as we set it as soon as we get the data
     {        
-        numberOfRows = [elementsArray count];
+        numberOfRows = [self.elementsArray count];
     }
     
 	return numberOfRows;
@@ -253,7 +242,7 @@
     if (cell == nil)
     {
         self.cellFromNib = [[NSBundle mainBundle] loadNibNamed:[self normalCellNibName] owner:self options:nil][0];
-        cell = cellFromNib;
+        cell = self.cellFromNib;
         self.cellFromNib = nil;    
     }
     
@@ -275,13 +264,16 @@
     [self configureCell:cell indexPath:indexPath]; 
     
     [UIView animateWithDuration:0.5 animations:^{
-        [[[tableView cellForRowAtIndexPath:indexPath] selectedBackgroundView] setAlpha:0.0];
+        [[[theTableView cellForRowAtIndexPath:indexPath] selectedBackgroundView] setAlpha:0.0];
     } completion:^(BOOL finished) {
         
-        [[tableView cellForRowAtIndexPath:indexPath] setSelectedBackgroundView:nil];
+        [[theTableView cellForRowAtIndexPath:indexPath] setSelectedBackgroundView:nil];
     }];
 }
 
+
+
+#pragma mark - Table View Customization
 
 - (void) setMaskAsTitleView
 {
@@ -320,12 +312,12 @@
     }
     else
     {
-        if (!groupNameSearchController)
+        if (!_groupNameSearchController)
         {
-            groupNameSearchController = [[GroupNameSearchController alloc] initWithSampleArrayinSampleArray:nil andDelegate:self];
+            _groupNameSearchController = [[GroupNameSearchController alloc] initWithSampleArrayinSampleArray:nil andDelegate:self];
         }
         
-        return groupNameSearchController;
+        return _groupNameSearchController;
     }
 }
 
@@ -333,7 +325,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     GroupNameSearchController* sc = [self groupNameSearchController];
-    sc.sampleArray = elementsArray;
+    sc.sampleArray = self.elementsArray;
     [sc searchResultsForString:searchText];
 }
 
@@ -352,7 +344,7 @@
 - (void)selectedElement:(id)element
 {    
     Agrupacion* selectedGroup = (Agrupacion*)element;
-    int index = [elementsArray indexOfObject:selectedGroup];
+    int index = [self.elementsArray indexOfObject:selectedGroup];
 
     if (index >= 0)
     {
@@ -360,6 +352,10 @@
         [self tableView:self.tableView didSelectRowAtIndexPath:ip];
     }    
 }
+
+
+
+#pragma mark - Background Image
 
 - (void) handleBackgroundImageFinishedProcessing
 {
@@ -374,9 +370,6 @@
     }];
 }
 
-
-
-#pragma mark - Background Image Helpers
 
 - (void) setUpBackgroundForYear:(NSString*)year
 {

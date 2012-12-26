@@ -11,17 +11,16 @@
 
 @implementation LinkViewerViewController
 
-@synthesize webView, link, loadingIndicator;
 
 
 #pragma mark - Memory Management
 
 - (void) dealloc
 {
-    [link release];
-    webView.delegate = nil;
-    [webView release];    
-    [loadingIndicator release];
+    [_link release];
+    _webView.delegate = nil;
+    [_webView release];
+    [_loadingIndicator release];
     
     [super dealloc];    
 }
@@ -40,16 +39,16 @@
 
 - (void)webViewDidStartLoad:(UIWebView*)webView
 {
-    [loadingIndicator setHidesWhenStopped:NO];
-    [loadingIndicator startAnimating];
+    [self.loadingIndicator setHidesWhenStopped:NO];
+    [self.loadingIndicator startAnimating];
     [[UIApplication sharedApplication] prp_pushNetworkActivity];
 }
 
 
 - (void)webViewDidFinishLoad:(UIWebView*)webView
 {
-    [loadingIndicator setHidesWhenStopped:YES];
-    [loadingIndicator stopAnimating];
+    [self.loadingIndicator setHidesWhenStopped:YES];
+    [self.loadingIndicator stopAnimating];
     [[UIApplication sharedApplication] prp_popNetworkActivity];
 }
 
@@ -61,19 +60,19 @@
 {
     [super viewDidLoad];
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:link.url]];
-    [webView loadRequest:request];
-    self.title = link.desc;
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.link.url]];
+    [self.webView loadRequest:request];
+    self.title = self.link.desc;
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [webView release];
-    webView = nil;
-    [loadingIndicator release];
-    loadingIndicator = nil;
+    [self.webView release];
+    self.webView = nil;
+    [self.loadingIndicator release];
+    self.loadingIndicator = nil;
     
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -12,9 +12,7 @@
 
 @implementation YearSelectionViewController
 
-@synthesize classOfTheNextViewController = _classOfTheNextViewController;
-@synthesize nibNameOfTheNextViewController = _nibNameOfTheNextViewController;
-@synthesize keyValuesToSetInNewInstance;
+
 
 #pragma mark - Parent Class extentsion methods
 
@@ -96,7 +94,7 @@
 
 - (void) dealloc
 {
-    [keyValuesToSetInNewInstance release];
+    [_keyValuesToSetInNewInstance release];
     [_nibNameOfTheNextViewController release];
     [super dealloc];
 }

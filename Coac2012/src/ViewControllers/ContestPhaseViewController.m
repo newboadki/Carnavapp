@@ -19,8 +19,6 @@
 
 @implementation ContestPhaseViewController
 
-@synthesize phase;
-@synthesize calendarController;
 
 
 #pragma mark - Super class extension methods
@@ -74,8 +72,8 @@
     [self setCalendarController:cc];
     [cc release];
     
-    [self.view addSubview:calendarController.view];    
-    [calendarController viewDidLoad];
+    [self.view addSubview:self.calendarController.view];
+    [self.calendarController viewDidLoad];
     
     
     
@@ -93,7 +91,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [calendarController viewDidUnload];
+    [self.calendarController viewDidUnload];
     
     [self.tableView release];
     self.tableView = nil;
@@ -105,14 +103,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [calendarController viewWillAppear:animated];    
+    [self.calendarController viewWillAppear:animated];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [calendarController viewWillDisappear:animated];
+    [self.calendarController viewWillDisappear:animated];
 }
 
 
@@ -220,8 +218,8 @@
 
 - (void) dealloc
 {
-    [calendarController release];
-    [phase release];
+    [_calendarController release];
+    [_phase release];
     [super dealloc];
 }
 

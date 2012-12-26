@@ -15,10 +15,7 @@
 @end
 
 @implementation SearchResultsTableViewController
-@synthesize results;
-@synthesize cellFromNib;
-@synthesize modelData;
-@synthesize selectionDelegate;
+
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -33,8 +30,8 @@
 
 - (void) dealloc
 {
-    [results release];
-    [modelData release];
+    [_results release];
+    [_modelData release];
     [super dealloc];
 }
 
@@ -101,7 +98,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [results count];
+    return [self.results count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +109,7 @@
     if (cell == nil)
     {
         self.cellFromNib = [[NSBundle mainBundle] loadNibNamed:@"SearchresultCell" owner:self options:nil][0];
-        cell = cellFromNib;
+        cell = self.cellFromNib;
         self.cellFromNib = nil;    
     }
     
@@ -130,7 +127,7 @@
 
 - (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    Agrupacion* ag = results[[indexpath row]];
+    Agrupacion* ag = self.results[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];        
         groupNameLabel.text = ag.nombre;
@@ -146,8 +143,8 @@
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
-    Agrupacion* selectedGroup = results[[indexPath row]];
-    [selectionDelegate selectedElement:selectedGroup];
+    Agrupacion* selectedGroup = self.results[[indexPath row]];
+    [self.selectionDelegate selectedElement:selectedGroup];
 }
 
 

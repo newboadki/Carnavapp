@@ -19,12 +19,9 @@
 
 @implementation HeaderAndFooterListViewController
 
-@synthesize yearString;
-@synthesize showHeader = _showHeader, showFooter = _showFooter;
 
 - (void) dealloc
 {
-    [yearString release];
     [super dealloc];
 }
 

@@ -14,15 +14,13 @@
 - (void) handleTap:(id)sender;
 - (void) setBackgroundColorForDate:(NSString*)theDateString inPhaseDictionaryForYear:(NSDictionary*)phasesDatesForYear;
 - (void) setPhaseLabelWithDateString:(NSString*)theDateString inPhaseDictionaryForYear:(NSDictionary*)phasesDatesForYear;
+
+@property (nonatomic, retain) NSDictionary* contestPhaseDatesInYear;
+@property (nonatomic, retain) NSDictionary* monthsNames;
+
 @end
 
 @implementation RoundedCalendarBoxController
-
-@synthesize tapDelegate;
-@synthesize dateString;
-@synthesize monthLabel, dayLabel, view, coloredAreaView, phaseLabel;
-@synthesize backgroundView;
-
 
 
 #pragma mark - Initializators
@@ -32,10 +30,10 @@
     self = [super init];
     if (self)
     {
-        tapDelegate = delegate;
-        dateString = [ds copy];
-        contestPhaseDatesInYear = [phasesDictionaryInYear retain];
-        monthsNames = [@{ @1: @"ENE",
+        _tapDelegate = delegate;
+        _dateString = [ds copy];
+        _contestPhaseDatesInYear = [phasesDictionaryInYear retain];
+        _monthsNames = [@{ @1: @"ENE",
                           @2: @"FEB",
                           @3: @"MAR",
                           @4: @"ABR",
@@ -58,34 +56,34 @@
 
 - (UIView*) view
 {
-    if (!view)
+    if (!_view)
     {
         [self loadView];
     }
     
-    return view;
+    return _view;
 }
 
 
 - (UIView*) monthLabel
 {
-    if (!view)
+    if (!self.view)
     {
         [self loadView];
     }
     
-    return monthLabel;
+    return _monthLabel;
 }
 
 
 - (UIView*) dayLabel
 {
-    if (!view)
+    if (!self.view)
     {
         [self loadView];
     }
     
-    return dayLabel;
+    return _dayLabel;
 }
 
 
@@ -96,11 +94,11 @@
 {
     // Create the view
     // will only be called once, only form the view getter.
-    view = [[[NSBundle mainBundle] loadNibNamed:@"RoundedCalendarBoxView" owner:self options:nil][0] retain];            
+    _view = [[[NSBundle mainBundle] loadNibNamed:@"RoundedCalendarBoxView" owner:self options:nil][0] retain];
     
     // Gesture recognizer
     UITapGestureRecognizer* tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [view addGestureRecognizer:tgr];
+    [_view addGestureRecognizer:tgr];
     [tgr release];    
     
 }
@@ -110,10 +108,10 @@
 {
     // The view will be on the hierarchy already    
     int day, month, year;
-    [self componentesFromDateString:dateString day:(&day) month:(&month) year:(&year)];
-    [self setBackgroundColorForDate:dateString inPhaseDictionaryForYear:contestPhaseDatesInYear];
-    [self setPhaseLabelWithDateString:dateString inPhaseDictionaryForYear:contestPhaseDatesInYear];
-    self.monthLabel.text = [NSString stringWithFormat:@"%@", monthsNames[@(month)]];
+    [self componentesFromDateString:self.dateString day:(&day) month:(&month) year:(&year)];
+    [self setBackgroundColorForDate:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
+    [self setPhaseLabelWithDateString:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
+    self.monthLabel.text = [NSString stringWithFormat:@"%@", self.monthsNames[@(month)]];
     self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 
 }
@@ -122,18 +120,18 @@
 - (void) viewDidUnload
 {
     // We assume that this view will be contained by another one. That view's controller will execure viewDidUnload (our superview), so our view will be out of the hierarchy anyway. That's why I'm not calling [scrollView removeFromSuperview];
-    [monthLabel release];
-    monthLabel = nil;
-    [dayLabel release];
-    dayLabel = nil;
-    [backgroundView release];
-    backgroundView = nil;
-    [coloredAreaView release];
-    coloredAreaView = nil;
-    [phaseLabel release];
-    phaseLabel = nil;
-    [view release];
-    view = nil;    
+    [_monthLabel release];
+    _monthLabel = nil;
+    [_dayLabel release];
+    _dayLabel = nil;
+    [_backgroundView release];
+    _backgroundView = nil;
+    [_coloredAreaView release];
+    _coloredAreaView = nil;
+    [_phaseLabel release];
+    _phaseLabel = nil;
+    [_view release];
+    _view = nil;
 }
 
 
@@ -154,7 +152,7 @@
 
 - (void) handleTap:(id)sender
 {
-    [tapDelegate handleTap:self];
+    [self.tapDelegate handleTap:self];
     [self setActiveLook];
 }
 
@@ -162,7 +160,7 @@
 - (void) setNormalLook
 {
     //self.backgroundView.image = [UIImage imageNamed:@"inactive_day.png"];
-    [self setBackgroundColorForDate:dateString inPhaseDictionaryForYear:contestPhaseDatesInYear];
+    [self setBackgroundColorForDate:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
 }
 
 
@@ -246,15 +244,15 @@
 
 - (void) dealloc
 {
-    [monthsNames release];
-    [dateString release];
-    [contestPhaseDatesInYear release];
-    [monthLabel release];
-    [dayLabel release];
-    [phaseLabel release];
-    [backgroundView release];
-    [coloredAreaView release];
-    [view release];    
+    [_monthsNames release];
+    [_dateString release];
+    [_contestPhaseDatesInYear release];
+    [_monthLabel release];
+    [_dayLabel release];
+    [_phaseLabel release];
+    [_backgroundView release];
+    [_coloredAreaView release];
+    [_view release];
     [super dealloc];
 }
 

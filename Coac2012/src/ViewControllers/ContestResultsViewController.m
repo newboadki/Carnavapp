@@ -34,7 +34,7 @@
         NSArray* selectedYearResults = self.modelData[RESULTS_KEY][self.yearString];
         NSMutableArray* groups = [[NSMutableArray alloc] init];
         
-        
+        // TODO: Move this processing to the parser
         NSPredicate *finalGroupsPredicate = [NSPredicate predicateWithFormat:@"self.phase LIKE 'FINAL'"];
         NSArray *finalGroups = [selectedYearResults filteredArrayUsingPredicate:finalGroupsPredicate];
 
@@ -186,13 +186,16 @@
 
 - (CGFloat)tableView:(UITableView *)_tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.elementsArray count] > 0) {
+    if ([self.elementsArray count] > 0)
+    {
         return [super tableView:_tableView heightForRowAtIndexPath:indexPath];
     }
-    else if (indexPath.row == 0 && indexPath.section ==0){
-        NSLog(@"%@", NSStringFromCGRect(_tableView.frame));
+    else if (indexPath.row == 0 && indexPath.section ==0)
+    {
         return _tableView.frame.size.height - 44;
-    } else {
+    }
+    else
+    {
         return 44;
     }
 

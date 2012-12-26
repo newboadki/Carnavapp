@@ -16,10 +16,10 @@
 @property (nonatomic, retain) NSDictionary* modelData;
 @property (nonatomic, retain) NSArray* elementsArray;
 @property (nonatomic, assign) UITableViewCell* cellFromNib;
-@property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, retain) SearchResultsTableViewController* searchResultsTableViewController;
-@property (nonatomic, retain) UILabel* noContentMessageLabel;
-@property (nonatomic, retain) UIView* noContentMessageView;
+@property (nonatomic, retain) IBOutlet UITableView* tableView;
+@property (nonatomic, retain) IBOutlet SearchResultsTableViewController* searchResultsTableViewController;
+@property (nonatomic, retain) IBOutlet UILabel* noContentMessageLabel;
+@property (nonatomic, retain) IBOutlet UIView* noContentMessageView;
 @property (nonatomic, retain) IBOutlet UIImageView *backgroundImageView;
 
 /** Defines the year the viewController is showing information from.*/

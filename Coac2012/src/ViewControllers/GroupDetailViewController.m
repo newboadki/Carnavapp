@@ -17,10 +17,6 @@
 
 @implementation GroupDetailViewController
 
-@synthesize group;
-@synthesize modalityLabel, authorLabel, directorLabel, cityLabel, nameLabel;
-@synthesize imageWebView, backgroundDefaultImage, loadingIndicator;
-@synthesize videosButton;
 
 
 #pragma mark - View lifecycle
@@ -29,29 +25,29 @@
 {
     [super viewDidLoad];
 
-    if (group)
+    if (self.group)
     {
         self.title = NSLocalizedString(self.group.nombre, self.group.nombre);
         
-        self.nameLabel.text = group.nombre;
-        self.modalityLabel.text = [group.modalidad lowercaseString];
-        self.authorLabel.text = group.autor;
-        self.directorLabel.text = group.director;
-        self.cityLabel.text = group.localidad;
+        self.nameLabel.text = self.group.nombre;
+        self.modalityLabel.text = [self.group.modalidad lowercaseString];
+        self.authorLabel.text = self.group.autor;
+        self.directorLabel.text = self.group.director;
+        self.cityLabel.text = self.group.localidad;
         
-        if ([group.urlFoto length] > 0) // The webView is transparent, if there's no url we are then showing the default image.
+        if ([self.group.urlFoto length] > 0) // The webView is transparent, if there's no url we are then showing the default image.
         {
-            NSURL *url = [NSURL URLWithString:group.urlFoto];
+            NSURL *url = [NSURL URLWithString:self.group.urlFoto];
             NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            [imageWebView loadRequest:requestObj];
+            [self.imageWebView loadRequest:requestObj];
         }
         
-        [self roundCornersForView:imageWebView];
-        [self roundCornersForView:backgroundDefaultImage];
+        [self roundCornersForView:self.imageWebView];
+        [self roundCornersForView:self.backgroundDefaultImage];
         
-        if ([group.videos count] > 0)
+        if ([self.group.videos count] > 0)
         {
-            [videosButton setHidden:NO];
+            [self.videosButton setHidden:NO];
         }
     }
 }
@@ -114,8 +110,8 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    [loadingIndicator setHidden:NO];
-    [loadingIndicator startAnimating];
+    [self.loadingIndicator setHidden:NO];
+    [self.loadingIndicator startAnimating];
     [[UIApplication sharedApplication] prp_pushNetworkActivity];
 }
 
@@ -123,9 +119,9 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [UIView animateWithDuration:0.5 animations:^{
-        imageWebView.alpha = 1.0;
+        self.imageWebView.alpha = 1.0;
     } completion:^(BOOL finished) {
-        [loadingIndicator stopAnimating];
+        [self.loadingIndicator stopAnimating];
         [[UIApplication sharedApplication] prp_popNetworkActivity];
     }];
 }
@@ -136,11 +132,11 @@
 
 - (IBAction) videosButtonPressed
 {
-    if ([group.videos count] > 0)
+    if ([self.group.videos count] > 0)
     {
         VideosForGroupViewController* controller = [[VideosForGroupViewController alloc] initWithNibName:@"BaseCoacListViewController" bundle:nil];
         
-        [controller setElementsArray:group.videos];
+        [controller setElementsArray:self.group.videos];
         [[self navigationController] pushViewController:controller animated:YES];
         [controller release];
     }
@@ -152,17 +148,17 @@
 
 - (void) dealloc
 {
-    imageWebView.delegate = nil;
-    [group release];
-    [nameLabel release];
-    [modalityLabel release];
-    [authorLabel release];
-    [directorLabel release];
-    [cityLabel release];
-    [imageWebView release];
-    [backgroundDefaultImage release];
-    [loadingIndicator release];
-    [videosButton release];
+    _imageWebView.delegate = nil;
+    [_group release];
+    [_nameLabel release];
+    [_modalityLabel release];
+    [_authorLabel release];
+    [_directorLabel release];
+    [_cityLabel release];
+    [_imageWebView release];
+    [_backgroundDefaultImage release];
+    [_loadingIndicator release];
+    [_videosButton release];
     [super dealloc];
 }
 

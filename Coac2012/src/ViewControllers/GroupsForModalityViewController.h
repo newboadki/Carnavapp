@@ -10,9 +10,6 @@
 #import "HeaderAndFooterListViewController.h"
 
 @interface GroupsForModalityViewController : HeaderAndFooterListViewController
-{
-    NSString* modality;
-}
 
 @property (nonatomic, retain) NSString* modality;
 

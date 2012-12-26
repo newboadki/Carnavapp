@@ -18,11 +18,6 @@
 @end
 
 @interface GroupNameSearchController : NSObject
-{
-    id<GroupNameSearchControllerDelegateProtocol> resultsDelegate;
-    NSArray* sampleArray;
-    NSOperationQueue* queue;
-}
 
 @property (nonatomic, assign) id<GroupNameSearchControllerDelegateProtocol> resultsDelegate;
 @property (nonatomic, retain) NSArray* sampleArray;

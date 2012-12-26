@@ -11,6 +11,6 @@
 (done)// 6. Remove cache the first time the new version of the app
 // 8. Contest Phases should select the current day if it's in the list
 (done)// 9. Add different backgrounds for different years
-// 10. Make methods protected for header and footer VC
+(done)// 10. Make methods protected for header and footer VC
 // 11. Design the view previous years cell
 (done)// 12. Move the results tab out of the first place, shall we bring 'Hoy' back ?

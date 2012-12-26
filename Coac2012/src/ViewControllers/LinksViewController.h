@@ -10,7 +10,5 @@
 #import "BaseCoacListViewController.h"
 
 @interface LinksViewController : BaseCoacListViewController
-{
-}
 
 @end

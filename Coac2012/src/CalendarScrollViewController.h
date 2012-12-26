@@ -11,13 +11,6 @@
 
 
 @interface CalendarScrollViewController : NSObject
-{
-    UIScrollView* scrollView;
-    @private    
-    NSArray* dates;
-    NSMutableArray* dayBoxControllers;
-    id<ScrollableBoxTappedDelegateProtocol> delegate;
-}
 
 @property (nonatomic, retain) UIView* view;
 @property (nonatomic, retain) NSArray* dates;

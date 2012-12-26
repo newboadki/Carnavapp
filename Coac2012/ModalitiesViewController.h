@@ -11,7 +11,5 @@
 #import "BaseCoacListViewController.h"
 
 @interface ModalitiesViewController : BaseCoacListViewController
-{
-}
 
 @end

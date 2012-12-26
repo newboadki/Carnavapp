@@ -13,12 +13,6 @@
 @end
 
 @interface SearchResultsTableViewController : UITableViewController
-{
-    NSArray* results;
-    UITableViewCell* cellFromNib;
-    NSDictionary* modelData;
-    id<SearchResultsTableViewControllerDelegateProtocol> selectionDelegate;
-}
 
 @property (nonatomic, retain) NSArray* results;
 @property (nonatomic, retain) NSDictionary* modelData;
