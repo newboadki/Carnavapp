@@ -116,7 +116,6 @@
 		002E7C13164851B000B69153 /* GroupNameSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9495914E87538006959C2 /* GroupNameSearchController.m */; };
 		002E7C14164851B000B69153 /* BSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085D9581568469500BB819D /* BSViewController.m */; };
 		002E7C15164851B900B69153 /* FileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */; };
-		002E7C16164851B900B69153 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
 		002E7C17164851F400B69153 /* Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 00820C4214CC6340008A914A /* Constants.h */; };
 		002E7C18164852AA00B69153 /* ModelDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C3D14CC42C0008A914A /* ModelDataHandler.m */; };
 		002E7C19164852AA00B69153 /* CoacParser_v_1_0_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD5314CACD9500427E42 /* CoacParser_v_1_0_4.m */; };
@@ -163,8 +162,8 @@
 		0086C2151685F9DE003F35F1 /* cartel_2013@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */; };
 		0086C2161685F9DE003F35F1 /* cartel_2013@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */; };
 		0086C2181685FC45003F35F1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0086C2171685FC45003F35F1 /* CoreImage.framework */; };
-		0086C21B16861658003F35F1 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* ImageManager.m */; };
-		0086C21C16861658003F35F1 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* ImageManager.m */; };
+		0086C21B16861658003F35F1 /* BackgroundImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* BackgroundImageManager.m */; };
+		0086C21C16861658003F35F1 /* BackgroundImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0086C21A16861658003F35F1 /* BackgroundImageManager.m */; };
 		0086C22316861A48003F35F1 /* gradientMap1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22116861A48003F35F1 /* gradientMap1.png */; };
 		0086C22416861A48003F35F1 /* gradientMap1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22116861A48003F35F1 /* gradientMap1.png */; };
 		0086C22516861A48003F35F1 /* gradientMap2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0086C22216861A48003F35F1 /* gradientMap2.png */; };
@@ -186,6 +185,8 @@
 		0088EFF2168B14D600BEA494 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0088EFED168B14D600BEA494 /* Default.png */; };
 		0088EFF3168B14D600BEA494 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0088EFEE168B14D600BEA494 /* Default@2x.png */; };
 		0088EFF4168B14D600BEA494 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0088EFEE168B14D600BEA494 /* Default@2x.png */; };
+		0089BBB2168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089BBB0168DA1DB00A2F21A /* ContestPhaseDatesHelper.m */; };
+		0089BBB3168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089BBB0168DA1DB00A2F21A /* ContestPhaseDatesHelper.m */; };
 		008EE9D714F5464C002BFA7F /* ContestResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */; };
 		008EE9DC14F573AD002BFA7F /* scoreboard_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */; };
 		008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */; };
@@ -193,7 +194,6 @@
 		00985C291683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */; };
 		00985C2A1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */; };
 		00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */; };
-		00A10FD0150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */; };
 		00A10FDB150A89F900D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD9150A89F900D1C425 /* active_day.png */; };
 		00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FDA150A89F900D1C425 /* inactive_day.png */; };
 		00A2B5981688C3AA00FA8C40 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A2B5971688C3AA00FA8C40 /* Result.m */; };
@@ -400,8 +400,8 @@
 		00861A1414EA7EBD00E27829 /* SearchresultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchresultCell.xib; sourceTree = "<group>"; };
 		0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cartel_2013@2x.png"; sourceTree = "<group>"; };
 		0086C2171685FC45003F35F1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		0086C21916861658003F35F1 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
-		0086C21A16861658003F35F1 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		0086C21916861658003F35F1 /* BackgroundImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundImageManager.h; sourceTree = "<group>"; };
+		0086C21A16861658003F35F1 /* BackgroundImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundImageManager.m; sourceTree = "<group>"; };
 		0086C22116861A48003F35F1 /* gradientMap1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientMap1.png; sourceTree = "<group>"; };
 		0086C22216861A48003F35F1 /* gradientMap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientMap2.png; sourceTree = "<group>"; };
 		0086C22716861F64003F35F1 /* cartel_2013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartel_2013.png; sourceTree = "<group>"; };
@@ -417,6 +417,8 @@
 		0088EFEC168B14D600BEA494 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0088EFED168B14D600BEA494 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0088EFEE168B14D600BEA494 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0089BBB0168DA1DB00A2F21A /* ContestPhaseDatesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseDatesHelper.m; sourceTree = "<group>"; };
+		0089BBB1168DA1DB00A2F21A /* ContestPhaseDatesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseDatesHelper.h; sourceTree = "<group>"; };
 		008EE9D414F5464C002BFA7F /* ContestResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestResultsViewController.h; sourceTree = "<group>"; };
 		008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestResultsViewController.m; sourceTree = "<group>"; };
 		008EE9DB14F573AD002BFA7F /* scoreboard_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreboard_icon3.png; sourceTree = "<group>"; };
@@ -424,8 +426,6 @@
 		008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemHelper.m; sourceTree = "<group>"; };
 		00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Carnavapp_v_1_0_3.xml; sourceTree = "<group>"; };
 		00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Carnavapp_v_1_0_4.xml; sourceTree = "<group>"; };
-		00A10FCE150A6E4A00D1C425 /* ContestPhaseDatesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseDatesHelper.h; sourceTree = "<group>"; };
-		00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseDatesHelper.m; sourceTree = "<group>"; };
 		00A10FD9150A89F900D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00A10FDA150A89F900D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
 		00A2B593168863F800FA8C40 /* HeaderAndFooterListViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HeaderAndFooterListViewController+Protected.h"; sourceTree = "<group>"; };
@@ -816,12 +816,12 @@
 		008EE9F714F6B2D6002BFA7F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0089BBB0168DA1DB00A2F21A /* ContestPhaseDatesHelper.m */,
+				0089BBB1168DA1DB00A2F21A /* ContestPhaseDatesHelper.h */,
 				008EE9F814F6B2F8002BFA7F /* FileSystemHelper.h */,
 				008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */,
-				00A10FCE150A6E4A00D1C425 /* ContestPhaseDatesHelper.h */,
-				00A10FCF150A6E4A00D1C425 /* ContestPhaseDatesHelper.m */,
-				0086C21916861658003F35F1 /* ImageManager.h */,
-				0086C21A16861658003F35F1 /* ImageManager.m */,
+				0086C21916861658003F35F1 /* BackgroundImageManager.h */,
+				0086C21A16861658003F35F1 /* BackgroundImageManager.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1427,7 +1427,6 @@
 				002E7C13164851B000B69153 /* GroupNameSearchController.m in Sources */,
 				002E7C14164851B000B69153 /* BSViewController.m in Sources */,
 				002E7C15164851B900B69153 /* FileSystemHelper.m in Sources */,
-				002E7C16164851B900B69153 /* ContestPhaseDatesHelper.m in Sources */,
 				002E7C1C164853F500B69153 /* ConsoleLogger.m in Sources */,
 				002E7C1D1648544500B69153 /* CXMLDocument.m in Sources */,
 				002E7C1E1648544500B69153 /* CXMLDocument_PrivateExtensions.m in Sources */,
@@ -1443,8 +1442,9 @@
 				0082B297167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
 				0082BBA5167E53CB007D6CF4 /* Parser_v_1_0_4Tests.m in Sources */,
 				0082BBA9167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
-				0086C21C16861658003F35F1 /* ImageManager.m in Sources */,
+				0086C21C16861658003F35F1 /* BackgroundImageManager.m in Sources */,
 				00A2B5991688C3AA00FA8C40 /* Result.m in Sources */,
+				0089BBB3168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1491,14 +1491,14 @@
 				008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */,
 				0052335014F823DC0034E314 /* FileDownloader.m in Sources */,
 				0052335414F823DC0034E314 /* ConsoleLogger.m in Sources */,
-				00A10FD0150A6E4A00D1C425 /* ContestPhaseDatesHelper.m in Sources */,
 				0085D9591568469500BB819D /* BSViewController.m in Sources */,
 				00AD9030166230F20099DEA6 /* YearSelectionViewController.m in Sources */,
 				00E22C0D1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */,
 				0082B296167BB8EE008529A9 /* LoadingScreenViewController.m in Sources */,
 				0082BBA8167E5447007D6CF4 /* CoacParser_v_1_0_3.m in Sources */,
-				0086C21B16861658003F35F1 /* ImageManager.m in Sources */,
+				0086C21B16861658003F35F1 /* BackgroundImageManager.m in Sources */,
 				00A2B5981688C3AA00FA8C40 /* Result.m in Sources */,
+				0089BBB2168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

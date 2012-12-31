@@ -9,8 +9,8 @@
 #import "ModalitiesViewController.h"
 #import "GroupsForModalityViewController.h"
 #import "Agrupacion.h"
-#import "ContestPhaseDatesHelper.h"
 #import "BaseCoacListViewController+Protected.h"
+#import "ContestPhaseDatesHelper.h"
 
 @implementation ModalitiesViewController
 

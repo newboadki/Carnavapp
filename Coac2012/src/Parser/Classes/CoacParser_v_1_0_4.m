@@ -23,6 +23,7 @@
 #define CALENDAR_POSITION_TAG_NAME          @"puesto"
 #define CALENDAR_GROUP_ATTRIBUTE_NAME       @"agrupacion"
 #define CALENDAR_REST_TOKEN                 @"DESCANSO"
+#define CALENDAR_PHASE_ATTRIBUTE_NAME       @"fase"
 
 #define RESULTS_GROUP_ID_TAG   @"agrupacion"
 #define RESULTS_PHASE_TAG      @"fase"
@@ -112,6 +113,7 @@
         
         groups = [[NSMutableDictionary alloc] init];        
         calendar = [[NSMutableDictionary alloc] init];
+        _daysForPhases = [[NSMutableDictionary alloc] init];
         links = [[NSMutableArray alloc] init];
         modalities = [[NSMutableDictionary alloc] init];
         _yearKeys = [[NSMutableArray alloc] initWithObjects:@"2013", @"2012", nil];
@@ -166,6 +168,7 @@
     
     NSDictionary* results = @{ GROUPS_KEY: groups,
                                CALENDAR_KEY: calendar,
+                               DAYS_FOR_PHASES_KEY : _daysForPhases,
                                LINKS_KEY: links,
                                MODALITIES_KEY: modalities,
                                YEARS_KEY:_yearKeys,
@@ -239,6 +242,7 @@
         dayNodes = [[calendarNode objectAtIndex:0] elementsForName:CALENDAR_DAY_TAG];
         for (CXMLElement* dayNode in dayNodes) {
             [self parseDay:dayNode fromYear:yearString];
+            [self parseDayForPhase:dayNode fromYear:yearString];
         }
     }
 
@@ -256,16 +260,16 @@
 }
 
 
-- (void) parseCalendar:(CXMLElement*)calendarNode
-{
-    NSString *yearString = [[calendarNode attributeForName:YEAR_ATTRIBUTE] stringValue];
-    NSArray* dayNodes = [calendarNode elementsForName:CALENDAR_DAY_TAG];
-    
-    for (CXMLElement* dayNode in dayNodes)
-    {
-        [self parseDay:dayNode fromYear:yearString];
-    }
-}
+//- (void) parseCalendar:(CXMLElement*)calendarNode
+//{
+//    NSString *yearString = [[calendarNode attributeForName:YEAR_ATTRIBUTE] stringValue];
+//    NSArray* dayNodes = [calendarNode elementsForName:CALENDAR_DAY_TAG];
+//    
+//    for (CXMLElement* dayNode in dayNodes)
+//    {
+//        [self parseDay:dayNode fromYear:yearString];
+//    }
+//}
 
 
 - (void) parseResultsNode:(CXMLElement*)resultNode fromYear:(NSString*)yearString
@@ -293,6 +297,30 @@
 }
 
 
+- (void) parseDayForPhase:(CXMLElement*)node fromYear:(NSString*)yearString
+{
+    NSString* dateString = [[node attributeForName:CALENDAR_DATE_ATTRIBUTE_NAME] stringValue];
+    NSString* phase = [[node attributeForName:CALENDAR_PHASE_ATTRIBUTE_NAME] stringValue];
+    
+    NSMutableDictionary* daysForPhasesForGivenYear = _daysForPhases[yearString];
+    if (!daysForPhasesForGivenYear)
+    {
+        daysForPhasesForGivenYear = [[NSMutableDictionary alloc] init];
+        _daysForPhases[yearString] = daysForPhasesForGivenYear;
+        [daysForPhasesForGivenYear release];
+    }
+    
+    NSMutableArray* daysForParticularPhase = daysForPhasesForGivenYear[phase];
+    if (!daysForParticularPhase)
+    {
+        daysForParticularPhase = [[NSMutableArray alloc] init];
+        daysForPhasesForGivenYear[phase] = daysForParticularPhase;
+        [daysForParticularPhase release];
+    }
+    
+    [daysForParticularPhase addObject:dateString];
+}
+
 - (void) parseDay:(CXMLElement*)node fromYear:(NSString*)yearString
 {
     NSString* dateString = [[node attributeForName:CALENDAR_DATE_ATTRIBUTE_NAME] stringValue];
@@ -300,7 +328,8 @@
     NSArray*  positionsNode = [node elementsForName:CALENDAR_POSITION_TAG_NAME];
 
     NSMutableDictionary* calendarForGivenYear = calendar[yearString];
-    if (!calendarForGivenYear) {
+    if (!calendarForGivenYear)
+    {
         calendarForGivenYear = [[NSMutableDictionary alloc] init];
         calendar[yearString] = calendarForGivenYear;
         [calendarForGivenYear release];
@@ -312,8 +341,6 @@
         calendarForGivenYear[dateString] = groupsForDateInYear;
         [groupsForDateInYear release];
     }
-    
-    
     
     for (CXMLElement* position in positionsNode)
     {        
@@ -604,6 +631,7 @@
 	/* Tidy-up.																			*/
 	/************************************************************************************/	
     [calendar release];
+    [_daysForPhases release];
     [groups release];
 	[xmlData release];
     [links release];

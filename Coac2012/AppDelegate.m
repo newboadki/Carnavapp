@@ -14,7 +14,7 @@
 #import "ContestPhaseDatesHelper.h"
 #import "LoadingScreenViewController.h"
 #import "ContestPhaseViewController.h"
-#import "ImageManager.h"
+#import "BackgroundImageManager.h"
 
 
 @implementation AppDelegate
@@ -27,8 +27,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Start caching the background Images because they have filters applied
-    [[ImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2012"];
-    [[ImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2013"];
+    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2012"];
+    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2013"];
     
     // As of v1.0.4 there's a new parser. Therefore We need to check for the dataModel cache in the file system.
     // If it's the first time we do this check, and the file exists, we delete it.

@@ -38,6 +38,10 @@
     [self.queue addOperationWithBlock:^{
         NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[c] %@", searchString]; // [c] to do a non case-sensitive search
         NSArray* results = [self.sampleArray filteredArrayUsingPredicate:predicate];
+        if (!results)
+        {
+            results = @[];
+        }
         
         NSDictionary* resultsDic = @{SEARCH_RESULTS_KEY: results, SEARCH_STRING_KEY: searchString};        
         [(NSObject*)self.resultsDelegate performSelectorOnMainThread:@selector(resultsAreReadyInDictionary:) withObject:resultsDic waitUntilDone:YES];

@@ -16,8 +16,9 @@
 @property (nonatomic, retain) NSArray* dates;
 @property (nonatomic, assign) id<ScrollableBoxTappedDelegateProtocol> delegate;
 @property (nonatomic, copy) NSString *yearString;
+@property (nonatomic, retain) NSDictionary* modelData;
 
-- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year;
+- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year modelData:(NSDictionary*)modelData;
 
 - (void) viewDidLoad;
 - (void) viewDidUnload;

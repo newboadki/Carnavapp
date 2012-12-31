@@ -10,12 +10,11 @@
 #import "Agrupacion.h"
 #import "GroupDetailViewController.h"
 #import "AppDelegate.h"
-#import "ContestPhaseDatesHelper.h"
 #import <CoreImage/CoreImage.h>
-#import "ImageManager.h"
+#import "BackgroundImageManager.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BaseCoacListViewController+Protected.h"
-
+#import "ContestPhaseDatesHelper.h"
 
 @implementation BaseCoacListViewController
 
@@ -137,7 +136,7 @@
     }
     
     // Set the year-dependant background
-    [self setUpBackgroundForYear:self.yearString];
+    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:self.backgroundImageView forYear:self.yearString];
     
     // Round corners of noContentView
     self.noContentMessageView.layer.cornerRadius = 8.0;
@@ -363,17 +362,12 @@
         self.backgroundImageView.alpha = 0.0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.3 animations:^{
-            self.backgroundImageView.image = [[ImageManager sharedInstance] imageForYear:self.yearString];
+            self.backgroundImageView.image = [[BackgroundImageManager sharedInstance] imageForYear:self.yearString];
             self.backgroundImageView.alpha = 0.3;
             [[NSNotificationCenter defaultCenter] removeObserver:self name:BACKGROUND_IMAGE_FINISHED_PROCESSING object:nil];
         }];
     }];
 }
 
-
-- (void) setUpBackgroundForYear:(NSString*)year
-{
-    [[ImageManager sharedInstance] setBackgroundImageInView:self.backgroundImageView forYear:year];
-}
 
 @end

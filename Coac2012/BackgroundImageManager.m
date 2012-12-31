@@ -6,22 +6,20 @@
 //  Copyright (c) 2012 Borja Arias Drake. All rights reserved.
 //
 
-#import "ImageManager.h"
+#import "BackgroundImageManager.h"
 #import "Constants.h"
 #import "FileSystemHelper.h"
 #import "ContestPhaseDatesHelper.h"
 
-@interface ImageManager ()
+@interface BackgroundImageManager ()
     @property (nonatomic, retain) NSMutableDictionary *imageInMemoryCache;
     @property (nonatomic, retain) NSMutableDictionary *imageDiskCache;
 @end
 
-static ImageManager *_sharedInstance;
+static BackgroundImageManager *_sharedInstance;
 
-@implementation ImageManager
+@implementation BackgroundImageManager
 
-@synthesize imageInMemoryCache = _imageInMemoryCache;
-@synthesize imageDiskCache = _imageDiskCache;
 
 - (id)init
 {
@@ -39,11 +37,12 @@ static ImageManager *_sharedInstance;
 {
     if (!_sharedInstance)
     {
-        _sharedInstance = [[ImageManager alloc] init];
+        _sharedInstance = [[BackgroundImageManager alloc] init];
     }
     
     return _sharedInstance;
 }
+
 
 - (NSString*) backgroundImageNameForYear:(NSString*)year
 {
@@ -52,6 +51,7 @@ static ImageManager *_sharedInstance;
     
     return namesForYears[year];
 }
+
 
 - (UIImage*) imageForYear:(NSString*)year
 {
@@ -121,6 +121,10 @@ static ImageManager *_sharedInstance;
 }
 
 
+/**
+ This method applies a filter synchronously. Users of this method should be aware of this back and run it on 
+ a background thread if pertinent.
+ */
 - (CGImageRef) imageWithSepiaFilterFromOriginalImageName:(NSString*)originalImageName
 {
     CIContext *context = [CIContext contextWithOptions:nil];

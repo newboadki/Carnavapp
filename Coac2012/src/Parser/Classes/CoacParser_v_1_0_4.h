@@ -17,6 +17,7 @@
     NSMutableDictionary*            groups;
     NSMutableArray*                 links;
     NSMutableDictionary*            calendar;
+    NSMutableDictionary*            _daysForPhases;
     NSMutableDictionary*            modalities;
     NSMutableArray*                 _yearKeys;
     NSMutableDictionary*            _results;

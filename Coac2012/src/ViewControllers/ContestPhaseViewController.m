@@ -9,9 +9,9 @@
 #import "ContestPhaseViewController.h"
 #import "CalendarScrollViewController.h"
 #import "GroupDetailViewController.h"
-#import "ContestPhaseDatesHelper.h"
 #import "YearSelectionViewController.h"
 #import "HeaderAndFooterListViewController+Protected.h"
+#import "ContestPhaseDatesHelper.h"
 
 @interface ContestPhaseViewController()
 - (void) handleGroupsForDate:(NSString*) selectedDate;
@@ -67,18 +67,31 @@
     {
         self.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
     }
-    NSArray* daysForContestInYear = [ContestPhaseDatesHelper allDaysForContestInYear:self.yearString];
-    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForContestInYear andDelegate:self andYearString:self.yearString];
+    NSArray* daysForContestInYear = [self allDaysForContestInYear:self.yearString];
+    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForContestInYear andDelegate:self andYearString:self.yearString modelData:self.modelData];
     [self setCalendarController:cc];
     [cc release];
     
     [self.view addSubview:self.calendarController.view];
     [self.calendarController viewDidLoad];
-    
-    
-    
 }
 
+
+- (NSArray*) allDaysForContestInYear:(NSString*)year
+{
+    NSMutableArray* result = [NSMutableArray array];
+    NSArray* daysForPreliminaresInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][PRELIMINAR];
+    NSArray* daysForCuartosInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][CUARTOS];
+    NSArray* daysForSemifinalesInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][SEMIFINALES];
+    NSArray* daysForFinalInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][FINAL];
+    
+    [result addObjectsFromArray:daysForPreliminaresInYear];
+    [result addObjectsFromArray:daysForCuartosInYear];
+    [result addObjectsFromArray:daysForSemifinalesInYear];
+    [result addObjectsFromArray:daysForFinalInYear];
+    
+    return result;        
+}
 
 - (void)didReceiveMemoryWarning
 {

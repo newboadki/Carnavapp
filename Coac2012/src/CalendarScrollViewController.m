@@ -8,7 +8,6 @@
 
 #import "CalendarScrollViewController.h"
 #import "RoundedCalendarBoxController.h"
-#import "ContestPhaseDatesHelper.h"
 
 @interface CalendarScrollViewController()
 
@@ -26,7 +25,7 @@
 
 #pragma mark - Initializators
 
-- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year
+- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year modelData:(NSDictionary*)modelData
 {
     self = [super init];
     
@@ -36,6 +35,7 @@
         _dayBoxControllers = [[NSMutableArray alloc] init];
         _delegate = del;
         _yearString = [year copy];
+        _modelData = [modelData retain];
     }
     
     return self;
@@ -83,7 +83,7 @@
     {
         
         NSString* dateString = self.dates[i];
-        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDatesInYear:[ContestPhaseDatesHelper phasesDates][self.yearString]];
+        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDatesInYear:self.modelData[DAYS_FOR_PHASES_KEY][self.yearString]];
         [self.dayBoxControllers addObject:controller];        
 
         // add the views        
@@ -110,7 +110,8 @@
         if ([cont.dateString isEqualToString:todaysDateString])
         {
             todayIsInTheList = YES;
-            [cont setActiveLook];            
+            [cont setActiveLook];
+            [self.scrollView scrollRectToVisible:cont.view.frame animated:YES];
         }
 
         [cont viewDidLoad];        
@@ -175,6 +176,7 @@
 
 - (NSString*) todaysDateString
 {
+    return @"31/12/2012";
     NSDate* today = [NSDate date];
     NSDateFormatter* df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
@@ -194,6 +196,7 @@
     [_scrollView release];
     [_dates release];
     [_yearString release];
+    [_modelData release];
     [super dealloc];
 }
 

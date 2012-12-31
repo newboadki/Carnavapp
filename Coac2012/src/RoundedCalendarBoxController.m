@@ -167,7 +167,7 @@
 - (void) setActiveLook
 {
     //self.backgroundView.image = [UIImage imageNamed:@"active_day.png"];
-    self.coloredAreaView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:153.0/255.0 alpha:1.0];
+    self.coloredAreaView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
 }
 
 

@@ -9,7 +9,8 @@
 
 // XML Server Url
 //#define XML_SERVER_URL @"http://jcorralejo.googlecode.com/svn/trunk/coac2012/coac2012.xml"
-#define XML_SERVER_URL @"https://dl.dropbox.com/u/35927076/data_parser_v_1_0_4.xml"
+//#define XML_SERVER_URL @"https://dl.dropbox.com/u/35927076/data_parser_v_1_0_4.xml"
+#define XML_SERVER_URL @"https://jcorralejo.googlecode.com/svn/trunk/Carnavapp/carnavapp.xml"
 
 
 #define BACKGROUND_IMAGES_DISK_CACHE_FILE_NAME @"backgroundImagesDiskCacheFileName"
@@ -29,6 +30,7 @@
 // Modalities
 #define GROUPS_KEY @"GroupsKey"
 #define CALENDAR_KEY @"CalendarKey"
+#define DAYS_FOR_PHASES_KEY @"DaysForPhasesKey"
 #define LINKS_KEY @"LinksKey"
 #define MODALITIES_KEY @"ModalitiesKey"
 #define YEARS_KEY @"YearsKey"
@@ -36,10 +38,10 @@
 
 
 // Contest Phases
-#define PRELIMINAR @"Preliminar"
-#define CUARTOS @"Cuartos"
-#define SEMIFINALES @"Semifinales"
-#define FINAL @"Final"
+#define PRELIMINAR @"PREELIMINAR"
+#define CUARTOS @"CUARTOS"
+#define SEMIFINALES @"SEMIFINAL"
+#define FINAL @"FINAL"
 
 // GroupCellInfo NIB
 #define GROUP_NAME_LABEL_TAG 1
