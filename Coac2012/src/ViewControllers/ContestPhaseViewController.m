@@ -47,6 +47,16 @@
     {
         NSString* selectedDate = calendarForGivenYear[0];
         [self handleGroupsForDate:selectedDate];
+        
+        // There's new data, reload the calendar view
+        CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self
+                                                                                    andYearString:self.yearString
+                                                                                        modelData:self.modelData];
+        [self setCalendarController:cc];
+        [cc release];
+        
+        [self.view addSubview:self.calendarController.view];
+        [self.calendarController viewDidLoad];
     }
 }
 
@@ -67,8 +77,8 @@
     {
         self.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
     }
-    NSArray* daysForContestInYear = [self allDaysForContestInYear:self.yearString];
-    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDates:daysForContestInYear andDelegate:self andYearString:self.yearString modelData:self.modelData];
+
+    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self andYearString:self.yearString modelData:self.modelData];
     [self setCalendarController:cc];
     [cc release];
     

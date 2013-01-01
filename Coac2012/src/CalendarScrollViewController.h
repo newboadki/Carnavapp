@@ -13,18 +13,16 @@
 @interface CalendarScrollViewController : NSObject
 
 @property (nonatomic, retain) UIView* view;
-@property (nonatomic, retain) NSArray* dates;
 @property (nonatomic, assign) id<ScrollableBoxTappedDelegateProtocol> delegate;
 @property (nonatomic, copy) NSString *yearString;
 @property (nonatomic, retain) NSDictionary* modelData;
 
-- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year modelData:(NSDictionary*)modelData;
+- (id) initWithDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year modelData:(NSDictionary*)modelData;
 
 - (void) viewDidLoad;
 - (void) viewDidUnload;
 - (void) viewWillAppear:(BOOL)animated;
 - (void) viewWillDisappear:(BOOL)animated;
-
 - (void) handleTap:(id) sender;
 
 @end

@@ -14,3 +14,7 @@
 (done)// 10. Make methods protected for header and footer VC
 // 11. Design the view previous years cell
 (done)// 12. Move the results tab out of the first place, shall we bring 'Hoy' back ?
+
+13. There are some changes on the parser that have not been tested: (A) the modelData has now the daysForPhases. for that, the days nodes have a fase tag.
+Puntuaciones sections, as part of the results
+

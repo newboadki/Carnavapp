@@ -25,13 +25,12 @@
 
 #pragma mark - Initializators
 
-- (id) initWithDates:(NSArray*)theDates andDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year modelData:(NSDictionary*)modelData
+- (id) initWithDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year modelData:(NSDictionary*)modelData
 {
     self = [super init];
     
     if (self)
     {
-        _dates = [theDates retain];
         _dayBoxControllers = [[NSMutableArray alloc] init];
         _delegate = del;
         _yearString = [year copy];
@@ -62,7 +61,7 @@
 #define PADDING 0.1
 
 - (void) loadView
-{
+{    
     // Create the view
     // will only be called once, only form the view getter.
     CGRect frame = [[UIScreen mainScreen] bounds];
@@ -70,19 +69,19 @@
     frame.size.width += (2 * PADDING);
 
     // Create the scroll view
-    UIScrollView* sv = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 71)];// Day boxes are 50x50, refactor to get this from the nib 
+    UIScrollView* sv = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 71)];// Day boxes are 50x50, refactor to get this from the nib
     self.scrollView = [sv retain];
     [sv release];
     self.scrollView.backgroundColor = [UIColor clearColor];
     
     // Resize scrollView contentSize
-    self.scrollView.contentSize = CGSizeMake([self.dates count]*45, 71); // Day boxes are 45x68, refactor to get this from the nib
+    self.scrollView.contentSize = CGSizeMake([[self allDaysForContestInYear:self.yearString] count]*45, 71); // Day boxes are 45x68, refactor to get this from the nib
     
     // Create the dayBoxes controllers
-    for (int i=0; i<[self.dates count]; i++)
+    for (int i=0; i<[[self allDaysForContestInYear:self.yearString] count]; i++)
     {
         
-        NSString* dateString = self.dates[i];
+        NSString* dateString = [self allDaysForContestInYear:self.yearString][i];
         RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDatesInYear:self.modelData[DAYS_FOR_PHASES_KEY][self.yearString]];
         [self.dayBoxControllers addObject:controller];        
 
@@ -187,6 +186,22 @@
 }
 
 
+- (NSArray*) allDaysForContestInYear:(NSString*)year
+{
+    NSMutableArray* result = [NSMutableArray array];
+    NSArray* daysForPreliminaresInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][PRELIMINAR];
+    NSArray* daysForCuartosInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][CUARTOS];
+    NSArray* daysForSemifinalesInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][SEMIFINALES];
+    NSArray* daysForFinalInYear = self.modelData[DAYS_FOR_PHASES_KEY][year][FINAL];
+    
+    [result addObjectsFromArray:daysForPreliminaresInYear];
+    [result addObjectsFromArray:daysForCuartosInYear];
+    [result addObjectsFromArray:daysForSemifinalesInYear];
+    [result addObjectsFromArray:daysForFinalInYear];
+    
+    return result;
+}
+
 
 #pragma mark - Memory Management
 
@@ -194,7 +209,6 @@
 {
     [_dayBoxControllers release];
     [_scrollView release];
-    [_dates release];
     [_yearString release];
     [_modelData release];
     [super dealloc];

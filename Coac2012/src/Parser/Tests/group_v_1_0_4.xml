@@ -52,11 +52,11 @@
             </agrupaciones>
             
             <calendario>
-                <dia fecha="21/01/2012">
+                <dia fecha="21/01/2012" fase="PREELIMINAR">
                     <puesto no="1" agrupacion="1"/>
                     <puesto no="1" agrupacion="2"/>
                 </dia>
-                <dia fecha="22/01/2012">
+                <dia fecha="22/01/2012" fase="PREELIMINAR">
                     <puesto no="1" agrupacion="2"/>
                     <puesto no="1" agrupacion="1"/>
                 </dia>
@@ -121,11 +121,11 @@
             </agrupaciones>
             
             <calendario>
-                <dia fecha="18/01/2013">
+                <dia fecha="18/01/2013" fase="PREELIMINAR">
                     <puesto no="1" agrupacion="1"/>
                     <puesto no="1" agrupacion="3"/>
                 </dia>
-                <dia fecha="24/02/2013">
+                <dia fecha="24/02/2013" fase="PREELIMINAR">
                     <puesto no="1" agrupacion="3"/>
                     <puesto no="1" agrupacion="1"/>
                 </dia>

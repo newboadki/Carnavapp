@@ -216,6 +216,11 @@
     STAssertTrue(0 == [results2013 count], @"Results for 2013 should be empty");
 }
 
+- (void) testDaysForPhases
+{
+    STAssertTrue(1 == 2, @"Pending ...");
+}
+
 - (void) testParsingLinks
 {
     NSDictionary* results = [parser doParsingSync]; // Calling the private method as NSOperation wasn't working on the tests. 
