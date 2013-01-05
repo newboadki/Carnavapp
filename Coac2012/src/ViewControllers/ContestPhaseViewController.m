@@ -42,13 +42,26 @@
 {
     NSDictionary* calendarDictionaryForAllYears = self.modelData[CALENDAR_KEY];
     NSArray* calendarForGivenYear = [calendarDictionaryForAllYears[self.yearString] allKeys];
-
-    if([calendarForGivenYear count] > 0)
+    NSArray* orderedCalendarForGivenYear = [calendarForGivenYear sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSString* dateString1 = obj1;
+        NSString* dateString2 = obj2;
+        
+        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"dd/MM/yyyy"];
+        NSDate* date1 = [df dateFromString:dateString1];
+        NSDate* date2 = [df dateFromString:dateString2];
+        [df release];
+        
+        return  [date1 compare:date2];
+    }];
+    
+    if([orderedCalendarForGivenYear count] > 0)
     {
-        NSString* selectedDate = calendarForGivenYear[0];
+        NSString* selectedDate = orderedCalendarForGivenYear[0];
         [self handleGroupsForDate:selectedDate];
         
         // There's new data, reload the calendar view
+        [self.calendarController.view removeFromSuperview];
         CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self
                                                                                     andYearString:self.yearString
                                                                                         modelData:self.modelData];
@@ -78,12 +91,17 @@
         self.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
     }
 
-    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self andYearString:self.yearString modelData:self.modelData];
-    [self setCalendarController:cc];
-    [cc release];
-    
-    [self.view addSubview:self.calendarController.view];
-    [self.calendarController viewDidLoad];
+    if (!self.calendarController)
+    {
+        CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self
+                                                                                    andYearString:self.yearString
+                                                                                        modelData:self.modelData];
+        [self setCalendarController:cc];
+        [cc release];
+        
+        [self.view addSubview:self.calendarController.view];
+        [self.calendarController viewDidLoad];
+    }
 }
 
 

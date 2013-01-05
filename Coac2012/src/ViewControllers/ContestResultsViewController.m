@@ -51,8 +51,13 @@
         
         NSComparisonResult (^comparatorBlock) (id obj1, id obj2) = ^NSComparisonResult(id obj1, id obj2) {
             Result* r1 = (Result*)obj1;
-            Result* r2 = (Result*)obj2;            
-            return [r1.points compare:r2.points];
+            Result* r2 = (Result*)obj2;
+            
+            // This block will be used in sortedArrayUsingComparator: which orders ascendent
+            // The order we are insterested is descendant as a biger number of points means that gourp is listed first
+            NSComparisonResult regularResult = [r1.points compare:r2.points];
+            NSComparisonResult invertedResult = (regularResult == NSOrderedAscending) ? NSOrderedDescending : ((regularResult == NSOrderedDescending) ? NSOrderedAscending: NSOrderedSame);
+            return invertedResult;
         };
         
         NSArray *orderedCoros = [coros sortedArrayUsingComparator:comparatorBlock];

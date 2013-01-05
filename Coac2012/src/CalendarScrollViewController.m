@@ -175,7 +175,6 @@
 
 - (NSString*) todaysDateString
 {
-    return @"31/12/2012";
     NSDate* today = [NSDate date];
     NSDateFormatter* df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];

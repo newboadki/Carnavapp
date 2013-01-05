@@ -85,7 +85,6 @@
     
     [nextController performSelector:@selector(setYearString:) withObject:selectedYear];
     [nextController setModelData:self.modelData];
-    //[nextController performSelector:@selector(updateArrayOfElements)];
     
     [[self navigationController] pushViewController:nextController animated:YES];
     [nextController release];
