@@ -438,7 +438,7 @@
 		00AD902916621FC10099DEA6 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		00AD902D166230F20099DEA6 /* YearSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearSelectionViewController.h; sourceTree = "<group>"; };
 		00AD902E166230F20099DEA6 /* YearSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearSelectionViewController.m; sourceTree = "<group>"; };
-		00AECA7414CAC6DC005CE4DC /* coac2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coac2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00AECA7414CAC6DC005CE4DC /* Carnavapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carnavapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AECA7814CAC6DC005CE4DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00AECA7A14CAC6DC005CE4DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00AECA7C14CAC6DC005CE4DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -860,7 +860,7 @@
 		00AECA7514CAC6DC005CE4DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00AECA7414CAC6DC005CE4DC /* coac2012.app */,
+				00AECA7414CAC6DC005CE4DC /* Carnavapp.app */,
 				00021BEB15EFACC700536D6E /* coac2012Tests.octest */,
 			);
 			name = Products;
@@ -1175,9 +1175,9 @@
 			productReference = 00021BEB15EFACC700536D6E /* coac2012Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		00AECA7314CAC6DC005CE4DC /* coac2012 */ = {
+		00AECA7314CAC6DC005CE4DC /* Carnavapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */;
+			buildConfigurationList = 00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Carnavapp" */;
 			buildPhases = (
 				00AECA7014CAC6DC005CE4DC /* Sources */,
 				00AECA7114CAC6DC005CE4DC /* Frameworks */,
@@ -1187,9 +1187,9 @@
 			);
 			dependencies = (
 			);
-			name = coac2012;
+			name = Carnavapp;
 			productName = Coac2012;
-			productReference = 00AECA7414CAC6DC005CE4DC /* coac2012.app */;
+			productReference = 00AECA7414CAC6DC005CE4DC /* Carnavapp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1213,7 +1213,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00AECA7314CAC6DC005CE4DC /* coac2012 */,
+				00AECA7314CAC6DC005CE4DC /* Carnavapp */,
 				00021BEA15EFACC700536D6E /* coac2012Tests */,
 			);
 		};
@@ -1651,7 +1651,7 @@
 					"\"$(SRCROOT)/Coac2012/src/External/FileDownloader\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E5EB4D93-8D9F-4A3E-B21D-79A3D5535EBE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EB20167-6500-4E74-A51E-FE4274B292DF";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1702,7 +1702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "coac2012" */ = {
+		00AECAB514CAC6DC005CE4DC /* Build configuration list for PBXNativeTarget "Carnavapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00AECAB614CAC6DC005CE4DC /* Debug */,
