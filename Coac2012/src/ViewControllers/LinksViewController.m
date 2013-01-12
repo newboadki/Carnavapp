@@ -66,7 +66,6 @@
     
 
     Link* selectedLink = self.elementsArray[[indexPath row]];
-    NSLog(@"link: %@", selectedLink.url);
     LinkViewerViewController* nextController = [[LinkViewerViewController alloc] initWithNibName:@"LinkViewerViewController" bundle:nil];
     [nextController setLink:selectedLink];
     

@@ -177,7 +177,7 @@
 - (void) componentesFromDateString:(NSString*)ds day:(int*)d month:(int*)m year:(int*)y
 {    
     NSDateFormatter* df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"dd/MM/yyyy"];
+    [df setDateFormat:COAC_DATE_FORMAT];
     NSDate* date = [df dateFromString:ds];
     [df release];
 

@@ -11,6 +11,8 @@
 #import "FileSystemHelper.h"
 #import "ContestPhaseDatesHelper.h"
 
+#define BACKGROUND_ALPHA 0.2
+
 @interface BackgroundImageManager ()
     @property (nonatomic, retain) NSMutableDictionary *imageInMemoryCache;
     @property (nonatomic, retain) NSMutableDictionary *imageDiskCache;
@@ -70,7 +72,7 @@ static BackgroundImageManager *_sharedInstance;
     if (image)
     {
         imageView.image = image;
-        imageView.alpha = 0.3;
+        imageView.alpha = BACKGROUND_ALPHA;
         return;
     }
     else
@@ -89,7 +91,7 @@ static BackgroundImageManager *_sharedInstance;
             if (diskCachedImage)
             {
                 imageView.image = diskCachedImage;
-                imageView.alpha = 0.3;
+                imageView.alpha = BACKGROUND_ALPHA;
                 self.imageInMemoryCache[year] = diskCachedImage;
                 return;
             }
@@ -106,7 +108,7 @@ static BackgroundImageManager *_sharedInstance;
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImage *resultUIImage = [UIImage imageWithCGImage:resultCGImage];            
             imageView.image = resultUIImage;
-            imageView.alpha = 0.3;
+            imageView.alpha = BACKGROUND_ALPHA;
             self.imageInMemoryCache[year] = resultUIImage;
             
             NSData* uiImageData = UIImagePNGRepresentation(resultUIImage);

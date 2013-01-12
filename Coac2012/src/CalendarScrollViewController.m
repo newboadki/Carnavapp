@@ -177,7 +177,7 @@
 {
     NSDate* today = [NSDate date];
     NSDateFormatter* df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"dd/MM/yyyy"];
+    [df setDateFormat:COAC_DATE_FORMAT];
     NSString* todaysDateString = [df stringFromDate:today];
     [df release];
     

@@ -15,5 +15,6 @@
 @property (nonatomic, retain) IBOutlet UIWebView* webView;
 @property (nonatomic, retain) Link* link;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* loadingIndicator;
+@property (nonatomic, retain) IBOutlet UIImageView* backgroundImageView;
 
 @end

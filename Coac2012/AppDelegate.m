@@ -62,6 +62,13 @@
     contestPhasesViewController.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
     [contestPhasesViewController updateArrayOfElements];
     
+    
+    // Apply Styles for UI iOS > 5.0
+    if ([self.tabBarController.tabBar respondsToSelector:@selector(selectedImageTintColor)])
+    {
+        self.tabBarController.tabBar.selectedImageTintColor = [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
+    }
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;

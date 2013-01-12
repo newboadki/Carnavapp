@@ -47,7 +47,7 @@
         NSString* dateString2 = obj2;
         
         NSDateFormatter* df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"dd/MM/yyyy"];
+        [df setDateFormat:COAC_DATE_FORMAT];
         NSDate* date1 = [df dateFromString:dateString1];
         NSDate* date2 = [df dateFromString:dateString2];
         [df release];
@@ -198,6 +198,19 @@
     {
         groupNameLabel.text = ag.nombre;
         categoryNameLabel.text = [NSString stringWithFormat:@"%@ (%@)", ag.modalidad, ag.localidad];
+        
+        // Color group if Head of group
+        UIColor *textColor = nil;
+        if ([ag.esCabezaDeSerie boolValue])
+        {
+            textColor = [UIColor colorWithRed:69.0/256.0 green:0.0/256.0 blue:31.0/256.0 alpha:1.0];
+        }
+        else
+        {
+            textColor = [UIColor blackColor];
+        }
+        
+        groupNameLabel.textColor = textColor;
     }
     else
     {

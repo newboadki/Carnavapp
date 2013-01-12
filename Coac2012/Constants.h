@@ -51,3 +51,6 @@
 
 // YearHearderViewLabel NIB
 #define YEAR_HEADER_VIEW_LABEL_TAG  1
+
+// DATES
+#define COAC_DATE_FORMAT @"dd/MM/yyyy"

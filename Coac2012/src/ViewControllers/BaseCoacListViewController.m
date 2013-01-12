@@ -259,7 +259,7 @@
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
-    cell.selectedBackgroundView = [[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil][0] ;
+    cell.selectedBackgroundView = [[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil][0];
     [self configureCell:cell indexPath:indexPath]; 
     
     [UIView animateWithDuration:0.5 animations:^{

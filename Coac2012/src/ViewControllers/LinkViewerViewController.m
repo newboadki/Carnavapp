@@ -8,6 +8,8 @@
 
 #import "LinkViewerViewController.h"
 #import "UIApplication+PRPNetworkActivity.h"
+#import "BackgroundImageManager.h"
+#import "ContestPhaseDatesHelper.h"
 
 @implementation LinkViewerViewController
 
@@ -21,6 +23,7 @@
     _webView.delegate = nil;
     [_webView release];
     [_loadingIndicator release];
+    [_backgroundImageView release];
     
     [super dealloc];    
 }
@@ -63,7 +66,10 @@
     NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.link.url]];
     [self.webView loadRequest:request];
     self.title = self.link.desc;
-    // Do any additional setup after loading the view from its nib.
+    
+    // Load the background
+    NSString* currentYear = [[ContestPhaseDatesHelper yearKeys] lastObject];
+    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:self.backgroundImageView forYear:currentYear];
 }
 
 - (void)viewDidUnload
