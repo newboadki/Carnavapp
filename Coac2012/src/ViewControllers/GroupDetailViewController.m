@@ -47,10 +47,6 @@
         // Set Up title and group's name label
         self.title = NSLocalizedString(self.group.nombre, self.group.nombre);
         self.nameLabel.text = self.group.nombre;
-
-        
-        [self setUpImageView];
-        
         
         // Show video button.
         if ([self.group.videos count] > 0)
@@ -81,6 +77,9 @@
     // We need to do this geometry related operations in viewWillAppear
     [self setDimensionsOfDetailsTableView];
     [self setDimensionsOfScrollView];
+    
+    // By loading the image view here, we allow after-regaining-conectivity recovery
+    [self setUpImageView];
 }
 
 
