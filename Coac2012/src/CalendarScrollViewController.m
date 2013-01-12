@@ -70,7 +70,7 @@
 
     // Create the scroll view
     UIScrollView* sv = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 71)];// Day boxes are 50x50, refactor to get this from the nib
-    self.scrollView = [sv retain];
+    [self setScrollView:sv];
     [sv release];
     self.scrollView.backgroundColor = [UIColor clearColor];
     
