@@ -115,6 +115,8 @@
         self.cellFromNib = [[NSBundle mainBundle] loadNibNamed:nibToLoad owner:self options:nil][0];
         cell = self.cellFromNib;
         self.cellFromNib = nil;
+        
+        cell.selectedBackgroundView = [[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil][0];
     }
     
     // Configure the cell...
@@ -192,11 +194,12 @@
     {
         // transform the indexPath to a content-section-only indexpath
         NSIndexPath *contentIndexPath = indexPath;
-        if (self.showHeader) {
+        if (self.showHeader)
+        {
             contentIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section-1];
         }
-        [super tableView:theTableView didSelectRowAtIndexPath:contentIndexPath];
-        [self tableView:(UITableView *)theTableView didSelectContentRowAtIndexPath:contentIndexPath];
+        [self tableView:(UITableView *)theTableView didSelectContentRowAtIndexPath:contentIndexPath];        
+        [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     }
 }
 

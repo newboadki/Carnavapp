@@ -28,6 +28,7 @@
 
 - (void) setNormalLook;
 - (void) setActiveLook;
+- (void) setUpView;
 
 - (id) initWithTapDelegate:(CalendarScrollViewController*)delegate andDateString:(NSString*)ds andContestPhasesDatesInYear:(NSDictionary*)phasesDictionaryInYear;
 

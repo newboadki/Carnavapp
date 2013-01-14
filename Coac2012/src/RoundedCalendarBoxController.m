@@ -106,20 +106,14 @@
 
 - (void) viewDidLoad
 {
-    // The view will be on the hierarchy already    
-    int day, month, year;
-    [self componentesFromDateString:self.dateString day:(&day) month:(&month) year:(&year)];
-    [self setBackgroundColorForDate:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
-    [self setPhaseLabelWithDateString:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
-    self.monthLabel.text = [NSString stringWithFormat:@"%@", self.monthsNames[@(month)]];
-    self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
-
+    // The view will be on the hierarchy already
+    [self setUpView];
 }
 
 
 - (void) viewDidUnload
 {
-    // We assume that this view will be contained by another one. That view's controller will execure viewDidUnload (our superview), so our view will be out of the hierarchy anyway. That's why I'm not calling [scrollView removeFromSuperview];
+    // We assume that this view will be contained by another one. That view's controller will execute viewDidUnload (our superview), so our view will be out of the hierarchy anyway. That's why I'm not calling [scrollView removeFromSuperview];
     [_monthLabel release];
     _monthLabel = nil;
     [_dayLabel release];
@@ -137,7 +131,17 @@
 
 - (void) viewWillAppear
 {
-    
+   // [self setUpView]; // I need to do this as there's an issue, the first time the app runs. There's no data, the scrollView is empty, and when reloading, the labels don't get populated in viewDidLoad
+}
+
+- (void) setUpView
+{
+    int day, month, year;
+    [self componentesFromDateString:self.dateString day:(&day) month:(&month) year:(&year)];
+    [self setBackgroundColorForDate:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
+    [self setPhaseLabelWithDateString:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
+    self.monthLabel.text = [NSString stringWithFormat:@"%@", self.monthsNames[@(month)]];
+    self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 }
 
 
@@ -159,14 +163,12 @@
 
 - (void) setNormalLook
 {
-    //self.backgroundView.image = [UIImage imageNamed:@"inactive_day.png"];
     [self setBackgroundColorForDate:self.dateString inPhaseDictionaryForYear:self.contestPhaseDatesInYear];
 }
 
 
 - (void) setActiveLook
 {
-    //self.backgroundView.image = [UIImage imageNamed:@"active_day.png"];
     self.coloredAreaView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
 }
 

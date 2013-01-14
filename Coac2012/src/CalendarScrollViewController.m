@@ -63,7 +63,7 @@
 - (void) loadView
 {    
     // Create the view
-    // will only be called once, only form the view getter.
+    // will only be called once, only from the view getter.
     CGRect frame = [[UIScreen mainScreen] bounds];
     frame.origin.x -= PADDING;
     frame.size.width += (2 * PADDING);
@@ -75,17 +75,54 @@
     self.scrollView.backgroundColor = [UIColor clearColor];
     
     // Resize scrollView contentSize
-    self.scrollView.contentSize = CGSizeMake([[self allDaysForContestInYear:self.yearString] count]*45, 71); // Day boxes are 45x68, refactor to get this from the nib
+    NSArray *allDaysInContestInYear = [self allDaysForContestInYear:self.yearString];
+    [self resizeScrollViewForDaysInContest:allDaysInContestInYear];
     
     // Create the dayBoxes controllers
-    for (int i=0; i<[[self allDaysForContestInYear:self.yearString] count]; i++)
-    {
-        
-        NSString* dateString = [self allDaysForContestInYear:self.yearString][i];
-        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDatesInYear:self.modelData[DAYS_FOR_PHASES_KEY][self.yearString]];
-        [self.dayBoxControllers addObject:controller];        
+    [self createDayBoxesForDaysInContest:allDaysInContestInYear];
+}
 
-        // add the views        
+- (void) reloadView
+{
+    // Remove all the subviews
+    [self removeAllDayBoxes];
+    
+    // Resize the scrollView
+    NSArray *allDaysInContestInYear = [self allDaysForContestInYear:self.yearString];
+    [self resizeScrollViewForDaysInContest:allDaysInContestInYear];
+    
+    // Create all the day boxes subviews
+    [self createDayBoxesForDaysInContest:allDaysInContestInYear];    
+}
+
+
+- (void) removeAllDayBoxes
+{
+    for (RoundedCalendarBoxController* cont in self.dayBoxControllers)
+    {
+        // Remove the views
+        [cont.view removeFromSuperview];
+        [cont viewDidUnload];
+    }
+    
+    // Remove the Controllers
+    [self.dayBoxControllers removeAllObjects];
+}
+
+- (void) resizeScrollViewForDaysInContest:(NSArray*)allDaysInContestInYear
+{
+    self.scrollView.contentSize = CGSizeMake([allDaysInContestInYear count] * 45, 71); // TODO: Day boxes are 45x68, refactor to get this from the nib
+}
+
+- (void) createDayBoxesForDaysInContest:(NSArray*)allDaysInContestInYear
+{
+    for (int i=0; i<[allDaysInContestInYear count]; i++)
+    {        
+        NSString* dateString = allDaysInContestInYear[i];
+        RoundedCalendarBoxController* controller = [[RoundedCalendarBoxController alloc] initWithTapDelegate:self andDateString:dateString andContestPhasesDatesInYear:self.modelData[DAYS_FOR_PHASES_KEY][self.yearString]];
+        [self.dayBoxControllers addObject:controller];
+        
+        // add the views
         // set up the padding
         float pageWidth = controller.view.frame.size.width;
         pageWidth -= (2 * PADDING);
@@ -94,10 +131,37 @@
         
         controller.view.frame = pageFrame;
         [self.scrollView addSubview:controller.view];
+        [controller setUpView]; // This seems to fix the unconfigured calendar boxes problem.
         [controller release];
-    }
+    }    
 }
 
+- (void) selectCurrentDate
+{
+    BOOL todayIsInTheList = NO;
+    for (RoundedCalendarBoxController* cont in self.dayBoxControllers)
+    {
+        NSString* todaysDateString = [self todaysDateString];
+        if ([cont.dateString isEqualToString:todaysDateString])
+        {
+            todayIsInTheList = YES;
+            [cont setActiveLook];
+            [self.scrollView scrollRectToVisible:cont.view.frame animated:YES];
+        }
+        else
+        {            
+            [cont setNormalLook];
+        }
+    }
+    
+    if (!todayIsInTheList)
+    {
+        if ([self.dayBoxControllers count] > 0)
+        {
+            RoundedCalendarBoxController* firstController = self.dayBoxControllers[0];
+            [firstController setActiveLook];
+        }
+    }}
 
 - (void) viewDidLoad
 {
@@ -128,11 +192,7 @@
 
 - (void) viewDidUnload
 {
-    // We assume that this view will be contained by another one. That view's controller will execure viewDidUnload (our superview), so our view will be out of the hierarchy anyway. That's why I'm not calling [scrollView removeFromSuperview];
-    for (RoundedCalendarBoxController* cont in self.dayBoxControllers)
-    {
-        [cont viewDidUnload];
-    }
+    [self removeAllDayBoxes];
 }
 
 

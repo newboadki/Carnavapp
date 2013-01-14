@@ -33,7 +33,7 @@
         NSArray* groupsForDate = calendarForGivenYear[selectedDate];
         
         [self setElementsArray:groupsForDate];
-        [self.tableView reloadData];
+        [self.tableView reloadData];        
     }
 }
 
@@ -55,24 +55,34 @@
         return  [date1 compare:date2];
     }];
     
-    if([orderedCalendarForGivenYear count] > 0)
+    // Update the Table view
+    NSString *todaysDate = [self todaysDateString];
+    NSString* selectedDate = orderedCalendarForGivenYear[0];
+    if ([orderedCalendarForGivenYear containsObject:todaysDate])
     {
-        NSString* selectedDate = orderedCalendarForGivenYear[0];
-        [self handleGroupsForDate:selectedDate];
-        
-        // There's new data, reload the calendar view
-        [self.calendarController.view removeFromSuperview];
-        CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self
-                                                                                    andYearString:self.yearString
-                                                                                        modelData:self.modelData];
-        [self setCalendarController:cc];
-        [cc release];
-        
-        [self.view addSubview:self.calendarController.view];
-        [self.calendarController viewDidLoad];
+        selectedDate = todaysDate;
     }
+    
+    [self handleGroupsForDate:selectedDate];
+    
+    // Update the Calendar
+    self.calendarController.modelData = self.modelData;
+    [self.calendarController reloadView];
+    //[self.calendarController viewWillAppear:YES]; // I need to call this here as the first time the app runs, this method
+    [self.calendarController selectCurrentDate];
+    
 }
 
+- (NSString*) todaysDateString
+{
+    NSDate* today = [NSDate date];
+    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:COAC_DATE_FORMAT];
+    NSString* todaysDateString = [df stringFromDate:today];
+    [df release];
+    
+    return todaysDateString;
+}
 
 
 #pragma mark - View lifecycle
@@ -91,17 +101,16 @@
         self.yearString = [[ContestPhaseDatesHelper yearKeys] lastObject];
     }
 
-    if (!self.calendarController)
-    {
-        CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self
-                                                                                    andYearString:self.yearString
-                                                                                        modelData:self.modelData];
-        [self setCalendarController:cc];
-        [cc release];
-        
-        [self.view addSubview:self.calendarController.view];
-        [self.calendarController viewDidLoad];
-    }
+    
+    // Add the scrollView
+    CalendarScrollViewController* cc = [[CalendarScrollViewController alloc] initWithDelegate:self
+                                                                                andYearString:self.yearString
+                                                                                    modelData:self.modelData];
+    [self setCalendarController:cc];
+    [cc release];
+    
+    [self.view addSubview:self.calendarController.view];
+    [self.calendarController viewDidLoad];
 }
 
 
@@ -203,7 +212,7 @@
         UIColor *textColor = nil;
         if ([ag.esCabezaDeSerie boolValue])
         {
-            textColor = [UIColor colorWithRed:69.0/256.0 green:0.0/256.0 blue:31.0/256.0 alpha:1.0];
+            textColor = [UIColor colorWithRed:103.0/256.0 green:0.0/256.0 blue:52.0/256.0 alpha:1.0];
         }
         else
         {
@@ -235,6 +244,8 @@
  */
 - (void) tableView:(UITableView *)theTableView didSelectContentRowAtIndexPath:(NSIndexPath *)contentSectionIndexPath
 {
+    [super tableView:theTableView didSelectContentRowAtIndexPath:contentSectionIndexPath];
+    
     int section = [contentSectionIndexPath section];
     int row = [contentSectionIndexPath row];
     int linealIndex = row + (section * 3);
@@ -272,6 +283,7 @@
 
 - (void) dealloc
 {
+    _calendarController.delegate = nil;
     [_calendarController release];
     [_phase release];
     [super dealloc];

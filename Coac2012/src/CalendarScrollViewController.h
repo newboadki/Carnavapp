@@ -24,5 +24,7 @@
 - (void) viewWillAppear:(BOOL)animated;
 - (void) viewWillDisappear:(BOOL)animated;
 - (void) handleTap:(id) sender;
+- (void) reloadView;
+- (void) selectCurrentDate;
 
 @end
