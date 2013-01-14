@@ -111,6 +111,10 @@
     
     [self.view addSubview:self.calendarController.view];
     [self.calendarController viewDidLoad];
+    
+    // Shadow
+    UIImage *shadow = [[UIImage imageNamed:@"shadow.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+    self.shadowImageView.image = shadow;
 }
 
 
@@ -145,6 +149,9 @@
     
     [self.tableView release];
     self.tableView = nil;
+    
+    [_shadowImageView release];
+    _shadowImageView = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -283,6 +290,7 @@
 
 - (void) dealloc
 {
+    [_shadowImageView release];
     _calendarController.delegate = nil;
     [_calendarController release];
     [_phase release];
