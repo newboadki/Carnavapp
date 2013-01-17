@@ -13,7 +13,6 @@
 
 @interface ContestPhaseViewController : HeaderAndFooterListViewController <ScrollableBoxTappedDelegateProtocol>
 
-@property (nonatomic, retain) NSString* phase;
 @property (nonatomic, retain) CalendarScrollViewController* calendarController;
 @property (nonatomic, retain) IBOutlet UIImageView *shadowImageView;
 

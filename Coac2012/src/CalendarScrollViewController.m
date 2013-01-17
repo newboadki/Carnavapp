@@ -8,6 +8,7 @@
 
 #import "CalendarScrollViewController.h"
 #import "RoundedCalendarBoxController.h"
+#import "DateTimeHelper.h"
 
 @interface CalendarScrollViewController()
 
@@ -15,7 +16,6 @@
 @property (nonatomic, retain) NSMutableArray *dayBoxControllers;
 
 - (void) loadView;
-- (NSString*) todaysDateString;
 @end
 
 
@@ -82,6 +82,7 @@
     [self createDayBoxesForDaysInContest:allDaysInContestInYear];
 }
 
+
 - (void) reloadView
 {
     // Remove all the subviews
@@ -109,10 +110,12 @@
     [self.dayBoxControllers removeAllObjects];
 }
 
+
 - (void) resizeScrollViewForDaysInContest:(NSArray*)allDaysInContestInYear
 {
     self.scrollView.contentSize = CGSizeMake([allDaysInContestInYear count] * 45, 71); // TODO: Day boxes are 45x68, refactor to get this from the nib
 }
+
 
 - (void) createDayBoxesForDaysInContest:(NSArray*)allDaysInContestInYear
 {
@@ -130,18 +133,19 @@
         pageFrame.size.width -= (2 * PADDING); // The padding is added into the paginScrollViewBounds. So we substract it to calculate the width
         
         controller.view.frame = pageFrame;
-        [self.scrollView addSubview:controller.view];
+        [self.scrollView addSubview:controller.view]; // we don't call viewDidLoad, we wait for our own viewDidLoad
         [controller setUpView]; // This seems to fix the unconfigured calendar boxes problem.
         [controller release];
     }    
 }
+
 
 - (void) selectCurrentDate
 {
     BOOL todayIsInTheList = NO;
     for (RoundedCalendarBoxController* cont in self.dayBoxControllers)
     {
-        NSString* todaysDateString = [self todaysDateString];
+        NSString* todaysDateString = [DateTimeHelper todaysDateString];
         if ([cont.dateString isEqualToString:todaysDateString])
         {
             todayIsInTheList = YES;
@@ -161,7 +165,9 @@
             RoundedCalendarBoxController* firstController = self.dayBoxControllers[0];
             [firstController setActiveLook];
         }
-    }}
+    }
+}
+
 
 - (void) viewDidLoad
 {
@@ -169,7 +175,7 @@
     BOOL todayIsInTheList = NO;
     for (RoundedCalendarBoxController* cont in self.dayBoxControllers)
     {
-        NSString* todaysDateString = [self todaysDateString];
+        NSString* todaysDateString = [DateTimeHelper todaysDateString];
         if ([cont.dateString isEqualToString:todaysDateString])
         {
             todayIsInTheList = YES;
@@ -230,18 +236,6 @@
     }
     
     [self.delegate scrollableBoxTappedWith:tappedBox.dateString];
-}
-
-
-- (NSString*) todaysDateString
-{
-    NSDate* today = [NSDate date];
-    NSDateFormatter* df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:COAC_DATE_FORMAT];
-    NSString* todaysDateString = [df stringFromDate:today];
-    [df release];
-    
-    return todaysDateString;
 }
 
 

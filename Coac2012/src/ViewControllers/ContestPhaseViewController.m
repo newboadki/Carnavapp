@@ -12,9 +12,10 @@
 #import "YearSelectionViewController.h"
 #import "HeaderAndFooterListViewController+Protected.h"
 #import "ContestPhaseDatesHelper.h"
+#import "DateTimeHelper.h"
 
 @interface ContestPhaseViewController()
-- (void) handleGroupsForDate:(NSString*) selectedDate;
+- (void) displayGroupsForDate:(NSString*)selectedDate;
 @end
 
 @implementation ContestPhaseViewController
@@ -23,23 +24,9 @@
 
 #pragma mark - Super class extension methods
 
-- (void) handleGroupsForDate:(NSString*) selectedDate
-{
-    NSArray* dateComponents = [selectedDate componentsSeparatedByString:@"/"];
-    if ([dateComponents count] == 3) {
-        NSString *yearOfSelectedDate = [dateComponents objectAtIndex:2];
-        NSDictionary* calendarDictionaryForAllYears = self.modelData[CALENDAR_KEY];
-        NSDictionary* calendarForGivenYear = calendarDictionaryForAllYears[yearOfSelectedDate];
-        NSArray* groupsForDate = calendarForGivenYear[selectedDate];
-        
-        [self setElementsArray:groupsForDate];
-        [self.tableView reloadData];        
-    }
-}
-
-
 - (void) updateArrayOfElements
 {
+    // Get an ordered array of dates for a specific year
     NSDictionary* calendarDictionaryForAllYears = self.modelData[CALENDAR_KEY];
     NSArray* calendarForGivenYear = [calendarDictionaryForAllYears[self.yearString] allKeys];
     NSArray* orderedCalendarForGivenYear = [calendarForGivenYear sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -56,33 +43,41 @@
     }];
     
     // Update the Table view
-    NSString *todaysDate = [self todaysDateString];
-    NSString* selectedDate = orderedCalendarForGivenYear[0];
+    NSString *todaysDate = [DateTimeHelper todaysDateString];
+    NSString *selectedDate = orderedCalendarForGivenYear[0];
+    
     if ([orderedCalendarForGivenYear containsObject:todaysDate])
     {
         selectedDate = todaysDate;
     }
     
-    [self handleGroupsForDate:selectedDate];
+    [self displayGroupsForDate:selectedDate];
     
     // Update the Calendar
-    self.calendarController.modelData = self.modelData;
-    [self.calendarController reloadView];
-    //[self.calendarController viewWillAppear:YES]; // I need to call this here as the first time the app runs, this method
-    [self.calendarController selectCurrentDate];
-    
+    self.calendarController.modelData = self.modelData;  // up-to-date model data
+    [self.calendarController reloadView];                // re-layout the scroll view
+    [self.calendarController selectCurrentDate];         // animate and select a day
 }
 
-- (NSString*) todaysDateString
+
+
+#pragma mark - Calendar Logic
+
+- (void) displayGroupsForDate:(NSString*)selectedDate
 {
-    NSDate* today = [NSDate date];
-    NSDateFormatter* df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:COAC_DATE_FORMAT];
-    NSString* todaysDateString = [df stringFromDate:today];
-    [df release];
-    
-    return todaysDateString;
+    NSArray* dateComponents = [selectedDate componentsSeparatedByString:@"/"];
+    if ([dateComponents count] == 3)
+    {
+        NSString *yearOfSelectedDate = [dateComponents objectAtIndex:2];
+        NSDictionary* calendarDictionaryForAllYears = self.modelData[CALENDAR_KEY];
+        NSDictionary* calendarForGivenYear = calendarDictionaryForAllYears[yearOfSelectedDate];
+        NSArray* groupsForDate = calendarForGivenYear[selectedDate];
+        
+        [self setElementsArray:groupsForDate];
+        [self.tableView reloadData];
+    }
 }
+
 
 
 #pragma mark - View lifecycle
@@ -134,6 +129,7 @@
     return result;        
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -145,7 +141,10 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    
+    [self.calendarController.view removeFromSuperview];
     [self.calendarController viewDidUnload];
+    self.calendarController = nil;
     
     [self.tableView release];
     self.tableView = nil;
@@ -174,7 +173,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 
@@ -184,7 +183,7 @@
 - (void) scrollableBoxTappedWith:(id)identifier
 {
     NSString* date = (NSString*)identifier;
-    [self handleGroupsForDate:date];    
+    [self displayGroupsForDate:date];
 }
 
 
@@ -293,7 +292,6 @@
     [_shadowImageView release];
     _calendarController.delegate = nil;
     [_calendarController release];
-    [_phase release];
     [super dealloc];
 }
 

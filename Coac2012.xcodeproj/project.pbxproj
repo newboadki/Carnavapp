@@ -191,6 +191,8 @@
 		0088EFF4168B14D600BEA494 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0088EFEE168B14D600BEA494 /* Default@2x.png */; };
 		0089BBB2168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089BBB0168DA1DB00A2F21A /* ContestPhaseDatesHelper.m */; };
 		0089BBB3168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0089BBB0168DA1DB00A2F21A /* ContestPhaseDatesHelper.m */; };
+		008A70C116A6114600B0001D /* DateTimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008A70C016A6114600B0001D /* DateTimeHelper.m */; };
+		008A70C216A6114600B0001D /* DateTimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 008A70C016A6114600B0001D /* DateTimeHelper.m */; };
 		008DDC2D169CCCBE008AF911 /* GroupDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DDC2C169CCCBE008AF911 /* GroupDetailCell.xib */; };
 		008DDC2E169CCCBE008AF911 /* GroupDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DDC2C169CCCBE008AF911 /* GroupDetailCell.xib */; };
 		008EE9D714F5464C002BFA7F /* ContestResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */; };
@@ -427,6 +429,8 @@
 		0088EFEE168B14D600BEA494 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0089BBB0168DA1DB00A2F21A /* ContestPhaseDatesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestPhaseDatesHelper.m; sourceTree = "<group>"; };
 		0089BBB1168DA1DB00A2F21A /* ContestPhaseDatesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestPhaseDatesHelper.h; sourceTree = "<group>"; };
+		008A70BF16A6114600B0001D /* DateTimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeHelper.h; sourceTree = "<group>"; };
+		008A70C016A6114600B0001D /* DateTimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeHelper.m; sourceTree = "<group>"; };
 		008DDC2C169CCCBE008AF911 /* GroupDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupDetailCell.xib; sourceTree = "<group>"; };
 		008EE9D414F5464C002BFA7F /* ContestResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestResultsViewController.h; sourceTree = "<group>"; };
 		008EE9D514F5464C002BFA7F /* ContestResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestResultsViewController.m; sourceTree = "<group>"; };
@@ -833,6 +837,8 @@
 				008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */,
 				0086C21916861658003F35F1 /* BackgroundImageManager.h */,
 				0086C21A16861658003F35F1 /* BackgroundImageManager.m */,
+				008A70BF16A6114600B0001D /* DateTimeHelper.h */,
+				008A70C016A6114600B0001D /* DateTimeHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1463,6 +1469,7 @@
 				0086C21C16861658003F35F1 /* BackgroundImageManager.m in Sources */,
 				00A2B5991688C3AA00FA8C40 /* Result.m in Sources */,
 				0089BBB3168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */,
+				008A70C216A6114600B0001D /* DateTimeHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1517,6 +1524,7 @@
 				0086C21B16861658003F35F1 /* BackgroundImageManager.m in Sources */,
 				00A2B5981688C3AA00FA8C40 /* Result.m in Sources */,
 				0089BBB2168DA1DB00A2F21A /* ContestPhaseDatesHelper.m in Sources */,
+				008A70C116A6114600B0001D /* DateTimeHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

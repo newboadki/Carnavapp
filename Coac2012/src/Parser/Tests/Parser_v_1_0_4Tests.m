@@ -218,7 +218,30 @@
 
 - (void) testDaysForPhases
 {
-    STAssertTrue(1 == 2, @"Pending ...");
+    NSDictionary* data = [parser doParsingSync]; // Calling the private method as NSOperation wasn't working on the tests.
+    NSDictionary* daysForPhases = [data objectForKey:DAYS_FOR_PHASES_KEY];
+    NSDictionary* daysForPhases2012 = daysForPhases[@"2012"];
+    NSDictionary* daysForPhases2013 = daysForPhases[@"2013"];
+    // 2012
+    STAssertTrue([[daysForPhases2012 allKeys] count] == 1, @"dates for 2012 should have 1 phase");
+    STAssertTrue([[daysForPhases2012 allKeys] containsObject:@"PREELIMINAR"] == YES, @"phases for 2012 should contain PREELIMINARES");
+    NSArray *datesForPreliminar = daysForPhases2012[@"PREELIMINAR"];
+    STAssertTrue([datesForPreliminar count] == 2, @"Preliminares for 2012 should contain two dates");
+    STAssertTrue([datesForPreliminar containsObject:@"21/01/2012"] == YES, @"Preliminares for 2012 should contain 21/01/2012");
+    STAssertTrue([datesForPreliminar containsObject:@"22/01/2012"] == YES, @"Preliminares for 2012 should contain 22/01/2012");
+    
+    // 2013
+    STAssertTrue([[daysForPhases2013 allKeys] count] == 2, @"dates for 2013 should have 2 phase");
+    STAssertTrue([[daysForPhases2013 allKeys] containsObject:@"SEMIFINAL"] == YES, @"phases for 2013 should contain SEMIFINAL");
+    STAssertTrue([[daysForPhases2013 allKeys] containsObject:@"FINAL"] == YES, @"phases for 2013 should contain FINAL");
+    
+    NSArray *datesForSemifinal = daysForPhases2013[@"SEMIFINAL"];
+    STAssertTrue([datesForSemifinal count] == 1, @"Semifinales for 2013 should contain one date");
+    STAssertTrue([datesForSemifinal containsObject:@"18/01/2013"] == YES, @"Semifinales for 2013 should contain 18/01/2013");
+    
+    NSArray *datesForFinal = daysForPhases2013[@"FINAL"];
+    STAssertTrue([datesForFinal count] == 1, @"Final for 2013 should contain one date");
+    STAssertTrue([datesForFinal containsObject:@"24/02/2013"] == YES, @"Final for 2013 should contain 24/02/2013");
 }
 
 - (void) testParsingLinks
