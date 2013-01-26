@@ -36,7 +36,10 @@
 - (void) searchResultsForString:(NSString*)searchString
 {
     [self.queue addOperationWithBlock:^{
-        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[c] %@", searchString]; // [c] to do a non case-sensitive search
+        
+        NSPredicate* byNamePredicate = [NSPredicate predicateWithFormat:@"nombre CONTAINS[c] %@", searchString]; // [c] to do a non case-sensitive search
+        NSPredicate* byAuthorpredicate = [NSPredicate predicateWithFormat:@"autor CONTAINS[c] %@", searchString];
+        NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[byNamePredicate, byAuthorpredicate]];
         NSArray* results = [self.sampleArray filteredArrayUsingPredicate:predicate];
         if (!results)
         {

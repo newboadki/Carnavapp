@@ -15,7 +15,7 @@
 #import "LoadingScreenViewController.h"
 #import "ContestPhaseViewController.h"
 #import "BackgroundImageManager.h"
-
+#import "VelvetTheme.h"
 
 @implementation AppDelegate
 
@@ -26,6 +26,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    FileDownloader *fd = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:@"https://www.googleapis.com/youtube/v3/videos?id=SNv_0LXlXLs&key=AIzaSyBvQEQEQiU6mwsqyweDQ9Rerv4f-rwG5Ns&part=snippet,contentDetails,statistics,status"] andFilePath:nil andCredential:nil andDelegate:self];
+    
+    FileDownloader *fd = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:@"https://gdata.youtube.com/feeds/api/videos/SNv_0LXlXLs?v=2"] andFilePath:nil andCredential:nil andDelegate:self];
+
+    [fd start];
+    
     // Start caching the background Images because they have filters applied
     [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2012"];
     [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2013"];
@@ -37,19 +43,19 @@
     // Create dataModel Handler
     ModelDataHandler* dh = [[ModelDataHandler alloc] init];
     [self setDataHandler:dh];
-    [dh release];    
+    [dh release];
     
     // Subscribe to notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(handleDataIsReady:) 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleDataIsReady:)
                                                  name:MODEL_DATA_IS_READY_NOTIFICATION
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(handleNoNetwork:) 
-                                                 name:NO_NETWORK_NOTIFICATION 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleNoNetwork:)
+                                                 name:NO_NETWORK_NOTIFICATION
                                                object:nil];
-
+    
     // Set the year for the current results VC.
     UINavigationController* navController = [[self.tabBarController viewControllers] objectAtIndex:2];
     ContestResultsViewController* resultController = (ContestResultsViewController*)[navController topViewController];
@@ -69,9 +75,36 @@
         self.tabBarController.tabBar.selectedImageTintColor = [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
     }
     
+    /*VelvetTheme *velvetTheme = [VelvetTheme sharedInstance];
+    [[UINavigationBar appearance] setBackgroundImage:[velvetTheme navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];    
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[velvetTheme navigationBarBackButtonImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UITabBar appearance] setBackgroundImage:[velvetTheme tabBarBackgroundImage]];*/
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void) handleSuccessfullDownloadWithData:(NSData*)data
+{
+    NSDictionary *obj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSArray *items = obj[@"items"];
+    NSDictionary *item = items[0];
+    
+    NSLog(@"%@", item);
+}
+- (void) handleFailedDownloadWithError:(NSError*)error
+{
+    NSLog(@"%@", error);
+}
+- (void) handleAuthenticationFailed{
+    NSLog(@"akdsjfhkasd");
+}
+- (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode{
+    NSLog(@"adskfjlsdaaaaaa %d", statusCode);
+}
+- (void) connectionCouldNotBeCreated{
+    NSLog(@"3424356");
 }
 
 
@@ -80,7 +113,7 @@
     // As of v1.0.4 there's a new parser. Therefore We need to check for the dataModel cache in the file system.
     // If it's the first time we do this check, and the file exists, we delete it.
     [self deleteParser_1_0_3_cache];
-
+    
     NSDictionary* data = (NSDictionary*)[FileSystemHelper unarchiveObjectWithFileName:MODEL_DATA_FILE_NAME];
     
     if (!data)
@@ -101,7 +134,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
 }

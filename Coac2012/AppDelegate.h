@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ModelDataHandler.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, FileDownloaderDelegateProtocol>
 {
     UIView* loadingScreen;
 }

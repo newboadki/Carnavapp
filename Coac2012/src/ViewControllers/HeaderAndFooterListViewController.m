@@ -120,13 +120,13 @@
     }
     
     // Configure the cell...
-    [self configureCell:cell indexPath:indexPath];
+    [self tableView:theTableView configureCell:cell indexPath:indexPath];
     
     return cell;
 }
 
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexPath
+- (void) tableView:(UITableView*)tableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexPath
 {
     if ((indexPath.section == HEADER_SECTION_INDEX) && self.showHeader)
     {        

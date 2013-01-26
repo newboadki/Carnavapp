@@ -11,7 +11,7 @@
 #import "GroupsForModalityViewController.h"
 
 @interface SearchResultsTableViewController(private)
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
 @end
 
 @implementation SearchResultsTableViewController
@@ -114,7 +114,7 @@
     }
     
     // Configure the cell...
-    [self configureCell:cell indexPath:indexPath];
+    [self tableView:theTableView configureCell:cell indexPath:indexPath];
     
     return cell;
 }
@@ -125,7 +125,7 @@
 }
 
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     Agrupacion* ag = self.results[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
@@ -144,7 +144,7 @@
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
     Agrupacion* selectedGroup = self.results[[indexPath row]];
-    [self.selectionDelegate selectedElement:selectedGroup];
+    [self.selectionDelegate tableView:theTableView selectedElement:selectedGroup];
 }
 
 

@@ -34,7 +34,7 @@
 }
 
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     Agrupacion* ag = [self.elementsArray objectAtIndex:[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];

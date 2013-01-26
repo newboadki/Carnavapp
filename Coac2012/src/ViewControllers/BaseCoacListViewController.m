@@ -246,12 +246,12 @@
     }
     
     // Configure the cell...
-    [self configureCell:cell indexPath:indexPath];
+    [self tableView:theTableView configureCell:cell indexPath:indexPath];
     
     return cell;
 }
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     // Implement in subclasses.
 }
@@ -260,7 +260,7 @@
 {
     UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
     cell.selectedBackgroundView = [[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil][0];
-    [self configureCell:cell indexPath:indexPath]; 
+    [self tableView:theTableView configureCell:cell indexPath:indexPath];
     
     [UIView animateWithDuration:0.5 animations:^{
         [[[theTableView cellForRowAtIndexPath:indexPath] selectedBackgroundView] setAlpha:0.0];
@@ -324,9 +324,15 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     GroupNameSearchController* sc = [self groupNameSearchController];
-    sc.sampleArray = self.elementsArray;
+    sc.sampleArray = [self searchDataSource];
     [sc searchResultsForString:searchText];
 }
+
+- (NSArray*) searchDataSource
+{
+    return self.elementsArray;
+}
+
 
 
 - (void) resultsAreReadyInDictionary:(NSDictionary*)resultsDictionary
@@ -340,7 +346,7 @@
 
 #pragma mark - SearchResultsTableViewControllerDelegateProtocol
 
-- (void)selectedElement:(id)element
+- (void)tableView:(UITableView *)theTableView selectedElement:(id)element
 {    
     Agrupacion* selectedGroup = (Agrupacion*)element;
     int index = [self.elementsArray indexOfObject:selectedGroup];

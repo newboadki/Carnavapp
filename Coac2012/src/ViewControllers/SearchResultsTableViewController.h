@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol SearchResultsTableViewControllerDelegateProtocol <NSObject>
-- (void)selectedElement:(id)element;
+- (void)tableView:(UITableView*)theTableView selectedElement:(id)element;
 @end
 
 @interface SearchResultsTableViewController : UITableViewController

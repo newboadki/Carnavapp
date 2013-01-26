@@ -48,7 +48,7 @@
 
 #pragma mark - Super class extension methods
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell...
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];    

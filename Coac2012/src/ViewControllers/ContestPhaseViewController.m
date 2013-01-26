@@ -107,9 +107,12 @@
     [self.view addSubview:self.calendarController.view];
     [self.calendarController viewDidLoad];
     
-    // Shadow
+    // Calendar Shadow
     UIImage *shadow = [[UIImage imageNamed:@"shadow.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
     self.shadowImageView.image = shadow;
+    
+    // NavBar Shadow
+    self.navigationController.navigationBar.shadowImage = [[UIImage imageNamed:@"navigationBarShadow.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
 }
 
 
@@ -174,6 +177,11 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSInteger) supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 

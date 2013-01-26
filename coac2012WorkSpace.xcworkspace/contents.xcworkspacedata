@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:gdata-objectivec-client-read-only/Source/GData.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Kiwi/Kiwi.xcodeproj">
    </FileRef>
    <FileRef

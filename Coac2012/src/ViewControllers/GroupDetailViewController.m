@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIApplication+PRPNetworkActivity.h"
 #import "VideosForGroupViewController.h"
+#import "VideoViewController.h"
 
 #define DETAIL_LABEL_FONT_SIZE 14.0
 #define BOTTOM_MARGIN 15.0
@@ -236,13 +237,13 @@
     }
     
     // Configure the cell...
-    [self configureCell:cell indexPath:indexPath];
+    [self tableView:theTableView configureCell:cell indexPath:indexPath];
     
     return cell;
 }
 
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     NSDictionary *detail = [self.groupDetailsTableViewDataSource objectAtIndex:indexpath.row];
     UILabel *keyLabel = (UILabel*)[cell viewWithTag:1];

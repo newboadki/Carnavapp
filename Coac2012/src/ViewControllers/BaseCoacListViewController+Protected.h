@@ -13,6 +13,6 @@
 @property (nonatomic, retain) GroupNameSearchController *groupNameSearchController;
 
 - (void) handleDataIsReady:(NSNotification*)notif;
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath;
 
 @end

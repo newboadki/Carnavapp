@@ -11,6 +11,11 @@
 #import "Agrupacion.h"
 #import "BaseCoacListViewController+Protected.h"
 #import "ContestPhaseDatesHelper.h"
+#import "GroupDetailViewController.h"
+
+@interface ModalitiesViewController ()
+@property (nonatomic, retain) NSArray *searchControllerDataSource;
+@end
 
 @implementation ModalitiesViewController
 
@@ -31,17 +36,34 @@
     }];
     
     [self setElementsArray:mk];
+    [self setSearchControllerDataSource:[self allGroupsFromModelData:self.modelData]];
+    
 }
 
 
-- (void) configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+- (NSArray*) allGroupsFromModelData:(NSDictionary*)data
 {
-    UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
-    UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
+    NSMutableArray *result = [NSMutableArray array];
     
-    NSString* currentModality = self.elementsArray[[indexpath row]];
-    groupNameLabel.text = currentModality;
-    categoryNameLabel.text = @"";
+    for (NSString* yearKey in data[GROUPS_KEY]) {
+        [result addObjectsFromArray:data[GROUPS_KEY][yearKey]];
+    }
+    
+    return result;
+}
+
+
+- (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
+{
+    if (theTableView == self.tableView)
+    {
+        UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
+        UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
+        
+        NSString* currentModality = self.elementsArray[[indexpath row]];
+        groupNameLabel.text = currentModality;
+        categoryNameLabel.text = @"";
+    }
 }
 
 
@@ -65,10 +87,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.
     self.title = NSLocalizedString(@"Modalidades", @"Modalidades");
     [self setMaskAsTitleView];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
+}
 
 
 #pragma mark -
@@ -79,6 +107,8 @@
 	/***********************************************************************************************/
 	/* didSelectRowAtIndexPath.																	   */
 	/***********************************************************************************************/
+        
+    // it's not coming from the search bar
     [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
     
     NSString* selectedModality = self.elementsArray[[indexPath row]];
@@ -90,7 +120,41 @@
     [nextController setYearString:[[ContestPhaseDatesHelper yearKeys] lastObject]];
     
     [[self navigationController] pushViewController:nextController animated:YES];
-    [nextController release];
+    [nextController release];        
+
+    
 }
+
+#pragma mark - SearchResultsTableViewControllerDelegateProtocol
+
+- (void)tableView:(UITableView *)theTableView selectedElement:(id)element
+{
+    
+    if (theTableView != self.tableView)
+    {
+
+        Agrupacion* selectedGroup = (Agrupacion*)element;
+        GroupDetailViewController *vc = [[GroupDetailViewController alloc] init];
+        vc.group = selectedGroup;
+        [self.navigationController pushViewController:vc animated:YES];
+        [vc release];
+    }
+    
+}
+
+
+#pragma mark - Search
+
+- (BOOL) implementsSearch
+{
+    return YES;
+}
+
+
+- (NSArray*) searchDataSource
+{
+    return self.searchControllerDataSource;
+}
+
 
 @end
