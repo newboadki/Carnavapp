@@ -509,7 +509,7 @@ describe(@"selectedElement:", ^{
         
         [elementsArrayMock stub:@selector(indexOfObject:) andReturn:theValue(0)]; // I would like to specify the groupMock as the parameter, but that makes the stub return always 0
         [[controller should] receive:@selector(tableView:didSelectRowAtIndexPath:)];
-        [controller selectedElement:groupMock];
+        [controller tableView:controller.tableView selectedElement:groupMock];
     });
 
     it(@"should call didSelectRowAtIndex path if index > 0", ^{
@@ -519,7 +519,7 @@ describe(@"selectedElement:", ^{
 
         [elementsArrayMock stub:@selector(indexOfObject:) andReturn:theValue(1)];// I would like to specify the groupMock as the parameter, but that makes the stub return always 0
         [[controller should] receive:@selector(tableView:didSelectRowAtIndexPath:)];
-        [controller selectedElement:groupMock];
+        [controller tableView:controller.tableView selectedElement:groupMock];
         
     });
 
@@ -530,7 +530,7 @@ describe(@"selectedElement:", ^{
 
         [elementsArrayMock stub:@selector(indexOfObject:) andReturn:theValue(-1)];// I would like to specify the groupMock as the parameter, but that makes the stub return always 0
         [[controller shouldNot] receive:@selector(tableView:didSelectRowAtIndexPath:)];
-        [controller selectedElement:groupMock];
+        [controller tableView:controller.tableView selectedElement:groupMock];
     });
 
 });

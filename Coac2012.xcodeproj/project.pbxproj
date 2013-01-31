@@ -100,7 +100,6 @@
 		002E7C021648519600B69153 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8414CAEE8A00427E42 /* Link.m */; };
 		002E7C031648519600B69153 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8814CAEFF200427E42 /* Picture.m */; };
 		002E7C041648519600B69153 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD8C14CAF04D00427E42 /* Video.m */; };
-		002E7C06164851B000B69153 /* ContestPhasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C6514CC9A44008A914A /* ContestPhasesViewController.m */; };
 		002E7C07164851B000B69153 /* ModalitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AECA9214CAC6DC005CE4DC /* ModalitiesViewController.m */; };
 		002E7C08164851B000B69153 /* GroupsForModalityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5114CC79AE008A914A /* GroupsForModalityViewController.m */; };
 		002E7C09164851B000B69153 /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00820C5814CC8511008A914A /* GroupDetailViewController.m */; };
@@ -206,6 +205,12 @@
 		00985C291683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */; };
 		00985C2A1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */; };
 		00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */; };
+		00988D6916B55543007C9BBF /* dunes_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6816B55543007C9BBF /* dunes_bg@2x.png */; };
+		00988D6A16B55543007C9BBF /* dunes_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6816B55543007C9BBF /* dunes_bg@2x.png */; };
+		00988D6E16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6C16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png */; };
+		00988D6F16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6C16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png */; };
+		00988D7016B5593E007C9BBF /* velvetThemeTabBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6D16B5593E007C9BBF /* velvetThemeTabBarBackground.png */; };
+		00988D7116B5593E007C9BBF /* velvetThemeTabBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6D16B5593E007C9BBF /* velvetThemeTabBarBackground.png */; };
 		00A10FDB150A89F900D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD9150A89F900D1C425 /* active_day.png */; };
 		00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FDA150A89F900D1C425 /* inactive_day.png */; };
 		00A2B5981688C3AA00FA8C40 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A2B5971688C3AA00FA8C40 /* Result.m */; };
@@ -216,10 +221,6 @@
 		00ABFBD816ACA74100A8BB35 /* velvetThemeNavigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD116ACA74100A8BB35 /* velvetThemeNavigationBarBackButton@2x.png */; };
 		00ABFBD916ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD216ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png */; };
 		00ABFBDA16ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD216ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png */; };
-		00ABFBDB16ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD316ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png */; };
-		00ABFBDC16ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD316ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png */; };
-		00ABFBDD16ACA74100A8BB35 /* velvetThemeTabBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD416ACA74100A8BB35 /* velvetThemeTabBarBackground.png */; };
-		00ABFBDE16ACA74100A8BB35 /* velvetThemeTabBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD416ACA74100A8BB35 /* velvetThemeTabBarBackground.png */; };
 		00ABFBDF16ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD516ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png */; };
 		00ABFBE016ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD516ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png */; };
 		00ABFBE116ACA74100A8BB35 /* velvetThemeNavigationBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 00ABFBD616ACA74100A8BB35 /* velvetThemeNavigationBarBackground.png */; };
@@ -466,6 +467,9 @@
 		008EE9F914F6B2F8002BFA7F /* FileSystemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemHelper.m; sourceTree = "<group>"; };
 		00985C261683915200528740 /* Carnavapp_v_1_0_3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Carnavapp_v_1_0_3.xml; sourceTree = "<group>"; };
 		00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Carnavapp_v_1_0_4.xml; sourceTree = "<group>"; };
+		00988D6816B55543007C9BBF /* dunes_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dunes_bg@2x.png"; sourceTree = "<group>"; };
+		00988D6C16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "velvetThemeTabBarBackground@2x.png"; sourceTree = "<group>"; };
+		00988D6D16B5593E007C9BBF /* velvetThemeTabBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velvetThemeTabBarBackground.png; sourceTree = "<group>"; };
 		00A10FD9150A89F900D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00A10FDA150A89F900D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
 		00A2B593168863F800FA8C40 /* HeaderAndFooterListViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HeaderAndFooterListViewController+Protected.h"; sourceTree = "<group>"; };
@@ -477,8 +481,6 @@
 		00ABFBCC16ACA44800A8BB35 /* VelvetTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VelvetTheme.m; sourceTree = "<group>"; };
 		00ABFBD116ACA74100A8BB35 /* velvetThemeNavigationBarBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "velvetThemeNavigationBarBackButton@2x.png"; sourceTree = "<group>"; };
 		00ABFBD216ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velvetThemeNavigationBarBackButton.png; sourceTree = "<group>"; };
-		00ABFBD316ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "velvetThemeTabBarBackground@2x.png"; sourceTree = "<group>"; };
-		00ABFBD416ACA74100A8BB35 /* velvetThemeTabBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velvetThemeTabBarBackground.png; sourceTree = "<group>"; };
 		00ABFBD516ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "velvetThemeNavigationBarBackground@2x.png"; sourceTree = "<group>"; };
 		00ABFBD616ACA74100A8BB35 /* velvetThemeNavigationBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velvetThemeNavigationBarBackground.png; sourceTree = "<group>"; };
 		00ABFBE316ACAE2B00A8BB35 /* navigationBarShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBarShadow@2x.png"; sourceTree = "<group>"; };
@@ -921,10 +923,10 @@
 		00ABFBD016ACA72600A8BB35 /* Velvet */ = {
 			isa = PBXGroup;
 			children = (
+				00988D6C16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png */,
+				00988D6D16B5593E007C9BBF /* velvetThemeTabBarBackground.png */,
 				00ABFBD116ACA74100A8BB35 /* velvetThemeNavigationBarBackButton@2x.png */,
 				00ABFBD216ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png */,
-				00ABFBD316ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png */,
-				00ABFBD416ACA74100A8BB35 /* velvetThemeTabBarBackground.png */,
 				00ABFBD516ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png */,
 				00ABFBD616ACA74100A8BB35 /* velvetThemeNavigationBarBackground.png */,
 				00ABFBE316ACAE2B00A8BB35 /* navigationBarShadow@2x.png */,
@@ -1218,6 +1220,7 @@
 			children = (
 				0088EFEB168B14AD00BEA494 /* Legacy */,
 				0086C22916861F65003F35F1 /* cartel_2012.png */,
+				00988D6816B55543007C9BBF /* dunes_bg@2x.png */,
 				0086C22816861F64003F35F1 /* cartel_2012@2x.png */,
 				0086C22716861F64003F35F1 /* cartel_2013.png */,
 				0086C2141685F9DE003F35F1 /* cartel_2013@2x.png */,
@@ -1292,7 +1295,7 @@
 		00AECA6B14CAC6DC005CE4DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Borja Arias Drake";
 			};
 			buildConfigurationList = 00AECA6E14CAC6DC005CE4DC /* Build configuration list for PBXProject "Coac2012" */;
@@ -1340,12 +1343,13 @@
 				00886A3A16A89D4C00E07CC8 /* VideoViewController.xib in Resources */,
 				00ABFBD816ACA74100A8BB35 /* velvetThemeNavigationBarBackButton@2x.png in Resources */,
 				00ABFBDA16ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png in Resources */,
-				00ABFBDC16ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png in Resources */,
-				00ABFBDE16ACA74100A8BB35 /* velvetThemeTabBarBackground.png in Resources */,
 				00ABFBE016ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png in Resources */,
 				00ABFBE216ACA74100A8BB35 /* velvetThemeNavigationBarBackground.png in Resources */,
 				00ABFBE616ACAE2B00A8BB35 /* navigationBarShadow@2x.png in Resources */,
 				00ABFBE816ACAE2B00A8BB35 /* navigationBarShadow.png in Resources */,
+				00988D6A16B55543007C9BBF /* dunes_bg@2x.png in Resources */,
+				00988D6F16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png in Resources */,
+				00988D7116B5593E007C9BBF /* velvetThemeTabBarBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1413,12 +1417,13 @@
 				00886A3916A89D4C00E07CC8 /* VideoViewController.xib in Resources */,
 				00ABFBD716ACA74100A8BB35 /* velvetThemeNavigationBarBackButton@2x.png in Resources */,
 				00ABFBD916ACA74100A8BB35 /* velvetThemeNavigationBarBackButton.png in Resources */,
-				00ABFBDB16ACA74100A8BB35 /* velvetThemeTabBarBackground@2x.png in Resources */,
-				00ABFBDD16ACA74100A8BB35 /* velvetThemeTabBarBackground.png in Resources */,
 				00ABFBDF16ACA74100A8BB35 /* velvetThemeNavigationBarBackground@2x.png in Resources */,
 				00ABFBE116ACA74100A8BB35 /* velvetThemeNavigationBarBackground.png in Resources */,
 				00ABFBE516ACAE2B00A8BB35 /* navigationBarShadow@2x.png in Resources */,
 				00ABFBE716ACAE2B00A8BB35 /* navigationBarShadow.png in Resources */,
+				00988D6916B55543007C9BBF /* dunes_bg@2x.png in Resources */,
+				00988D6E16B5593E007C9BBF /* velvetThemeTabBarBackground@2x.png in Resources */,
+				00988D7016B5593E007C9BBF /* velvetThemeTabBarBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1533,7 +1538,6 @@
 				002E7C021648519600B69153 /* Link.m in Sources */,
 				002E7C031648519600B69153 /* Picture.m in Sources */,
 				002E7C041648519600B69153 /* Video.m in Sources */,
-				002E7C06164851B000B69153 /* ContestPhasesViewController.m in Sources */,
 				002E7C07164851B000B69153 /* ModalitiesViewController.m in Sources */,
 				002E7C08164851B000B69153 /* GroupsForModalityViewController.m in Sources */,
 				002E7C09164851B000B69153 /* GroupDetailViewController.m in Sources */,
@@ -1721,6 +1725,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1734,6 +1742,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -1745,12 +1754,17 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -1775,7 +1789,7 @@
 					"\"$(SRCROOT)/Coac2012/src/External/FileDownloader\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "794DC21E-15E0-4BF8-A970-C31251C5AADE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EB20167-6500-4E74-A51E-FE4274B292DF";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1798,8 +1812,8 @@
 					"\"$(SRCROOT)/Coac2012/src/External/FileDownloader\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C5845F57-7151-499C-86E3-A18046A4EFF6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1DCC457F-E34B-4489-82EC-CEB16FD1D725";
+				PROVISIONING_PROFILE = "080F1A71-2BC3-4EA3-B522-5A62552AEAE7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "080F1A71-2BC3-4EA3-B522-5A62552AEAE7";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};

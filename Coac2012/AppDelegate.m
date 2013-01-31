@@ -75,10 +75,10 @@
         self.tabBarController.tabBar.selectedImageTintColor = [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
     }
     
-    /*VelvetTheme *velvetTheme = [VelvetTheme sharedInstance];
+    VelvetTheme *velvetTheme = [VelvetTheme sharedInstance];
     [[UINavigationBar appearance] setBackgroundImage:[velvetTheme navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];    
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[velvetTheme navigationBarBackButtonImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UITabBar appearance] setBackgroundImage:[velvetTheme tabBarBackgroundImage]];*/
+    [[UITabBar appearance] setBackgroundImage:[velvetTheme tabBarBackgroundImage]];
     
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
@@ -118,7 +118,7 @@
     
     if (!data)
     {
-        [self presentLoadingScreenWithLoadingMessage:@"Descargando Datos." andModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentLoadingScreenWithLoadingMessage:@"Descargando Datos." andModalTransitionStyle:UIModalPresentationFullScreen];
     }
     
     [self.dataHandler downloadAndParseModelData];
@@ -177,7 +177,7 @@
     
     if (!data)
     {
-        [self presentLoadingScreenWithLoadingMessage:@"No hay acceso a internet" andModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentLoadingScreenWithLoadingMessage:@"No hay acceso a internet" andModalTransitionStyle:UIModalPresentationFullScreen];
     }
 }
 
