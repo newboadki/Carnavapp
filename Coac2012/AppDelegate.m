@@ -25,13 +25,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-//    FileDownloader *fd = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:@"https://www.googleapis.com/youtube/v3/videos?id=SNv_0LXlXLs&key=AIzaSyBvQEQEQiU6mwsqyweDQ9Rerv4f-rwG5Ns&part=snippet,contentDetails,statistics,status"] andFilePath:nil andCredential:nil andDelegate:self];
-    
-    FileDownloader *fd = [[FileDownloader alloc] initWithURL:[NSURL URLWithString:@"https://gdata.youtube.com/feeds/api/videos/SNv_0LXlXLs?v=2"] andFilePath:nil andCredential:nil andDelegate:self];
-
-    [fd start];
-    
+{    
     // Start caching the background Images because they have filters applied
     [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2012"];
     [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2013"];
@@ -69,42 +63,11 @@
     [contestPhasesViewController updateArrayOfElements];
     
     
-    // Apply Styles for UI iOS > 5.0
-    if ([self.tabBarController.tabBar respondsToSelector:@selector(selectedImageTintColor)])
-    {
-        self.tabBarController.tabBar.selectedImageTintColor = [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:0.0/255.0 alpha:1.0];
-    }
+
+    [self customizeGui];
     
-    VelvetTheme *velvetTheme = [VelvetTheme sharedInstance];
-    [[UINavigationBar appearance] setBackgroundImage:[velvetTheme navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];    
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[velvetTheme navigationBarBackButtonImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UITabBar appearance] setBackgroundImage:[velvetTheme tabBarBackgroundImage]];
-    
-    // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
-}
-
-- (void) handleSuccessfullDownloadWithData:(NSData*)data
-{
-    NSDictionary *obj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSArray *items = obj[@"items"];
-    NSDictionary *item = items[0];
-    
-    NSLog(@"%@", item);
-}
-- (void) handleFailedDownloadWithError:(NSError*)error
-{
-    NSLog(@"%@", error);
-}
-- (void) handleAuthenticationFailed{
-    NSLog(@"akdsjfhkasd");
-}
-- (void) connectionReceivedResponseWithErrorCode:(NSInteger) statusCode{
-    NSLog(@"adskfjlsdaaaaaa %d", statusCode);
-}
-- (void) connectionCouldNotBeCreated{
-    NSLog(@"3424356");
 }
 
 
@@ -225,6 +188,23 @@
     }
 }
 
+
+- (void) customizeGui
+{
+    self.guiTheme = [VelvetTheme sharedInstance];
+    
+    // Tab Bar
+    [[UITabBar appearance] setBackgroundImage:[self.guiTheme tabBarBackgroundImage]];
+    self.tabBarController.tabBar.selectedImageTintColor = [self.guiTheme tabBarIconSelectedColor];
+    
+    // Navigation Bar
+    [[UINavigationBar appearance] setBackgroundImage:[self.guiTheme navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[self.guiTheme navigationBarBackButtonImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    // Font
+    //    [[UILabel appearance] setFont:[UIFont fontWithName:@"Noteworthy" size:19.0]];
+    // Override point for customization after application launch.
+}
 
 
 #pragma mark - Memory Management

@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol Theme <NSObject>
+@protocol ThemeProtocol <NSObject>
 
 @required
 + (id) sharedInstance;
 - (UIImage*) navigationBarBackgroundImage;
 - (UIImage*) navigationBarBackButtonImage;
 - (UIImage*) tabBarBackgroundImage;
+- (UIColor*) tabBarIconSelectedColor;
 
 @end

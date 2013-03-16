@@ -19,12 +19,16 @@
 
 - (id) initWithDelegate:(id<ScrollableBoxTappedDelegateProtocol>)del andYearString:(NSString*)year modelData:(NSDictionary*)modelData;
 
+// TODO: Put this methods into a CustomViewController class
 - (void) viewDidLoad;
 - (void) viewDidUnload;
 - (void) viewWillAppear:(BOOL)animated;
 - (void) viewWillDisappear:(BOOL)animated;
+
+
 - (void) handleTap:(id) sender;
 - (void) reloadView;
 - (void) selectCurrentDate;
+- (NSInteger) count;
 
 @end

@@ -11,9 +11,14 @@
 #import "ScrollableBoxTappedDelegateProtocol.h"
 #import "HeaderAndFooterListViewController.h"
 
+/**
+ */
 @interface ContestPhaseViewController : HeaderAndFooterListViewController <ScrollableBoxTappedDelegateProtocol>
 
+/** It's the custom view controller that manages the calendar view.*/
 @property (nonatomic, retain) CalendarScrollViewController* calendarController;
+
+/** Shadow that the calendarController's view drops over the table view.*/
 @property (nonatomic, retain) IBOutlet UIImageView *shadowImageView;
 
 @end

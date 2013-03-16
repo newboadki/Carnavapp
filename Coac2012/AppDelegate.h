@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ModelDataHandler.h"
+#import "ThemeProtocol.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, FileDownloaderDelegateProtocol>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 {
     UIView* loadingScreen;
 }
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (strong, nonatomic) IBOutlet UITabBarController *tabBarController;
 @property (retain, nonatomic) ModelDataHandler* dataHandler;
+@property (retain, nonatomic) id <ThemeProtocol> guiTheme;
 
 @end

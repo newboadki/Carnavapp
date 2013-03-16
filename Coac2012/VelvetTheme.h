@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Theme.h"
+#import "ThemeProtocol.h"
 
-@interface VelvetTheme : NSObject <Theme>
+@interface VelvetTheme : NSObject <ThemeProtocol>
 
 @end

@@ -169,6 +169,8 @@
 }
 
 
+#pragma mark - Custom view controller methods
+
 - (void) viewDidLoad
 {
     // The view will be on the hierarchy already
@@ -220,6 +222,12 @@
 }
 
 
+#pragma mark - Utilities
+
+- (NSInteger) count
+{
+    return [self.view.subviews count];
+}
 
 #pragma mark - Event Handlers
 
