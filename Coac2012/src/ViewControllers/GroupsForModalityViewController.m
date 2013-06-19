@@ -77,6 +77,7 @@
 
 - (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
 {
+    [super configureContentCell:cell inTableView:theTableView indexPath:indexpath];
     // Configure the cell...
     Agrupacion* ag = self.elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];

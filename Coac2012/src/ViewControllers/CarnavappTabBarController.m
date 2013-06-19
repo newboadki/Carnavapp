@@ -14,7 +14,7 @@
 
 @implementation CarnavappTabBarController
 
-- (NSInteger) supportedInterfaceOrientations
+- (NSUInteger) supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait;
 }

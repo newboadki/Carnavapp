@@ -27,8 +27,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
     // Start caching the background Images because they have filters applied
-    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2012"];
-    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2013"];
+//    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2012"];
+//    [[BackgroundImageManager sharedInstance] setBackgroundImageInView:nil forYear:@"2013"];
     
     // As of v1.0.4 there's a new parser. Therefore We need to check for the dataModel cache in the file system.
     // If it's the first time we do this check, and the file exists, we delete it.
@@ -195,7 +195,8 @@
     
     // Tab Bar
     [[UITabBar appearance] setBackgroundImage:[self.guiTheme tabBarBackgroundImage]];
-    self.tabBarController.tabBar.selectedImageTintColor = [self.guiTheme tabBarIconSelectedColor];
+    //self.tabBarController.tabBar.selectedImageTintColor = [self.guiTheme tabBarIconSelectedColor];
+    self.window.tintColor = self.guiTheme.tintColor;
     
     // Navigation Bar
     [[UINavigationBar appearance] setBackgroundImage:[self.guiTheme navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];

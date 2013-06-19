@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0ah-i8-Asf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
+    </dependencies>
+    <scenes>
+        <!--Carnavapp Tab Bar Controller-->
+        <scene sceneID="qDm-Or-ibL">
+            <objects>
+                <tabBarController id="0ah-i8-Asf" customClass="CarnavappTabBarController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="n3V-hP-Zr0">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.27140465559999999" green="0.0010534571610000001" blue="0.1233859402" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <viewControllers>
+                        <navigationController id="8SS-j0-GEd">
+                            <extendedEdge key="edgesForExtendedLayout"/>
+                            <tabBarItem key="tabBarItem" title="Concurso" image="contestIcon.png" id="C2B-a2-JIi"/>
+                            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                            <nil key="simulatedTopBarMetrics"/>
+                            <nil key="simulatedBottomBarMetrics"/>
+                            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                            <nil key="simulatedDestinationMetrics"/>
+                            <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="CW1-JG-lgs">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="tintColor" red="0.27058823529999998" green="0.0" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </navigationBar>
+                            <viewControllers>
+                                <viewController nibName="ContestPhaseViewController" id="iSg-Lu-HJe" customClass="ContestPhaseViewController">
+                                    <extendedEdge key="edgesForExtendedLayout"/>
+                                    <navigationItem key="navigationItem" title="Concurso" id="C4G-MD-VMX">
+                                        <barButtonItem key="backBarButtonItem" title="Fases" id="bhZ-Sv-Fro"/>
+                                    </navigationItem>
+                                    <nil key="simulatedStatusBarMetrics"/>
+                                    <nil key="simulatedTopBarMetrics"/>
+                                    <nil key="simulatedBottomBarMetrics"/>
+                                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                                    <nil key="simulatedDestinationMetrics"/>
+                                </viewController>
+                            </viewControllers>
+                        </navigationController>
+                        <navigationController id="SR1-gC-9H3">
+                            <extendedEdge key="edgesForExtendedLayout"/>
+                            <tabBarItem key="tabBarItem" title="Modalidades" image="groupsIcon.png" id="vlB-fx-1Rf"/>
+                            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                            <nil key="simulatedTopBarMetrics"/>
+                            <nil key="simulatedBottomBarMetrics"/>
+                            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                            <nil key="simulatedDestinationMetrics"/>
+                            <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XER-Yk-Xck">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="tintColor" red="0.27058823529999998" green="0.0" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </navigationBar>
+                            <viewControllers>
+                                <viewController nibName="BaseCoacListViewController" id="Mft-UH-1Ak" customClass="ModalitiesViewController">
+                                    <extendedEdge key="edgesForExtendedLayout"/>
+                                    <navigationItem key="navigationItem" title="Modalidades" id="FeH-AO-doq"/>
+                                    <nil key="simulatedStatusBarMetrics"/>
+                                    <nil key="simulatedTopBarMetrics"/>
+                                    <nil key="simulatedBottomBarMetrics"/>
+                                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                                    <nil key="simulatedDestinationMetrics"/>
+                                </viewController>
+                            </viewControllers>
+                        </navigationController>
+                        <navigationController id="HKo-2W-sTH">
+                            <extendedEdge key="edgesForExtendedLayout"/>
+                            <tabBarItem key="tabBarItem" title="Resultados" image="scoreboard_icon3.png" id="fEf-uW-7XQ"/>
+                            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                            <nil key="simulatedTopBarMetrics"/>
+                            <nil key="simulatedBottomBarMetrics"/>
+                            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                            <nil key="simulatedDestinationMetrics"/>
+                            <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="OdQ-mX-jMV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="tintColor" red="0.27058823529999998" green="0.0" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </navigationBar>
+                            <viewControllers>
+                                <viewController title="Resultados" nibName="BaseCoacListViewController" id="dVe-yx-Tqn" customClass="ContestResultsViewController">
+                                    <extendedEdge key="edgesForExtendedLayout"/>
+                                    <navigationItem key="navigationItem" title="Resultados" id="u0I-cQ-dH3">
+                                        <barButtonItem key="backBarButtonItem" title="Resultados" id="oae-Vp-OQs"/>
+                                    </navigationItem>
+                                    <nil key="simulatedStatusBarMetrics"/>
+                                    <nil key="simulatedTopBarMetrics"/>
+                                    <nil key="simulatedBottomBarMetrics"/>
+                                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                                    <nil key="simulatedDestinationMetrics"/>
+                                </viewController>
+                            </viewControllers>
+                        </navigationController>
+                        <navigationController id="5fb-pJ-5gn">
+                            <extendedEdge key="edgesForExtendedLayout"/>
+                            <tabBarItem key="tabBarItem" title="Enlaces" image="linksIcon.png" id="qQ3-zR-24V"/>
+                            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                            <nil key="simulatedTopBarMetrics"/>
+                            <nil key="simulatedBottomBarMetrics"/>
+                            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                            <nil key="simulatedDestinationMetrics"/>
+                            <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ff2-Vp-YAf">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="tintColor" red="0.27058823529999998" green="0.0" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </navigationBar>
+                            <viewControllers>
+                                <viewController nibName="BaseCoacListViewController" id="tDx-zy-Jmg" customClass="LinksViewController">
+                                    <extendedEdge key="edgesForExtendedLayout"/>
+                                    <navigationItem key="navigationItem" title="Enlaces" id="gvk-2B-UQk"/>
+                                    <nil key="simulatedStatusBarMetrics"/>
+                                    <nil key="simulatedTopBarMetrics"/>
+                                    <nil key="simulatedBottomBarMetrics"/>
+                                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                                    <nil key="simulatedDestinationMetrics"/>
+                                </viewController>
+                            </viewControllers>
+                        </navigationController>
+                    </viewControllers>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0F5-4V-Fcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="contestIcon.png" width="30" height="30"/>
+        <image name="groupsIcon.png" width="30" height="30"/>
+        <image name="linksIcon.png" width="30" height="30"/>
+        <image name="scoreboard_icon3.png" width="20" height="20"/>
+    </resources>
+    <classes>
+        <class className="BaseCoacListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseCoacListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="noContentMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="noContentMessageView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="searchResultsTableViewController" candidateClass="SearchResultsTableViewController"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CarnavappTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarnavappTabBarController.h"/>
+        </class>
+        <class className="ContestPhaseViewController" superclassName="HeaderAndFooterListViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContestPhaseViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="shadowImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ContestResultsViewController" superclassName="HeaderAndFooterListViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContestResultsViewController.h"/>
+        </class>
+        <class className="HeaderAndFooterListViewController" superclassName="BaseCoacListViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HeaderAndFooterListViewController.h"/>
+        </class>
+        <class className="LinksViewController" superclassName="BaseCoacListViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LinksViewController.h"/>
+        </class>
+        <class className="ModalitiesViewController" superclassName="BaseCoacListViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModalitiesViewController.h"/>
+        </class>
+        <class className="SearchResultsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultsTableViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

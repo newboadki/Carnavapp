@@ -16,5 +16,5 @@
 - (UIImage*) navigationBarBackButtonImage;
 - (UIImage*) tabBarBackgroundImage;
 - (UIColor*) tabBarIconSelectedColor;
-
+- (UIColor*) tintColor;
 @end

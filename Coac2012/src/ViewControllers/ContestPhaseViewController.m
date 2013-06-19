@@ -87,8 +87,7 @@
     [super viewDidLoad];
     
     // Set the Title:
-    [self setTitle:[NSString stringWithFormat:@"Concurso %@", self.yearString]]; // This is affecting the TabBar's item, why?    
-    [(UITabBarItem*)[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Concurso"];
+    [self setTitle:[NSString stringWithFormat:@"Concurso %@", self.yearString]]; // This is affecting the TabBar's item, why?
     
     // Create the contest's calendar
     if (!self.yearString)
@@ -179,7 +178,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSInteger) supportedInterfaceOrientations
+- (NSUInteger) supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait;
 }
@@ -213,6 +212,7 @@
 - (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell...
+    [super configureContentCell:cell inTableView:theTableView indexPath:indexpath];
     Agrupacion* ag = self.elementsArray[[indexpath row]];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];

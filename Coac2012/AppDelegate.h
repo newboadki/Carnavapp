@@ -14,8 +14,8 @@
 {
     UIView* loadingScreen;
 }
-@property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong, nonatomic) IBOutlet UITabBarController *tabBarController;
+@property (retain, nonatomic) IBOutlet UIWindow *window;
+@property (retain, nonatomic) IBOutlet UITabBarController *tabBarController;
 @property (retain, nonatomic) ModelDataHandler* dataHandler;
 @property (retain, nonatomic) id <ThemeProtocol> guiTheme;
 

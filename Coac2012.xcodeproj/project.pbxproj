@@ -285,6 +285,8 @@
 		00E22BC916628E6500CFB9ED /* YearHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E22BC716628E6500CFB9ED /* YearHeaderView.xib */; };
 		00E22C0D1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E22C0C1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m */; };
 		00E22C0E1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E22C0C1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m */; };
+		00E71CA11771017500E2B54C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E71CA01771017500E2B54C /* Storyboard.storyboard */; };
+		00E71CA21771017500E2B54C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E71CA01771017500E2B54C /* Storyboard.storyboard */; };
 		00E73ED614E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E73ED414E90BC6008961B9 /* SearchResultsTableViewController.m */; };
 		00E73ED814E90BC6008961B9 /* SearchResultsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E73ED514E90BC6008961B9 /* SearchResultsTableViewController.xib */; };
 		00EA736414D1534400DD1DEF /* BaseCoacListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EA736214D1534400DD1DEF /* BaseCoacListViewController.m */; };
@@ -599,6 +601,7 @@
 		00E22BC716628E6500CFB9ED /* YearHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YearHeaderView.xib; sourceTree = "<group>"; };
 		00E22C0B1662BF5E00CFB9ED /* HeaderAndFooterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderAndFooterListViewController.h; sourceTree = "<group>"; };
 		00E22C0C1662BF5E00CFB9ED /* HeaderAndFooterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderAndFooterListViewController.m; sourceTree = "<group>"; };
+		00E71CA01771017500E2B54C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		00E73ED314E90BC6008961B9 /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
 		00E73ED414E90BC6008961B9 /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
 		00E73ED514E90BC6008961B9 /* SearchResultsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchResultsTableViewController.xib; path = src/ViewControllers/SearchResultsTableViewController.xib; sourceTree = "<group>"; };
@@ -804,6 +807,7 @@
 		00820C4714CC64BE008A914A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0088EFEB168B14AD00BEA494 /* Legacy */,
 				00ABFBCF16ACA70200A8BB35 /* UI_Themes */,
 				00861A1814EAB2F800E27829 /* Calendar */,
 				00B8AF2214D72DED002799BC /* Group Details View */,
@@ -900,6 +904,7 @@
 				0083613514D7D84E006FA9D5 /* old_default_screen@2x.png */,
 			);
 			name = Legacy;
+			path = Backgrounds;
 			sourceTree = "<group>";
 		};
 		008EE9F714F6B2D6002BFA7F /* Helpers */ = {
@@ -964,6 +969,7 @@
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
+				00E71CA01771017500E2B54C /* Storyboard.storyboard */,
 				00B0C88016F47418000DD560 /* artwork.png */,
 				00B0C88116F47418000DD560 /* icon.png */,
 				00B0C88216F47418000DD560 /* icon@2x.png */,
@@ -1254,7 +1260,6 @@
 		00DC4A8F14D0A0DE0018E3E3 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				0088EFEB168B14AD00BEA494 /* Legacy */,
 				0086C22916861F65003F35F1 /* cartel_2012.png */,
 				00988D6816B55543007C9BBF /* dunes_bg@2x.png */,
 				0086C22816861F64003F35F1 /* cartel_2012@2x.png */,
@@ -1331,7 +1336,7 @@
 		00AECA6B14CAC6DC005CE4DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Borja Arias Drake";
 			};
 			buildConfigurationList = 00AECA6E14CAC6DC005CE4DC /* Build configuration list for PBXProject "Coac2012" */;
@@ -1380,6 +1385,7 @@
 				00ABFBE816ACAE2B00A8BB35 /* navigationBarShadow.png in Resources */,
 				00988D6A16B55543007C9BBF /* dunes_bg@2x.png in Resources */,
 				00BBE2F016EFBE5000866553 /* Noteworthy.ttc in Resources */,
+				00E71CA21771017500E2B54C /* Storyboard.storyboard in Resources */,
 				00F2E93816F1BE100039C6FB /* Default-568h@2x.png in Resources */,
 				00F2E93A16F1BE100039C6FB /* Default.png in Resources */,
 				00F2E93C16F1BE100039C6FB /* Default@2x.png in Resources */,
@@ -1416,6 +1422,7 @@
 				00DC4AC314D0B2F60018E3E3 /* LinkViewerViewController.xib in Resources */,
 				00DC4AC614D0B6B70018E3E3 /* GroupInfoCell.xib in Resources */,
 				00EA736614D1534400DD1DEF /* BaseCoacListViewController.xib in Resources */,
+				00E71CA11771017500E2B54C /* Storyboard.storyboard in Resources */,
 				00EA737614D1E72C00DD1DEF /* antifaz_52x37.png in Resources */,
 				0084FECB14D1E876002A074E /* activeDay_45x68.png in Resources */,
 				0084FECD14D1E876002A074E /* inactiveDay_45x68.png in Resources */,
@@ -1766,8 +1773,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1784,9 +1792,12 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1795,8 +1806,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1806,7 +1818,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";

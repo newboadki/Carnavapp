@@ -210,6 +210,7 @@
 
 - (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
 {
+    [super configureContentCell:cell inTableView:theTableView indexPath:indexpath];
     int section = [indexpath section];
     int row = [indexpath row];
     int linealIndex = row + (section * 3);

@@ -242,6 +242,7 @@
 - (void) configureContentCell:(UITableViewCell*)cell inTableView:(UITableView*)theTableView indexPath:(NSIndexPath*)indexpath
 {
     // Implement in subclasses
+    cell.backgroundColor = [UIColor clearColor];
 }
 
 
