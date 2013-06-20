@@ -28,6 +28,7 @@
 - (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
     // Configure the cell..
+    [super tableView:theTableView configureCell:cell indexPath:indexpath];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     
     Link* link = self.elementsArray[[indexpath row]];

@@ -28,6 +28,7 @@
 
 - (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
+    [super tableView:theTableView configureCell:cell indexPath:indexpath];
     UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
     UILabel* categoryNameLabel = (UILabel*) [cell viewWithTag:CATEGORY_LABEL_TAG];
     
@@ -48,7 +49,7 @@
 
 - (NSString*) selectedCellNibName
 {
-    return @"SpacedOneLabelSlectedCell";
+    return @"SpacedOneLabelSelectedCell";
 }
 
 

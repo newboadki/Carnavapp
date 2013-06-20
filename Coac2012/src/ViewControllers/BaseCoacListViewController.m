@@ -253,21 +253,17 @@
 
 - (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
-    // Implement in subclasses.
+    // Implement in subclasses.    
+    cell.backgroundColor = [UIColor clearColor];
+    
+    cell.selectedBackgroundView = [[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil][0];
+
 }
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [theTableView cellForRowAtIndexPath:indexPath];
-    cell.selectedBackgroundView = [[NSBundle mainBundle] loadNibNamed:[self selectedCellNibName] owner:self options:nil][0];
-    [self tableView:theTableView configureCell:cell indexPath:indexPath];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        [[[theTableView cellForRowAtIndexPath:indexPath] selectedBackgroundView] setAlpha:0.0];
-    } completion:^(BOOL finished) {
-        
-        [[theTableView cellForRowAtIndexPath:indexPath] setSelectedBackgroundView:nil];
-    }];
+    // Deselect the cell so it is not highlighted when we come back to this VC
+    [theTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

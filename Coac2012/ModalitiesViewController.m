@@ -55,6 +55,8 @@
 
 - (void) tableView:(UITableView*)theTableView configureCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexpath
 {
+    [super tableView:theTableView configureCell:cell indexPath:indexpath];
+    
     if (theTableView == self.tableView)
     {
         UILabel* groupNameLabel = (UILabel*) [cell viewWithTag:GROUP_NAME_LABEL_TAG];
@@ -64,6 +66,7 @@
         groupNameLabel.text = currentModality;
         categoryNameLabel.text = @"";
     }
+        
 }
 
 
@@ -77,7 +80,7 @@
 
 - (NSString*) selectedCellNibName
 {
-    return @"SpacedOneLabelSlectedCell";
+    return @"SpacedOneLabelSelectedCell";
 }
 
 
@@ -120,10 +123,15 @@
     [nextController setYearString:[[ContestPhaseDatesHelper yearKeys] lastObject]];
     
     [[self navigationController] pushViewController:nextController animated:YES];
-    [nextController release];        
-
-    
+    [nextController release];
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0f;
+}
+
 
 #pragma mark - SearchResultsTableViewControllerDelegateProtocol
 

@@ -196,7 +196,11 @@
     // Tab Bar
     [[UITabBar appearance] setBackgroundImage:[self.guiTheme tabBarBackgroundImage]];
     //self.tabBarController.tabBar.selectedImageTintColor = [self.guiTheme tabBarIconSelectedColor];
-    self.window.tintColor = self.guiTheme.tintColor;
+    
+    if ([self.window respondsToSelector:@selector(tintColor)]) { // iOS 7 or higher
+        [self.window performSelector:@selector(tintColor) withObject:self.guiTheme.tintColor];
+    }
+    
     
     // Navigation Bar
     [[UINavigationBar appearance] setBackgroundImage:[self.guiTheme navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];

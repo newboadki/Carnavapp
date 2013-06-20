@@ -181,7 +181,8 @@
 
 - (void) tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        
+    [super tableView:theTableView didSelectRowAtIndexPath:indexPath];
+    
     if ((indexPath.section == HEADER_SECTION_INDEX) && self.showHeader)
     {        
         [self handleHeaderSelected];

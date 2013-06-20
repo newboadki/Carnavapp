@@ -83,7 +83,7 @@
 
 - (NSString*) selectedCellNibName
 {
-    return @"SpacedOneLabelSlectedCell";
+    return @"SpacedOneLabelSelectedCell";
 }
 
 
