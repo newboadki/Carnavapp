@@ -199,6 +199,12 @@
 		00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 00985C271683915200528740 /* Carnavapp_v_1_0_4.xml */; };
 		00988D6916B55543007C9BBF /* dunes_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6816B55543007C9BBF /* dunes_bg@2x.png */; };
 		00988D6A16B55543007C9BBF /* dunes_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00988D6816B55543007C9BBF /* dunes_bg@2x.png */; };
+		009DE64317CBAAEC0030ED08 /* ThemeManager_iOS7.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64217CBAAEC0030ED08 /* ThemeManager_iOS7.m */; };
+		009DE64417CBAAEC0030ED08 /* ThemeManager_iOS7.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64217CBAAEC0030ED08 /* ThemeManager_iOS7.m */; };
+		009DE64817CBAEBA0030ED08 /* ThemeManager_iOS6.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64717CBAEBA0030ED08 /* ThemeManager_iOS6.m */; };
+		009DE64917CBAEBA0030ED08 /* ThemeManager_iOS6.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64717CBAEBA0030ED08 /* ThemeManager_iOS6.m */; };
+		009DE64C17CBAF780030ED08 /* BaseThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64B17CBAF780030ED08 /* BaseThemeManager.m */; };
+		009DE64D17CBAF780030ED08 /* BaseThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64B17CBAF780030ED08 /* BaseThemeManager.m */; };
 		00A10FDB150A89F900D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD9150A89F900D1C425 /* active_day.png */; };
 		00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FDA150A89F900D1C425 /* inactive_day.png */; };
 		00A2B5981688C3AA00FA8C40 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A2B5971688C3AA00FA8C40 /* Result.m */; };
@@ -452,6 +458,13 @@
 		00988D6816B55543007C9BBF /* dunes_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dunes_bg@2x.png"; sourceTree = "<group>"; };
 		00988D6C16B5593E007C9BBF /* old_velvetThemeTabBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "old_velvetThemeTabBarBackground@2x.png"; path = "../old_velvetThemeTabBarBackground@2x.png"; sourceTree = "<group>"; };
 		00988D6D16B5593E007C9BBF /* old_velvetThemeTabBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = old_velvetThemeTabBarBackground.png; path = ../old_velvetThemeTabBarBackground.png; sourceTree = "<group>"; };
+		009DE64117CBAAEC0030ED08 /* ThemeManager_iOS7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager_iOS7.h; sourceTree = "<group>"; };
+		009DE64217CBAAEC0030ED08 /* ThemeManager_iOS7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager_iOS7.m; sourceTree = "<group>"; };
+		009DE64517CBAC950030ED08 /* ThemeManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManagerProtocol.h; sourceTree = "<group>"; };
+		009DE64617CBAEBA0030ED08 /* ThemeManager_iOS6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager_iOS6.h; sourceTree = "<group>"; };
+		009DE64717CBAEBA0030ED08 /* ThemeManager_iOS6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager_iOS6.m; sourceTree = "<group>"; };
+		009DE64A17CBAF780030ED08 /* BaseThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseThemeManager.h; sourceTree = "<group>"; };
+		009DE64B17CBAF780030ED08 /* BaseThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseThemeManager.m; sourceTree = "<group>"; };
 		00A10FD9150A89F900D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00A10FDA150A89F900D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
 		00A2B593168863F800FA8C40 /* HeaderAndFooterListViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HeaderAndFooterListViewController+Protected.h"; sourceTree = "<group>"; };
@@ -900,6 +913,13 @@
 				00ABFBCA16ACA3B200A8BB35 /* ThemeProtocol.h */,
 				00ABFBCB16ACA44800A8BB35 /* VelvetTheme.h */,
 				00ABFBCC16ACA44800A8BB35 /* VelvetTheme.m */,
+				009DE64117CBAAEC0030ED08 /* ThemeManager_iOS7.h */,
+				009DE64217CBAAEC0030ED08 /* ThemeManager_iOS7.m */,
+				009DE64517CBAC950030ED08 /* ThemeManagerProtocol.h */,
+				009DE64617CBAEBA0030ED08 /* ThemeManager_iOS6.h */,
+				009DE64717CBAEBA0030ED08 /* ThemeManager_iOS6.m */,
+				009DE64A17CBAF780030ED08 /* BaseThemeManager.h */,
+				009DE64B17CBAF780030ED08 /* BaseThemeManager.m */,
 			);
 			name = UI_Themes;
 			sourceTree = "<group>";
@@ -1417,6 +1437,7 @@
 				000C3BFB164860B900B8E92D /* KWBeforeEachNode.m in Sources */,
 				000C3BFC164860B900B8E92D /* KWBeIdenticalToMatcher.m in Sources */,
 				000C3BFD164860B900B8E92D /* KWBeKindOfClassMatcher.m in Sources */,
+				009DE64917CBAEBA0030ED08 /* ThemeManager_iOS6.m in Sources */,
 				000C3BFE164860B900B8E92D /* KWBeMemberOfClassMatcher.m in Sources */,
 				000C3BFF164860B900B8E92D /* KWBeNilMatcher.m in Sources */,
 				000C3C00164860B900B8E92D /* KWBeNonNilMatcher.m in Sources */,
@@ -1436,6 +1457,7 @@
 				000C3C0E164860B900B8E92D /* KWEqualMatcher.m in Sources */,
 				000C3C0F164860B900B8E92D /* KWExample.m in Sources */,
 				000C3C10164860B900B8E92D /* KWExampleGroupBuilder.m in Sources */,
+				009DE64417CBAAEC0030ED08 /* ThemeManager_iOS7.m in Sources */,
 				000C3C11164860B900B8E92D /* KWExampleSuite.m in Sources */,
 				000C3C12164860B900B8E92D /* KWExistVerifier.m in Sources */,
 				000C3C13164860B900B8E92D /* KWFailure.m in Sources */,
@@ -1491,6 +1513,7 @@
 				00021BFF15EFAD7100536D6E /* CoacParserSpec.m in Sources */,
 				002E7BFF1648519600B69153 /* Agrupacion.m in Sources */,
 				002E7C001648519600B69153 /* Componente.m in Sources */,
+				009DE64D17CBAF780030ED08 /* BaseThemeManager.m in Sources */,
 				002E7C011648519600B69153 /* Comentario.m in Sources */,
 				002E7C021648519600B69153 /* Link.m in Sources */,
 				002E7C031648519600B69153 /* Picture.m in Sources */,
@@ -1541,6 +1564,7 @@
 			files = (
 				00AECA8514CAC6DC005CE4DC /* main.m in Sources */,
 				00AECA8914CAC6DC005CE4DC /* AppDelegate.m in Sources */,
+				009DE64C17CBAF780030ED08 /* BaseThemeManager.m in Sources */,
 				00AECA9314CAC6DC005CE4DC /* ModalitiesViewController.m in Sources */,
 				00C0BD4314CACC7300427E42 /* CXMLDocument_CreationExtensions.m in Sources */,
 				00C0BD4414CACC7300427E42 /* CXMLNode_CreationExtensions.m in Sources */,
@@ -1550,8 +1574,10 @@
 				00C0BD4814CACC7300427E42 /* CXMLElement_CreationExtensions.m in Sources */,
 				00C0BD4914CACC7300427E42 /* CXMLElement_ElementTreeExtensions.m in Sources */,
 				00C0BD4A14CACC7300427E42 /* CXMLNamespaceNode.m in Sources */,
+				009DE64317CBAAEC0030ED08 /* ThemeManager_iOS7.m in Sources */,
 				00C0BD4B14CACC7300427E42 /* CXMLNode.m in Sources */,
 				00C0BD4C14CACC7300427E42 /* CXMLNode_PrivateExtensions.m in Sources */,
+				009DE64817CBAEBA0030ED08 /* ThemeManager_iOS6.m in Sources */,
 				00C0BD4D14CACC7300427E42 /* CXMLNode_XPathExtensions.m in Sources */,
 				00C0BD4E14CACC7300427E42 /* CTidy.m in Sources */,
 				00C0BD5714CACD9500427E42 /* CoacParser_v_1_0_4.m in Sources */,

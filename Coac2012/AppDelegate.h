@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ModelDataHandler.h"
-#import "ThemeProtocol.h"
+#import "ThemeManagerProtocol.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 {
@@ -17,6 +17,6 @@
 @property (retain, nonatomic) IBOutlet UIWindow *window;
 @property (retain, nonatomic) IBOutlet UITabBarController *tabBarController;
 @property (retain, nonatomic) ModelDataHandler* dataHandler;
-@property (retain, nonatomic) id <ThemeProtocol> guiTheme;
+@property (retain, nonatomic) id <ThemeManagerProtocol> themeManager;
 
 @end

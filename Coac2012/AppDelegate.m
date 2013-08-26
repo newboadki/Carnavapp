@@ -16,6 +16,8 @@
 #import "ContestPhaseViewController.h"
 #import "BackgroundImageManager.h"
 #import "VelvetTheme.h"
+#import "ThemeManager_iOS6.h"
+#import "ThemeManager_iOS7.h"
 
 @implementation AppDelegate
 
@@ -191,26 +193,24 @@
 
 - (void) customizeGui
 {
-    self.guiTheme = [VelvetTheme sharedInstance];
-    
-    // Tab Bar
-    [[UITabBar appearance] setBackgroundImage:[self.guiTheme tabBarBackgroundImage]];
-    //self.tabBarController.tabBar.selectedImageTintColor = [self.guiTheme tabBarIconSelectedColor];
-    
-    if ([self.window respondsToSelector:@selector(tintColor)]) { // iOS 7 or higher
-        [self.window performSelector:@selector(tintColor) withObject:self.guiTheme.tintColor];
-    }
-    
-    
-    // Navigation Bar
-    [[UINavigationBar appearance] setBackgroundImage:[self.guiTheme navigationBarBackgroundImage] forBarMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[self.guiTheme navigationBarBackButtonImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
-    // Font
-    //    [[UILabel appearance] setFont:[UIFont fontWithName:@"Noteworthy" size:19.0]];
-    // Override point for customization after application launch.
+    self.themeManager = [self specificThemeManager];
+    [self.themeManager applyTheme];
 }
 
+- (id<ThemeManagerProtocol>)specificThemeManager
+{
+    id<ThemeManagerProtocol> manager = nil;
+    if ([self.window respondsToSelector:@selector(tintColor)]) { // iOS 7 or higher
+        manager = [[[ThemeManager_iOS7 alloc] init] autorelease];
+    } else {
+        // iOS 6 or lower
+        manager = [[[ThemeManager_iOS6 alloc] init] autorelease];
+    }
+    
+    [manager setTheme:[VelvetTheme sharedInstance]];
+
+    return manager;
+}
 
 #pragma mark - Memory Management
 
