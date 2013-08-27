@@ -205,6 +205,10 @@
 		009DE64917CBAEBA0030ED08 /* ThemeManager_iOS6.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64717CBAEBA0030ED08 /* ThemeManager_iOS6.m */; };
 		009DE64C17CBAF780030ED08 /* BaseThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64B17CBAF780030ED08 /* BaseThemeManager.m */; };
 		009DE64D17CBAF780030ED08 /* BaseThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 009DE64B17CBAF780030ED08 /* BaseThemeManager.m */; };
+		009DE65017CD39CB0030ED08 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 009DE64E17CD39CB0030ED08 /* Default.png */; };
+		009DE65117CD39CB0030ED08 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 009DE64E17CD39CB0030ED08 /* Default.png */; };
+		009DE65217CD39CB0030ED08 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 009DE64F17CD39CB0030ED08 /* Default@2x.png */; };
+		009DE65317CD39CB0030ED08 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 009DE64F17CD39CB0030ED08 /* Default@2x.png */; };
 		00A10FDB150A89F900D1C425 /* active_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FD9150A89F900D1C425 /* active_day.png */; };
 		00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A10FDA150A89F900D1C425 /* inactive_day.png */; };
 		00A2B5981688C3AA00FA8C40 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A2B5971688C3AA00FA8C40 /* Result.m */; };
@@ -465,6 +469,8 @@
 		009DE64717CBAEBA0030ED08 /* ThemeManager_iOS6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager_iOS6.m; sourceTree = "<group>"; };
 		009DE64A17CBAF780030ED08 /* BaseThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseThemeManager.h; sourceTree = "<group>"; };
 		009DE64B17CBAF780030ED08 /* BaseThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseThemeManager.m; sourceTree = "<group>"; };
+		009DE64E17CD39CB0030ED08 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Carnavapp/Media.xcassets/LaunchImage.launchimage/Default.png; sourceTree = "<group>"; };
+		009DE64F17CD39CB0030ED08 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Carnavapp/Media.xcassets/LaunchImage.launchimage/Default@2x.png"; sourceTree = "<group>"; };
 		00A10FD9150A89F900D1C425 /* active_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_day.png; sourceTree = "<group>"; };
 		00A10FDA150A89F900D1C425 /* inactive_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_day.png; sourceTree = "<group>"; };
 		00A2B593168863F800FA8C40 /* HeaderAndFooterListViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HeaderAndFooterListViewController+Protected.h"; sourceTree = "<group>"; };
@@ -927,6 +933,8 @@
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
+				009DE64E17CD39CB0030ED08 /* Default.png */,
+				009DE64F17CD39CB0030ED08 /* Default@2x.png */,
 				00E71CA51772556D00E2B54C /* Default-568h@2x.png */,
 				00E71CA3177251FB00E2B54C /* Media.xcassets */,
 				00B0C88016F47418000DD560 /* artwork.png */,
@@ -1320,6 +1328,7 @@
 				00EE6181160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png in Resources */,
 				000C3C3F164862CF00B8E92D /* group_v_1_0_3.xml in Resources */,
 				00E22BC916628E6500CFB9ED /* YearHeaderView.xib in Resources */,
+				009DE65117CD39CB0030ED08 /* Default.png in Resources */,
 				0082BBA2167E4E98007D6CF4 /* group_v_1_0_4.xml in Resources */,
 				00985C291683915200528740 /* Carnavapp_v_1_0_3.xml in Resources */,
 				00985C2B1683915200528740 /* Carnavapp_v_1_0_4.xml in Resources */,
@@ -1331,6 +1340,7 @@
 				0086C22F16861F65003F35F1 /* cartel_2012.png in Resources */,
 				008DDC2E169CCCBE008AF911 /* GroupDetailCell.xib in Resources */,
 				00856E1016A4AB6D00D1AE34 /* shadow@2x.png in Resources */,
+				009DE65317CD39CB0030ED08 /* Default@2x.png in Resources */,
 				00856E1216A4AB6D00D1AE34 /* shadow.png in Resources */,
 				00886A3A16A89D4C00E07CC8 /* VideoViewController.xib in Resources */,
 				00988D6A16B55543007C9BBF /* dunes_bg@2x.png in Resources */,
@@ -1352,8 +1362,10 @@
 				00DC4A9E14D0A0DE0018E3E3 /* fondoBlanco.png in Resources */,
 				00DC4AA014D0A0DE0018E3E3 /* fondoNegro_320x480.png in Resources */,
 				00DC4AA614D0A0DE0018E3E3 /* groupsIcon.png in Resources */,
+				009DE65017CD39CB0030ED08 /* Default.png in Resources */,
 				00DC4AA814D0A0DE0018E3E3 /* groupsIcon@2x.png in Resources */,
 				00DC4AAA14D0A0DE0018E3E3 /* contestIcon.png in Resources */,
+				009DE65217CD39CB0030ED08 /* Default@2x.png in Resources */,
 				00DC4AAC14D0A0DE0018E3E3 /* contestIcon@2x.png in Resources */,
 				00DC4AAE14D0A0DE0018E3E3 /* linksIcon.png in Resources */,
 				00DC4AB014D0A0DE0018E3E3 /* linksIcon@2x.png in Resources */,
