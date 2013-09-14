@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LoadingScreenViewController : UIViewController
-
+@property (assign, nonatomic) IBOutlet UIImageView *imageView;
 @end

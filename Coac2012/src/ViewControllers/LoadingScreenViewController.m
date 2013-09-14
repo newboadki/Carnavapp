@@ -8,6 +8,8 @@
 
 #import "LoadingScreenViewController.h"
 
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
 @interface LoadingScreenViewController ()
 
 @end
@@ -26,7 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    if (IS_IPHONE_5)
+    {
+        self.imageView.image = [UIImage imageNamed:@"Default-568h@2x.png"];
+    }
 }
 
 - (void)didReceiveMemoryWarning

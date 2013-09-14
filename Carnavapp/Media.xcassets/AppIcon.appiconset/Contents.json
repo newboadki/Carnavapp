@@ -32,18 +32,6 @@
       "idiom" : "iphone",
       "filename" : "vectormask-icon-120x120.png",
       "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "unassigned" : true,
-      "scale" : "1x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "unassigned" : true,
-      "scale" : "2x"
     }
   ],
   "info" : {
