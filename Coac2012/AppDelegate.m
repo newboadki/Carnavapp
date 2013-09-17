@@ -16,8 +16,10 @@
 #import "ContestPhaseViewController.h"
 #import "BackgroundImageManager.h"
 #import "VelvetTheme.h"
+#import "FlatPurpleTheme.h"
 #import "ThemeManager_iOS6.h"
 #import "ThemeManager_iOS7.h"
+#import "ThemeManager_iOS7_translucent.h"
 
 @implementation AppDelegate
 
@@ -202,12 +204,14 @@
     id<ThemeManagerProtocol> manager = nil;
     if ([self.window respondsToSelector:@selector(tintColor)]) { // iOS 7 or higher
         manager = [[[ThemeManager_iOS7 alloc] init] autorelease];
+        [manager setTheme:[VelvetTheme sharedInstance]];
     } else {
         // iOS 6 or lower
         manager = [[[ThemeManager_iOS6 alloc] init] autorelease];
+        [manager setTheme:[VelvetTheme sharedInstance]];
     }
     
-    [manager setTheme:[VelvetTheme sharedInstance]];
+    
 
     return manager;
 }

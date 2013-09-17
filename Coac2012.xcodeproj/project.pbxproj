@@ -131,6 +131,10 @@
 		002E7C251648544500B69153 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C0BD3E14CACC7300427E42 /* CXMLNode_XPathExtensions.m */; };
 		0052335014F823DC0034E314 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334414F823DC0034E314 /* FileDownloader.m */; };
 		0052335414F823DC0034E314 /* ConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052334F14F823DC0034E314 /* ConsoleLogger.m */; };
+		005D488317E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D488217E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m */; };
+		005D488417E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D488217E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m */; };
+		005D488717E8FB8600C147E6 /* FlatPurpleTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D488617E8FB8600C147E6 /* FlatPurpleTheme.m */; };
+		005D488817E8FB8600C147E6 /* FlatPurpleTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D488617E8FB8600C147E6 /* FlatPurpleTheme.m */; };
 		007A6E6616876DD6006AFFE1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0086C2171685FC45003F35F1 /* CoreImage.framework */; };
 		0080960414CC9F01000E1525 /* RoundedCalendarBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0080960314CC9F01000E1525 /* RoundedCalendarBoxView.xib */; };
 		0080960914CCA072000E1525 /* ContestPhaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0080960714CCA072000E1525 /* ContestPhaseViewController.m */; };
@@ -287,6 +291,10 @@
 		00EE617F160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EE617C160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png */; };
 		00EE6180160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EE617D160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png */; };
 		00EE6181160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EE617D160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png */; };
+		00F2332317E51386009ED408 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F2332117E51386009ED408 /* icon.png */; };
+		00F2332417E51386009ED408 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F2332117E51386009ED408 /* icon.png */; };
+		00F2332517E51386009ED408 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F2332217E51386009ED408 /* icon@2x.png */; };
+		00F2332617E51386009ED408 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F2332217E51386009ED408 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -381,6 +389,10 @@
 		0052334C14F823DC0034E314 /* FileDownloaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloaderTests.m; sourceTree = "<group>"; };
 		0052334E14F823DC0034E314 /* ConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleLogger.h; sourceTree = "<group>"; };
 		0052334F14F823DC0034E314 /* ConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleLogger.m; sourceTree = "<group>"; };
+		005D488117E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager_iOS7_translucent.h; sourceTree = "<group>"; };
+		005D488217E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager_iOS7_translucent.m; sourceTree = "<group>"; };
+		005D488517E8FB8600C147E6 /* FlatPurpleTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatPurpleTheme.h; sourceTree = "<group>"; };
+		005D488617E8FB8600C147E6 /* FlatPurpleTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatPurpleTheme.m; sourceTree = "<group>"; };
 		007237771567F61E0075CBFE /* coac2012Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "coac2012Tests-Info.plist"; sourceTree = "<group>"; };
 		007237781567F61E0075CBFE /* coac2012Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "coac2012Tests-Prefix.pch"; sourceTree = "<group>"; };
 		0072377C1567F88C0075CBFE /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
@@ -596,6 +608,8 @@
 		00EA737514D1E72C00DD1DEF /* antifaz_52x37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = antifaz_52x37.png; sourceTree = "<group>"; };
 		00EE617C160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondoBlanco_iPhone5_640x1136.png; sourceTree = "<group>"; };
 		00EE617D160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondoNegro_iPhone5_640x1136.png; sourceTree = "<group>"; };
+		00F2332117E51386009ED408 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Carnavapp/Media.xcassets/AppIcon.appiconset/icon.png; sourceTree = "<group>"; };
+		00F2332217E51386009ED408 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Carnavapp/Media.xcassets/AppIcon.appiconset/icon@2x.png"; sourceTree = "<group>"; };
 		00FEA550160F94D3004AA9D9 /* old_default_screen-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "old_default_screen-568h@2x.png"; path = "../../old_default_screen-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -927,6 +941,10 @@
 				009DE64717CBAEBA0030ED08 /* ThemeManager_iOS6.m */,
 				009DE64A17CBAF780030ED08 /* BaseThemeManager.h */,
 				009DE64B17CBAF780030ED08 /* BaseThemeManager.m */,
+				005D488117E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.h */,
+				005D488217E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m */,
+				005D488517E8FB8600C147E6 /* FlatPurpleTheme.h */,
+				005D488617E8FB8600C147E6 /* FlatPurpleTheme.m */,
 			);
 			name = UI_Themes;
 			sourceTree = "<group>";
@@ -934,6 +952,8 @@
 		00AECA6914CAC6DC005CE4DC = {
 			isa = PBXGroup;
 			children = (
+				00F2332117E51386009ED408 /* icon.png */,
+				00F2332217E51386009ED408 /* icon@2x.png */,
 				009DE65417CE77BC0030ED08 /* Default-568h@2x.png */,
 				009DE64E17CD39CB0030ED08 /* Default.png */,
 				009DE64F17CD39CB0030ED08 /* Default@2x.png */,
@@ -1345,9 +1365,11 @@
 				009DE65617CE77BC0030ED08 /* Default-568h@2x.png in Resources */,
 				00856E1216A4AB6D00D1AE34 /* shadow.png in Resources */,
 				00886A3A16A89D4C00E07CC8 /* VideoViewController.xib in Resources */,
+				00F2332417E51386009ED408 /* icon.png in Resources */,
 				00988D6A16B55543007C9BBF /* dunes_bg@2x.png in Resources */,
 				00BBE2F016EFBE5000866553 /* Noteworthy.ttc in Resources */,
 				00B0C88416F47418000DD560 /* artwork.png in Resources */,
+				00F2332617E51386009ED408 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1396,6 +1418,7 @@
 				00A10FDB150A89F900D1C425 /* active_day.png in Resources */,
 				00A10FDD150A89F900D1C425 /* inactive_day.png in Resources */,
 				00EE617E160FC29100277A7B /* fondoBlanco_iPhone5_640x1136.png in Resources */,
+				00F2332517E51386009ED408 /* icon@2x.png in Resources */,
 				00EE6180160FC29100277A7B /* fondoNegro_iPhone5_640x1136.png in Resources */,
 				00AD902A16621FC10099DEA6 /* TODO in Resources */,
 				00E22BC816628E6500CFB9ED /* YearHeaderView.xib in Resources */,
@@ -1415,6 +1438,7 @@
 				00988D6916B55543007C9BBF /* dunes_bg@2x.png in Resources */,
 				00BBE2EF16EFBE5000866553 /* Noteworthy.ttc in Resources */,
 				00B0C88316F47418000DD560 /* artwork.png in Resources */,
+				00F2332317E51386009ED408 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1447,6 +1471,7 @@
 				000C3BF7164860B900B8E92D /* KWAsyncVerifier.m in Sources */,
 				000C3BF8164860B900B8E92D /* KWBeBetweenMatcher.m in Sources */,
 				000C3BF9164860B900B8E92D /* KWBeEmptyMatcher.m in Sources */,
+				005D488817E8FB8600C147E6 /* FlatPurpleTheme.m in Sources */,
 				000C3BFA164860B900B8E92D /* KWBeforeAllNode.m in Sources */,
 				000C3BFB164860B900B8E92D /* KWBeforeEachNode.m in Sources */,
 				000C3BFC164860B900B8E92D /* KWBeIdenticalToMatcher.m in Sources */,
@@ -1491,6 +1516,7 @@
 				000C3C21164860B900B8E92D /* KWMatchVerifier.m in Sources */,
 				000C3C22164860B900B8E92D /* KWMessagePattern.m in Sources */,
 				000C3C23164860B900B8E92D /* KWMessageTracker.m in Sources */,
+				005D488417E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m in Sources */,
 				000C3C24164860B900B8E92D /* KWMock.m in Sources */,
 				000C3C25164860B900B8E92D /* KWNull.m in Sources */,
 				000C3C26164860B900B8E92D /* KWObjCUtilities.m in Sources */,
@@ -1586,6 +1612,7 @@
 				00C0BD4614CACC7300427E42 /* CXMLDocument_PrivateExtensions.m in Sources */,
 				00C0BD4714CACC7300427E42 /* CXMLElement.m in Sources */,
 				00C0BD4814CACC7300427E42 /* CXMLElement_CreationExtensions.m in Sources */,
+				005D488317E8F5FD00C147E6 /* ThemeManager_iOS7_translucent.m in Sources */,
 				00C0BD4914CACC7300427E42 /* CXMLElement_ElementTreeExtensions.m in Sources */,
 				00C0BD4A14CACC7300427E42 /* CXMLNamespaceNode.m in Sources */,
 				009DE64317CBAAEC0030ED08 /* ThemeManager_iOS7.m in Sources */,
@@ -1613,6 +1640,7 @@
 				00BC176F14D3F72A00D043E7 /* UIApplication+PRPNetworkActivity.m in Sources */,
 				0019596814D5EB9600DD5F35 /* VideosForGroupViewController.m in Sources */,
 				00D9495A14E87538006959C2 /* GroupNameSearchController.m in Sources */,
+				005D488717E8FB8600C147E6 /* FlatPurpleTheme.m in Sources */,
 				00E73ED614E90BC6008961B9 /* SearchResultsTableViewController.m in Sources */,
 				008EE9D714F5464C002BFA7F /* ContestResultsViewController.m in Sources */,
 				008EE9FA14F6B2F8002BFA7F /* FileSystemHelper.m in Sources */,

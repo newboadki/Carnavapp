@@ -1,17 +1,16 @@
 //
-//  VelvetTheme.m
+//  FlatPurpleTheme.m
 //  Coac2012
 //
-//  Created by Borja Arias Drake on 20/01/2013.
+//  Created by Borja Arias Drake on 17/09/2013.
 //  Copyright (c) 2013 Borja Arias Drake. All rights reserved.
 //
 
-#import "VelvetTheme.h"
+#import "FlatPurpleTheme.h"
 
-static VelvetTheme *_sharedInstance;
+static FlatPurpleTheme *_sharedInstance;
 
-@implementation VelvetTheme
-
+@implementation FlatPurpleTheme
 
 #pragma mark - Singleton
 
@@ -19,7 +18,7 @@ static VelvetTheme *_sharedInstance;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[VelvetTheme alloc] init];
+        _sharedInstance = [[FlatPurpleTheme alloc] init];
     });
     
     return _sharedInstance;
@@ -86,6 +85,5 @@ static VelvetTheme *_sharedInstance;
 {
     return [UIColor colorWithRed:169.0/255.0 green:3.0/255.0 blue:79.0/255.0 alpha:1.0];
 }
-
 
 @end
